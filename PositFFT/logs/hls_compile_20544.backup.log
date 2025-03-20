@@ -1,0 +1,110 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_add_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_add_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=positAdd' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 8.56 seconds; current allocated memory: 162.305 MB.
+INFO: [HLS 200-10] Analyzing design file 'posit_lib.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 53.922 seconds; current allocated memory: 169.180 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 3,055 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 253 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 188 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 184 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 164 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 146 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 146 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 145 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 150 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 164 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT()' into 'positAdd(POSIT, POSIT)' (posit_lib.cpp:417:0)
+INFO: [HLS 214-178] Inlining function 'LOD_ADD(ap_uint<32>)' into 'positAdd(POSIT, POSIT)' (posit_lib.cpp:417:0)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_23_1> at posit_lib.cpp:23:22 
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 12.091 seconds; current allocated memory: 170.035 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.008 seconds; current allocated memory: 170.039 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.208 seconds; current allocated memory: 175.707 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] posit_lib.cpp:452: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.075 seconds; current allocated memory: 178.492 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:23:30) to (posit_lib.cpp:23:22) in function 'positAdd'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (posit_lib.cpp:23:22) in function 'positAdd'... converting 15 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:29:13) to (posit_lib.cpp:506:1) in function 'positAdd'... converting 8 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.147 seconds; current allocated memory: 201.125 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.124 seconds; current allocated memory: 205.469 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'positAdd' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positAdd_Pipeline_VITIS_LOOP_23_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_23_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'VITIS_LOOP_23_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.426 seconds; current allocated memory: 208.910 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.094 seconds; current allocated memory: 210.004 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.132 seconds; current allocated memory: 210.125 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.624 seconds; current allocated memory: 210.164 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positAdd_Pipeline_VITIS_LOOP_23_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'positAdd_Pipeline_VITIS_LOOP_23_1' pipeline 'VITIS_LOOP_23_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'bitselect_1ns_32ns_32ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positAdd_Pipeline_VITIS_LOOP_23_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.262 seconds; current allocated memory: 212.016 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'positAdd/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'positAdd/y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'positAdd' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'bitset_32ns_32ns_32s_1s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_7_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positAdd'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.303 seconds; current allocated memory: 213.207 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.773 seconds; current allocated memory: 218.043 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.162 seconds; current allocated memory: 220.465 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for positAdd.
+INFO: [VLOG 209-307] Generating Verilog RTL for positAdd.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 140.60 MHz
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 79.042 seconds; peak allocated memory: 220.633 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 27s

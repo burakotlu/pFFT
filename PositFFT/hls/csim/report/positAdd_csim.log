@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_mul_test.cpp in debug mode
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+-1.77435 -1.28389 2.27807
+-1.77435 -1.28389 2.27807
+Sum written to mulDouble.txt
+Sum written to mulFloat.txt
+SNR (Posit Reconstruction): 178.815 dB
+SNR (Float Conversion): 147.733 dB
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

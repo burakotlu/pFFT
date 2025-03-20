@@ -1,0 +1,26 @@
+{
+  "0": {
+    "basicblocks": 9,
+    "calls": "1",
+    "file": "posit_lib.cpp",
+    "fileloc": 671,
+    "instructions": 109,
+    "loads": {
+      "L": 1
+    },
+    "name": "positDiv",
+    "total_instructions": 116
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "posit.hpp",
+    "fileloc": 68,
+    "instructions": 7,
+    "name": "POSIT",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 7
+  }
+}

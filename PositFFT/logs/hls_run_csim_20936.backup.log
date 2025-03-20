@@ -1,0 +1,86 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_add_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_add_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=encode' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../posit_add_test.cpp in debug mode
+csim.mk:88: recipe for target 'obj/posit_add_test.o' failed
+In file included from ../../../../posit_add_test.cpp:1:
+In file included from ../../../../posit.hpp:1:
+In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+../../../../posit_add_test.cpp:60:12: error: no viable conversion from returned value of type 'vector<float>' to function return type 'vector<double>'
+    return result;
+           ^~~~~~
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:550:7: note: candidate constructor not viable: no known conversion from 'std::vector<float>' to 'const std::vector<double> &' for 1st argument
+      vector(const vector& __x)
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:569:7: note: candidate constructor not viable: no known conversion from 'std::vector<float>' to 'std::vector<double> &&' for 1st argument
+      vector(vector&&) noexcept = default;
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:622:7: note: candidate constructor not viable: no known conversion from 'std::vector<float>' to 'initializer_list<std::vector<double>::value_type>' (aka 'initializer_list<double>') for 1st argument
+      vector(initializer_list<value_type> __l,
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:494:7: note: explicit constructor is not a candidate
+      vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:507:7: note: explicit constructor is not a candidate
+      vector(size_type __n, const allocator_type& __a = allocator_type())
+      ^
+../../../../posit_add_test.cpp:240:24: error: no viable conversion from 'vector<double>' to 'vector<float>'
+    std::vector<float> sumFloat = addVectorsFloat(floatArray, floatArray2);
+                       ^          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:550:7: note: candidate constructor not viable: no known conversion from 'std::vector<double>' to 'const std::vector<float> &' for 1st argument
+      vector(const vector& __x)
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:569:7: note: candidate constructor not viable: no known conversion from 'std::vector<double>' to 'std::vector<float> &&' for 1st argument
+      vector(vector&&) noexcept = default;
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:622:7: note: candidate constructor not viable: no known conversion from 'std::vector<double>' to 'initializer_list<std::vector<float>::value_type>' (aka 'initializer_list<float>') for 1st argument
+      vector(initializer_list<value_type> __l,
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:494:7: note: explicit constructor is not a candidate
+      vector(const allocator_type& __a) _GLIBCXX_NOEXCEPT
+      ^
+C:/Xilinx/Vitis/2024.2/tps/mingw/10.0.0/win64.o/nt/include/c++/9.5.0/bits/stl_vector.h:507:7: note: explicit constructor is not a candidate
+      vector(size_type __n, const allocator_type& __a = allocator_type())
+      ^
+../../../../posit_add_test.cpp:241:5: error: no matching function for call to 'writeToFileFloat'
+    writeToFileFloat(sumFloat, "sumFloat.txt");
+    ^~~~~~~~~~~~~~~~
+../../../../posit_add_test.cpp:26:6: note: candidate function not viable: no known conversion from 'vector<float>' to 'const vector<std::float_round_style>' for 1st argument
+void writeToFileFloat(const std::vector<float_round_style>& vec, const std::string& filename) {
+     ^
+1 warning and 3 errors generated.
+make: *** [obj/posit_add_test.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 6 seconds. Total CPU system time: 3 seconds. Total elapsed time: 84.951 seconds; peak allocated memory: 163.445 MB.

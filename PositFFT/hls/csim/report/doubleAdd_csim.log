@@ -1,0 +1,13 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_div_test.cpp in debug mode
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+1.18617 0.722291 1.64224
+1.18616 0.72229 1.64209
+Div written to divDouble.txt
+Sum written to divFloat.txt
+SNR (Posit Reconstruction): 4.48219 dB
+SNR (Float Conversion): 145.158 dB
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

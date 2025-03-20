@@ -1,0 +1,12 @@
+{
+  "name": "PositFFT",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "hls_config.cfg"
+    ],
+    "work_dir": "PositFFT"
+  },
+  "template": "empty_hls_component"
+}

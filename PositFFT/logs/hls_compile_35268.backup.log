@@ -1,0 +1,77 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_sin_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_sin_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=doubleSub' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 4.026 seconds; current allocated memory: 162.609 MB.
+INFO: [HLS 200-10] Analyzing design file 'posit_lib.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 33.877 seconds; current allocated memory: 169.488 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 7 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 12.453 seconds; current allocated memory: 170.512 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 170.516 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.268 seconds; current allocated memory: 174.453 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.052 seconds; current allocated memory: 177.004 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 197.703 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.083 seconds; current allocated memory: 198.141 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'doubleSub' ...
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'doubleSub' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.34 seconds; current allocated memory: 198.141 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 198.141 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'doubleSub' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'doubleSub/x' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'doubleSub/y' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'doubleSub' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'dsub_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'doubleSub'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.145 seconds; current allocated memory: 198.141 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.42 seconds; current allocated memory: 201.422 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.107 seconds; current allocated memory: 202.379 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for doubleSub.
+INFO: [VLOG 209-307] Generating Verilog RTL for doubleSub.
+INFO: [HLS 200-789] **** Estimated Fmax: 144.53 MHz
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 53.05 seconds; peak allocated memory: 202.527 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 58s

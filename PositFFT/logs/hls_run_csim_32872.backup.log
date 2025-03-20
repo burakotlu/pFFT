@@ -1,0 +1,181 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_mul_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=doubleSub' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../posit_mul_test.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../posit_mul_test.cpp:1:
+In file included from ../../../../posit.hpp:1:
+In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+1 warning generated.
+1.18617
+-1.26626
+1.11876
+0.387401
+-0.216669
+-1.6001
+-0.163004
+-0.665166
+-1.42853
+0.603554
+0.722291
+-0.716106
+-1.37856
+0.402269
+1.69743
+1.15146
+1.05532
+0.811896
+1.33576
+1.20791
+1.18617 1.18617
+0.722291 0.722291
+---IN1---
+isZero: 0
+isInf: 0
+Sign: 0
+Regime: 0
+Exponent: 0
+Mantissa: 636821209
+---IN2---
+isZero: 0
+isInf: 0
+Sign: 0
+Regime: -1
+Exponent: 0
+Mantissa: 775553954
+------
+---ADD---
+isZero: 0
+isInf: 0
+Sign: 0
+Regime: 0
+Exponent: 0
+Mantissa: 1024598186
+------
+dAdd: 1.90846
+dRC: 1.90846
+------
+6
+2
+SNR IN1 (Posit Reconstruction): 178.482 dB
+SNR IN1 (Float Conversion): 151.167 dB
+SNR IN2 (Posit Reconstruction): 179.991 dB
+SNR IN2 (Float Conversion): 149.232 dB
+1954.27
+-2029.94
+-1064.14
+1617.24
+1516.3
+-1837.64
+1827.47
+1202.02
+-1520.05
+1854.94
+Sum written to addDouble.txt
+Sum written to addFloat.txt
+SNR IN1+IN2 (Posit Reconstruction): -62.7582 dB
+SNR IN1+IN2 (Float Conversion): 146.028 dB
+7.4221
+-4.40124
+4.99465
+-7.61258
+-7.65641
+-5.50312
+-4.87331
+-5.90825
+-5.52858
+-4.83486
+Sum written to subDouble.txt
+Sum written to subFloat.txt
+SNR IN1-IN2 (Posit Reconstruction): -8.82458 dB
+SNR IN1-IN2 (Float Conversion): 146.589 dB
+0.856761
+0.906778
+-1.54229
+0.155839
+-0.367781
+-1.84245
+-0.172022
+-0.540045
+-1.90817
+0.72904
+Sum written to mulDouble.txt
+Sum written to mulFloat.txt
+SNR IN1*IN2 (Posit Reconstruction): 171.469 dB
+SNR IN1*IN2 (Float Conversion): 153.156 dB
+1.407
+1.60342
+1.25163
+0.150079
+0.0469454
+2.56032
+0.0265704
+0.442445
+2.04071
+0.364277
+Sum written to sqrDouble.txt
+Sum written to sqrFloat.txt
+SNR IN1*IN1 (Posit Reconstruction): 170.7 dB
+SNR IN1*IN1 (Float Conversion): 144.627 dB
+1.97966
+2.57094
+1.56658
+0.0225238
+0.00220387
+6.55524
+0.000705989
+0.195758
+4.16448
+0.132698
+Sum written to p4Double.txt
+Sum written to p4Float.txt
+SNR IN1**4 (Posit Reconstruction): 163.915 dB
+SNR IN1**4 (Float Conversion): 139.206 dB
+1.64224
+1.76826
+-0.811544
+0.963039
+-0.127645
+-1.38963
+-0.154459
+-0.819274
+-1.06946
+0.499667
+Sum written to divDouble.txt
+Sum written to divFloat.txt
+SNR IN1/IN2 (Posit Reconstruction): 178.569 dB
+SNR IN1/IN2 (Float Conversion): 144.86 dB
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 13.008 seconds; peak allocated memory: 162.582 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 19s

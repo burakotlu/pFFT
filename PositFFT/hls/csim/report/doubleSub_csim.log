@@ -1,0 +1,35 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_mul_test.cpp in debug mode
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+SNR IN1 (Posit Reconstruction): 78.1142 dB
+SNR IN1 (Float Conversion): 152.897 dB
+SNR IN2 (Posit Reconstruction): 78.1766 dB
+SNR IN2 (Float Conversion): 152.944 dB
+Sum written to addDouble.txt
+Sum written to addFloat.txt
+SNR IN1+IN2 (Posit Reconstruction): 76.2592 dB
+SNR IN1+IN2 (Float Conversion): 148.973 dB
+Sum written to subDouble.txt
+Sum written to subFloat.txt
+SNR IN1-IN2 (Posit Reconstruction): 76.2616 dB
+SNR IN1-IN2 (Float Conversion): 148.932 dB
+Sum written to mulDouble.txt
+Sum written to mulFloat.txt
+SNR IN1*IN2 (Posit Reconstruction): 70.3926 dB
+SNR IN1*IN2 (Float Conversion): 147.733 dB
+Sum written to sqrDouble.txt
+Sum written to sqrFloat.txt
+SNR IN1*IN1 (Posit Reconstruction): 71.7513 dB
+SNR IN1*IN1 (Float Conversion): 146.385 dB
+Sum written to p4Double.txt
+Sum written to p4Float.txt
+SNR IN1**4 (Posit Reconstruction): 65.4152 dB
+SNR IN1**4 (Float Conversion): 140.827 dB
+Sum written to divDouble.txt
+Sum written to divFloat.txt
+SNR IN1/IN2 (Posit Reconstruction): 4.18121 dB
+SNR IN1/IN2 (Float Conversion): 145.158 dB
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

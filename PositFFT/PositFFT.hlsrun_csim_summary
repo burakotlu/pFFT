@@ -1,0 +1,107 @@
+<ENTRY>
+{
+ "thisFile": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\PositFFT.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "03/20/25 23:48:24",
+ "timestampMillis": "1742510904070",
+ "buildStep": {
+  "cmdId": "7352bff7-6d53-4742-a474-67e9150e37d0",
+  "name": "vitis-run",
+  "logFile": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\logs\\PositFFT.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\hls_config.cfg --work_dir PositFFT ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\hls_config.cfg",
+   "--work_dir",
+   "PositFFT"
+  ],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/20/25 23:48:24",
+ "timestampMillis": "1742510904070",
+ "status": {
+  "cmdId": "7352bff7-6d53-4742-a474-67e9150e37d0",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "03/20/25 23:48:29",
+ "timestampMillis": "1742510909840",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "positDiv",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit.hpp",
+     "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit_lib.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "03/20/25 23:48:29",
+ "timestampMillis": "1742510909841",
+ "buildStep": {
+  "cmdId": "5e3ca607-6221-463c-86cd-6a0f88e62d09",
+  "name": "",
+  "logFile": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "03/20/25 23:48:29",
+ "timestampMillis": "1742510909843",
+ "status": {
+  "cmdId": "5e3ca607-6221-463c-86cd-6a0f88e62d09",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>

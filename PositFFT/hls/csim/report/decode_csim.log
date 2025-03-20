@@ -1,0 +1,10 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_decode_test.cpp in debug mode
+   Generating csim.exe
+Limit: 65536
+Data written to numbers.txt
+Data written to outfiles
+Accuracy: 100%
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

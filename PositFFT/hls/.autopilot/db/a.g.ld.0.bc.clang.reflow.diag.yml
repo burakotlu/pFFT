@@ -1,0 +1,51 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 673, Column: 7 }
+Function:        _Z8positDiv5POSITS_
+Args:            
+  - Callee:          'POSIT::POSIT()'
+    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'positDiv(POSIT, POSIT)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 673, Column: 7 }
+Function:        _Z8positDiv5POSITS_
+Args:            
+  - Callee:          'POSIT::POSIT()'
+    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'positDiv(POSIT, POSIT)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_positDiv_ir
+Args:            
+  - Callee:          'positDiv(POSIT, POSIT)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_positDiv_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+Function:        _Z8positDiv5POSITS_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'POSIT::POSIT()'
+    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'positDiv(POSIT, POSIT)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - String:          ''''
+...

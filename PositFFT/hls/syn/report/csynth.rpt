@@ -1,0 +1,123 @@
+
+
+================================================================
+== Synthesis Summary Report of 'positDiv'
+================================================================
++ General Information: 
+    * Date:           Wed Mar  5 22:25:19 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        PositFFT
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: azynquplus
+    * Target device:  xazu3teg-sfvc784-1Q-q
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |   Modules  | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |    |           |           |     |
+    |   & Loops  | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
+    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    |+ positDiv  |     -|  2.17|       29|  290.000|         -|       30|     -|        no|     -|   -|  374 (~0%)|  672 (~0%)|    -|
+    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++-----------+---------+-----------+----------+
+| Port      | Mode    | Direction | Bitwidth |
++-----------+---------+-----------+----------+
+| ap_return |         | out       | 64       |
+| x         | ap_none | in        | 64       |
+| y         | ap_none | in        | 64       |
++-----------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_rst    | reset      | ap_rst                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| x        | in        | POSIT    |
+| y        | in        | POSIT    |
+| return   | out       | POSIT    |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| x        | x            | port    |
+| y        | y            | port    |
+| return   | ap_return    | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
+| Name                            | DSP | Pragma | Variable     | Op        | Impl                   | Latency |
++---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
+| + positDiv                      | 0   |        |              |           |                        |         |
+|   sign_fu_215_p2                |     |        | sign         | xor       | auto                   | 0       |
+|   isZero_fu_221_p2              |     |        | isZero       | or        | auto                   | 0       |
+|   sf_r_fu_271_p2                |     |        | sf_r         | sub       | fabric                 | 0       |
+|   icmp_ln697_fu_285_p2          |     |        | icmp_ln697   | seteq     | auto                   | 0       |
+|   udiv_25ns_13ns_25_29_seq_1_U1 |     |        | mant         | udiv      | auto_seq               | 28      |
+|   sf_r_2_fu_327_p2              |     |        | sf_r_2       | add       | fabric                 | 0       |
+|   sf_r_3_fu_332_p3              |     |        | sf_r_3       | select    | auto_sel               | 0       |
+|   mantissa_fu_351_p3            |     |        | mantissa     | select    | auto_sel               | 0       |
+|   icmp_ln729_fu_377_p2          |     |        | icmp_ln729   | seteq     | auto                   | 0       |
+|   regime_2_fu_383_p3            |     |        | regime_2     | select    | auto_sel               | 0       |
+|   icmp_ln732_fu_391_p2          |     |        | icmp_ln732   | setgt     | auto                   | 0       |
+|   icmp_ln733_fu_397_p2          |     |        | icmp_ln733   | setlt     | auto                   | 0       |
+|   add_ln736_fu_411_p2           |     |        | add_ln736    | add       | fabric                 | 0       |
+|   sub_ln736_fu_417_p2           |     |        | sub_ln736    | sub       | fabric                 | 0       |
+|   SREG_fu_423_p3                |     |        | SREG         | select    | auto_sel               | 0       |
+|   REM_fu_431_p2                 |     |        | REM          | sub       | fabric                 | 0       |
+|   icmp_ln738_fu_437_p2          |     |        | icmp_ln738   | seteq     | auto                   | 0       |
+|   icmp_ln739_fu_453_p2          |     |        | icmp_ln739   | setne     | auto                   | 0       |
+|   shl_ln744_fu_471_p2           |     |        | shl_ln744    | shl       | auto_pipe              | 0       |
+|   xor_ln744_fu_481_p2           |     |        | xor_ln744    | xor       | auto                   | 0       |
+|   exponent_2_fu_565_p6          |     |        | exponent_1   | and       | auto                   | 0       |
+|   xor_ln732_fu_493_p2           |     |        | xor_ln732    | xor       | auto                   | 0       |
+|   and_ln733_fu_499_p2           |     |        | and_ln733    | and       | auto                   | 0       |
+|   sparsemux_7_2_5_1_1_U2        |     |        | regime_3     | sparsemux | onehotencoding_realdef | 0       |
+|   or_ln738_fu_533_p2            |     |        | or_ln738     | or        | auto                   | 0       |
+|   or_ln738_1_fu_539_p2          |     |        | or_ln738_1   | or        | auto                   | 0       |
+|   xor_ln738_fu_545_p2           |     |        | xor_ln738    | xor       | auto                   | 0       |
+|   and_ln739_fu_551_p2           |     |        | and_ln739    | and       | auto                   | 0       |
+|   sparsemux_7_2_1_1_1_U3        |     |        | exponent_2   | sparsemux | onehotencoding_realdef | 0       |
+|   xor_ln749_fu_585_p2           |     |        | xor_ln749    | xor       | auto                   | 0       |
+|   exponent_3_fu_590_p2          |     |        | exponent_3   | and       | auto                   | 0       |
+|   mantissa_2_fu_596_p3          |     |        | mantissa_2   | select    | auto_sel               | 0       |
+|   sign_1_fu_603_p2              |     |        | sign_1       | and       | auto                   | 0       |
+|   select_ln749_fu_608_p3        |     |        | select_ln749 | select    | auto_sel               | 0       |
++---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
+  No bind storage info in design
+
+================================================================
+== Pragma Report
+================================================================
+  No pragmas found
+
