@@ -8,14 +8,16 @@
 #include <cmath>
 #include <vector>
 using namespace std;
+
 #define N 32
 #define ES 0
+#define TERMS 3
+#define IN_SIZE 4000
+#define APPR_TAILOR 1
+
 #define FRAC_LEN (N-(ES+2))
 #define MUL_LEN 2*FRAC_LEN
 #define PI 3.14
-#define TERMS 3
-#define IN_SIZE 4000
-
 #if (ES==0)
 #define REG_SHIFT 1 //(1<<ES)
 #define USEED 2 //(1<<REG_SHIFT)
@@ -98,7 +100,7 @@ std::vector<double> dIFFT(const dFFTResult& result);
 // Defining some constant POSIT structs 
 const ps_t POSIT_PI = {0, false, false, 0, 0, 1411}; 
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
-
+const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)}; 
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t  decode(posit_t posit);
@@ -126,5 +128,3 @@ float fTailorCos(float in);
 void pEuler(ps_t angle, ps_t *result_real, ps_t *result_imag);
 void dEuler(double angle, double *result_real, double *result_imag);
 void fEuler(float angle, float *result_real, float *result_imag);
-
-

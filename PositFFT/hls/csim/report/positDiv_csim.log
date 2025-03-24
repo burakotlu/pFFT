@@ -1,5 +1,26 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
-   Compiling ../../../../posit_fft_test.cpp in debug mode
-   Compiling ../../../../posit_lib.cpp in debug mode
-   Generating csim.exe
+make: 'csim.exe' is up to date.
+ONE: 1
+Before Load
+After Load
+Calculating double results...
+sampleCount: 100
+0
+Calculating float results...
+0
+Calculating posit results...
+sampleCount: 100
+0
+Writing results in files...
+Saved 4000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/posit_fft_real.txt
+Saved 4000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/posit_fft_imag.txt
+Saved 4000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/double_fft_real.txt
+Saved 4000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/double_fft_imag.txt
+Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/double_fft_real.txt
+Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_3_N_32_ES_0/double_fft_imag.txt
+----------------SNR RESULTS-------------------------
+SNR (Posit Reconstruction): 39.9845 dB
+SNR (Float Conversion): 40.9053 dB
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

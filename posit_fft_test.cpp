@@ -9,6 +9,7 @@
 #include <cmath>
 #include <limits>
 #include <cstdint>
+#include <filesystem>
 
 // Function to load data from a txt file into a vector
 std::vector<double> loadSignal(const std::string& filename) {
@@ -127,19 +128,55 @@ std::vector<float> convertDoubleArrayToFloat(const std::vector<double>& doubleAr
 
     return floatArray;
 }
+fFFTResult convertToFFFTResult(const dFFTResult& dfftResult) {
+    fFFTResult ffftResult;
+
+    // Convert real part
+    for (size_t i = 0; i < IN_SIZE; ++i) {
+        ffftResult.real[i] = static_cast<float>(dfftResult.real[i]);
+    }
+
+    // Convert imaginary part
+    for (size_t i = 0; i < IN_SIZE; ++i) {
+        ffftResult.imag[i] = static_cast<float>(dfftResult.imag[i]);
+    }
+
+    return ffftResult;
+}
+pFFTResult convertToPFFTResult(const dFFTResult& dfftResult) {
+    pFFTResult pfftResult;
+
+    // Convert real part using the helper function
+    pfftResult.real = convertDoubleArrayToPosit(dfftResult.real);
+
+    // Convert imaginary part using the helper function
+    pfftResult.imag = convertDoubleArrayToPosit(dfftResult.imag);
+
+    return pfftResult;
+}
 int main() {
-    std::cout<<posit2double(POSIT_2PI)<<std::endl;
-    
-    std::string inputFile = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/output.txt";  // Input file with the time-domain signal
-    std::string dOutputFileReal = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/double_fft_real.txt";
-    std::string dOutputFileImag = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/double_fft_imag.txt";
-    std::string fOutputFileReal = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/float_fft_real.txt";
-    std::string fOutputFileImag = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/float_fft_imag.txt";
-    std::string pOutputFileReal = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_real.txt";
-    std::string pOutputFileImag = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_imag.txt";
+    //std::cout<<posit2double(POSIT_2PI)<<std::endl;
+    std::cout<<"ONE: "<<posit2double(ONE)<<std::endl;
+    std::string appr_suffix = (APPR_TAILOR == 1) ? "_APP" : "_NAPP";
 
-    std::string ifftOutputFile = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/ifft_output.txt";
-
+    // Construct the base path
+    std::string basePath = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_" 
+                            + std::to_string(TERMS) + "_N_" + std::to_string(N) 
+                            + "_ES_" + std::to_string(ES)
+                            + "_SIZE_" + std::to_string(IN_SIZE) + appr_suffix;
+    std::string inputFile = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/output_" +std::to_string(IN_SIZE)+".txt";  // Input file with the time-domain signal
+    std::string signalFile = basePath +"/signal.txt";  // Input file with the time-domain signal
+    std::string dOutputFileReal = basePath + "/double_fft_real.txt";
+    std::string dOutputFileImag = basePath + "/double_fft_imag.txt";
+    std::string fOutputFileReal = basePath + "/float_fft_real.txt";
+    std::string fOutputFileImag = basePath + "/float_fft_imag.txt";
+    std::string pOutputFileReal = basePath + "/posit_fft_real.txt";
+    std::string pOutputFileImag = basePath + "/posit_fft_imag.txt";
+    std::string snrFFTOut = basePath + "/snr_fft.txt";
+    std::string difftOutputFile = basePath+"/double_ifft_output.txt";
+    std::string fifftOutputFile = basePath+"/float_ifft_output.txt";
+    std::string pifftOutputFile = basePath+"/posit_ifft_output.txt";
+    std::string snrIFFTOut = basePath + "/snr_ifft.txt";
     std::cout<<"Before Load"<<std::endl;
     // Step 1: Load the signal from the txt file
     std::vector<double> signal = loadSignal(inputFile);
@@ -160,31 +197,65 @@ int main() {
     std::vector<double> RC_imag = convertPositArrayToDouble(pfftResult.imag);
     std::cout<<"Writing results in files..."<<std::endl;
     // Write to files
+    writeToFile(signalFile, signal);
     writeToFile(pOutputFileReal, RC_real);
     writeToFile(pOutputFileImag, RC_imag);    
     writeToFile(dOutputFileReal, d_fftResult.real);
     writeToFile(dOutputFileImag, d_fftResult.imag);
-    writeToFileFloat(dOutputFileReal, f_fftResult.real);
-    writeToFileFloat(dOutputFileImag, f_fftResult.imag);
+    writeToFileFloat(fOutputFileReal, f_fftResult.real);
+    writeToFileFloat(fOutputFileImag, f_fftResult.imag);
     // Compute SNRs
     double snrPosit = computeSNR(d_fftResult.real, RC_real);
     double snrFloat = computeSNRFloat(d_fftResult.real, f_fftResult.real);
 
 
     // Print results
-    std::cout<<"----------------SNR RESULTS-------------------------"<<std::endl;
+    std::cout<<"----------------SNR RESULTS FFT-------------------------"<<std::endl;
     std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
     std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
+    std::ofstream outFileFFT(snrFFTOut);
+    outFileFFT << "Posit: " << snrPosit << std::endl;
+    outFileFFT << "Float: " << snrFloat << std::endl;
+    outFileFFT.close();
 
-
-
- /*   std::cout << "Computing IFFT...\n";
-    std::vector<double> reconstructedSignal = dIFFT(fftResult);
+    std::cout << "Computing double IFFT...\n";
+    std::vector<double> d_reconstructedSignal = dIFFT(d_fftResult);
 
     std::cout << "Writing IFFT results to file...\n";
-    writeToFile(ifftOutputFile, reconstructedSignal);
+    writeToFile(difftOutputFile, d_reconstructedSignal);
+    std::cout << "Computing float IFFT...\n";
+    fFFTResult f_ifft_in = convertToFFFTResult(d_fftResult);
+    std::vector<float> f_reconstructedSignal = fIFFT(f_ifft_in);
+    writeToFileFloat(fifftOutputFile, f_reconstructedSignal);
+    std::cout << "Computing float IFFT...\n";
+    pFFTResult p_ifft_in = convertToPFFTResult(d_fftResult);
+    std::vector<ps_t> p_reconstructedSignal = pIFFT(p_ifft_in);
+    std::vector<double> RC_result = convertPositArrayToDouble(p_reconstructedSignal);
+ 
+    writeToFile(pifftOutputFile, RC_result);
+        // Compute SNRs
+    snrPosit = computeSNR(d_reconstructedSignal, RC_result);
+    snrFloat = computeSNRFloat(d_reconstructedSignal, f_reconstructedSignal);
 
+    std::cout<<"----------------SNR RESULTS IFFT-------------------------"<<std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
+    std::ofstream outFileIFFT(snrIFFTOut);
+    outFileIFFT << "Posit: " << snrPosit << std::endl;
+    outFileIFFT << "Float: " << snrFloat << std::endl;
+	std::cout<<"----------------SNR RESULTS IFFT WRT ORIG-------------------------"<<std::endl;
+	// Compute SNRs
+    snrPosit = computeSNR(signal, RC_result);
+    snrFloat = computeSNRFloat(signal, f_reconstructedSignal);
+	double snrDouble = computeSNR(signal, d_reconstructedSignal);
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
+	std::cout << "SNR (Double Conversion): " << snrDouble << " dB" << std::endl;
+    outFileIFFT << "-------------WRT ORIG-------------------------"<< std::endl;
+    outFileIFFT << "Posit: " << snrPosit << std::endl;
+    outFileIFFT << "Float: " << snrFloat << std::endl;
+    outFileIFFT.close();
     std::cout << "Processing complete.\n";
-    */
+    
     return 0;
 }
