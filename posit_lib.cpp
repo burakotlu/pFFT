@@ -1226,7 +1226,7 @@ void fAccumulateFC(int k, const std::vector<float>& signal, float& realSum, floa
         angle += deltaTheta;
     }
 }
-
+//test
 std::ofstream PsignalFile("posit_signal_values.txt");
 std::ofstream PrealPartFile("posit_realPart_values.txt");
 std::ofstream PmultiplicationFile("posit_multiplication_values.txt");
