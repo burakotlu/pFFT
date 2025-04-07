@@ -9,10 +9,10 @@
 #include <vector>
 using namespace std;
 
-#define N 32
-#define ES 2
+#define N 28
+#define ES 0
 #define TERMS 2
-#define IN_SIZE 10
+#define IN_SIZE 2000
 #define APPR_TAILOR 0
 
 #define FRAC_LEN (N-(ES+2))
@@ -103,7 +103,8 @@ std::vector<ps_t> pIFFT(const pFFTResult& result);
 // Defining some constant POSIT structs 
 const ps_t POSIT_PI = {0, false, false, 0, 0, 1411}; 
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
-const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)}; 
+const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};
+const ps_t ZERO = {0, true, false, 0, 0, 1<<(FRAC_LEN-1)}; 
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t  decode(posit_t posit);

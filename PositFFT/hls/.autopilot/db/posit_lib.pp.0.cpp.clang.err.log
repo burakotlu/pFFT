@@ -656,10 +656,40 @@ In file included from C:/Xilinx/Vitis/2024.2/common/technology/autopilot\hls_mat
 C:/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/hls_hypot_apfixed.h:170:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=hypot_fixed_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS unroll
         ^
-directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=positDiv_XLX_SEP_ PragmaOptions=name=positDiv_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLSDIRECTIVE TOP name=positDiv
-        ^
-posit_lib.cpp:916:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
- sf_t sf_x,sf_y,sf_r,max =((2-16)<<1);
+posit_lib.cpp:675:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+ sf_t sf_x,sf_y,sf_r,max =((2-32)<<0);
                            ~~~~~~^
-203 warnings generated.
+posit_lib.cpp:1244:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=inline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pAccumulateFC_XLX_SEP_ PragmaOptions=_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INLINE
+        ^
+posit_lib.cpp:1250:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pAccumulateFC_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
+        ^
+posit_lib.cpp:1299:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=signal_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=signal
+        ^
+posit_lib.cpp:1300:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=real_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=real
+        ^
+posit_lib.cpp:1301:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=imag_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=imag
+        ^
+posit_lib.cpp:1302:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=pFFT_XLX_SEP_ PragmaOptions=mode=ap_ctrl_hs port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
+        ^
+directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=name=dFFT_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=dFFT
+        ^
+posit_lib.cpp:1326:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=signal_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=signal
+        ^
+posit_lib.cpp:1327:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=real_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=real
+        ^
+posit_lib.cpp:1328:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=mode=ap_memory port=imag_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_memory port=imag
+        ^
+posit_lib.cpp:1329:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=mode=ap_ctrl_hs port=return_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
+        ^
+213 warnings generated.

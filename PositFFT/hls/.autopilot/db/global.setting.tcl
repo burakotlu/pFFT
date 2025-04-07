@@ -1,5 +1,5 @@
 
-set TopModule "positDiv"
+set TopModule "dFFT"
 set ClockPeriod 10
 set ClockList ap_clk
 set AxiliteClockList {}
@@ -9,7 +9,7 @@ set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
 set noPortSwitchingFlag 0
-set FloatingPointFlag 0
+set FloatingPointFlag 1
 set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
@@ -24,7 +24,7 @@ set ResetRegisterNum 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix positDiv_
+set RtlSubPrefix dFFT_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}
@@ -46,7 +46,7 @@ set TargetInfo xazu3teg:-sfvc784:-1Q-q
 set SourceFiles {sc {} c ../../posit_lib.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {}
-set TBFiles {verilog C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp bc C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp vhdl C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp sc C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp cas C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp c {}}
+set TBFiles {verilog C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp bc C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp vhdl C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp sc C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp cas C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

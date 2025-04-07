@@ -22,7 +22,7 @@ def format_label(folder_name):
     """
     Reformats the folder name to a shorter label.
     Expected folder name format: TERMS_<T>_N_<N_value>_ES_<ES_value>_SIZE_<size>_<APP/NAPP>
-    For example: 'TERMS_4_N_32_ES_0_SIZE_4000_APP' becomes 'T:4 (32,0) APP'
+    Example: 'TERMS_4_N_32_ES_0_SIZE_4000_APP' → 'T:4 (32,0) APP'
     """
     parts = folder_name.split('_')
     if len(parts) >= 9:
@@ -44,15 +44,11 @@ def process_folders(base_dir='.'):
             posit_ifft, float_ifft = extract_snr_values(ifft_file)
             data.append([folder, size_val, posit_fft, float_fft, posit_ifft, float_ifft])
     
-    # Create DataFrame with an additional column for SIZE
     df = pd.DataFrame(data, columns=['Configuration', 'SIZE', 'Posit_FFT', 'Float_FFT', 'Posit_IFFT', 'Float_IFFT'])
-    # Create a new column for the formatted label to use on plots
     df['Label'] = df['Configuration'].apply(format_label)
     
-    # Save the combined results to CSV
     df.to_csv('snr_results.csv', index=False)
     
-    # Group data by SIZE and create separate plots for each group
     size_groups = df.groupby('SIZE')
     for size, group in size_groups:
          plot_results(group, 'FFT', size)
@@ -60,6 +56,13 @@ def process_folders(base_dir='.'):
 
 def plot_results(df, plot_type, size):
     """Plots the SNR values for FFT or IFFT for a given SIZE group and saves the figure."""
+    size_to_points = {
+        '1000': '1024',
+        '2000': '2048',
+        '4000': '4096'
+    }
+    point_count = size_to_points.get(size, size)  # fallback to size if not mapped
+
     if plot_type == 'FFT':
         posit_values = df['Posit_FFT']
         float_values = df['Float_FFT']
@@ -72,7 +75,7 @@ def plot_results(df, plot_type, size):
     plt.plot(df['Label'], float_values, marker='s', label='Float')
     plt.xlabel('Configuration')
     plt.ylabel('SNR (dB)')
-    plt.title('SNR Comparison ({}), SIZE: {}'.format(plot_type, size))
+    plt.title('SNR Comparison ({}) - {}-Point'.format(plot_type, point_count))
     plt.xticks(rotation=90)
     plt.legend()
     plt.grid()

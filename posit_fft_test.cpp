@@ -164,7 +164,7 @@ int main() {
                             + std::to_string(TERMS) + "_N_" + std::to_string(N) 
                             + "_ES_" + std::to_string(ES)
                             + "_SIZE_" + std::to_string(IN_SIZE) + appr_suffix;
-    std::string inputFile = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/output_" +std::to_string(IN_SIZE)+".txt";  // Input file with the time-domain signal
+    std::string inputFile = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/random_numbers_" +std::to_string(IN_SIZE)+".txt";  // Input file with the time-domain signal
     std::string signalFile = basePath +"/signal.txt";  // Input file with the time-domain signal
     std::string dOutputFileReal = basePath + "/double_fft_real.txt";
     std::string dOutputFileImag = basePath + "/double_fft_imag.txt";

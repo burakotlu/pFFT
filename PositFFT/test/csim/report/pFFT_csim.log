@@ -1,2 +1,104 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_fft_test.cpp in debug mode
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+ONE: 1
+Before Load
+After Load
+Calculating double results...
+sampleCount: 2000
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Calculating float results...
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Calculating posit results...
+sampleCount: 2000
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Writing results in files...
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/signal.txt
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_fft_real.txt
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_fft_imag.txt
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_fft_real.txt
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_fft_imag.txt
+Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_fft_real.txt
+Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_fft_imag.txt
+----------------SNR RESULTS FFT-------------------------
+SNR (Posit Reconstruction): 23.1714 dB
+SNR (Float Conversion): 22.4323 dB
+Computing double IFFT...
+sampleCount: 2000
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Writing IFFT results to file...
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_ifft_output.txt
+Computing float IFFT...
+sampleCount: 2000
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_ifft_output.txt
+Computing float IFFT...
+sampleCount: 2000
+0
+200
+400
+600
+800
+1000
+1200
+1400
+1600
+1800
+Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_ifft_output.txt
+----------------SNR RESULTS IFFT-------------------------
+SNR (Posit Reconstruction): 4.10075 dB
+SNR (Float Conversion): 27.5732 dB
+----------------SNR RESULTS IFFT WRT ORIG-------------------------
+SNR (Posit Reconstruction): 4.83836 dB
+SNR (Float Conversion): 18.9352 dB
+SNR (Double Conversion): 19.1663 dB
+Processing complete.
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

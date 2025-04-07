@@ -721,18 +721,48 @@ C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posi
        ^~~
        VITIS_LOOP_169_3: 
 C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:50549:8: note: FIX-IT applied suggested code changes
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52872:5: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56894:5: warning: Added loop label VITIS_LOOP_48_1:   [xilinx-label-all-loops]
     for(int i=in.width-1;i>=0;i-- ){
     ^~~
     VITIS_LOOP_48_1: 
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52872:5: note: FIX-IT applied suggested code changes
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52883:5: warning: Added loop label VITIS_LOOP_59_1:   [xilinx-label-all-loops]
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56894:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56905:5: warning: Added loop label VITIS_LOOP_59_1:   [xilinx-label-all-loops]
     for(int i=in.width-1;i>=0;i-- ){
     ^~~
     VITIS_LOOP_59_1: 
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52883:5: note: FIX-IT applied suggested code changes
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52894:5: warning: Added loop label VITIS_LOOP_70_1:   [xilinx-label-all-loops]
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56905:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56916:5: warning: Added loop label VITIS_LOOP_70_1:   [xilinx-label-all-loops]
     for(int i=in.width-1;i>=0;i-- ){
     ^~~
     VITIS_LOOP_70_1: 
-C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:52894:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:56916:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57842:5: warning: Added loop label VITIS_LOOP_1219_1:   [xilinx-label-all-loops]
+    for (int n = 0; n < sampleCount; n++) {
+    ^~~
+    VITIS_LOOP_1219_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57842:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57857:5: warning: Added loop label VITIS_LOOP_1234_1:   [xilinx-label-all-loops]
+    for (int n = 0; n < sampleCount; n++) {
+    ^~~
+    VITIS_LOOP_1234_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57857:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57872:5: warning: Added loop label VITIS_LOOP_1249_1:   [xilinx-label-all-loops]
+    for (int n = 0; n < sampleCount; n++) {
+    ^~~
+    VITIS_LOOP_1249_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57872:5: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57895:2: warning: Added loop label VITIS_LOOP_1304_1:   [xilinx-label-all-loops]
+ for (int k = 0; k < sampleCount; k++) {
+ ^~~
+ VITIS_LOOP_1304_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57895:2: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57912:2: warning: Added loop label VITIS_LOOP_1331_1:   [xilinx-label-all-loops]
+ for (int k = 0; k < sampleCount; k++) {
+ ^~~
+ VITIS_LOOP_1331_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57912:2: note: FIX-IT applied suggested code changes
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57925:5: warning: Added loop label VITIS_LOOP_1359_1:   [xilinx-label-all-loops]
+    for (int k = 0; k < sampleCount; k++) {
+    ^~~
+    VITIS_LOOP_1359_1: 
+C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp:57925:5: note: FIX-IT applied suggested code changes

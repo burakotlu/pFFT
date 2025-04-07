@@ -1178,13 +1178,14 @@ void fEuler(float angle, float *result_real, float *result_imag) {
     *result_real = fTailorCos(angle);
     *result_imag = fTailorSin(angle);
 }
-/*
+
 std::ofstream signalFile("signal_values.txt");
 std::ofstream realPartFile("realPart_values.txt");
 std::ofstream multiplicationFile("multiplication_values.txt");
 std::ofstream realSumFile("realsum_values.txt");
 std::ofstream angleFile("angle_values.txt");
-std::ofstream deltaThetaFile("deltaTheta_values.txt");*/
+std::ofstream deltaThetaFile("deltaTheta_values.txt");
+
 void dAccumulateFC(int k, const std::vector<double>& signal, double& realSum, double& imagSum) {
     int sampleCount = signal.size();
     double realPart, imagPart,angle=0.0;
@@ -1205,18 +1206,11 @@ void dAccumulateFC(int k, const std::vector<double>& signal, double& realSum, do
         realSum += signal[n] * realPart;
         imagSum += signal[n] * imagPart;
         angle += deltaTheta;
-/*        if(k==3125){
-            signalFile << signal[n] << std::endl;
-            realPartFile << realPart << std::endl;
-            multiplicationFile << signal[n] * realPart << std::endl;
-            angleFile<<angle<<std::endl;
-            deltaThetaFile<<deltaTheta<<std::endl;
-        }*/
+
     }
-/*    if(k==3125){
-        realSumFile<<realSum<<std::endl;
-    }*/
-}
+    }
+
+
 void fAccumulateFC(int k, const std::vector<float>& signal, float& realSum, float& imagSum) {
     int sampleCount = signal.size();
     float realPart, imagPart,angle=0.0;
@@ -1232,6 +1226,7 @@ void fAccumulateFC(int k, const std::vector<float>& signal, float& realSum, floa
         angle += deltaTheta;
     }
 }
+
 std::ofstream PsignalFile("posit_signal_values.txt");
 std::ofstream PrealPartFile("posit_realPart_values.txt");
 std::ofstream PmultiplicationFile("posit_multiplication_values.txt");
@@ -1256,18 +1251,18 @@ void pAccumulateFC(int k, const std::vector<ps_t>& signal, ps_t& realSum, ps_t& 
 
         imagSum = positAdd(imagSum,positMul(signal[n] ,imagPart));
         angle = positAdd(angle, deltaTheta);
-     /*   if (k==3125){
+        if (k==3125){
             PsignalFile << posit2double(signal[n]) << std::endl;
             PrealPartFile << posit2double(realPart) << std::endl;
             PmultiplicationFile << posit2double(positMul(signal[n] ,realPart)) << std::endl;
             PrealSumFile<<posit2double(realSum)<<std::endl;
             PangleFile<<posit2double(angle)<<std::endl;
             PdeltaThetaFile<<posit2double(deltaTheta)<<std::endl;
-        }*/
+        }
     }
-  /*  if (k==3125){
+    if (k==3125){
         PrealSumFile<<posit2double(realSum)<<std::endl;
-    }*/
+    }
 
 }
 
@@ -1285,6 +1280,7 @@ pFFTResult pFFT(const std::vector<ps_t>& signal) {
     
     return result;
 }
+
 dFFTResult dFFT(const std::vector<double>& signal) {
     int sampleCount = signal.size();
     dFFTResult result;
@@ -1363,6 +1359,7 @@ void fAccumulateFC_IFFT(int k, const fFFTResult& result, float& realSum, float& 
         angle += deltaTheta;
     }
 }
+//CSIM Version
 void pAccumulateFC_IFFT(int k, const pFFTResult& result, ps_t& realSum, ps_t& imagSum) {
     int sampleCount = result.real.size();
 
@@ -1394,6 +1391,7 @@ std::vector<float> fIFFT(const fFFTResult& result) {
     
     return signal;
 }
+
 std::vector<ps_t> pIFFT(const pFFTResult& result) {
     int sampleCount = result.real.size();
     std::vector<ps_t> signal(sampleCount);
@@ -1402,6 +1400,8 @@ std::vector<ps_t> pIFFT(const pFFTResult& result) {
     for (int k = 0; k < sampleCount; k++) { // For each frequency bin
         if (k%200 ==0)  
             std::cout<<k<<std::endl;
+        realSum = ZERO;
+        imagSum = ZERO;
         pAccumulateFC_IFFT(k, result, realSum, imagSum);
         signal[k] = positDiv(realSum , double2posit(sampleCount));
     }

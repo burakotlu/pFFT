@@ -1,10 +1,10 @@
 
 
 ================================================================
-== Synthesis Summary Report of 'positDiv'
+== Synthesis Summary Report of 'dFFT'
 ================================================================
 + General Information: 
-    * Date:           Wed Mar  5 22:25:19 2025
+    * Date:           Sat Apr  5 23:10:51 2025
     * Version:        2024.2 (Build 5238294 on Nov  8 2024)
     * Project:        PositFFT
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,25 +15,40 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |   Modules  | Issue|      | Latency | Latency | Iteration|         | Trip |          |      |    |           |           |     |
-    |   & Loops  | Type | Slack| (cycles)|   (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT    | URAM|
-    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
-    |+ positDiv  |     -|  2.17|       29|  290.000|         -|       30|     -|        no|     -|   -|  374 (~0%)|  672 (~0%)|    -|
-    +------------+------+------+---------+---------+----------+---------+------+----------+------+----+-----------+-----------+-----+
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |                Modules               | Issue|      | Latency |  Latency  | Iteration|         | Trip |          |      |         |           |           |     |
+    |                & Loops               | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined| BRAM |   DSP   |     FF    |    LUT    | URAM|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
+    |+ dFFT                                |     -|  0.01|        -|          -|         -|        -|     -|        no|     -|  28 (4%)|  3403 (2%)|  4739 (6%)|    -|
+    | o VITIS_LOOP_1331_1                  |     -|  7.30|        -|          -|         -|        -|     -|        no|     -|        -|          -|          -|    -|
+    |  o VITIS_LOOP_1219_1                 |     -|  7.30|        -|          -|      2199|        -|     -|        no|     -|        -|          -|          -|    -|
+    |   + generic_fmod_double_s            |     -|  2.53|     2102|  2.102e+04|         -|     2102|     -|        no|     -|        -|  399 (~0%)|  1060 (1%)|    -|
+    |    + generic_fmod_double_Pipeline_1  |     -|  4.66|     2100|  2.100e+04|         -|     2100|     -|        no|     -|        -|   82 (~0%)|  366 (~0%)|    -|
+    |     o Loop 1                         |     -|  7.30|     2098|  2.098e+04|         1|        1|  2098|       yes|     -|        -|          -|          -|    -|
+    +--------------------------------------+------+------+---------+-----------+----------+---------+------+----------+------+---------+-----------+-----------+-----+
 
 
 ================================================================
 == HW Interfaces
 ================================================================
+* AP_MEMORY
++-------------------+-----------+----------+
+| Port              | Direction | Bitwidth |
++-------------------+-----------+----------+
+| imag_address0     | out       | 10       |
+| imag_d0           | out       | 64       |
+| real_r_address0   | out       | 10       |
+| real_r_d0         | out       | 64       |
+| signal_r_address0 | out       | 10       |
+| signal_r_q0       | in        | 64       |
++-------------------+-----------+----------+
+
 * Other Ports
-+-----------+---------+-----------+----------+
-| Port      | Mode    | Direction | Bitwidth |
-+-----------+---------+-----------+----------+
-| ap_return |         | out       | 64       |
-| x         | ap_none | in        | 64       |
-| y         | ap_none | in        | 64       |
-+-----------+---------+-----------+----------+
++-------------+---------+-----------+----------+
+| Port        | Mode    | Direction | Bitwidth |
++-------------+---------+-----------+----------+
+| sampleCount | ap_none | in        | 32       |
++-------------+---------+-----------+----------+
 
 * TOP LEVEL CONTROL
 +-----------+------------+-----------------------------------+
@@ -49,66 +64,124 @@
 == SW I/O Information
 ================================================================
 * Top Function Arguments
-+----------+-----------+----------+
-| Argument | Direction | Datatype |
-+----------+-----------+----------+
-| x        | in        | POSIT    |
-| y        | in        | POSIT    |
-| return   | out       | POSIT    |
-+----------+-----------+----------+
++-------------+-----------+----------------+
+| Argument    | Direction | Datatype       |
++-------------+-----------+----------------+
+| signal      | in        | double const * |
+| real        | out       | double*        |
+| imag        | out       | double*        |
+| sampleCount | in        | int            |
++-------------+-----------+----------------+
 
 * SW-to-HW Mapping
-+----------+--------------+---------+
-| Argument | HW Interface | HW Type |
-+----------+--------------+---------+
-| x        | x            | port    |
-| y        | y            | port    |
-| return   | ap_return    | port    |
-+----------+--------------+---------+
++-------------+-------------------+---------+----------+
+| Argument    | HW Interface      | HW Type | HW Usage |
++-------------+-------------------+---------+----------+
+| signal      | signal_r_address0 | port    | offset   |
+| signal      | signal_r_ce0      | port    |          |
+| signal      | signal_r_q0       | port    |          |
+| real        | real_r_address0   | port    | offset   |
+| real        | real_r_ce0        | port    |          |
+| real        | real_r_we0        | port    |          |
+| real        | real_r_d0         | port    |          |
+| imag        | imag_address0     | port    | offset   |
+| imag        | imag_ce0          | port    |          |
+| imag        | imag_we0          | port    |          |
+| imag        | imag_d0           | port    |          |
+| sampleCount | sampleCount       | port    |          |
++-------------+-------------------+---------+----------+
 
 
 ================================================================
 == Bind Op Report
 ================================================================
-+---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
-| Name                            | DSP | Pragma | Variable     | Op        | Impl                   | Latency |
-+---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
-| + positDiv                      | 0   |        |              |           |                        |         |
-|   sign_fu_215_p2                |     |        | sign         | xor       | auto                   | 0       |
-|   isZero_fu_221_p2              |     |        | isZero       | or        | auto                   | 0       |
-|   sf_r_fu_271_p2                |     |        | sf_r         | sub       | fabric                 | 0       |
-|   icmp_ln697_fu_285_p2          |     |        | icmp_ln697   | seteq     | auto                   | 0       |
-|   udiv_25ns_13ns_25_29_seq_1_U1 |     |        | mant         | udiv      | auto_seq               | 28      |
-|   sf_r_2_fu_327_p2              |     |        | sf_r_2       | add       | fabric                 | 0       |
-|   sf_r_3_fu_332_p3              |     |        | sf_r_3       | select    | auto_sel               | 0       |
-|   mantissa_fu_351_p3            |     |        | mantissa     | select    | auto_sel               | 0       |
-|   icmp_ln729_fu_377_p2          |     |        | icmp_ln729   | seteq     | auto                   | 0       |
-|   regime_2_fu_383_p3            |     |        | regime_2     | select    | auto_sel               | 0       |
-|   icmp_ln732_fu_391_p2          |     |        | icmp_ln732   | setgt     | auto                   | 0       |
-|   icmp_ln733_fu_397_p2          |     |        | icmp_ln733   | setlt     | auto                   | 0       |
-|   add_ln736_fu_411_p2           |     |        | add_ln736    | add       | fabric                 | 0       |
-|   sub_ln736_fu_417_p2           |     |        | sub_ln736    | sub       | fabric                 | 0       |
-|   SREG_fu_423_p3                |     |        | SREG         | select    | auto_sel               | 0       |
-|   REM_fu_431_p2                 |     |        | REM          | sub       | fabric                 | 0       |
-|   icmp_ln738_fu_437_p2          |     |        | icmp_ln738   | seteq     | auto                   | 0       |
-|   icmp_ln739_fu_453_p2          |     |        | icmp_ln739   | setne     | auto                   | 0       |
-|   shl_ln744_fu_471_p2           |     |        | shl_ln744    | shl       | auto_pipe              | 0       |
-|   xor_ln744_fu_481_p2           |     |        | xor_ln744    | xor       | auto                   | 0       |
-|   exponent_2_fu_565_p6          |     |        | exponent_1   | and       | auto                   | 0       |
-|   xor_ln732_fu_493_p2           |     |        | xor_ln732    | xor       | auto                   | 0       |
-|   and_ln733_fu_499_p2           |     |        | and_ln733    | and       | auto                   | 0       |
-|   sparsemux_7_2_5_1_1_U2        |     |        | regime_3     | sparsemux | onehotencoding_realdef | 0       |
-|   or_ln738_fu_533_p2            |     |        | or_ln738     | or        | auto                   | 0       |
-|   or_ln738_1_fu_539_p2          |     |        | or_ln738_1   | or        | auto                   | 0       |
-|   xor_ln738_fu_545_p2           |     |        | xor_ln738    | xor       | auto                   | 0       |
-|   and_ln739_fu_551_p2           |     |        | and_ln739    | and       | auto                   | 0       |
-|   sparsemux_7_2_1_1_1_U3        |     |        | exponent_2   | sparsemux | onehotencoding_realdef | 0       |
-|   xor_ln749_fu_585_p2           |     |        | xor_ln749    | xor       | auto                   | 0       |
-|   exponent_3_fu_590_p2          |     |        | exponent_3   | and       | auto                   | 0       |
-|   mantissa_2_fu_596_p3          |     |        | mantissa_2   | select    | auto_sel               | 0       |
-|   sign_1_fu_603_p2              |     |        | sign_1       | and       | auto                   | 0       |
-|   select_ln749_fu_608_p3        |     |        | select_ln749 | select    | auto_sel               | 0       |
-+---------------------------------+-----+--------+--------------+-----------+------------------------+---------+
++-----------------------------------------+-----+--------+----------------+-----------+------------------------+---------+
+| Name                                    | DSP | Pragma | Variable       | Op        | Impl                   | Latency |
++-----------------------------------------+-----+--------+----------------+-----------+------------------------+---------+
+| + dFFT                                  | 28  |        |                |           |                        |         |
+|   sitodp_32ns_64_4_no_dsp_1_U15         |     |        | conv1_i        | sitodp    | auto                   | 3       |
+|   icmp_ln1331_fu_314_p2                 |     |        | icmp_ln1331    | setlt     | auto                   | 0       |
+|   add_ln1331_fu_319_p2                  |     |        | add_ln1331     | add       | fabric                 | 0       |
+|   sitodp_32ns_64_4_no_dsp_1_U15         |     |        | conv_i         | sitodp    | auto                   | 3       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul_i          | dmul      | maxdsp                 | 5       |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U11     |     |        | deltaTheta     | ddiv      | fabric                 | 21      |
+|   icmp_ln1219_fu_332_p2                 |     |        | icmp_ln1219    | seteq     | auto                   | 0       |
+|   add_ln1219_fu_337_p2                  |     |        | add_ln1219     | add       | fabric                 | 0       |
+|   icmp_ln801_fu_374_p2                  |     |        | icmp_ln801     | setne     | auto                   | 0       |
+|   icmp_ln801_1_fu_380_p2                |     |        | icmp_ln801_1   | seteq     | auto                   | 0       |
+|   or_ln801_fu_386_p2                    |     |        | or_ln801       | or        | auto                   | 0       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U13       |     |        | tmp_1          | dcmp      | auto                   | 1       |
+|   and_ln801_fu_392_p2                   |     |        | and_ln801      | and       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | angle_assign_1 | dadd      | fulldsp                | 4       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U14       |     |        | tmp_3          | dcmp      | auto                   | 1       |
+|   and_ln803_fu_398_p2                   |     |        | and_ln803      | and       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U8 | 3   |        | angle_assign_2 | dadd      | fulldsp                | 4       |
+|   select_ln803_fu_404_p3                |     |        | select_ln803   | select    | auto_sel               | 0       |
+|   angle_assign_4_fu_411_p3              |     |        | angle_assign_4 | select    | auto_sel               | 0       |
+|   icmp_ln808_fu_436_p2                  |     |        | icmp_ln808     | setne     | auto                   | 0       |
+|   icmp_ln808_1_fu_442_p2                |     |        | icmp_ln808_1   | seteq     | auto                   | 0       |
+|   or_ln808_fu_448_p2                    |     |        | or_ln808       | or        | auto                   | 0       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U13       |     |        | tmp_5          | dcmp      | auto                   | 1       |
+|   and_ln808_fu_454_p2                   |     |        | and_ln808      | and       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | angle_assign_5 | dadd      | fulldsp                | 4       |
+|   dcmp_64ns_64ns_1_2_no_dsp_1_U14       |     |        | tmp_7          | dcmp      | auto                   | 1       |
+|   and_ln811_fu_460_p2                   |     |        | and_ln811      | and       | auto                   | 0       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U8 | 3   |        | angle_assign_6 | dadd      | fulldsp                | 4       |
+|   negate_fu_529_p2                      |     |        | negate         | or        | auto                   | 0       |
+|   xor_ln808_fu_466_p2                   |     |        | xor_ln808      | xor       | auto                   | 0       |
+|   and_ln811_1_fu_472_p2                 |     |        | and_ln811_1    | and       | auto                   | 0       |
+|   sparsemux_7_2_64_1_1_U16              |     |        | angle_assign_s | sparsemux | onehotencoding_realdef | 0       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | x2             | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | term2          | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul1_i_i_i     | dmul      | maxdsp                 | 5       |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U11     |     |        | term3          | ddiv      | fabric                 | 21      |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | sub_i_i_i      | dadd      | fulldsp                | 4       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | add_i_i_i      | dadd      | fulldsp                | 4       |
+|   xor_ln850_fu_545_p2                   |     |        | xor_ln850      | xor       | auto                   | 0       |
+|   realPart_fu_567_p3                    |     |        | realPart       | select    | auto_sel               | 0       |
+|   select_ln1017_fu_505_p3               |     |        | select_ln1017  | select    | auto_sel               | 0       |
+|   term1_fu_511_p3                       |     |        | term1          | select    | auto_sel               | 0       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U10     | 11  |        | mul_i18_i_i    | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U10     | 11  |        | mul1_i19_i_i   | dmul      | maxdsp                 | 5       |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U12     |     |        | term2_1        | ddiv      | fabric                 | 21      |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul2_i_i_i     | dmul      | maxdsp                 | 5       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul3_i_i_i     | dmul      | maxdsp                 | 5       |
+|   ddiv_64ns_64ns_64_22_no_dsp_1_U11     |     |        | term3_1        | ddiv      | fabric                 | 21      |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | sub_i21_i_i    | dadd      | fulldsp                | 4       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | imagPart       | dadd      | fulldsp                | 4       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul2_i         | dmul      | maxdsp                 | 5       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | add_i          | dadd      | fulldsp                | 4       |
+|   dmul_64ns_64ns_64_6_max_dsp_1_U9      | 11  |        | mul5_i         | dmul      | maxdsp                 | 5       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | add6_i         | dadd      | fulldsp                | 4       |
+|   dadddsub_64ns_64ns_64_5_full_dsp_1_U7 | 3   |        | angle          | dadd      | fulldsp                | 4       |
+|  + generic_fmod_double_s                | 0   |        |                |           |                        |         |
+|    isF_e_x_fu_117_p2                    |     |        | isF_e_x        | seteq     | auto                   | 0       |
+|    isyBx_e_fu_123_p2                    |     |        | isyBx_e        | setlt     | auto                   | 0       |
+|    icmp_ln267_fu_129_p2                 |     |        | icmp_ln267     | setne     | auto                   | 0       |
+|    icmp_ln267_1_fu_135_p2               |     |        | icmp_ln267_1   | setgt     | auto                   | 0       |
+|    or_ln267_fu_141_p2                   |     |        | or_ln267       | or        | auto                   | 0       |
+|    icmp_ln271_fu_147_p2                 |     |        | icmp_ln271     | setne     | auto                   | 0       |
+|    or_ln271_fu_153_p2                   |     |        | or_ln271       | or        | auto                   | 0       |
+|    n_fu_178_p2                          |     |        | n              | add       | fabric                 | 0       |
+|    icmp_ln319_fu_205_p2                 |     |        | icmp_ln319     | seteq     | auto                   | 0       |
+|    ctlz_54_54_1_1_U4                    |     |        | tmp_5          | ctlz      | auto                   | 0       |
+|    add_ln325_fu_227_p2                  |     |        | add_ln325      | add       | fabric                 | 0       |
+|    icmp_ln325_fu_233_p2                 |     |        | icmp_ln325     | seteq     | auto                   | 0       |
+|    shl_ln325_fu_257_p2                  |     |        | shl_ln325      | shl       | auto_pipe              | 0       |
+|    ap_mx_2_fu_267_p3                    |     |        | ap_mx_2        | select    | auto_sel               | 0       |
+|    sub_ln327_fu_275_p2                  |     |        | sub_ln327      | sub       | fabric                 | 0       |
+|    fz_exp_1_fu_285_p2                   |     |        | fz_exp_1       | add       | fabric                 | 0       |
+|   + generic_fmod_double_Pipeline_1      | 0   |        |                |           |                        |         |
+|     icmp_ln308_fu_99_p2                 |     |        | icmp_ln308     | seteq     | auto                   | 0       |
+|     loop_2_fu_105_p2                    |     |        | loop_2         | add       | fabric                 | 0       |
+|     icmp_ln309_fu_117_p2                |     |        | icmp_ln309     | setgt     | auto                   | 0       |
+|     add_ln310_fu_123_p2                 |     |        | add_ln310      | add       | fabric                 | 0       |
+|     r_sh_1_fu_129_p3                    |     |        | r_sh_1         | select    | auto_sel               | 0       |
+|     icmp_ln311_fu_137_p2                |     |        | icmp_ln311     | setgt     | auto                   | 0       |
+|     i_1_fu_149_p2                       |     |        | i_1            | add       | fabric                 | 0       |
+|     r_sh_3_fu_155_p3                    |     |        | r_sh_3         | select    | auto_sel               | 0       |
+|     i_2_fu_163_p3                       |     |        | i_2            | select    | auto_sel               | 0       |
++-----------------------------------------+-----+--------+----------------+-----------+------------------------+---------+
 
 
 ================================================================
@@ -119,5 +192,20 @@
 ================================================================
 == Pragma Report
 ================================================================
-  No pragmas found
+* Valid Pragma Syntax
++-----------+-----------------------------+-------------------------------------+
+| Type      | Options                     | Location                            |
++-----------+-----------------------------+-------------------------------------+
+| inline    |                             | posit_lib.cpp:1244 in paccumulatefc |
+| pipeline  | II=1                        | posit_lib.cpp:1250 in paccumulatefc |
+| interface | mode=ap_memory port=signal  | posit_lib.cpp:1299 in pfft, signal  |
+| interface | mode=ap_memory port=real    | posit_lib.cpp:1300 in pfft, real    |
+| interface | mode=ap_memory port=imag    | posit_lib.cpp:1301 in pfft, imag    |
+| interface | mode=ap_ctrl_hs port=return | posit_lib.cpp:1302 in pfft, return  |
+| interface | mode=ap_memory port=signal  | posit_lib.cpp:1326 in dfft, signal  |
+| interface | mode=ap_memory port=real    | posit_lib.cpp:1327 in dfft, real    |
+| interface | mode=ap_memory port=imag    | posit_lib.cpp:1328 in dfft, imag    |
+| interface | mode=ap_ctrl_hs port=return | posit_lib.cpp:1329 in dfft, return  |
++-----------+-----------------------------+-------------------------------------+
+
 

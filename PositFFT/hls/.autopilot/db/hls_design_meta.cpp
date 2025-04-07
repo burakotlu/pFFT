@@ -6,8 +6,17 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("ap_done", 1, hls_out, -1, "", "", 1),
 	Port_Property("ap_idle", 1, hls_out, -1, "", "", 1),
 	Port_Property("ap_ready", 1, hls_out, -1, "", "", 1),
-	Port_Property("x", 64, hls_in, 0, "ap_none", "in_data", 1),
-	Port_Property("y", 64, hls_in, 1, "ap_none", "in_data", 1),
-	Port_Property("ap_return", 64, hls_out, -1, "", "", 1),
+	Port_Property("signal_r_address0", 10, hls_out, 0, "ap_memory", "mem_address", 1),
+	Port_Property("signal_r_ce0", 1, hls_out, 0, "ap_memory", "mem_ce", 1),
+	Port_Property("signal_r_q0", 64, hls_in, 0, "ap_memory", "mem_dout", 1),
+	Port_Property("real_r_address0", 10, hls_out, 1, "ap_memory", "mem_address", 1),
+	Port_Property("real_r_ce0", 1, hls_out, 1, "ap_memory", "mem_ce", 1),
+	Port_Property("real_r_we0", 1, hls_out, 1, "ap_memory", "mem_we", 1),
+	Port_Property("real_r_d0", 64, hls_out, 1, "ap_memory", "mem_din", 1),
+	Port_Property("imag_address0", 10, hls_out, 2, "ap_memory", "mem_address", 1),
+	Port_Property("imag_ce0", 1, hls_out, 2, "ap_memory", "mem_ce", 1),
+	Port_Property("imag_we0", 1, hls_out, 2, "ap_memory", "mem_we", 1),
+	Port_Property("imag_d0", 64, hls_out, 2, "ap_memory", "mem_din", 1),
+	Port_Property("sampleCount", 32, hls_in, 3, "ap_none", "in_data", 1),
 };
-const char* HLS_Design_Meta::dut_name = "positDiv";
+const char* HLS_Design_Meta::dut_name = "dFFT";

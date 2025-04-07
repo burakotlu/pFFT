@@ -1,11 +1,26 @@
 {
   "0": {
-    "basicblocks": 9,
-    "calls": "",
+    "basicblocks": 20,
+    "calls": "1",
     "file": "posit_lib.cpp",
-    "fileloc": 671,
-    "instructions": 101,
-    "name": "positDiv",
-    "total_instructions": 101
+    "fileloc": 1325,
+    "instructions": 96,
+    "loads": {
+      "T": 1
+    },
+    "name": "dFFT",
+    "stores": {
+      "T": 2
+    },
+    "total_instructions": 243
+  },
+  "1": {
+    "basicblocks": 26,
+    "calls": "",
+    "file": "hls_fmod_rem_quo.h",
+    "fileloc": 225,
+    "instructions": 147,
+    "name": "generic_fmod<double>",
+    "total_instructions": 147
   }
 }

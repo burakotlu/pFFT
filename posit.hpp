@@ -10,9 +10,9 @@
 using namespace std;
 
 #define N 32
-#define ES 2
-#define TERMS 2
-#define IN_SIZE 10
+#define ES 0
+#define TERMS 3
+#define IN_SIZE 1024
 #define APPR_TAILOR 0
 
 #define FRAC_LEN (N-(ES+2))
@@ -72,22 +72,30 @@ typedef ap_uint<1> bool_t;
 
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
-
+/*
 struct pFFTResult {
     std::vector<ps_t> real;
     std::vector<ps_t> imag;
 
-    // Constructor to initialize vectors with a given size
+  // Constructor to initialize vectors with a given size
     pFFTResult(size_t size = IN_SIZE) {
         real.resize(size);
         imag.resize(size);
     }
+};*/
+struct pFFTResult {
+    ps_t real[IN_SIZE];
+    ps_t imag[IN_SIZE];
 };
+/*
 struct dFFTResult {
     std::vector<double> real = std::vector<double>(IN_SIZE, 0.0);
     std::vector<double> imag = std::vector<double>(IN_SIZE, 0.0);
+};*/
+struct dFFTResult {
+    double real[IN_SIZE];
+    double imag[IN_SIZE];
 };
-
 struct fFFTResult {
     std::vector<float> real = std::vector<float>(IN_SIZE, 0.0f);
     std::vector<float> imag = std::vector<float>(IN_SIZE, 0.0f);
@@ -95,7 +103,8 @@ struct fFFTResult {
 
 fFFTResult fFFT(const std::vector<float>& signal);
 dFFTResult dFFT(const std::vector<double>& signal);
-pFFTResult pFFT(const std::vector<ps_t>& signal);
+//pFFTResult pFFT(const std::vector<ps_t>& signal);
+void pFFT(const ps_t signal[IN_SIZE], ps_t real[IN_SIZE], ps_t imag[IN_SIZE], int sampleCount) ;
 
 std::vector<double> dIFFT(const dFFTResult& result);
 std::vector<float> fIFFT(const fFFTResult& result);
@@ -103,7 +112,8 @@ std::vector<ps_t> pIFFT(const pFFTResult& result);
 // Defining some constant POSIT structs 
 const ps_t POSIT_PI = {0, false, false, 0, 0, 1411}; 
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
-const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)}; 
+const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};
+const ps_t ZERO = {0, true, false, 0, 0, 1<<(FRAC_LEN-1)}; 
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t  decode(posit_t posit);

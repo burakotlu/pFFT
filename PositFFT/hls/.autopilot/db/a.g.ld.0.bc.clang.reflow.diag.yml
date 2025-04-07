@@ -1,51 +1,590 @@
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 673, Column: 7 }
-Function:        _Z8positDiv5POSITS_
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 496, Column: 17 }
+Function:        _ZNK9fp_structIdE9to_doubleEv
 Args:            
-  - Callee:          'POSIT::POSIT()'
-    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - Callee:          'fp_struct<double>::data() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 475, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'positDiv(POSIT, POSIT)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - Caller:          'fp_struct<double>::to_double() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 673, Column: 7 }
-Function:        _Z8positDiv5POSITS_
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 510, Column: 16 }
+Function:        _ZNK9fp_structIdE7to_ieeeEv
 Args:            
-  - Callee:          'POSIT::POSIT()'
-    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - Callee:          'fp_struct<double>::to_double() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'positDiv(POSIT, POSIT)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - Caller:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-Function:        apatb_positDiv_ir
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 231, Column: 15 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
 Args:            
-  - Callee:          'positDiv(POSIT, POSIT)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - Callee:          'fp_struct<double>::fp_struct(double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 456, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          apatb_positDiv_ir
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 335, Column: 12 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
+Args:            
+  - Callee:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                   Line: 7, Column: 12 }
+Function:        fmod
+Args:            
+  - Callee:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 800, Column: 13 }
+Function:        _Z12dReduceAngledRb
+Args:            
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 825, Column: 9 }
+Function:        _Z10dTailorCosd
+Args:            
+  - Callee:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1008, Column: 13 }
+Function:        _Z7dNAngled
+Args:            
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1025, Column: 9 }
+Function:        _Z10dTailorSind
+Args:            
+  - Callee:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1174, Column: 20 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - Callee:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1175, Column: 20 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - Callee:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1220, Column: 9 }
+Function:        _Z13dAccumulateFCiPKdRdS1_i
+Args:            
+  - Callee:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1334, Column: 9 }
+Function:        _Z4dFFTPKdPdS1_i
+Args:            
+  - Callee:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dFFT(double const*, double*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 496, Column: 17 }
+Function:        _ZNK9fp_structIdE9to_doubleEv.7.17.27.56
+Args:            
+  - Callee:          'fp_struct<double>::data() const (.10.20.30.59)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 475, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'fp_struct<double>::to_double() const (.7.17.27.56)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 510, Column: 16 }
+Function:        _ZNK9fp_structIdE7to_ieeeEv
+Args:            
+  - Callee:          'fp_struct<double>::to_double() const (.7.17.27.56)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 231, Column: 15 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
+Args:            
+  - Callee:          'fp_struct<double>::fp_struct(double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 456, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 261, Column: 14 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
+Args:            
+  - Callee:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                   Line: 7, Column: 12 }
+Function:        fmod
+Args:            
+  - Callee:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 800, Column: 13 }
+Function:        _Z12dReduceAngledRb
+Args:            
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 825, Column: 9 }
+Function:        _Z10dTailorCosd
+Args:            
+  - Callee:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1008, Column: 13 }
+Function:        _Z7dNAngled
+Args:            
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1025, Column: 9 }
+Function:        _Z10dTailorSind
+Args:            
+  - Callee:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1174, Column: 20 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - Callee:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1175, Column: 20 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - Callee:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1220, Column: 9 }
+Function:        _Z13dAccumulateFCiPKdRdS1_i
+Args:            
+  - Callee:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: posit_lib.cpp, Line: 1334, Column: 9 }
+Function:        _Z4dFFTPKdPdS1_i
+Args:            
+  - Callee:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dFFT(double const*, double*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_dFFT_ir
+Args:            
+  - Callee:          'dFFT(double const*, double*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_dFFT_ir
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
-Function:        _Z8positDiv5POSITS_
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 494, Column: 0 }
+Function:        _ZNK9fp_structIdE9to_doubleEv.7.17.27.56
 Args:            
   - String:          'Inlining function '''
-  - Callee:          'POSIT::POSIT()'
-    DebugLoc:        { File: ./posit.hpp, Line: 68, Column: 0 }
+  - Callee:          'fp_struct<double>::data() const (.10.20.30.59)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 475, Column: 0 }
   - String:          ''' into '''
-  - Caller:          'positDiv(POSIT, POSIT)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 671, Column: 0 }
+  - Caller:          'fp_struct<double>::to_double() const (.7.17.27.56)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
   - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                   Line: 509, Column: 0 }
+Function:        _ZNK9fp_structIdE7to_ieeeEv
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::to_double() const (.7.17.27.56)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 494, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 226, Column: 0 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::fp_struct(double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 456, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                   Line: 226, Column: 0 }
+Function:        _ZN6fmdrmd12generic_fmodIdEET_S1_S1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'fp_struct<double>::to_ieee() const'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h', 
+                       Line: 509, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+Function:        _Z12dReduceAngledRb
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+Function:        _Z10dTailorCosd
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dReduceAngle(double, bool&)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 798, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+Function:        _Z7dNAngled
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          fmod
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+Function:        _Z10dTailorSind
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dNAngle(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1006, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dTailorCos(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 822, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+Function:        _Z6dEulerdPdS_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dTailorSin(double)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1023, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+Function:        _Z13dAccumulateFCiPKdRdS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dEuler(double, double*, double*)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1173, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+Function:        _Z4dFFTPKdPdS1_i
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'dAccumulateFC(int, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1212, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'dFFT(double const*, double*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+  - String:          ''''
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        unknown
+  - String:          '> at '
+  - LoopLoc:         'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:308:2'
+  - String:          ' '
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
+                   Line: 7, Column: 12 }
+Function:        _Z4dFFTPKdPdS1_i
+Args:            
+  - Callee:          'double fmdrmd::generic_fmod<double>(double, double)'
+    DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
+                       Line: 226, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          'dFFT(double const*, double*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1325, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
 ...

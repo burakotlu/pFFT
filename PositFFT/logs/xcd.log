@@ -26848,3 +26848,253 @@
 03/22/25 16:19:08: Socket received request to stop server.
 03/22/25 16:19:08: Dispatch Server: do_await_stop
 03/22/25 16:19:08: SERVER: destructor for server bound to port 54192
+04/04/25 23:25:41: Running xcd server. This server was built by gradle.
+04/04/25 23:25:41: Server was asked to start on port: '65325'
+04/04/25 23:25:41: Server is using token UUID: '7cd9adb1-e9d8-469c-ac4b-c187ec6fc517'
+04/04/25 23:25:41: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/04/25 23:25:41: Attempting to start server on port '65325'
+04/04/25 23:25:41: Running Dispatch Server
+04/04/25 23:25:41: Version 2.2.0
+04/04/25 23:25:42: Dispatch Server: Accepted socket connection from client
+04/04/25 23:25:42: Starting Socket connection
+04/04/25 23:25:42: EXCHANGE_TOKEN received, server token: 7cd9adb1-e9d8-469c-ac4b-c187ec6fc517, passed token: 7cd9adb1-e9d8-469c-ac4b-c187ec6fc517
+04/04/25 23:25:42: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/04/25 23:25:42: SESSION_MGR: creating session with session uuid: '007157c8-b0ab-43cf-bedd-505b3bbd0a19' and name 'v++_compile_PositFFT'
+04/04/25 23:25:42: KERNEL_SVC: creating session with uuid: '007157c8-b0ab-43cf-bedd-505b3bbd0a19' and name 'v++_compile_PositFFT'
+04/04/25 23:25:42: GUIDANCE_SMGR: creating guidance session with uuid: '007157c8-b0ab-43cf-bedd-505b3bbd0a19' and name 'v++_compile_PositFFT'
+04/04/25 23:25:42: SYSTEM_DIAGRAM: creating session with uuid: '007157c8-b0ab-43cf-bedd-505b3bbd0a19' and name 'v++_compile_PositFFT'
+04/04/25 23:25:50: Dispatch Server: Accepted socket connection from client
+04/04/25 23:25:50: Starting Socket connection
+04/04/25 23:26:38: SESSION_MGR: closing session for UUID '007157c8-b0ab-43cf-bedd-505b3bbd0a19' with name 'v++_compile_PositFFT'
+04/04/25 23:26:38: KERNEL_SVC: closing session for UUID '007157c8-b0ab-43cf-bedd-505b3bbd0a19' with name 'v++_compile_PositFFT'
+04/04/25 23:26:38: GUIDANCE_SMGR: closing session for UUID '007157c8-b0ab-43cf-bedd-505b3bbd0a19' with name 'v++_compile_PositFFT'
+04/04/25 23:26:38: SYSTEM_DIAGRAM: closing session for UUID '007157c8-b0ab-43cf-bedd-505b3bbd0a19' with name 'v++_compile_PositFFT'
+04/04/25 23:26:38: STOP_SERVER received, server token: 7cd9adb1-e9d8-469c-ac4b-c187ec6fc517, passed token: 7cd9adb1-e9d8-469c-ac4b-c187ec6fc517
+04/04/25 23:26:38: Socket received request to stop server.
+04/04/25 23:26:38: Dispatch Server: do_await_stop
+04/04/25 23:26:38: SERVER: destructor for server bound to port 65325
+04/04/25 23:30:44: Running xcd server. This server was built by gradle.
+04/04/25 23:30:44: Server was asked to start on port: '65350'
+04/04/25 23:30:44: Server is using token UUID: 'b9338be6-af16-4a48-9aad-8d7bf5b138d8'
+04/04/25 23:30:44: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/04/25 23:30:44: Attempting to start server on port '65350'
+04/04/25 23:30:44: Running Dispatch Server
+04/04/25 23:30:44: Version 2.2.0
+04/04/25 23:30:46: Dispatch Server: Accepted socket connection from client
+04/04/25 23:30:46: Starting Socket connection
+04/04/25 23:30:46: EXCHANGE_TOKEN received, server token: b9338be6-af16-4a48-9aad-8d7bf5b138d8, passed token: b9338be6-af16-4a48-9aad-8d7bf5b138d8
+04/04/25 23:30:46: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/04/25 23:30:46: SESSION_MGR: creating session with session uuid: '8c727427-1aeb-4987-8a46-60c60cd432b8' and name 'v++_compile_PositFFT'
+04/04/25 23:30:46: KERNEL_SVC: creating session with uuid: '8c727427-1aeb-4987-8a46-60c60cd432b8' and name 'v++_compile_PositFFT'
+04/04/25 23:30:46: GUIDANCE_SMGR: creating guidance session with uuid: '8c727427-1aeb-4987-8a46-60c60cd432b8' and name 'v++_compile_PositFFT'
+04/04/25 23:30:46: SYSTEM_DIAGRAM: creating session with uuid: '8c727427-1aeb-4987-8a46-60c60cd432b8' and name 'v++_compile_PositFFT'
+04/04/25 23:30:52: Dispatch Server: Accepted socket connection from client
+04/04/25 23:30:52: Starting Socket connection
+04/04/25 23:31:39: SESSION_MGR: closing session for UUID '8c727427-1aeb-4987-8a46-60c60cd432b8' with name 'v++_compile_PositFFT'
+04/04/25 23:31:39: KERNEL_SVC: closing session for UUID '8c727427-1aeb-4987-8a46-60c60cd432b8' with name 'v++_compile_PositFFT'
+04/04/25 23:31:39: GUIDANCE_SMGR: closing session for UUID '8c727427-1aeb-4987-8a46-60c60cd432b8' with name 'v++_compile_PositFFT'
+04/04/25 23:31:39: SYSTEM_DIAGRAM: closing session for UUID '8c727427-1aeb-4987-8a46-60c60cd432b8' with name 'v++_compile_PositFFT'
+04/04/25 23:31:39: STOP_SERVER received, server token: b9338be6-af16-4a48-9aad-8d7bf5b138d8, passed token: b9338be6-af16-4a48-9aad-8d7bf5b138d8
+04/04/25 23:31:39: Socket received request to stop server.
+04/04/25 23:31:39: Dispatch Server: do_await_stop
+04/04/25 23:31:39: SERVER: destructor for server bound to port 65350
+04/05/25 22:43:53: Running xcd server. This server was built by gradle.
+04/05/25 22:43:53: Server was asked to start on port: '54221'
+04/05/25 22:43:53: Server is using token UUID: '5ab9e2cf-9655-41ef-a670-acd99b1135c7'
+04/05/25 22:43:53: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 22:43:53: Attempting to start server on port '54221'
+04/05/25 22:43:53: Running Dispatch Server
+04/05/25 22:43:53: Version 2.2.0
+04/05/25 22:43:54: Dispatch Server: Accepted socket connection from client
+04/05/25 22:43:54: Starting Socket connection
+04/05/25 22:43:54: EXCHANGE_TOKEN received, server token: 5ab9e2cf-9655-41ef-a670-acd99b1135c7, passed token: 5ab9e2cf-9655-41ef-a670-acd99b1135c7
+04/05/25 22:43:55: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 22:43:55: SESSION_MGR: creating session with session uuid: 'a50c1f3d-0601-416b-9c1f-badace188d11' and name 'v++_compile_PositFFT'
+04/05/25 22:43:55: KERNEL_SVC: creating session with uuid: 'a50c1f3d-0601-416b-9c1f-badace188d11' and name 'v++_compile_PositFFT'
+04/05/25 22:43:55: GUIDANCE_SMGR: creating guidance session with uuid: 'a50c1f3d-0601-416b-9c1f-badace188d11' and name 'v++_compile_PositFFT'
+04/05/25 22:43:55: SYSTEM_DIAGRAM: creating session with uuid: 'a50c1f3d-0601-416b-9c1f-badace188d11' and name 'v++_compile_PositFFT'
+04/05/25 22:44:03: Dispatch Server: Accepted socket connection from client
+04/05/25 22:44:03: Starting Socket connection
+04/05/25 22:44:10: SESSION_MGR: closing session for UUID 'a50c1f3d-0601-416b-9c1f-badace188d11' with name 'v++_compile_PositFFT'
+04/05/25 22:44:10: KERNEL_SVC: closing session for UUID 'a50c1f3d-0601-416b-9c1f-badace188d11' with name 'v++_compile_PositFFT'
+04/05/25 22:44:10: GUIDANCE_SMGR: closing session for UUID 'a50c1f3d-0601-416b-9c1f-badace188d11' with name 'v++_compile_PositFFT'
+04/05/25 22:44:10: SYSTEM_DIAGRAM: closing session for UUID 'a50c1f3d-0601-416b-9c1f-badace188d11' with name 'v++_compile_PositFFT'
+04/05/25 22:44:10: STOP_SERVER received, server token: 5ab9e2cf-9655-41ef-a670-acd99b1135c7, passed token: 5ab9e2cf-9655-41ef-a670-acd99b1135c7
+04/05/25 22:44:10: Socket received request to stop server.
+04/05/25 22:44:10: Dispatch Server: do_await_stop
+04/05/25 22:44:10: SERVER: destructor for server bound to port 54221
+04/05/25 22:45:37: Running xcd server. This server was built by gradle.
+04/05/25 22:45:37: Server was asked to start on port: '54263'
+04/05/25 22:45:37: Server is using token UUID: '36fe4594-c934-4583-b5e3-5cfb81b511fb'
+04/05/25 22:45:37: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 22:45:37: Attempting to start server on port '54263'
+04/05/25 22:45:37: Running Dispatch Server
+04/05/25 22:45:37: Version 2.2.0
+04/05/25 22:45:39: Dispatch Server: Accepted socket connection from client
+04/05/25 22:45:39: Starting Socket connection
+04/05/25 22:45:39: EXCHANGE_TOKEN received, server token: 36fe4594-c934-4583-b5e3-5cfb81b511fb, passed token: 36fe4594-c934-4583-b5e3-5cfb81b511fb
+04/05/25 22:45:39: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 22:45:39: SESSION_MGR: creating session with session uuid: 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' and name 'v++_compile_PositFFT'
+04/05/25 22:45:39: KERNEL_SVC: creating session with uuid: 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' and name 'v++_compile_PositFFT'
+04/05/25 22:45:39: GUIDANCE_SMGR: creating guidance session with uuid: 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' and name 'v++_compile_PositFFT'
+04/05/25 22:45:39: SYSTEM_DIAGRAM: creating session with uuid: 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' and name 'v++_compile_PositFFT'
+04/05/25 22:45:45: Dispatch Server: Accepted socket connection from client
+04/05/25 22:45:45: Starting Socket connection
+04/05/25 22:45:53: SESSION_MGR: closing session for UUID 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' with name 'v++_compile_PositFFT'
+04/05/25 22:45:53: KERNEL_SVC: closing session for UUID 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' with name 'v++_compile_PositFFT'
+04/05/25 22:45:53: GUIDANCE_SMGR: closing session for UUID 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' with name 'v++_compile_PositFFT'
+04/05/25 22:45:53: SYSTEM_DIAGRAM: closing session for UUID 'bcce0f67-f8f3-4c8d-853a-98a8b6985c14' with name 'v++_compile_PositFFT'
+04/05/25 22:45:53: STOP_SERVER received, server token: 36fe4594-c934-4583-b5e3-5cfb81b511fb, passed token: 36fe4594-c934-4583-b5e3-5cfb81b511fb
+04/05/25 22:45:53: Socket received request to stop server.
+04/05/25 22:45:53: Dispatch Server: do_await_stop
+04/05/25 22:45:53: SERVER: destructor for server bound to port 54263
+04/05/25 22:48:44: Running xcd server. This server was built by gradle.
+04/05/25 22:48:44: Server was asked to start on port: '54344'
+04/05/25 22:48:44: Server is using token UUID: '634604d8-db9d-433c-a97a-a0ba62e94f0c'
+04/05/25 22:48:44: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 22:48:44: Attempting to start server on port '54344'
+04/05/25 22:48:44: Running Dispatch Server
+04/05/25 22:48:44: Version 2.2.0
+04/05/25 22:48:45: Dispatch Server: Accepted socket connection from client
+04/05/25 22:48:45: Starting Socket connection
+04/05/25 22:48:45: EXCHANGE_TOKEN received, server token: 634604d8-db9d-433c-a97a-a0ba62e94f0c, passed token: 634604d8-db9d-433c-a97a-a0ba62e94f0c
+04/05/25 22:48:45: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 22:48:45: SESSION_MGR: creating session with session uuid: '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' and name 'v++_compile_PositFFT'
+04/05/25 22:48:45: KERNEL_SVC: creating session with uuid: '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' and name 'v++_compile_PositFFT'
+04/05/25 22:48:45: GUIDANCE_SMGR: creating guidance session with uuid: '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' and name 'v++_compile_PositFFT'
+04/05/25 22:48:45: SYSTEM_DIAGRAM: creating session with uuid: '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' and name 'v++_compile_PositFFT'
+04/05/25 22:48:52: Dispatch Server: Accepted socket connection from client
+04/05/25 22:48:52: Starting Socket connection
+04/05/25 22:48:58: SESSION_MGR: closing session for UUID '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' with name 'v++_compile_PositFFT'
+04/05/25 22:48:58: KERNEL_SVC: closing session for UUID '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' with name 'v++_compile_PositFFT'
+04/05/25 22:48:58: GUIDANCE_SMGR: closing session for UUID '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' with name 'v++_compile_PositFFT'
+04/05/25 22:48:58: SYSTEM_DIAGRAM: closing session for UUID '8f5c3e74-7ef6-4dfe-bb65-15f2a4ead176' with name 'v++_compile_PositFFT'
+04/05/25 22:48:58: STOP_SERVER received, server token: 634604d8-db9d-433c-a97a-a0ba62e94f0c, passed token: 634604d8-db9d-433c-a97a-a0ba62e94f0c
+04/05/25 22:48:58: Socket received request to stop server.
+04/05/25 22:48:58: Dispatch Server: do_await_stop
+04/05/25 22:48:58: SERVER: destructor for server bound to port 54344
+04/05/25 22:49:51: Running xcd server. This server was built by gradle.
+04/05/25 22:49:51: Server was asked to start on port: '63121'
+04/05/25 22:49:51: Server is using token UUID: '293a993d-d5a6-4f98-bdf4-4026c1dc18b5'
+04/05/25 22:49:51: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 22:49:51: Attempting to start server on port '63121'
+04/05/25 22:49:51: Running Dispatch Server
+04/05/25 22:49:51: Version 2.2.0
+04/05/25 22:49:53: Dispatch Server: Accepted socket connection from client
+04/05/25 22:49:53: Starting Socket connection
+04/05/25 22:49:53: EXCHANGE_TOKEN received, server token: 293a993d-d5a6-4f98-bdf4-4026c1dc18b5, passed token: 293a993d-d5a6-4f98-bdf4-4026c1dc18b5
+04/05/25 22:49:53: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 22:49:53: SESSION_MGR: creating session with session uuid: '32a996d9-e1d2-416b-82ef-bd22b7c37c10' and name 'v++_compile_PositFFT'
+04/05/25 22:49:53: KERNEL_SVC: creating session with uuid: '32a996d9-e1d2-416b-82ef-bd22b7c37c10' and name 'v++_compile_PositFFT'
+04/05/25 22:49:53: GUIDANCE_SMGR: creating guidance session with uuid: '32a996d9-e1d2-416b-82ef-bd22b7c37c10' and name 'v++_compile_PositFFT'
+04/05/25 22:49:53: SYSTEM_DIAGRAM: creating session with uuid: '32a996d9-e1d2-416b-82ef-bd22b7c37c10' and name 'v++_compile_PositFFT'
+04/05/25 22:49:59: Dispatch Server: Accepted socket connection from client
+04/05/25 22:49:59: Starting Socket connection
+04/05/25 22:50:05: SESSION_MGR: closing session for UUID '32a996d9-e1d2-416b-82ef-bd22b7c37c10' with name 'v++_compile_PositFFT'
+04/05/25 22:50:05: KERNEL_SVC: closing session for UUID '32a996d9-e1d2-416b-82ef-bd22b7c37c10' with name 'v++_compile_PositFFT'
+04/05/25 22:50:05: GUIDANCE_SMGR: closing session for UUID '32a996d9-e1d2-416b-82ef-bd22b7c37c10' with name 'v++_compile_PositFFT'
+04/05/25 22:50:05: SYSTEM_DIAGRAM: closing session for UUID '32a996d9-e1d2-416b-82ef-bd22b7c37c10' with name 'v++_compile_PositFFT'
+04/05/25 22:50:05: STOP_SERVER received, server token: 293a993d-d5a6-4f98-bdf4-4026c1dc18b5, passed token: 293a993d-d5a6-4f98-bdf4-4026c1dc18b5
+04/05/25 22:50:05: Socket received request to stop server.
+04/05/25 22:50:05: Dispatch Server: do_await_stop
+04/05/25 22:50:05: SERVER: destructor for server bound to port 63121
+04/05/25 22:53:12: Running xcd server. This server was built by gradle.
+04/05/25 22:53:12: Server was asked to start on port: '63176'
+04/05/25 22:53:12: Server is using token UUID: '710f795d-033b-4ede-851f-adaa04d6ec9d'
+04/05/25 22:53:12: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 22:53:12: Attempting to start server on port '63176'
+04/05/25 22:53:12: Running Dispatch Server
+04/05/25 22:53:12: Version 2.2.0
+04/05/25 22:53:14: Dispatch Server: Accepted socket connection from client
+04/05/25 22:53:14: Starting Socket connection
+04/05/25 22:53:14: EXCHANGE_TOKEN received, server token: 710f795d-033b-4ede-851f-adaa04d6ec9d, passed token: 710f795d-033b-4ede-851f-adaa04d6ec9d
+04/05/25 22:53:14: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 22:53:14: SESSION_MGR: creating session with session uuid: '687f6d22-af22-4521-96c0-74f75745033c' and name 'v++_compile_PositFFT'
+04/05/25 22:53:14: KERNEL_SVC: creating session with uuid: '687f6d22-af22-4521-96c0-74f75745033c' and name 'v++_compile_PositFFT'
+04/05/25 22:53:14: GUIDANCE_SMGR: creating guidance session with uuid: '687f6d22-af22-4521-96c0-74f75745033c' and name 'v++_compile_PositFFT'
+04/05/25 22:53:14: SYSTEM_DIAGRAM: creating session with uuid: '687f6d22-af22-4521-96c0-74f75745033c' and name 'v++_compile_PositFFT'
+04/05/25 22:53:20: Dispatch Server: Accepted socket connection from client
+04/05/25 22:53:20: Starting Socket connection
+04/05/25 23:00:08: SESSION_MGR: closing session for UUID '687f6d22-af22-4521-96c0-74f75745033c' with name 'v++_compile_PositFFT'
+04/05/25 23:00:08: KERNEL_SVC: closing session for UUID '687f6d22-af22-4521-96c0-74f75745033c' with name 'v++_compile_PositFFT'
+04/05/25 23:00:08: GUIDANCE_SMGR: closing session for UUID '687f6d22-af22-4521-96c0-74f75745033c' with name 'v++_compile_PositFFT'
+04/05/25 23:00:08: SYSTEM_DIAGRAM: closing session for UUID '687f6d22-af22-4521-96c0-74f75745033c' with name 'v++_compile_PositFFT'
+04/05/25 23:00:08: STOP_SERVER received, server token: 710f795d-033b-4ede-851f-adaa04d6ec9d, passed token: 710f795d-033b-4ede-851f-adaa04d6ec9d
+04/05/25 23:00:08: Socket received request to stop server.
+04/05/25 23:00:08: Dispatch Server: do_await_stop
+04/05/25 23:00:08: SERVER: destructor for server bound to port 63176
+04/05/25 23:03:20: Running xcd server. This server was built by gradle.
+04/05/25 23:03:20: Server was asked to start on port: '52635'
+04/05/25 23:03:20: Server is using token UUID: '0a3ea65e-6e17-48db-b7f3-b57345cefb87'
+04/05/25 23:03:20: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 23:03:20: Attempting to start server on port '52635'
+04/05/25 23:03:20: Running Dispatch Server
+04/05/25 23:03:20: Version 2.2.0
+04/05/25 23:03:21: Dispatch Server: Accepted socket connection from client
+04/05/25 23:03:21: Starting Socket connection
+04/05/25 23:03:21: EXCHANGE_TOKEN received, server token: 0a3ea65e-6e17-48db-b7f3-b57345cefb87, passed token: 0a3ea65e-6e17-48db-b7f3-b57345cefb87
+04/05/25 23:03:22: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 23:03:22: SESSION_MGR: creating session with session uuid: '087b85a3-00af-44a1-bc3b-a52b569b41cd' and name 'v++_compile_PositFFT'
+04/05/25 23:03:22: KERNEL_SVC: creating session with uuid: '087b85a3-00af-44a1-bc3b-a52b569b41cd' and name 'v++_compile_PositFFT'
+04/05/25 23:03:22: GUIDANCE_SMGR: creating guidance session with uuid: '087b85a3-00af-44a1-bc3b-a52b569b41cd' and name 'v++_compile_PositFFT'
+04/05/25 23:03:22: SYSTEM_DIAGRAM: creating session with uuid: '087b85a3-00af-44a1-bc3b-a52b569b41cd' and name 'v++_compile_PositFFT'
+04/05/25 23:03:31: Dispatch Server: Accepted socket connection from client
+04/05/25 23:03:31: Starting Socket connection
+04/05/25 23:04:17: SESSION_MGR: closing session for UUID '087b85a3-00af-44a1-bc3b-a52b569b41cd' with name 'v++_compile_PositFFT'
+04/05/25 23:04:17: KERNEL_SVC: closing session for UUID '087b85a3-00af-44a1-bc3b-a52b569b41cd' with name 'v++_compile_PositFFT'
+04/05/25 23:04:17: GUIDANCE_SMGR: closing session for UUID '087b85a3-00af-44a1-bc3b-a52b569b41cd' with name 'v++_compile_PositFFT'
+04/05/25 23:04:17: SYSTEM_DIAGRAM: closing session for UUID '087b85a3-00af-44a1-bc3b-a52b569b41cd' with name 'v++_compile_PositFFT'
+04/05/25 23:04:17: STOP_SERVER received, server token: 0a3ea65e-6e17-48db-b7f3-b57345cefb87, passed token: 0a3ea65e-6e17-48db-b7f3-b57345cefb87
+04/05/25 23:04:17: Socket received request to stop server.
+04/05/25 23:04:17: Dispatch Server: do_await_stop
+04/05/25 23:04:17: SERVER: destructor for server bound to port 52635
+04/05/25 23:08:34: Running xcd server. This server was built by gradle.
+04/05/25 23:08:34: Server was asked to start on port: '52663'
+04/05/25 23:08:34: Server is using token UUID: '42b03e8e-bc31-4ea0-ae0a-1585a07208a4'
+04/05/25 23:08:34: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 23:08:34: Attempting to start server on port '52663'
+04/05/25 23:08:34: Running Dispatch Server
+04/05/25 23:08:34: Version 2.2.0
+04/05/25 23:08:36: Dispatch Server: Accepted socket connection from client
+04/05/25 23:08:36: Starting Socket connection
+04/05/25 23:08:36: EXCHANGE_TOKEN received, server token: 42b03e8e-bc31-4ea0-ae0a-1585a07208a4, passed token: 42b03e8e-bc31-4ea0-ae0a-1585a07208a4
+04/05/25 23:08:36: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 23:08:36: SESSION_MGR: creating session with session uuid: 'd832ba6c-f602-448a-8405-753ca924ea47' and name 'v++_compile_PositFFT'
+04/05/25 23:08:36: KERNEL_SVC: creating session with uuid: 'd832ba6c-f602-448a-8405-753ca924ea47' and name 'v++_compile_PositFFT'
+04/05/25 23:08:36: GUIDANCE_SMGR: creating guidance session with uuid: 'd832ba6c-f602-448a-8405-753ca924ea47' and name 'v++_compile_PositFFT'
+04/05/25 23:08:36: SYSTEM_DIAGRAM: creating session with uuid: 'd832ba6c-f602-448a-8405-753ca924ea47' and name 'v++_compile_PositFFT'
+04/05/25 23:08:43: Dispatch Server: Accepted socket connection from client
+04/05/25 23:08:43: Starting Socket connection
+04/05/25 23:08:50: SESSION_MGR: closing session for UUID 'd832ba6c-f602-448a-8405-753ca924ea47' with name 'v++_compile_PositFFT'
+04/05/25 23:08:50: KERNEL_SVC: closing session for UUID 'd832ba6c-f602-448a-8405-753ca924ea47' with name 'v++_compile_PositFFT'
+04/05/25 23:08:50: GUIDANCE_SMGR: closing session for UUID 'd832ba6c-f602-448a-8405-753ca924ea47' with name 'v++_compile_PositFFT'
+04/05/25 23:08:50: SYSTEM_DIAGRAM: closing session for UUID 'd832ba6c-f602-448a-8405-753ca924ea47' with name 'v++_compile_PositFFT'
+04/05/25 23:08:50: STOP_SERVER received, server token: 42b03e8e-bc31-4ea0-ae0a-1585a07208a4, passed token: 42b03e8e-bc31-4ea0-ae0a-1585a07208a4
+04/05/25 23:08:50: Socket received request to stop server.
+04/05/25 23:08:50: Dispatch Server: do_await_stop
+04/05/25 23:08:50: SERVER: destructor for server bound to port 52663
+04/05/25 23:09:51: Running xcd server. This server was built by gradle.
+04/05/25 23:09:51: Server was asked to start on port: '52673'
+04/05/25 23:09:51: Server is using token UUID: '70f85d7e-907a-4be6-af83-b4d2310c20e0'
+04/05/25 23:09:51: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+04/05/25 23:09:51: Attempting to start server on port '52673'
+04/05/25 23:09:51: Running Dispatch Server
+04/05/25 23:09:51: Version 2.2.0
+04/05/25 23:09:52: Dispatch Server: Accepted socket connection from client
+04/05/25 23:09:52: Starting Socket connection
+04/05/25 23:09:52: EXCHANGE_TOKEN received, server token: 70f85d7e-907a-4be6-af83-b4d2310c20e0, passed token: 70f85d7e-907a-4be6-af83-b4d2310c20e0
+04/05/25 23:09:52: DISPATCH_HANDLER: Adding handler from function makeHandler in library xv_system_diagram
+04/05/25 23:09:52: SESSION_MGR: creating session with session uuid: 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' and name 'v++_compile_PositFFT'
+04/05/25 23:09:52: KERNEL_SVC: creating session with uuid: 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' and name 'v++_compile_PositFFT'
+04/05/25 23:09:52: GUIDANCE_SMGR: creating guidance session with uuid: 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' and name 'v++_compile_PositFFT'
+04/05/25 23:09:52: SYSTEM_DIAGRAM: creating session with uuid: 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' and name 'v++_compile_PositFFT'
+04/05/25 23:10:00: Dispatch Server: Accepted socket connection from client
+04/05/25 23:10:00: Starting Socket connection
+04/05/25 23:10:56: SESSION_MGR: closing session for UUID 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' with name 'v++_compile_PositFFT'
+04/05/25 23:10:56: KERNEL_SVC: closing session for UUID 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' with name 'v++_compile_PositFFT'
+04/05/25 23:10:56: GUIDANCE_SMGR: closing session for UUID 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' with name 'v++_compile_PositFFT'
+04/05/25 23:10:56: SYSTEM_DIAGRAM: closing session for UUID 'ba68b5d6-391c-4fc5-b236-496a7d33e08f' with name 'v++_compile_PositFFT'
+04/05/25 23:10:56: STOP_SERVER received, server token: 70f85d7e-907a-4be6-af83-b4d2310c20e0, passed token: 70f85d7e-907a-4be6-af83-b4d2310c20e0
+04/05/25 23:10:56: Socket received request to stop server.
+04/05/25 23:10:56: Dispatch Server: do_await_stop
+04/05/25 23:10:56: SERVER: destructor for server bound to port 52673
