@@ -1,21 +1,30 @@
 {
     "1": {
-        "name": "pNAngle",
-        "file": "posit_lib.cpp",
-        "fileloc": "1235",
-        "instructions": "137",
-        "total_instructions": "1347",
-        "calls": "3 3 3 3 3",
-        "basicblocks": "13"
+        "name": "generic_fmod<double>_Pipeline_1",
+        "file": "C:\\scratch\\2024.2\\hls_product\\495\\2024.2\\src\\shared\\hls\\clib\/hlsmath\/include\/FloatingPoint\\hls_fmod_rem_quo.h",
+        "fileloc": "298",
+        "instructions": "34",
+        "total_instructions": "34",
+        "calls": "",
+        "basicblocks": "4",
+        "loads": {
+            "L": "4"
+        },
+        "stores": {
+            "L": "6"
+        },
+        "loops": {
+            "L": "1"
+        }
     },
     "0": {
-        "name": "pFFT",
+        "name": "dFFT",
         "file": "posit_lib.cpp",
-        "fileloc": "1363",
-        "instructions": "39",
-        "total_instructions": "6242",
-        "calls": "6",
-        "basicblocks": "4",
+        "fileloc": "1424",
+        "instructions": "111",
+        "total_instructions": "200",
+        "calls": "2",
+        "basicblocks": "7",
         "loads": {
             "L": "1"
         },
@@ -24,109 +33,20 @@
             "T": "2"
         },
         "loops": {
-            "L": "1"
+            "L": "1",
+            "N": "1"
         }
     },
     "2": {
-        "name": "log_generic<double>",
-        "file": "hls_log_.h",
-        "fileloc": "182",
-        "instructions": "421",
-        "total_instructions": "421",
-        "calls": "",
-        "basicblocks": "103",
+        "name": "generic_fmod<double>",
+        "file": "hls_fmod_rem_quo.h",
+        "fileloc": "225",
+        "instructions": "55",
+        "total_instructions": "89",
+        "calls": "1",
+        "basicblocks": "11",
         "loads": {
-            "G": "9"
-        }
-    },
-    "3": {
-        "name": "positAdd",
-        "file": "posit_lib.cpp",
-        "fileloc": "523",
-        "instructions": "242",
-        "total_instructions": "242",
-        "calls": "",
-        "basicblocks": "1"
-    },
-    "4": {
-        "name": "positCos",
-        "file": "posit_lib.cpp",
-        "fileloc": "1042",
-        "instructions": "125",
-        "total_instructions": "2190",
-        "calls": "5 3 3 3",
-        "basicblocks": "4"
-    },
-    "5": {
-        "name": "pReduceAngle",
-        "file": "posit_lib.cpp",
-        "fileloc": "1048",
-        "instructions": "129",
-        "total_instructions": "1339",
-        "calls": "3 3 3 3 3",
-        "basicblocks": "13"
-    },
-    "6": {
-        "name": "pAccumulateFC",
-        "file": "posit_lib.cpp",
-        "fileloc": "1339",
-        "instructions": "51",
-        "total_instructions": "6203",
-        "calls": "7 9",
-        "basicblocks": "1",
-        "loads": {
-            "L": "10"
-        }
-    },
-    "7": {
-        "name": "double2posit",
-        "file": "posit_lib.cpp",
-        "fileloc": "1341",
-        "instructions": "171",
-        "total_instructions": "752",
-        "calls": "2 8",
-        "basicblocks": "6",
-        "loads": {
-            "G": "3"
-        }
-    },
-    "8": {
-        "name": "pow_generic<double>",
-        "file": "hls_pow.h",
-        "fileloc": "291",
-        "instructions": "160",
-        "total_instructions": "160",
-        "calls": "",
-        "basicblocks": "1",
-        "loads": {
-            "G": "4"
-        }
-    },
-    "9": {
-        "name": "pAccumulateFC_Pipeline_VITIS_LOOP_1345_1",
-        "file": "posit_lib.cpp",
-        "fileloc": "1340",
-        "instructions": "215",
-        "total_instructions": "5400",
-        "calls": "4 1 10 10 10 10 3 3 3 3 3 3",
-        "basicblocks": "4",
-        "loads": {
-            "L": "11"
-        },
-        "stores": {
-            "L": "14"
-        },
-        "loops": {
             "L": "1"
         }
-    },
-    "10": {
-        "name": "positMul",
-        "file": "posit_lib.cpp",
-        "fileloc": "731",
-        "instructions": "49",
-        "total_instructions": "49",
-        "calls": "",
-        "basicblocks": "1"
     }
 }

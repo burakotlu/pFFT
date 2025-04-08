@@ -6,230 +6,59 @@
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 | Phase         | Step                        | Instructions | Description                                                                            |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
-| Compile/Link  |                             | 155,738 *    | After all functions are compiled and linked into a single design                       |
+| Compile/Link  |                             | 13,970       | After all functions are compiled and linked into a single design                       |
 |               |                             |              |                                                                                        |
 | Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
-|               | (1) unroll                  |  14,480      | user unroll pragmas are applied                                                        |
-|               | (2) simplification          |   9,127      | simplification of applied user unroll pragmas                                          |
-|               | (3) inline                  |   9,233      | user inline pragmas are applied                                                        |
-|               | (4) simplification          |   6,937      | simplification of applied user inline pragmas                                          |
+|               | (1) unroll                  |    870       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |    644       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |    603       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |    253       | simplification of applied user inline pragmas                                          |
 |               |                             |              |                                                                                        |
 | Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
-|               | (1) array partition         |   6,248      | user array partition pragmas are applied                                               |
-|               | (2) simplification          |   6,248      | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
-|               | (3) aggregate/disaggregate  |   6,335      | user struct aggregate/disaggregate pragmas are applied                                 |
-|               | (4) array reshape           |   6,295      | apply array reshape pragmas                                                            |
-|               | (5) access patterns         |   6,326      | array access pattern optmizations                                                      |
+|               | (1) array partition         |    253       | user array partition pragmas are applied                                               |
+|               | (2) simplification          |    253       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |    253       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |    253       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |    256       | array access pattern optmizations                                                      |
 |               |                             |              |                                                                                        |
 | Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
-|               | (1) loop simplification     |   5,718      | loop and instruction simplification                                                    |
-|               | (2) parallelization         |  10,484      | loops are unrolled or pipelined to meet performance targets                            |
-|               | (3) array partition         |  10,484      | arrays are partitioned to meet performance targets                                     |
-|               | (4) simplification          |  10,484      | simplification of design after performance transformations                             |
+|               | (1) loop simplification     |    256       | loop and instruction simplification                                                    |
+|               | (2) parallelization         |    253       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |    253       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |    253       | simplification of design after performance transformations                             |
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
-|               | (1) lowering                |  10,466      | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           |  10,061      | high level synthesis optimizations                                                     |
+|               | (1) lowering                |    261       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |    265       | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
-    * - Exceeded design size warning message threshold
 
 * Instructions per Function for each Compilation Phase
-+------------------------------------------+-----------------------+------------------+----------------+----------------+-----------------+-----------------+
-| Function                                 | Location              | Compile/Link     | Unroll/Inline  | Array/Struct   | Performance     | HW Transforms   |
-+------------------------------------------+-----------------------+------------------+----------------+----------------+-----------------+-----------------+
-| + pFFT                                   | posit_lib.cpp:1363    | 155,738 *        | 6,937          | 6,326          | 10,484          | 10,061          |
-|  + pAccumulateFC                         | posit_lib.cpp:1339    | 155,697          | 6,833          | 6,186          | 10,368          | 9,971           |
-|     POSIT                                | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|   + double2posit                         | posit_lib.cpp:344     | 59,019           | 1,286          | 1,074          | 1,026           |                 |
-|      POSIT                               | posit.hpp:74          |     64           |                |                |                 |                 |
-|    + log2                                | logdouble.cpp:12      | 17,441           |                |                |                 |                 |
-|     + log2                               | hls_log_double.cpp:12 | 17,439           |                |                |                 |                 |
-|      + log_generic<double>               | hls_log_.h:182        | 17,436           |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:456     |    319           |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:454     |      4           |                |                |                 |                 |
-|         expv                             | x_hls_utils.h:485     |    109           |                |                |                 |                 |
-|       + generic_isnan<double>            | hls_isnan.h:16        |    390           |                |                |                 |                 |
-|          fp_struct                       | x_hls_utils.h:456     |    319           |                |                |                 |                 |
-|       + generic_isinf<double>            | hls_isinf.h:16        |    389           |                |                |                 |                 |
-|          fp_struct                       | x_hls_utils.h:456     |    319           |                |                |                 |                 |
-|       + to_ieee                          | x_hls_utils.h:509     |  1,515 (5 calls) |                |                |                 |                 |
-|        + to_double                       | x_hls_utils.h:494     |  1,505 (5 calls) |                |                |                 |                 |
-|           data                           | x_hls_utils.h:475     |  1,395 (5 calls) |                |                |                 |                 |
-|       + range_reduction<57>              | hls_log_.h:153        | 10,206           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,263           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,232           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,234           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,237           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,238           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,241           |                |                |                 |                 |
-|          range_reduce<ap_fixed<102, 1... | hls_log_.h:28         |  1,241           |                |                |                 |                 |
-|    + stable_floor                        | posit_lib.cpp:338     |  8,905           |                |                |                 |                 |
-|     + round                              | rounddouble.cpp:6     |  5,252 (2 calls) |                |                |                 |                 |
-|      + generic_round<double>             | hls_round.h:159       |  5,248 (2 calls) |                |                |                 |                 |
-|         init_mask_table<double>          | hls_round.h:20        |     38 (2 calls) |                |                |                 |                 |
-|         init_one_half_table<double>      | hls_round.h:32        |     38 (2 calls) |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|       + generic_copysign<double>         | hls_copysign.h:10     |  1,918 (2 calls) |                |                |                 |                 |
-|          fp_struct                       | x_hls_utils.h:456     |  1,276 (4 calls) |                |                |                 |                 |
-|        + to_ieee                         | x_hls_utils.h:509     |    606 (2 calls) |                |                |                 |                 |
-|         + to_double                      | x_hls_utils.h:494     |    602 (2 calls) |                |                |                 |                 |
-|            data                          | x_hls_utils.h:475     |    558 (2 calls) |                |                |                 |                 |
-|         data                             | x_hls_utils.h:475     |    558 (2 calls) |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:464     |    578 (2 calls) |                |                |                 |                 |
-|       + to_ieee                          | x_hls_utils.h:509     |    606 (2 calls) |                |                |                 |                 |
-|        + to_double                       | x_hls_utils.h:494     |    602 (2 calls) |                |                |                 |                 |
-|           data                           | x_hls_utils.h:475     |    558 (2 calls) |                |                |                 |                 |
-|     + abs                                | std_abs.h:70          |    965           |                |                |                 |                 |
-|      + fabs                              | fabsdouble.cpp:7      |    963           |                |                |                 |                 |
-|       + generic_fabs<double>             | hls_fabs.h:12         |    961           |                |                |                 |                 |
-|        + generic_copysign<double>        | hls_copysign.h:10     |    959           |                |                |                 |                 |
-|           fp_struct                      | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|         + to_ieee                        | x_hls_utils.h:509     |    303           |                |                |                 |                 |
-|          + to_double                     | x_hls_utils.h:494     |    301           |                |                |                 |                 |
-|             data                         | x_hls_utils.h:475     |    279           |                |                |                 |                 |
-|     + floor                              | floordouble.cpp:6     |  2,677           |                |                |                 |                 |
-|      + generic_floor<double>             | hls_floor.h:13        |  2,675           |                |                |                 |                 |
-|         init_mask_table<double>          | hls_round.h:20        |     19           |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:456     |    319           |                |                |                 |                 |
-|         __signbit                        | x_hls_utils.h:512     |     18 (2 calls) |                |                |                 |                 |
-|       + generic_copysign<double>         | hls_copysign.h:10     |    959           |                |                |                 |                 |
-|          fp_struct                       | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|        + to_ieee                         | x_hls_utils.h:509     |    303           |                |                |                 |                 |
-|         + to_double                      | x_hls_utils.h:494     |    301           |                |                |                 |                 |
-|            data                          | x_hls_utils.h:475     |    279           |                |                |                 |                 |
-|         data                             | x_hls_utils.h:475     |    279           |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:464     |    289           |                |                |                 |                 |
-|       + to_ieee                          | x_hls_utils.h:509     |    303           |                |                |                 |                 |
-|        + to_double                       | x_hls_utils.h:494     |    301           |                |                |                 |                 |
-|           data                           | x_hls_utils.h:475     |    279           |                |                |                 |                 |
-|    + pow                                 | powdouble.cpp:6       | 26,829           |                |                |                 |                 |
-|     + pow_generic<double>                | hls_pow.h:291         | 26,827           |                |                |                 |                 |
-|        fp_struct                         | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|        fp_struct                         | x_hls_utils.h:454     |      4           |                |                |                 |                 |
-|        expv                              | x_hls_utils.h:485     |    218 (2 calls) |                |                |                 |                 |
-|      + generic_isinf<double>             | hls_isinf.h:16        |    778 (2 calls) |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|      + generic_isnan<double>             | hls_isnan.h:16        |    780 (2 calls) |                |                |                 |                 |
-|         fp_struct                        | x_hls_utils.h:456     |    638 (2 calls) |                |                |                 |                 |
-|      + to_ieee                           | x_hls_utils.h:509     |  2,727 (9 calls) |                |                |                 |                 |
-|       + to_double                        | x_hls_utils.h:494     |  2,709 (9 calls) |                |                |                 |                 |
-|          data                            | x_hls_utils.h:475     |  2,511 (9 calls) |                |                |                 |                 |
-|      + log_range_reduction<71>           | hls_pow.h:186         | 10,185           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,256           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,228           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,233           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,237           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,237           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,237           |                |                |                 |                 |
-|         log_range_reduce<ap_fixed<12...  | hls_pow.h:30          |  1,237           |                |                |                 |                 |
-|        exp_Z1P_m_1                       | hls_pow.h:224         |  2,725           |                |                |                 |                 |
-|    + log_generic<double>                 | hls_log_.h:182        |                  |  535           |  530           |   530           |                 |
-|       range_reduction<57>                | hls_log_.h:153        |                  |  224           |  224           |   224           |                 |
-|      generic_round<double>               | hls_round.h:159       |                  |   38           |   38           |    38           |                 |
-|      generic_floor<double>               | hls_floor.h:13        |                  |   45           |   45           |    45           |                 |
-|    + pow_generic<double>                 | hls_pow.h:291         |                  |  548           |  341           |   293           |                 |
-|       to_ieee                            | x_hls_utils.h:509     |                  |   72 (8 calls) |   72 (8 calls) |    40 (8 calls) |                 |
-|       log_range_reduction<71>            | hls_pow.h:186         |                  |  224           |   17           |    17           |                 |
-|   + pEuler                               | posit_lib.cpp:1270    | 82,938           |                |                |                 |                 |
-|    + positCos                            | posit_lib.cpp:1042    | 40,464           |                |                |                 |                 |
-|       POSIT                              | posit.hpp:74          |    576 (9 calls) |                |                |                 |                 |
-|     + pReduceAngle                       | posit_lib.cpp:995     | 21,207           |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |     64           |                |                |                 |                 |
-|      + positMod                          | posit_lib.cpp:32      |  8,568           |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    320 (5 calls) |                |                |                 |                 |
-|         isGreater_posit                  | posit_lib.cpp:3       |    216           |                |                |                 |                 |
-|       + positDiv                         | posit_lib.cpp:642     |  2,501           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positMul                         | posit_lib.cpp:731     |  2,411           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positSub                         | posit_lib.cpp:848     |  2,962           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|        + positAdd                        | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|           POSIT                          | posit.hpp:74          |     64           |                |                |                 |                 |
-|           LOD_ADD                        | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|        isGreater_posit                   | posit_lib.cpp:3       |    864 (4 calls) |                |                |                 |                 |
-|      + positAdd                          | posit_lib.cpp:523     |  8,631 (3 calls) |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|         LOD_ADD                          | posit_lib.cpp:96      |    162 (3 calls) |                |                |                 |                 |
-|      + positSub                          | posit_lib.cpp:848     |  2,962           |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positAdd                         | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|          LOD_ADD                         | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|     + positMul                           | posit_lib.cpp:731     |  7,233 (3 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|     + positDiv2p                         | posit_lib.cpp:625     |  2,361 (3 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|     + positSub                           | posit_lib.cpp:848     |  5,924 (2 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    128 (2 calls) |                |                |                 |                 |
-|      + positAdd                          | posit_lib.cpp:523     |  5,754 (2 calls) |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    128 (2 calls) |                |                |                 |                 |
-|         LOD_ADD                          | posit_lib.cpp:96      |    108 (2 calls) |                |                |                 |                 |
-|     + positAdd                           | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |     64           |                |                |                 |                 |
-|        LOD_ADD                           | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|     + posit_negate                       | posit_lib.cpp:249     |     95           |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |     64           |                |                |                 |                 |
-|    + positSin                            | posit_lib.cpp:1232    | 42,451           |                |                |                 |                 |
-|       POSIT                              | posit.hpp:74          |    320 (5 calls) |                |                |                 |                 |
-|     + pNAngle                            | posit_lib.cpp:1192    | 21,204           |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |     64           |                |                |                 |                 |
-|      + positMod                          | posit_lib.cpp:32      |  8,568           |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    320 (5 calls) |                |                |                 |                 |
-|         isGreater_posit                  | posit_lib.cpp:3       |    216           |                |                |                 |                 |
-|       + positDiv                         | posit_lib.cpp:642     |  2,501           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positMul                         | posit_lib.cpp:731     |  2,411           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positSub                         | posit_lib.cpp:848     |  2,962           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|        + positAdd                        | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|           POSIT                          | posit.hpp:74          |     64           |                |                |                 |                 |
-|           LOD_ADD                        | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|        isGreater_posit                   | posit_lib.cpp:3       |    864 (4 calls) |                |                |                 |                 |
-|      + positAdd                          | posit_lib.cpp:523     |  8,631 (3 calls) |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|         LOD_ADD                          | posit_lib.cpp:96      |    162 (3 calls) |                |                |                 |                 |
-|      + positSub                          | posit_lib.cpp:848     |  2,962           |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |     64           |                |                |                 |                 |
-|       + positAdd                         | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|          POSIT                           | posit.hpp:74          |     64           |                |                |                 |                 |
-|          LOD_ADD                         | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|     + positMul                           | posit_lib.cpp:731     |  9,644 (4 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    256 (4 calls) |                |                |                 |                 |
-|     + positDiv2p                         | posit_lib.cpp:625     |  2,361 (3 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|     + positSub                           | posit_lib.cpp:848     |  5,924 (2 calls) |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |    128 (2 calls) |                |                |                 |                 |
-|      + positAdd                          | posit_lib.cpp:523     |  5,754 (2 calls) |                |                |                 |                 |
-|         POSIT                            | posit.hpp:74          |    128 (2 calls) |                |                |                 |                 |
-|         LOD_ADD                          | posit_lib.cpp:96      |    108 (2 calls) |                |                |                 |                 |
-|     + positAdd                           | posit_lib.cpp:523     |  2,877           |                |                |                 |                 |
-|        POSIT                             | posit.hpp:74          |     64           |                |                |                 |                 |
-|        LOD_ADD                           | posit_lib.cpp:96      |     54           |                |                |                 |                 |
-|   + positMul                             | posit_lib.cpp:731     |  4,822 (2 calls) |                |                |                 |                 |
-|      POSIT                               | posit.hpp:74          |    128 (2 calls) |                |                |                 |                 |
-|   + positAdd                             | posit_lib.cpp:523     |  8,631 (3 calls) |  480 (3 calls) |  426 (3 calls) | 1,170 (3 calls) | 1,170 (3 calls) |
-|      POSIT                               | posit.hpp:74          |    192 (3 calls) |                |                |                 |                 |
-|      LOD_ADD                             | posit_lib.cpp:96      |    162 (3 calls) |                |                |                 |                 |
-|   + positCos                             | posit_lib.cpp:1042    |                  | 2,355          | 2,164          | 3,935           | 3,758           |
-|    + pReduceAngle                        | posit_lib.cpp:995     |                  | 1,382          | 1,263          | 2,350           |                 |
-|     + positMod                           | posit_lib.cpp:32      |                  |  342           |  317           |   501           |                 |
-|        positAdd                          | posit_lib.cpp:523     |                  |  160           |  142           |   390           |                 |
-|       isGreater_posit                    | posit_lib.cpp:3       |                  |  112 (4 calls) |  112 (4 calls) |    80 (4 calls) |                 |
-|       positAdd                           | posit_lib.cpp:523     |                  |  640 (4 calls) |  568 (4 calls) | 1,560 (4 calls) |                 |
-|      positMul                            | posit_lib.cpp:731     |                  |  177 (3 calls) |  177 (3 calls) |   177 (3 calls) |   177 (3 calls) |
-|      positAdd                            | posit_lib.cpp:523     |                  |  480 (3 calls) |  426 (3 calls) | 1,170 (3 calls) | 1,170 (3 calls) |
-|   + positSin                             | posit_lib.cpp:1232    |                  | 2,353          | 2,161          | 3,928           | 3,805           |
-|    + pNAngle                             | posit_lib.cpp:1192    |                  | 1,379          | 1,260          | 2,347           |                 |
-|     + positMod                           | posit_lib.cpp:32      |                  |  342           |  317           |   501           |                 |
-|        positAdd                          | posit_lib.cpp:523     |                  |  160           |  142           |   390           |                 |
-|       isGreater_posit                    | posit_lib.cpp:3       |                  |  112 (4 calls) |  112 (4 calls) |    80 (4 calls) |                 |
-|       positAdd                           | posit_lib.cpp:523     |                  |  640 (4 calls) |  568 (4 calls) | 1,560 (4 calls) |                 |
-|      positMul                            | posit_lib.cpp:731     |                  |  236 (4 calls) |  236 (4 calls) |   236 (4 calls) |   236 (4 calls) |
-|      positAdd                            | posit_lib.cpp:523     |                  |  480 (3 calls) |  426 (3 calls) | 1,170 (3 calls) | 1,170 (3 calls) |
-+------------------------------------------+-----------------------+------------------+----------------+----------------+-----------------+-----------------+
-    * - Exceeded design size warning message threshold
++------------------------------+------------------------+-----------------+---------------+--------------+-------------+---------------+
+| Function                     | Location               | Compile/Link    | Unroll/Inline | Array/Struct | Performance | HW Transforms |
++------------------------------+------------------------+-----------------+---------------+--------------+-------------+---------------+
+| + dFFT                       | posit_lib.cpp:1424     | 13,970          | 253           | 256          | 253         | 265           |
+|  + dAccumulateFC             | posit_lib.cpp:1309     | 13,930          | 229           | 232          | 229         | 235           |
+|   + dEuler                   | posit_lib.cpp:1285     | 13,885          |               |              |             |               |
+|    + dTailorCos              | posit_lib.cpp:892      | 6,947           |               |              |             |               |
+|     + dReduceAngle           | posit_lib.cpp:868      | 6,922           |               |              |             |               |
+|      + fmod                  | fmoddouble.cpp:6       | 6,895           |               |              |             |               |
+|       + generic_fmod<double> | hls_fmod_rem_quo.h:225 | 6,893           |               |              |             |               |
+|          fp_struct           | x_hls_utils.h:456      |   638 (2 calls) |               |              |             |               |
+|          fp_struct           | x_hls_utils.h:454      |     4           |               |              |             |               |
+|        + to_ieee             | x_hls_utils.h:509      | 1,818 (6 calls) |               |              |             |               |
+|         + to_double          | x_hls_utils.h:494      | 1,806 (6 calls) |               |              |             |               |
+|            data              | x_hls_utils.h:475      | 1,674 (6 calls) |               |              |             |               |
+|    + dTailorSin              | posit_lib.cpp:1114     | 6,933           |               |              |             |               |
+|     + dNAngle                | posit_lib.cpp:1097     | 6,919           |               |              |             |               |
+|      + fmod                  | fmoddouble.cpp:6       | 6,895           |               |              |             |               |
+|       + generic_fmod<double> | hls_fmod_rem_quo.h:225 | 6,893           |               |              |             |               |
+|          fp_struct           | x_hls_utils.h:456      |   638 (2 calls) |               |              |             |               |
+|          fp_struct           | x_hls_utils.h:454      |     4           |               |              |             |               |
+|        + to_ieee             | x_hls_utils.h:509      | 1,818 (6 calls) |               |              |             |               |
+|         + to_double          | x_hls_utils.h:494      | 1,806 (6 calls) |               |              |             |               |
+|            data              | x_hls_utils.h:475      | 1,674 (6 calls) |               |              |             |               |
+|     generic_fmod<double>     | hls_fmod_rem_quo.h:225 |                 | 146           | 147          | 146         | 149           |
++------------------------------+------------------------+-----------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings
 +---------------------------------------------+--------+------------------------------------------------------------------+

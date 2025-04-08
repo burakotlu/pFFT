@@ -1,5 +1,5 @@
 1 warning and 26 errors generated.
 Error while processing C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp.
-clang-tidy applied 144 of 144 suggested fixes.
+clang-tidy applied 145 of 145 suggested fixes.
 Suppressed 118 warnings (117 in non-user code, 1 with check filters).
 Use -header-filter=.* to display errors from all non-system headers. Use -system-headers to display errors from system headers as well.

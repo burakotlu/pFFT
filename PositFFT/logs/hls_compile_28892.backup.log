@@ -1,0 +1,274 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=pFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu7ev-fbvb900-1-i' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu7ev-fbvb900-1-i'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 3.904 seconds; current allocated memory: 162.383 MB.
+INFO: [HLS 200-10] Analyzing design file 'posit_lib.cpp' ... 
+WARNING: [HLS 207-5168] shifting a negative signed value is undefined (posit_lib.cpp:745:34)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:134:23)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:146:23)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:158:23)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 39.716 seconds; current allocated memory: 169.250 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 99,844 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,940 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 7,412 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 7,573 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,924 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,439 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,439 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,526 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,486 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,518 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 4,850 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,613 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,613 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,613 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,597 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,188 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-210] Disaggregating variable 'result' (posit_lib.cpp:1397:0)
+Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'calculateKFactor(int)' (posit_lib.cpp:1349:0)
+INFO: [HLS 214-178] Inlining function 'LOD_FFT(ap_uint<30>)' into 'calculateKFactor(int)' (posit_lib.cpp:1349:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positMul(POSIT, POSIT)' (posit_lib.cpp:742:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positDiv(POSIT, POSIT)' (posit_lib.cpp:653:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positAdd(POSIT, POSIT) (.185.188.237.247.393.413)' (posit_lib.cpp:534:0)
+INFO: [HLS 214-178] Inlining function 'LOD_ADD(ap_uint<31>)' into 'positAdd(POSIT, POSIT) (.185.188.237.247.393.413)' (posit_lib.cpp:534:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positSub(POSIT, POSIT) (.77.80.210.285.307)' (posit_lib.cpp:859:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'isGreater_posit(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positDiv(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positMul(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.77.80.210.285.307)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'pReduceAngle(POSIT, bool&)' (posit_lib.cpp:1006:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.77.80.210.285.307)' into 'pReduceAngle(POSIT, bool&)' (posit_lib.cpp:1006:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positDiv2p(POSIT, int)' (posit_lib.cpp:636:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'posit_negate(POSIT)' (posit_lib.cpp:260:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positCos(POSIT)' (posit_lib.cpp:1053:0)
+INFO: [HLS 214-178] Inlining function 'positDiv2p(POSIT, int)' into 'positCos(POSIT)' (posit_lib.cpp:1053:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.77.80.210.285.307)' into 'positCos(POSIT)' (posit_lib.cpp:1053:0)
+INFO: [HLS 214-178] Inlining function 'posit_negate(POSIT)' into 'positCos(POSIT)' (posit_lib.cpp:1053:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'pNAngle(POSIT)' (posit_lib.cpp:1203:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.77.80.210.285.307)' into 'pNAngle(POSIT)' (posit_lib.cpp:1203:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'positSin(POSIT)' (posit_lib.cpp:1243:0)
+INFO: [HLS 214-178] Inlining function 'positDiv2p(POSIT, int)' into 'positSin(POSIT)' (posit_lib.cpp:1243:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.77.80.210.285.307)' into 'positSin(POSIT)' (posit_lib.cpp:1243:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.56.62.68.74)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1370:0)
+INFO: [HLS 214-178] Inlining function 'calculateKFactor(int)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1370:0)
+INFO: [HLS 214-178] Inlining function 'pEuler(POSIT, POSIT*, POSIT*)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1370:0)
+INFO: [HLS 214-241] Aggregating bram variable 'result_imag' with compact=bit mode in 40-bits (posit_lib.cpp:1397:0)
+INFO: [HLS 214-241] Aggregating bram variable 'result_real' with compact=bit mode in 40-bits (posit_lib.cpp:1397:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'signal' with compact=bit mode in 40-bits (posit_lib.cpp:1397:0)
+WARNING: [HLS 214-450] Ignore address on register port 'signal' (posit_lib.cpp:1389:46)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_1379_1> at posit_lib.cpp:1379:24 
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_132_1> at posit_lib.cpp:132:23 
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_99_1' is marked as complete unroll implied by the pipeline pragma (posit_lib.cpp:99:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_99_1' (posit_lib.cpp:99:22) in function 'positAdd' completely with a factor of 31 (posit_lib.cpp:534:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2 seconds. CPU system time: 0 seconds. Elapsed time: 16.409 seconds; current allocated memory: 171.957 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.006 seconds; current allocated memory: 171.957 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.498 seconds; current allocated memory: 179.664 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] posit_lib.cpp:133: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 184.438 MB.
+INFO: [XFORM 203-602] Inlining function 'positMod' into 'pReduceAngle' (posit_lib.cpp:1008->posit_lib.cpp:1059) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMod' into 'pNAngle' (posit_lib.cpp:1205->posit_lib.cpp:1246) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:742:27) in function 'positMul'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:534:20) in function 'positAdd'... converting 73 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:132:31) to (posit_lib.cpp:132:23) in function 'pAccumulateFC'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:8:10) to (posit_lib.cpp:31:1) in function 'isGreater_posit'... converting 6 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'isGreater_posit' into 'pReduceAngle' (posit_lib.cpp:1010->posit_lib.cpp:1059) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMul' into 'positCos' (posit_lib.cpp:1061) automatically.
+INFO: [XFORM 203-602] Inlining function 'isGreater_posit' into 'pNAngle' (posit_lib.cpp:1207->posit_lib.cpp:1246) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMul' into 'pAccumulateFC' (posit_lib.cpp:1374) automatically.
+INFO: [XFORM 203-602] Inlining function 'positSin' into 'pAccumulateFC' (posit_lib.cpp:1283->posit_lib.cpp:1385) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'positMul' (posit_lib.cpp:759:5)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'positCos' (posit_lib.cpp:264:12)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'pAccumulateFC' (posit_lib.cpp:132:2)...6 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.539 seconds; current allocated memory: 209.305 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.576 seconds; current allocated memory: 258.781 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'pFFT' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positAdd'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 8, function 'positAdd'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.622 seconds; current allocated memory: 268.945 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.136 seconds; current allocated memory: 270.000 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pReduceAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pReduceAngle'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, function 'pReduceAngle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.214 seconds; current allocated memory: 270.266 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.107 seconds; current allocated memory: 270.348 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positCos' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positCos'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 52, function 'positCos'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.202 seconds; current allocated memory: 271.215 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.094 seconds; current allocated memory: 271.461 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pNAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pNAngle'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, function 'pNAngle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.229 seconds; current allocated memory: 271.617 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.522 seconds; current allocated memory: 272.008 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positMul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positMul'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'positMul'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.278 seconds; current allocated memory: 272.199 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.095 seconds; current allocated memory: 272.320 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pAccumulateFC' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_1379_1'.
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC' (loop 'VITIS_LOOP_1379_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret18', posit_lib.cpp:1389) and 'call' operation 39 bit ('call_ret3', posit_lib.cpp:1389) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC' (loop 'VITIS_LOOP_1379_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret18', posit_lib.cpp:1389) and 'call' operation 39 bit ('call_ret3', posit_lib.cpp:1389) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC' (loop 'VITIS_LOOP_1379_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret18', posit_lib.cpp:1389) and 'call' operation 39 bit ('call_ret3', posit_lib.cpp:1389) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC' (loop 'VITIS_LOOP_1379_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret18', posit_lib.cpp:1389) and 'call' operation 39 bit ('call_ret3', posit_lib.cpp:1389) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC' (loop 'VITIS_LOOP_1379_1'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret18', posit_lib.cpp:1389) and 'call' operation 39 bit ('call_ret3', posit_lib.cpp:1389) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 64, loop 'VITIS_LOOP_1379_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.592 seconds; current allocated memory: 274.457 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.136 seconds; current allocated memory: 275.684 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pFFT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 276.113 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 276.223 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'positAdd' pipeline 'positAdd' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_6_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positAdd'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.308 seconds; current allocated memory: 280.367 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pReduceAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pReduceAngle' pipeline 'pReduceAngle' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_59ns_61ns_119_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pReduceAngle'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.574 seconds; current allocated memory: 287.094 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positCos' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'positCos' pipeline 'positCos' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positCos'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.907 seconds; current allocated memory: 292.461 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pNAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pNAngle' pipeline 'pNAngle' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_59ns_61ns_119_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pNAngle'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.934 seconds; current allocated memory: 297.812 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positMul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positMul'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.769 seconds; current allocated memory: 302.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pAccumulateFC' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pAccumulateFC' pipeline 'VITIS_LOOP_1379_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pAccumulateFC'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.858 seconds; current allocated memory: 305.059 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pFFT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/signal_r' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/result_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/result_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'pFFT' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pFFT'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.058 seconds; current allocated memory: 310.930 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.379 seconds; current allocated memory: 313.016 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 2.926 seconds; current allocated memory: 322.168 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for pFFT.
+INFO: [VLOG 209-307] Generating Verilog RTL for pFFT.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 129.49 MHz
+INFO: [HLS 200-112] Total CPU user time: 7 seconds. Total CPU system time: 3 seconds. Total elapsed time: 78.653 seconds; peak allocated memory: 322.539 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 1m 25s

@@ -56887,7 +56887,9 @@ class stream : public stream<__STREAM_T__, 0> {
 # 13 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot\\hls_stream.h" 2
 # 11 "./posit.hpp" 2
 using namespace std;
-# 53 "./posit.hpp"
+# 30 "./posit.hpp"
+typedef ap_uint<6> log_sf_t;
+# 65 "./posit.hpp"
 typedef ap_int<6> regime_t;
 typedef ap_uint<6> ml_t;
 typedef ap_uint<(32 -(0 +2))> mantissa_t;
@@ -56911,7 +56913,7 @@ typedef ap_uint<1> bool_t;
 
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
-# 86 "./posit.hpp"
+# 98 "./posit.hpp"
 const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 842887333};
 const ps_t POSIT_PI = {0, false, false, 1, 0, 842887333};
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333};
@@ -56924,6 +56926,7 @@ const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333};
 
 const ps_t ONE = {0, false, false, 0, 0, 1<<((32 -(0 +2))-1)};
 const ps_t ZERO = {0, true, false, 0, 0, 1<<((32 -(0 +2))-1)};
+ps_t calculateKFactor(int k);
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t decode(posit_t posit);
@@ -56990,8 +56993,8 @@ struct fFFTResult {
 };
 
 void fFFT(float signal[], fFFTResult& result);
-void dFFT(double signal[], dFFTResult& result);
-__attribute__((sdx_kernel("pFFT", 0))) void pFFT(ps_t signal[], pFFTResult& result);
+__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result);
+void pFFT(ps_t signal[], pFFTResult& result);
 
 
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount);
@@ -57031,7 +57034,7 @@ bool isGreater_posit(ps_t x, ps_t y) {
         return !absXGreaterEqual;
 }
 ps_t positMod(ps_t x, ps_t y){
-    ps_t quotient,floor_val,c_x, inter,res;
+    ps_t quotient,c_x, inter,res;
     sf_t sf_fVal=0;
     mantissa_t m=0;
     bool small;
@@ -57126,6 +57129,17 @@ int LOD_DIV(dv_t in){
         else flag=true;
     }
     return (32 -(0 +2))-1-count;
+}
+int LOD_FFT(mantissa_t in){
+    bool flag=0;
+    int count =0;
+    VITIS_LOOP_132_1: for(int i=in.width-1;i>=0;i-- ){
+        if(in[i] ==0){
+            if(flag==false) count+=1;
+        }
+        else flag=true;
+    }
+    return count;
 }
 ps_t decode(posit_t posit){
 
@@ -57381,7 +57395,7 @@ ps_t double2posit(double in) {
     mant_with_sf = dtol;
     mant_part= mant_with_sf >> (int)sf;
     regime = (sf_t)sf >> 0;
-# 400 "posit_lib.cpp"
+# 411 "posit_lib.cpp"
     if (regime >= 0) {
         if (regime + 3 < 32) {
             SREG = (reg_t)regime + 3;
@@ -57551,7 +57565,7 @@ ps_t positAdd(ps_t x,ps_t y){
     SA = LOD_ADD(mantissa);
     mantissa = mantissa <<SA;
     sf_r = sf_r-SA;
-# 586 "posit_lib.cpp"
+# 597 "posit_lib.cpp"
  regime=sf_r>>0;
 
  SREG=regime>=0?regime+3:2-regime;
@@ -57652,7 +57666,7 @@ ps_t positDiv(ps_t x,ps_t y){
             sf_r = sf_r-1;
         }
         mantissa = (mantissa_t)mant;
-# 697 "posit_lib.cpp"
+# 708 "posit_lib.cpp"
         regime=sf_r>>0;
 
     }
@@ -57714,7 +57728,7 @@ ps_t positMul(ps_t x,ps_t y){
  sf_x=((sf_t)x_regime<<0)+x_exponent;
  sf_y=((sf_t)y_regime<<0)+y_exponent;
  sf_r=(sf_t)sf_x+sf_y;
-# 771 "posit_lib.cpp"
+# 782 "posit_lib.cpp"
     if (sf_r.range(6 +0,6 +0 -1)==2){
         regime = 2-32;
 
@@ -57730,7 +57744,7 @@ ps_t positMul(ps_t x,ps_t y){
         }
         else
             mantissa = (mantissa_t) mant.range(2*(32 -(0 +2))-2,2*(32 -(0 +2))-1-(32 -(0 +2)));
-# 800 "posit_lib.cpp"
+# 811 "posit_lib.cpp"
         regime=sf_r>>0;
     }
 
@@ -57758,7 +57772,7 @@ ps_t positMul(ps_t x,ps_t y){
  result.mantissa=mantissa;
  result.sign=sign;
  result.isZero=isZero;
-# 845 "posit_lib.cpp"
+# 856 "posit_lib.cpp"
  return result;
 }
 
@@ -57817,7 +57831,7 @@ double dTailorCos(double x) {
 
 
             term4 = x2 * term3 / 32.0;
-# 911 "posit_lib.cpp"
+# 922 "posit_lib.cpp"
         return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
 
 
@@ -57844,7 +57858,7 @@ float fReduceAngle(float angle, bool &negate) {
 
     return angle;
 }
-# 954 "posit_lib.cpp"
+# 965 "posit_lib.cpp"
 float fTailorCos(float x) {
     bool negate;
     float x2,term1,term2,term3,term4;
@@ -57867,7 +57881,7 @@ float fTailorCos(float x) {
 
 
             term4 = x2 * term3 / 32.0;
-# 984 "posit_lib.cpp"
+# 995 "posit_lib.cpp"
         return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
 
 
@@ -57900,7 +57914,7 @@ ps_t pReduceAngle(ps_t angle, bool &negate) {
     }
  return m_angle;
 }
-# 1042 "posit_lib.cpp"
+# 1053 "posit_lib.cpp"
 ps_t positCos(ps_t x) {
     ps_t y, y2, y4, result;
     ps_t term1, term2, term3, t1minust2, term4;
@@ -57984,7 +57998,7 @@ double dTailorSin(double in) {
 
 
             term4 = term3*x*x/32.0;
-# 1133 "posit_lib.cpp"
+# 1144 "posit_lib.cpp"
         return term1 - term2 + term3 - term4;
 
 
@@ -58029,7 +58043,7 @@ float fTailorSin(float in) {
 
 
             term4 = term3*x*x/32.0;
-# 1185 "posit_lib.cpp"
+# 1196 "posit_lib.cpp"
         return term1 - term2 + term3 - term4;
 
 
@@ -58055,7 +58069,7 @@ ps_t pNAngle(ps_t angle) {
 
 
 }
-# 1232 "posit_lib.cpp"
+# 1243 "posit_lib.cpp"
 ps_t positSin(ps_t x) {
     ps_t y,y2,y3,y5,y7;
 
@@ -58068,7 +58082,7 @@ ps_t positSin(ps_t x) {
 
 
         y7 = positMul(y2, y5);
-# 1265 "posit_lib.cpp"
+# 1276 "posit_lib.cpp"
             return positSub(positAdd(positSub(y,positDiv2p(y3,-3)),positDiv2p(y5,-7)),positDiv2p(y7, -12));
 
 
@@ -58111,7 +58125,7 @@ void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& 
     imagSum = 0.0;
 
 
-    VITIS_LOOP_1307_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1318_1: for (int n = 0; n < sampleCount; n++) {
         dEuler(angle, &realPart, &imagPart);
 
         realSum += signalBuffer[n] * realPart;
@@ -58130,7 +58144,7 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
     float deltaTheta = -2.0 * 3.14159265358979323846 * k / sampleCount;
 
 
-    VITIS_LOOP_1326_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1337_1: for (int n = 0; n < sampleCount; n++) {
 
         float signalVal = signal[n];
 
@@ -58142,14 +58156,46 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
         angle += deltaTheta;
     }
 }
+ps_t calculateKFactor(int k){
+ ps_t result;
+ log_sf_t mant;
+ sf_t sf=0;
+ regime_t regime=0;
+ exponent_t exponent=0;
+ mantissa_t mantissa=0;
+ int shiftAmount=0;
+ if (k==0) return result;
+    result.isZero = false;
+ mant = k;
 
+ mantissa.range((32 -(0 +2))-2,(32 -(0 +2))-1-6) =mant;
+ shiftAmount = LOD_FFT(mantissa);
+ sf = -shiftAmount;
+ regime = (sf_t)sf >> 0;
+ exponent = sf & ((1 << 0) - 1);
+
+    mantissa = mantissa<<shiftAmount;
+ result.regime = regime;
+ result.exponent =exponent;
+ result.mantissa=mantissa;
+
+
+
+
+
+
+ return result;
+}
 void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
     ps_t angle, realPart, imagPart;
-    ps_t deltaTheta = double2posit(-2.0 * 3.14159265358979323846 * k / sampleCount);
+    ps_t deltaTheta, k_factor;
+ k_factor = calculateKFactor(k);
+ deltaTheta = positMul(POSIT_M_2PI,k_factor);
 
 
 
-    VITIS_LOOP_1345_1: for (int n = 0; n < sampleCount; n++) {
+
+    VITIS_LOOP_1388_1: for (int n = 0; n < sampleCount; n++) {
 
         ps_t signalVal = signal[n];
 
@@ -58167,16 +58213,12 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
 }
 
 
-__attribute__((sdx_kernel("pFFT", 0))) void pFFT(ps_t signal[], pFFTResult& result) {
-#line 1 "directive"
-#pragma HLSDIRECTIVE TOP name=pFFT
-# 1363 "posit_lib.cpp"
-
+void pFFT(ps_t signal[], pFFTResult& result) {
     int sampleCount = 64;
 
-    VITIS_LOOP_1366_1: for (int k = 0; k < sampleCount; k++) {
-        if (k % 200 == 0)
-            std::cout << k << std::endl;
+    VITIS_LOOP_1409_1: for (int k = 0; k < sampleCount; k++) {
+
+
 
 
         ps_t realSum = ZERO;
@@ -58189,14 +58231,18 @@ __attribute__((sdx_kernel("pFFT", 0))) void pFFT(ps_t signal[], pFFTResult& resu
 }
 
 
-void dFFT(double signal[], dFFTResult& result) {
+__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result) {
+#line 1 "directive"
+#pragma HLSDIRECTIVE TOP name=dFFT
+# 1424 "posit_lib.cpp"
+
     const int sampleCount = 64;
 
 
     double signalBuffer[64];
 
 
-    VITIS_LOOP_1388_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1431_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << "Processing bin: " << k << std::endl;
 
@@ -58214,7 +58260,7 @@ void dFFT(double signal[], dFFTResult& result) {
 void fFFT(float signal[], fFFTResult& result) {
     int sampleCount = 64;
 
-    VITIS_LOOP_1406_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1449_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58235,7 +58281,7 @@ void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double&
     double realPart, imagPart, angle = 0.0;
     double deltaTheta = 2.0 * 3.14 * k / sampleCount;
 
-    VITIS_LOOP_1427_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1470_1: for (int n = 0; n < sampleCount; n++) {
         double signalVal_real = real[n];
         double signalVal_imag = imag[n];
 
@@ -58249,7 +58295,7 @@ void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double&
 
 
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount) {
-    VITIS_LOOP_1441_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1484_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58267,7 +58313,7 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
     float realPart, imagPart, angle = 0.0f;
     float deltaTheta = 2.0f * 3.14 * k / sampleCount;
 
-    VITIS_LOOP_1459_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1502_1: for (int n = 0; n < sampleCount; n++) {
         float signalVal_real = real[n];
         float signalVal_imag = imag[n];
 
@@ -58281,7 +58327,7 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
 
 
 void fIFFT(const float real[], const float imag[], float signal[], int sampleCount) {
-    VITIS_LOOP_1473_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1516_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58298,7 +58344,7 @@ void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realS
     ps_t realPart, imagPart, angle = ZERO;
     ps_t deltaTheta = double2posit(2.0 * 3.14 * k / sampleCount);
 
-    VITIS_LOOP_1490_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1533_1: for (int n = 0; n < sampleCount; n++) {
         ps_t signalVal_real = real[n];
         ps_t signalVal_imag = imag[n];
 
@@ -58313,7 +58359,7 @@ void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realS
 
 
 void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount) {
-    VITIS_LOOP_1505_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1548_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 

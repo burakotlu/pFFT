@@ -12,10 +12,22 @@ using namespace std;
 
 #define N 32
 #define ES 0
-#define TERMS 2
+#define TERMS 4
 #define IN_SIZE 64
 #define APPR_TAILOR 1
-
+#if (IN_SIZE ==64)
+#define LOG_IN_SIZE_SF 6
+#endif
+#if (IN_SIZE ==128)
+#define LOG_IN_SIZE_SF 7
+#endif
+#if (IN_SIZE ==256)
+#define LOG_IN_SIZE_SF 8
+#endif
+#if (IN_SIZE ==512)
+#define LOG_IN_SIZE_SF 9
+#endif
+typedef ap_uint<LOG_IN_SIZE_SF> log_sf_t;
 #define FRAC_LEN (N-(ES+2))
 #define MUL_LEN 2*FRAC_LEN
 #define PI 3.14
@@ -95,6 +107,7 @@ const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333};
 
 const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};
 const ps_t ZERO = {0, true, false, 0, 0, 1<<(FRAC_LEN-1)}; 
+ps_t calculateKFactor(int k);
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t  decode(posit_t posit);

@@ -1,5 +1,5 @@
 
-set TopModule "pFFT"
+set TopModule "dFFT"
 set ClockPeriod 10
 set ClockList ap_clk
 set AxiliteClockList {}
@@ -14,7 +14,7 @@ set FftOrFirFlag 0
 set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
-set HasDSPModule 1
+set HasDSPModule 0
 set ResetLevelFlag 1
 set ResetStyle control
 set ResetSyncFlag 1
@@ -24,7 +24,7 @@ set ResetRegisterNum 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix pFFT_
+set RtlSubPrefix dFFT_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}

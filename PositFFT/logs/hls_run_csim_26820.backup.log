@@ -1,0 +1,490 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=pFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu7ev-fbvb900-1-i' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu7ev-fbvb900-1-i'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../posit_lib.cpp:1:
+In file included from ../../../../posit.hpp:1:
+In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+../../../../posit_lib.cpp:745:33: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+        sf_t sf_x,sf_y,sf_r,max =((2-N)<<ES);
+                                  ~~~~~^
+2 warnings generated.
+0
+k: 1
+mant: 1
+mantissa: 8388608
+shiftAmount: 6
+mantissa: 8388608
+shiftAmount: 6
+0.000244141
+k: 2
+mant: 2
+mantissa: 16777216
+shiftAmount: 5
+mantissa: 16777216
+shiftAmount: 5
+0.000976562
+k: 3
+mant: 3
+mantissa: 25165824
+shiftAmount: 5
+mantissa: 25165824
+shiftAmount: 5
+0.00146484
+k: 4
+mant: 4
+mantissa: 33554432
+shiftAmount: 4
+mantissa: 33554432
+shiftAmount: 4
+0.00390625
+k: 5
+mant: 5
+mantissa: 41943040
+shiftAmount: 4
+mantissa: 41943040
+shiftAmount: 4
+0.00488281
+k: 6
+mant: 6
+mantissa: 50331648
+shiftAmount: 4
+mantissa: 50331648
+shiftAmount: 4
+0.00585938
+k: 7
+mant: 7
+mantissa: 58720256
+shiftAmount: 4
+mantissa: 58720256
+shiftAmount: 4
+0.00683594
+k: 8
+mant: 8
+mantissa: 67108864
+shiftAmount: 3
+mantissa: 67108864
+shiftAmount: 3
+0.015625
+k: 9
+mant: 9
+mantissa: 75497472
+shiftAmount: 3
+mantissa: 75497472
+shiftAmount: 3
+0.0175781
+k: 10
+mant: 10
+mantissa: 83886080
+shiftAmount: 3
+mantissa: 83886080
+shiftAmount: 3
+0.0195312
+k: 11
+mant: 11
+mantissa: 92274688
+shiftAmount: 3
+mantissa: 92274688
+shiftAmount: 3
+0.0214844
+k: 12
+mant: 12
+mantissa: 100663296
+shiftAmount: 3
+mantissa: 100663296
+shiftAmount: 3
+0.0234375
+k: 13
+mant: 13
+mantissa: 109051904
+shiftAmount: 3
+mantissa: 109051904
+shiftAmount: 3
+0.0253906
+k: 14
+mant: 14
+mantissa: 117440512
+shiftAmount: 3
+mantissa: 117440512
+shiftAmount: 3
+0.0273438
+k: 15
+mant: 15
+mantissa: 125829120
+shiftAmount: 3
+mantissa: 125829120
+shiftAmount: 3
+0.0292969
+k: 16
+mant: 16
+mantissa: 134217728
+shiftAmount: 2
+mantissa: 134217728
+shiftAmount: 2
+0.0625
+k: 17
+mant: 17
+mantissa: 142606336
+shiftAmount: 2
+mantissa: 142606336
+shiftAmount: 2
+0.0664062
+k: 18
+mant: 18
+mantissa: 150994944
+shiftAmount: 2
+mantissa: 150994944
+shiftAmount: 2
+0.0703125
+k: 19
+mant: 19
+mantissa: 159383552
+shiftAmount: 2
+mantissa: 159383552
+shiftAmount: 2
+0.0742188
+k: 20
+mant: 20
+mantissa: 167772160
+shiftAmount: 2
+mantissa: 167772160
+shiftAmount: 2
+0.078125
+k: 21
+mant: 21
+mantissa: 176160768
+shiftAmount: 2
+mantissa: 176160768
+shiftAmount: 2
+0.0820312
+k: 22
+mant: 22
+mantissa: 184549376
+shiftAmount: 2
+mantissa: 184549376
+shiftAmount: 2
+0.0859375
+k: 23
+mant: 23
+mantissa: 192937984
+shiftAmount: 2
+mantissa: 192937984
+shiftAmount: 2
+0.0898438
+k: 24
+mant: 24
+mantissa: 201326592
+shiftAmount: 2
+mantissa: 201326592
+shiftAmount: 2
+0.09375
+k: 25
+mant: 25
+mantissa: 209715200
+shiftAmount: 2
+mantissa: 209715200
+shiftAmount: 2
+0.0976562
+k: 26
+mant: 26
+mantissa: 218103808
+shiftAmount: 2
+mantissa: 218103808
+shiftAmount: 2
+0.101562
+k: 27
+mant: 27
+mantissa: 226492416
+shiftAmount: 2
+mantissa: 226492416
+shiftAmount: 2
+0.105469
+k: 28
+mant: 28
+mantissa: 234881024
+shiftAmount: 2
+mantissa: 234881024
+shiftAmount: 2
+0.109375
+k: 29
+mant: 29
+mantissa: 243269632
+shiftAmount: 2
+mantissa: 243269632
+shiftAmount: 2
+0.113281
+k: 30
+mant: 30
+mantissa: 251658240
+shiftAmount: 2
+mantissa: 251658240
+shiftAmount: 2
+0.117188
+k: 31
+mant: 31
+mantissa: 260046848
+shiftAmount: 2
+mantissa: 260046848
+shiftAmount: 2
+0.121094
+k: 32
+mant: 32
+mantissa: 268435456
+shiftAmount: 1
+mantissa: 268435456
+shiftAmount: 1
+0.25
+k: 33
+mant: 33
+mantissa: 276824064
+shiftAmount: 1
+mantissa: 276824064
+shiftAmount: 1
+0.257812
+k: 34
+mant: 34
+mantissa: 285212672
+shiftAmount: 1
+mantissa: 285212672
+shiftAmount: 1
+0.265625
+k: 35
+mant: 35
+mantissa: 293601280
+shiftAmount: 1
+mantissa: 293601280
+shiftAmount: 1
+0.273438
+k: 36
+mant: 36
+mantissa: 301989888
+shiftAmount: 1
+mantissa: 301989888
+shiftAmount: 1
+0.28125
+k: 37
+mant: 37
+mantissa: 310378496
+shiftAmount: 1
+mantissa: 310378496
+shiftAmount: 1
+0.289062
+k: 38
+mant: 38
+mantissa: 318767104
+shiftAmount: 1
+mantissa: 318767104
+shiftAmount: 1
+0.296875
+k: 39
+mant: 39
+mantissa: 327155712
+shiftAmount: 1
+mantissa: 327155712
+shiftAmount: 1
+0.304688
+k: 40
+mant: 40
+mantissa: 335544320
+shiftAmount: 1
+mantissa: 335544320
+shiftAmount: 1
+0.3125
+k: 41
+mant: 41
+mantissa: 343932928
+shiftAmount: 1
+mantissa: 343932928
+shiftAmount: 1
+0.320312
+k: 42
+mant: 42
+mantissa: 352321536
+shiftAmount: 1
+mantissa: 352321536
+shiftAmount: 1
+0.328125
+k: 43
+mant: 43
+mantissa: 360710144
+shiftAmount: 1
+mantissa: 360710144
+shiftAmount: 1
+0.335938
+k: 44
+mant: 44
+mantissa: 369098752
+shiftAmount: 1
+mantissa: 369098752
+shiftAmount: 1
+0.34375
+k: 45
+mant: 45
+mantissa: 377487360
+shiftAmount: 1
+mantissa: 377487360
+shiftAmount: 1
+0.351562
+k: 46
+mant: 46
+mantissa: 385875968
+shiftAmount: 1
+mantissa: 385875968
+shiftAmount: 1
+0.359375
+k: 47
+mant: 47
+mantissa: 394264576
+shiftAmount: 1
+mantissa: 394264576
+shiftAmount: 1
+0.367188
+k: 48
+mant: 48
+mantissa: 402653184
+shiftAmount: 1
+mantissa: 402653184
+shiftAmount: 1
+0.375
+k: 49
+mant: 49
+mantissa: 411041792
+shiftAmount: 1
+mantissa: 411041792
+shiftAmount: 1
+0.382812
+k: 50
+mant: 50
+mantissa: 419430400
+shiftAmount: 1
+mantissa: 419430400
+shiftAmount: 1
+0.390625
+k: 51
+mant: 51
+mantissa: 427819008
+shiftAmount: 1
+mantissa: 427819008
+shiftAmount: 1
+0.398438
+k: 52
+mant: 52
+mantissa: 436207616
+shiftAmount: 1
+mantissa: 436207616
+shiftAmount: 1
+0.40625
+k: 53
+mant: 53
+mantissa: 444596224
+shiftAmount: 1
+mantissa: 444596224
+shiftAmount: 1
+0.414062
+k: 54
+mant: 54
+mantissa: 452984832
+shiftAmount: 1
+mantissa: 452984832
+shiftAmount: 1
+0.421875
+k: 55
+mant: 55
+mantissa: 461373440
+shiftAmount: 1
+mantissa: 461373440
+shiftAmount: 1
+0.429688
+k: 56
+mant: 56
+mantissa: 469762048
+shiftAmount: 1
+mantissa: 469762048
+shiftAmount: 1
+0.4375
+k: 57
+mant: 57
+mantissa: 478150656
+shiftAmount: 1
+mantissa: 478150656
+shiftAmount: 1
+0.445312
+k: 58
+mant: 58
+mantissa: 486539264
+shiftAmount: 1
+mantissa: 486539264
+shiftAmount: 1
+0.453125
+k: 59
+mant: 59
+mantissa: 494927872
+shiftAmount: 1
+mantissa: 494927872
+shiftAmount: 1
+0.460938
+k: 60
+mant: 60
+mantissa: 503316480
+shiftAmount: 1
+mantissa: 503316480
+shiftAmount: 1
+0.46875
+k: 61
+mant: 61
+mantissa: 511705088
+shiftAmount: 1
+mantissa: 511705088
+shiftAmount: 1
+0.476562
+k: 62
+mant: 62
+mantissa: 520093696
+shiftAmount: 1
+mantissa: 520093696
+shiftAmount: 1
+0.484375
+k: 63
+mant: 63
+mantissa: 528482304
+shiftAmount: 1
+mantissa: 528482304
+shiftAmount: 1
+0.492188
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 16.292 seconds; peak allocated memory: 163.270 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 22s

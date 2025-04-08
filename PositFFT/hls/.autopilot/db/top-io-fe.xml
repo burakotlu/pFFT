@@ -1,16 +1,16 @@
 <root versionMajor = "1" versionMinor = "5">
-  <kernel src_name="pFFT" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
+  <kernel src_name="dFFT" language="c" hwCtrl="ap_ctrl_hs" mem_layout="fpga64-xilinx-none">
     <args>
-      <arg id="0" access_type="r" src_name="signal" src_type="POSIT*" src_isptr="1" src_bitwidth="96" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="Register" hw_name="signal_r" hw_bitwidth="40" hw_size_or_depth="1" hw_kernel_support="false">
+      <arg id="0" access_type="r" src_name="signal" src_type="double*" src_isptr="1" src_bitwidth="64" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="Register" hw_name="signal_r" hw_bitwidth="64" hw_size_or_depth="1" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_none" register_option="0"/>
         </hw>
       </arg>
-      <arg id="1" access_type="w" src_name="result" src_type="pFFTResult&amp;" src_isptr="1" src_bitwidth="12288" src_size_or_depth="1">
-        <hw hw_usage="data" hw_interface="BRAM" hw_name="result_real" hw_bitwidth="40" hw_size_or_depth="64" hw_kernel_support="false">
+      <arg id="1" access_type="w" src_name="result" src_type="dFFTResult&amp;" src_isptr="1" src_bitwidth="8192" src_size_or_depth="1">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="result_real" hw_bitwidth="64" hw_size_or_depth="64" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
         </hw>
-        <hw hw_usage="data" hw_interface="BRAM" hw_name="result_imag" hw_bitwidth="40" hw_size_or_depth="64" hw_kernel_support="false">
+        <hw hw_usage="data" hw_interface="BRAM" hw_name="result_imag" hw_bitwidth="64" hw_size_or_depth="64" hw_kernel_support="false">
           <constraint constraint_type="pragma interface" mode="ap_memory" register_option="0"/>
         </hw>
       </arg>

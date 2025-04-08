@@ -161,7 +161,7 @@ void calculateCosArrays(
     }
 }
 int main() {
-    std::cout << "ONE: " << posit2double(ONE) << std::endl;
+ /*   std::cout << "ONE: " << posit2double(ONE) << std::endl;
     std::cout << "POSIT_PI_OVER2: " << posit2double(POSIT_PI_OVER2) << std::endl;
     std::cout << "PI: " << posit2double(POSIT_PI) << std::endl;
     std::cout << "2PI: " << posit2double(POSIT_2PI) << std::endl;
@@ -190,7 +190,12 @@ int main() {
     std::cout<<posit2double(positMod(double2posit(18),POSIT_2PI))<<std::endl;
     std::cout<<posit2double(positMod(double2posit(-4),POSIT_2PI))<<std::endl;
     std::cout<<posit2double(positMod(double2posit(5),POSIT_2PI))<<std::endl;
-    std::cout<<posit2double(positMod(double2posit(8),POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(double2posit(8),POSIT_2PI))<<std::endl;*/
+/*
+    for(int i=0;i<IN_SIZE;i++){
+        std::cout<<posit2double(calculateKFactor(i))<<std::endl;
+    }*/
+    
     std::string appr_suffix = (APPR_TAILOR == 1) ? "_APP" : "_NAPP";
 
     // Construct the base path

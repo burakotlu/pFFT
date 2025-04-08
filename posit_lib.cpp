@@ -30,7 +30,7 @@ bool isGreater_posit(ps_t x, ps_t y) {
         return !absXGreaterEqual; // Both negative: smaller abs = greater
 }
 ps_t positMod(ps_t x, ps_t y){
-    ps_t quotient,floor_val,c_x, inter,res;
+    ps_t quotient,c_x, inter,res;
     sf_t sf_fVal=0;
     mantissa_t m=0;
     bool small;
@@ -125,6 +125,17 @@ int LOD_DIV(dv_t in){
         else flag=true;
     }
     return FRAC_LEN-1-count;
+}
+int LOD_FFT(mantissa_t in){
+    bool flag=0;
+    int count =0;
+    for(int i=in.width-1;i>=0;i-- ){
+        if(in[i] ==0){
+            if(flag==false) count+=1;
+        }
+        else flag=true;
+    }
+    return count;
 }
 ps_t  decode(posit_t posit){
 
@@ -1335,10 +1346,41 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
         angle += deltaTheta;
     }
 }
+ps_t calculateKFactor(int k){
+	ps_t result;
+	log_sf_t mant;
+	sf_t sf=0;
+	regime_t regime=0;
+	exponent_t exponent=0;
+	mantissa_t mantissa=0;
+	int shiftAmount=0;
+	if (k==0) return result;
+    result.isZero = false;
+	mant = k;
 
+	mantissa.range(FRAC_LEN-2,FRAC_LEN-1-LOG_IN_SIZE_SF) =mant;
+	shiftAmount = LOD_FFT(mantissa);
+	sf = -shiftAmount;
+	regime = (sf_t)sf >> ES;
+	exponent = sf & ((1 << ES) - 1);
+    //std::cout<<"mantissa: "<<mantissa<<std::endl;
+    mantissa = mantissa<<shiftAmount;
+	result.regime = regime;
+	result.exponent =exponent;
+	result.mantissa=mantissa;
+ /*   std::cout<<"k: "<<k<<std::endl;
+	std::cout<<"mant: "<<mant<<std::endl;
+    std::cout<<"mantissa: "<<mantissa<<std::endl;
+    std::cout<<"shiftAmount: "<<shiftAmount<<std::endl;
+    std::cout<<"regime: "<<regime<<std::endl;
+    std::cout<<"exponent: "<<exponent<<std::endl;*/
+	return result;
+}
 void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
     ps_t angle, realPart, imagPart;
-    ps_t deltaTheta;
+    ps_t deltaTheta, k_factor;
+	k_factor = calculateKFactor(k);
+	deltaTheta = positMul(POSIT_M_2PI,k_factor);
     //ps_t deltaTheta = double2posit(-2.0 * M_PI * k / sampleCount);
 
     // Loop over the samples and compute the FFT accumulation
