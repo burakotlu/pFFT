@@ -2,75 +2,312 @@
     <item name="Total Instructions per Compilation Phase">
         <table>
             <keys size="4">Phase, Step, Instructions, Description</keys>
-            <column name="Compile/Link">, 13954, After all functions are compiled and linked into a single design</column>
+            <column name="Compile/Link">, 155738 *, After all functions are compiled and linked into a single design</column>
             <column name="">, , </column>
             <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
-            <column name="">(1) unroll,    854, user unroll pragmas are applied</column>
-            <column name="">(2) simplification,    624, simplification of applied user unroll pragmas</column>
-            <column name="">(3) inline,    589, user inline pragmas are applied</column>
-            <column name="">(4) simplification,    221, simplification of applied user inline pragmas</column>
+            <column name="">(1) unroll,  14480, user unroll pragmas are applied</column>
+            <column name="">(2) simplification,   9127, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline,   9233, user inline pragmas are applied</column>
+            <column name="">(4) simplification,   6937, simplification of applied user inline pragmas</column>
             <column name="">, , </column>
             <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(1) array partition,    225, user array partition pragmas are applied</column>
-            <column name="">(2) simplification,    225, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
-            <column name="">(3) aggregate/disaggregate ,    225, user struct aggregate/disaggregate pragmas are applied</column>
-            <column name="">(4) array reshape,    225, apply array reshape pragmas</column>
-            <column name="">(5) access patterns,    228, array access pattern optmizations</column>
+            <column name="">(1) array partition,   6248, user array partition pragmas are applied</column>
+            <column name="">(2) simplification,   6248, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate ,   6335, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape,   6295, apply array reshape pragmas</column>
+            <column name="">(5) access patterns,   6326, array access pattern optmizations</column>
             <column name="">, , </column>
             <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
-            <column name="">(1) loop simplification,    228, loop and instruction simplification</column>
-            <column name="">(2) parallelization,    225, loops are unrolled or pipelined to meet performance targets</column>
-            <column name="">(3) array partition,    225, arrays are partitioned to meet performance targets</column>
-            <column name="">(4) simplification,    225, simplification of design after performance transformations</column>
+            <column name="">(1) loop simplification,   5718, loop and instruction simplification</column>
+            <column name="">(2) parallelization,  10484, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition,  10484, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification,  10484, simplification of design after performance transformations</column>
             <column name="">, , </column>
             <column name="HW Transforms">, , After hardware transfomations</column>
-            <column name="">(1) lowering,    233, initial conversion to HW specific instructions</column>
-            <column name="">(2) optimizations,    243, high level synthesis optimizations</column>
+            <column name="">(1) lowering,  10466, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations,  10061, high level synthesis optimizations</column>
         </table>
     </item>
     <item name="Instructions per Function for each Compilation Phase">
         <hiertable>
             <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
             <rows>
-                <row id="0" col0="dFFT" col1="posit_lib.cpp:1288" col2="13954" col3="221" col4="228" col5="225" col6="243">
-                    <row id="12" col0="dAccumulateFC" col1="posit_lib.cpp:1205" col2="13914" col3="" col4="" col5="" col6="">
-                        <row id="4" col0="dEuler" col1="posit_lib.cpp:1181" col2="13869" col3="" col4="" col5="" col6="">
-                            <row id="3" col0="dTailorCos" col1="posit_lib.cpp:830" col2="6939" col3="" col4="" col5="" col6="">
-                                <row id="11" col0="dReduceAngle" col1="posit_lib.cpp:806" col2="6922" col3="" col4="" col5="" col6="">
-                                    <row id="8" col0="fmod" col1="fmoddouble.cpp:6" col2="6895" col3="" col4="" col5="" col6="">
-                                        <row id="7" col0="generic_fmod&lt;double&gt;" col1="hls_fmod_rem_quo.h:225" col2="6893" col3="" col4="" col5="" col6="">
-                                            <row id="6" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="  638 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                            <row id="1" col0="fp_struct" col1="x_hls_utils.h:454" col2="4" col3="" col4="" col5="" col6=""/>
-                                            <row id="5" col0="to_ieee" col1="x_hls_utils.h:509" col2="1818" col2_disp="1,818 (6 calls)" col3="" col4="" col5="" col6="">
-                                                <row id="13" col0="to_double" col1="x_hls_utils.h:494" col2="1806" col2_disp="1,806 (6 calls)" col3="" col4="" col5="" col6="">
-                                                    <row id="2" col0="data" col1="x_hls_utils.h:475" col2="1674" col2_disp="1,674 (6 calls)" col3="" col4="" col5="" col6=""/>
+                <row id="0" col0="pFFT" col1="posit_lib.cpp:1363" col2="155738" col2_note="*" col3="6937" col4="6326" col5="10484" col6="10061">
+                    <row id="100" col0="pAccumulateFC" col1="posit_lib.cpp:1339" col2="155697" col3="6833" col4="6186" col5="10368" col6="9971">
+                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                        <row id="14" col0="double2posit" col1="posit_lib.cpp:344" col2="59019" col3="1286" col4="1074" col5="1026" col6="">
+                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                            <row id="71" col0="log2" col1="logdouble.cpp:12" col2="17441" col3="" col4="" col5="" col6="">
+                                <row id="62" col0="log2" col1="hls_log_double.cpp:12" col2="17439" col3="" col4="" col5="" col6="">
+                                    <row id="61" col0="log_generic&lt;double&gt;" col1="hls_log_.h:182" col2="17436" col3="" col4="" col5="" col6="">
+                                        <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="319" col3="" col4="" col5="" col6=""/>
+                                        <row id="23" col0="fp_struct" col1="x_hls_utils.h:454" col2="4" col3="" col4="" col5="" col6=""/>
+                                        <row id="69" col0="expv" col1="x_hls_utils.h:485" col2="109" col3="" col4="" col5="" col6=""/>
+                                        <row id="25" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="390" col3="" col4="" col5="" col6="">
+                                            <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="319" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="76" col0="generic_isinf&lt;double&gt;" col1="hls_isinf.h:16" col2="389" col3="" col4="" col5="" col6="">
+                                            <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="319" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="1515" col2_disp=" 1,515 (5 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="1505" col2_disp=" 1,505 (5 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="33" col0="data" col1="x_hls_utils.h:475" col2="1395" col2_disp=" 1,395 (5 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                        <row id="59" col0="range_reduction&lt;57&gt;" col1="hls_log_.h:153" col2="10206" col3="" col4="" col5="" col6="">
+                                            <row id="66" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 4, 4, 57, 59&gt;" col1="hls_log_.h:28" col2="1263" col3="" col4="" col5="" col6=""/>
+                                            <row id="67" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 7, 6, 59, 69&gt;" col1="hls_log_.h:28" col2="1232" col3="" col4="" col5="" col6=""/>
+                                            <row id="86" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 12, 6, 69, 73&gt;" col1="hls_log_.h:28" col2="1234" col3="" col4="" col5="" col6=""/>
+                                            <row id="68" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 17, 6, 73, 68&gt;" col1="hls_log_.h:28" col2="1237" col3="" col4="" col5="" col6=""/>
+                                            <row id="81" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 22, 6, 68, 63&gt;" col1="hls_log_.h:28" col2="1238" col3="" col4="" col5="" col6=""/>
+                                            <row id="88" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 27, 6, 63, 58&gt;" col1="hls_log_.h:28" col2="1241" col3="" col4="" col5="" col6=""/>
+                                            <row id="77" col0="range_reduce&lt;ap_fixed&lt;102, 12, AP_TRN, AP_WRAP, 0&gt;, 32, 6, 58, 53&gt;" col1="hls_log_.h:28" col2="1241" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                </row>
+                            </row>
+                            <row id="52" col0="stable_floor" col1="posit_lib.cpp:338" col2="8905" col3="" col4="" col5="" col6="">
+                                <row id="54" col0="round" col1="rounddouble.cpp:6" col2="5252" col2_disp=" 5,252 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="12" col0="generic_round&lt;double&gt;" col1="hls_round.h:159" col2="5248" col2_disp=" 5,248 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="58" col0="init_mask_table&lt;double&gt;" col1="hls_round.h:20" col2="38" col2_disp="    38 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="11" col0="init_one_half_table&lt;double&gt;" col1="hls_round.h:32" col2="38" col2_disp="    38 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="34" col0="generic_copysign&lt;double&gt;" col1="hls_copysign.h:10" col2="1918" col2_disp=" 1,918 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="1276" col2_disp=" 1,276 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                            <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="606" col2_disp="   606 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="602" col2_disp="   602 (2 calls)" col3="" col4="" col5="" col6="">
+                                                    <row id="33" col0="data" col1="x_hls_utils.h:475" col2="558" col2_disp="   558 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                </row>
+                                            </row>
+                                        </row>
+                                        <row id="33" col0="data" col1="x_hls_utils.h:475" col2="558" col2_disp="   558 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="29" col0="fp_struct" col1="x_hls_utils.h:464" col2="578" col2_disp="   578 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="606" col2_disp="   606 (2 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="602" col2_disp="   602 (2 calls)" col3="" col4="" col5="" col6="">
+                                                <row id="33" col0="data" col1="x_hls_utils.h:475" col2="558" col2_disp="   558 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                    </row>
+                                </row>
+                                <row id="56" col0="abs" col1="std_abs.h:70" col2="965" col3="" col4="" col5="" col6="">
+                                    <row id="10" col0="fabs" col1="fabsdouble.cpp:7" col2="963" col3="" col4="" col5="" col6="">
+                                        <row id="70" col0="generic_fabs&lt;double&gt;" col1="hls_fabs.h:12" col2="961" col3="" col4="" col5="" col6="">
+                                            <row id="34" col0="generic_copysign&lt;double&gt;" col1="hls_copysign.h:10" col2="959" col3="" col4="" col5="" col6="">
+                                                <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                                <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="303" col3="" col4="" col5="" col6="">
+                                                    <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="301" col3="" col4="" col5="" col6="">
+                                                        <row id="33" col0="data" col1="x_hls_utils.h:475" col2="279" col3="" col4="" col5="" col6=""/>
+                                                    </row>
                                                 </row>
                                             </row>
                                         </row>
                                     </row>
                                 </row>
-                            </row>
-                            <row id="10" col0="dTailorSin" col1="posit_lib.cpp:1031" col2="6925" col3="" col4="" col5="" col6="">
-                                <row id="9" col0="dNAngle" col1="posit_lib.cpp:1014" col2="6919" col3="" col4="" col5="" col6="">
-                                    <row id="8" col0="fmod" col1="fmoddouble.cpp:6" col2="6895" col3="" col4="" col5="" col6="">
-                                        <row id="7" col0="generic_fmod&lt;double&gt;" col1="hls_fmod_rem_quo.h:225" col2="6893" col3="" col4="" col5="" col6="">
-                                            <row id="6" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="  638 (2 calls)" col3="" col4="" col5="" col6=""/>
-                                            <row id="1" col0="fp_struct" col1="x_hls_utils.h:454" col2="4" col3="" col4="" col5="" col6=""/>
-                                            <row id="5" col0="to_ieee" col1="x_hls_utils.h:509" col2="1818" col2_disp="1,818 (6 calls)" col3="" col4="" col5="" col6="">
-                                                <row id="13" col0="to_double" col1="x_hls_utils.h:494" col2="1806" col2_disp="1,806 (6 calls)" col3="" col4="" col5="" col6="">
-                                                    <row id="2" col0="data" col1="x_hls_utils.h:475" col2="1674" col2_disp="1,674 (6 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="55" col0="floor" col1="floordouble.cpp:6" col2="2677" col3="" col4="" col5="" col6="">
+                                    <row id="57" col0="generic_floor&lt;double&gt;" col1="hls_floor.h:13" col2="2675" col3="" col4="" col5="" col6="">
+                                        <row id="58" col0="init_mask_table&lt;double&gt;" col1="hls_round.h:20" col2="19" col3="" col4="" col5="" col6=""/>
+                                        <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="319" col3="" col4="" col5="" col6=""/>
+                                        <row id="30" col0="__signbit" col1="x_hls_utils.h:512" col2="18" col2_disp="    18 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="34" col0="generic_copysign&lt;double&gt;" col1="hls_copysign.h:10" col2="959" col3="" col4="" col5="" col6="">
+                                            <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                            <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="303" col3="" col4="" col5="" col6="">
+                                                <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="301" col3="" col4="" col5="" col6="">
+                                                    <row id="33" col0="data" col1="x_hls_utils.h:475" col2="279" col3="" col4="" col5="" col6=""/>
                                                 </row>
                                             </row>
                                         </row>
+                                        <row id="33" col0="data" col1="x_hls_utils.h:475" col2="279" col3="" col4="" col5="" col6=""/>
+                                        <row id="29" col0="fp_struct" col1="x_hls_utils.h:464" col2="289" col3="" col4="" col5="" col6=""/>
+                                        <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="303" col3="" col4="" col5="" col6="">
+                                            <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="301" col3="" col4="" col5="" col6="">
+                                                <row id="33" col0="data" col1="x_hls_utils.h:475" col2="279" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
                                     </row>
+                                </row>
+                            </row>
+                            <row id="9" col0="pow" col1="powdouble.cpp:6" col2="26829" col3="" col4="" col5="" col6="">
+                                <row id="97" col0="pow_generic&lt;double&gt;" col1="hls_pow.h:291" col2="26827" col3="" col4="" col5="" col6="">
+                                    <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="23" col0="fp_struct" col1="x_hls_utils.h:454" col2="4" col3="" col4="" col5="" col6=""/>
+                                    <row id="69" col0="expv" col1="x_hls_utils.h:485" col2="218" col2_disp="   218 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="76" col0="generic_isinf&lt;double&gt;" col1="hls_isinf.h:16" col2="778" col2_disp="   778 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="25" col0="generic_isnan&lt;double&gt;" col1="hls_isnan.h:16" col2="780" col2_disp="   780 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="31" col0="fp_struct" col1="x_hls_utils.h:456" col2="638" col2_disp="   638 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="2727" col2_disp=" 2,727 (9 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="35" col0="to_double" col1="x_hls_utils.h:494" col2="2709" col2_disp=" 2,709 (9 calls)" col3="" col4="" col5="" col6="">
+                                            <row id="33" col0="data" col1="x_hls_utils.h:475" col2="2511" col2_disp=" 2,511 (9 calls)" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                    <row id="91" col0="log_range_reduction&lt;71&gt;" col1="hls_pow.h:186" col2="10185" col3="" col4="" col5="" col6="">
+                                        <row id="48" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 4, 4, 71, 73&gt;" col1="hls_pow.h:30" col2="1256" col3="" col4="" col5="" col6=""/>
+                                        <row id="47" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 7, 6, 73, 83&gt;" col1="hls_pow.h:30" col2="1228" col3="" col4="" col5="" col6=""/>
+                                        <row id="37" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 12, 6, 83, 92&gt;" col1="hls_pow.h:30" col2="1233" col3="" col4="" col5="" col6=""/>
+                                        <row id="38" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 17, 6, 92, 87&gt;" col1="hls_pow.h:30" col2="1237" col3="" col4="" col5="" col6=""/>
+                                        <row id="39" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 22, 6, 87, 82&gt;" col1="hls_pow.h:30" col2="1237" col3="" col4="" col5="" col6=""/>
+                                        <row id="28" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 27, 6, 82, 77&gt;" col1="hls_pow.h:30" col2="1237" col3="" col4="" col5="" col6=""/>
+                                        <row id="36" col0="log_range_reduce&lt;ap_fixed&lt;121, 12, AP_TRN, AP_WRAP, 0&gt;, 32, 6, 77, 72&gt;" col1="hls_pow.h:30" col2="1237" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="73" col0="exp_Z1P_m_1" col1="hls_pow.h:224" col2="2725" col3="" col4="" col5="" col6=""/>
+                                </row>
+                            </row>
+                            <row id="61" col0="log_generic&lt;double&gt;" col1="hls_log_.h:182" col2="" col3="535" col4="530" col5="530" col6="">
+                                <row id="59" col0="range_reduction&lt;57&gt;" col1="hls_log_.h:153" col2="" col3="224" col4="224" col5="224" col6=""/>
+                            </row>
+                            <row id="12" col0="generic_round&lt;double&gt;" col1="hls_round.h:159" col2="" col3="38" col4="38" col5="38" col6=""/>
+                            <row id="57" col0="generic_floor&lt;double&gt;" col1="hls_floor.h:13" col2="" col3="45" col4="45" col5="45" col6=""/>
+                            <row id="97" col0="pow_generic&lt;double&gt;" col1="hls_pow.h:291" col2="" col3="548" col4="341" col5="293" col6="">
+                                <row id="51" col0="to_ieee" col1="x_hls_utils.h:509" col2="" col3="72" col3_disp="  72 (8 calls)" col4="72" col4_disp="  72 (8 calls)" col5="40" col5_disp="   40 (8 calls)" col6=""/>
+                                <row id="91" col0="log_range_reduction&lt;71&gt;" col1="hls_pow.h:186" col2="" col3="224" col4="17" col5="17" col6=""/>
+                            </row>
+                        </row>
+                        <row id="85" col0="pEuler" col1="posit_lib.cpp:1270" col2="82938" col3="" col4="" col5="" col6="">
+                            <row id="65" col0="positCos" col1="posit_lib.cpp:1042" col2="40464" col3="" col4="" col5="" col6="">
+                                <row id="64" col0="POSIT" col1="posit.hpp:74" col2="576" col2_disp="   576 (9 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="22" col0="pReduceAngle" col1="posit_lib.cpp:995" col2="21207" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                    <row id="26" col0="positMod" col1="posit_lib.cpp:32" col2="8568" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="320" col2_disp="   320 (5 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="216" col3="" col4="" col5="" col6=""/>
+                                        <row id="53" col0="positDiv" col1="posit_lib.cpp:642" col2="2501" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="2411" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="2962" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                            <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                                <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                                <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                    </row>
+                                    <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="864" col2_disp="   864 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="8631" col2_disp=" 8,631 (3 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="162" col2_disp="   162 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="2962" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                            <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                </row>
+                                <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="7233" col2_disp=" 7,233 (3 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="21" col0="positDiv2p" col1="posit_lib.cpp:625" col2="2361" col2_disp=" 2,361 (3 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="5924" col2_disp=" 5,924 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="128" col2_disp="   128 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="5754" col2_disp=" 5,754 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="128" col2_disp="   128 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="108" col2_disp="   108 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                                <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                    <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="50" col0="posit_negate" col1="posit_lib.cpp:249" col2="95" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                </row>
+                            </row>
+                            <row id="87" col0="positSin" col1="posit_lib.cpp:1232" col2="42451" col3="" col4="" col5="" col6="">
+                                <row id="64" col0="POSIT" col1="posit.hpp:74" col2="320" col2_disp="   320 (5 calls)" col3="" col4="" col5="" col6=""/>
+                                <row id="24" col0="pNAngle" col1="posit_lib.cpp:1192" col2="21204" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                    <row id="26" col0="positMod" col1="posit_lib.cpp:32" col2="8568" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="320" col2_disp="   320 (5 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="216" col3="" col4="" col5="" col6=""/>
+                                        <row id="53" col0="positDiv" col1="posit_lib.cpp:642" col2="2501" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="2411" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                        <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="2962" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                            <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                                <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                                <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
+                                            </row>
+                                        </row>
+                                    </row>
+                                    <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="864" col2_disp="   864 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="8631" col2_disp=" 8,631 (3 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="162" col2_disp="   162 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                    <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="2962" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                        <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                            <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
+                                        </row>
+                                    </row>
+                                </row>
+                                <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="9644" col2_disp=" 9,644 (4 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="256" col2_disp="   256 (4 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="21" col0="positDiv2p" col1="posit_lib.cpp:625" col2="2361" col2_disp=" 2,361 (3 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                                </row>
+                                <row id="1" col0="positSub" col1="posit_lib.cpp:848" col2="5924" col2_disp=" 5,924 (2 calls)" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="128" col2_disp="   128 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="5754" col2_disp=" 5,754 (2 calls)" col3="" col4="" col5="" col6="">
+                                        <row id="64" col0="POSIT" col1="posit.hpp:74" col2="128" col2_disp="   128 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                        <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="108" col2_disp="   108 (2 calls)" col3="" col4="" col5="" col6=""/>
+                                    </row>
+                                </row>
+                                <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="2877" col3="" col4="" col5="" col6="">
+                                    <row id="64" col0="POSIT" col1="posit.hpp:74" col2="64" col3="" col4="" col5="" col6=""/>
+                                    <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="54" col3="" col4="" col5="" col6=""/>
                                 </row>
                             </row>
                         </row>
+                        <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="4822" col2_disp=" 4,822 (2 calls)" col3="" col4="" col5="" col6="">
+                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="128" col2_disp="   128 (2 calls)" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="8631" col2_disp=" 8,631 (3 calls)" col3="480" col3_disp=" 480 (3 calls)" col4="426" col4_disp=" 426 (3 calls)" col5="1170" col5_disp="1,170 (3 calls)" col6="1170" col6_disp="1,170 (3 calls)">
+                            <row id="64" col0="POSIT" col1="posit.hpp:74" col2="192" col2_disp="   192 (3 calls)" col3="" col4="" col5="" col6=""/>
+                            <row id="84" col0="LOD_ADD" col1="posit_lib.cpp:96" col2="162" col2_disp="   162 (3 calls)" col3="" col4="" col5="" col6=""/>
+                        </row>
+                        <row id="65" col0="positCos" col1="posit_lib.cpp:1042" col2="" col3="2355" col4="2164" col5="3935" col6="3758">
+                            <row id="22" col0="pReduceAngle" col1="posit_lib.cpp:995" col2="" col3="1382" col4="1263" col5="2350" col6="">
+                                <row id="26" col0="positMod" col1="posit_lib.cpp:32" col2="" col3="342" col4="317" col5="501" col6="">
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="160" col4="142" col5="390" col6=""/>
+                                </row>
+                                <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="" col3="112" col3_disp=" 112 (4 calls)" col4="112" col4_disp=" 112 (4 calls)" col5="80" col5_disp="   80 (4 calls)" col6=""/>
+                                <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="640" col3_disp=" 640 (4 calls)" col4="568" col4_disp=" 568 (4 calls)" col5="1560" col5_disp="1,560 (4 calls)" col6=""/>
+                            </row>
+                            <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="" col3="177" col3_disp=" 177 (3 calls)" col4="177" col4_disp=" 177 (3 calls)" col5="177" col5_disp="  177 (3 calls)" col6="177" col6_disp="  177 (3 calls)"/>
+                            <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="480" col3_disp=" 480 (3 calls)" col4="426" col4_disp=" 426 (3 calls)" col5="1170" col5_disp="1,170 (3 calls)" col6="1170" col6_disp="1,170 (3 calls)"/>
+                        </row>
+                        <row id="87" col0="positSin" col1="posit_lib.cpp:1232" col2="" col3="2353" col4="2161" col5="3928" col6="3805">
+                            <row id="24" col0="pNAngle" col1="posit_lib.cpp:1192" col2="" col3="1379" col4="1260" col5="2347" col6="">
+                                <row id="26" col0="positMod" col1="posit_lib.cpp:32" col2="" col3="342" col4="317" col5="501" col6="">
+                                    <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="160" col4="142" col5="390" col6=""/>
+                                </row>
+                                <row id="72" col0="isGreater_posit" col1="posit_lib.cpp:3" col2="" col3="112" col3_disp=" 112 (4 calls)" col4="112" col4_disp=" 112 (4 calls)" col5="80" col5_disp="   80 (4 calls)" col6=""/>
+                                <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="640" col3_disp=" 640 (4 calls)" col4="568" col4_disp=" 568 (4 calls)" col5="1560" col5_disp="1,560 (4 calls)" col6=""/>
+                            </row>
+                            <row id="74" col0="positMul" col1="posit_lib.cpp:731" col2="" col3="236" col3_disp=" 236 (4 calls)" col4="236" col4_disp=" 236 (4 calls)" col5="236" col5_disp="  236 (4 calls)" col6="236" col6_disp="  236 (4 calls)"/>
+                            <row id="27" col0="positAdd" col1="posit_lib.cpp:523" col2="" col3="480" col3_disp=" 480 (3 calls)" col4="426" col4_disp=" 426 (3 calls)" col5="1170" col5_disp="1,170 (3 calls)" col6="1170" col6_disp="1,170 (3 calls)"/>
+                        </row>
                     </row>
-                    <row id="7" col0="generic_fmod&lt;double&gt;" col1="hls_fmod_rem_quo.h:225" col2="" col3="146" col4="147" col5="146" col6="149"/>
                 </row>
             </rows>
-            <notes/>
+            <notes>
+                <note name="*" desc="Exceeded design size warning message threshold"/>
+            </notes>
         </hiertable>
     </item>
     <item name="Design Size Message Settings">

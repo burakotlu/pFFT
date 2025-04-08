@@ -162,6 +162,35 @@ void calculateCosArrays(
 }
 int main() {
     std::cout << "ONE: " << posit2double(ONE) << std::endl;
+    std::cout << "POSIT_PI_OVER2: " << posit2double(POSIT_PI_OVER2) << std::endl;
+    std::cout << "PI: " << posit2double(POSIT_PI) << std::endl;
+    std::cout << "2PI: " << posit2double(POSIT_2PI) << std::endl;
+    std::cout << "POSIT_M_PI_OVER2: " << posit2double(POSIT_M_PI_OVER2) << std::endl;
+    std::cout << "POSIT_M_PI: " << posit2double(POSIT_M_PI) << std::endl;
+    std::cout << "POSIT_M_2PI: " << posit2double(POSIT_M_2PI) << std::endl;
+
+    ps_t x,y;
+    x= double2posit(5);
+	y= double2posit(2);
+	std::cout<<posit2double(positMod(x,y))<<std::endl;
+	x= double2posit(3);
+	y= double2posit(5);
+	std::cout<<posit2double(positMod(x,y))<<std::endl;
+	x= double2posit(-3);
+	y= double2posit(5);
+	std::cout<<posit2double(positMod(x,y))<<std::endl;
+	x= double2posit(-18);
+	y= double2posit(5);
+	std::cout<<posit2double(positMod(x,y))<<std::endl;
+	x= double2posit(-18.25);
+	y= double2posit(5);
+	std::cout<<posit2double(positMod(x,y))<<std::endl;
+    std::cout<<posit2double(positMod(POSIT_PI,POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(POSIT_M_2PI,POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(double2posit(18),POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(double2posit(-4),POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(double2posit(5),POSIT_2PI))<<std::endl;
+    std::cout<<posit2double(positMod(double2posit(8),POSIT_2PI))<<std::endl;
     std::string appr_suffix = (APPR_TAILOR == 1) ? "_APP" : "_NAPP";
 
     // Construct the base path

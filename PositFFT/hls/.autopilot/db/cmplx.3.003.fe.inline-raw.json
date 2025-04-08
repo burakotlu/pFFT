@@ -1,34 +1,273 @@
 {
   "0": {
-    "basicblocks": 18,
-    "calls": "1 1",
+    "basicblocks": 3,
+    "calls": "12",
     "file": "posit_lib.cpp",
-    "fileloc": 1288,
-    "instructions": 115,
+    "fileloc": 1363,
+    "instructions": 104,
     "loads": {
-      "L": 5,
-      "T": 1
+      "L": 12
     },
-    "name": "dFFT",
+    "name": "pFFT",
     "stores": {
-      "L": 11,
-      "T": 2
+      "L": 12,
+      "T": 12
     },
-    "total_instructions": 589
+    "total_instructions": 9233
   },
   "1": {
-    "basicblocks": 26,
-    "calls": "",
-    "file": "hls_fmod_rem_quo.h",
-    "fileloc": 225,
-    "instructions": 237,
+    "basicblocks": 10,
+    "calls": "6 8 10 8 10 8 10 8 10",
+    "file": "posit_lib.cpp",
+    "fileloc": 995,
+    "instructions": 348,
     "loads": {
+      "L": 36
+    },
+    "name": "pReduceAngle",
+    "stores": {
+      "L": 81
+    },
+    "total_instructions": 1773
+  },
+  "10": {
+    "basicblocks": 23,
+    "calls": "",
+    "file": "posit_lib.cpp",
+    "fileloc": 523,
+    "instructions": 170,
+    "loads": {
+      "L": 9
+    },
+    "name": "positAdd",
+    "stores": {
+      "L": 15
+    },
+    "total_instructions": 170
+  },
+  "11": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "hls_floor.h",
+    "fileloc": 13,
+    "instructions": 153,
+    "loads": {
+      "G": 1,
+      "L": 21
+    },
+    "name": "generic_floor<double>",
+    "stores": {
+      "L": 20
+    },
+    "total_instructions": 153
+  },
+  "12": {
+    "basicblocks": 13,
+    "calls": "7 15 9 10 10 10",
+    "file": "posit_lib.cpp",
+    "fileloc": 1339,
+    "instructions": 449,
+    "loads": {
+      "L": 72
+    },
+    "name": "pAccumulateFC",
+    "stores": {
+      "L": 70
+    },
+    "total_instructions": 9129
+  },
+  "13": {
+    "basicblocks": 22,
+    "calls": "3 3 3 3 2 3 3 3 3",
+    "file": "hls_pow.h",
+    "fileloc": 291,
+    "instructions": 407,
+    "loads": {
+      "G": 4,
+      "L": 15
+    },
+    "name": "pow_generic<double>",
+    "stores": {
+      "L": 30
+    },
+    "total_instructions": 792
+  },
+  "14": {
+    "basicblocks": 5,
+    "calls": "",
+    "file": "hls_round.h",
+    "fileloc": 159,
+    "instructions": 139,
+    "loads": {
+      "G": 2,
+      "L": 17
+    },
+    "name": "generic_round<double>",
+    "stores": {
+      "L": 19
+    },
+    "total_instructions": 139
+  },
+  "15": {
+    "basicblocks": 16,
+    "calls": "1 17 17 17 10 10 10",
+    "file": "posit_lib.cpp",
+    "fileloc": 1042,
+    "instructions": 712,
+    "loads": {
+      "L": 73
+    },
+    "name": "positCos",
+    "stores": {
+      "L": 207
+    },
+    "total_instructions": 3172
+  },
+  "16": {
+    "basicblocks": 111,
+    "calls": "5",
+    "file": "hls_log_.h",
+    "fileloc": 182,
+    "instructions": 462,
+    "loads": {
+      "G": 2,
+      "L": 30
+    },
+    "name": "log_generic<double>",
+    "stores": {
       "L": 27
     },
-    "name": "generic_fmod<double>",
+    "total_instructions": 719
+  },
+  "17": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "posit_lib.cpp",
+    "fileloc": 731,
+    "instructions": 59,
+    "name": "positMul",
     "stores": {
-      "L": 23
+      "L": 11
     },
-    "total_instructions": 237
+    "total_instructions": 59
+  },
+  "2": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "hls_pow.h",
+    "fileloc": 186,
+    "instructions": 257,
+    "loads": {
+      "G": 7,
+      "L": 14
+    },
+    "name": "log_range_reduction<71>",
+    "stores": {
+      "L": 28
+    },
+    "total_instructions": 257
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 509,
+    "instructions": 16,
+    "loads": {
+      "L": 4
+    },
+    "name": "to_ieee",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 16
+  },
+  "4": {
+    "basicblocks": 10,
+    "calls": "6 8 10 8 10 8 10 8 10",
+    "file": "posit_lib.cpp",
+    "fileloc": 1192,
+    "instructions": 345,
+    "loads": {
+      "L": 36
+    },
+    "name": "pNAngle",
+    "stores": {
+      "L": 78
+    },
+    "total_instructions": 1770
+  },
+  "5": {
+    "basicblocks": 15,
+    "calls": "",
+    "file": "hls_log_.h",
+    "fileloc": 153,
+    "instructions": 257,
+    "loads": {
+      "G": 7,
+      "L": 14
+    },
+    "name": "range_reduction<57>",
+    "stores": {
+      "L": 28
+    },
+    "total_instructions": 257
+  },
+  "6": {
+    "basicblocks": 16,
+    "calls": "10",
+    "file": "posit_lib.cpp",
+    "fileloc": 32,
+    "instructions": 463,
+    "loads": {
+      "L": 42
+    },
+    "name": "positMod",
+    "stores": {
+      "L": 112
+    },
+    "total_instructions": 633
+  },
+  "7": {
+    "basicblocks": 13,
+    "calls": "16 14 11 13",
+    "file": "posit_lib.cpp",
+    "fileloc": 344,
+    "instructions": 227,
+    "loads": {
+      "L": 13
+    },
+    "name": "double2posit",
+    "stores": {
+      "L": 27
+    },
+    "total_instructions": 2030
+  },
+  "8": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "posit_lib.cpp",
+    "fileloc": 3,
+    "instructions": 28,
+    "loads": {
+      "L": 8
+    },
+    "name": "isGreater_posit",
+    "total_instructions": 28
+  },
+  "9": {
+    "basicblocks": 10,
+    "calls": "4 17 17 17 17 10 10 10",
+    "file": "posit_lib.cpp",
+    "fileloc": 1232,
+    "instructions": 452,
+    "loads": {
+      "L": 72
+    },
+    "name": "positSin",
+    "stores": {
+      "L": 117
+    },
+    "total_instructions": 2968
   }
 }

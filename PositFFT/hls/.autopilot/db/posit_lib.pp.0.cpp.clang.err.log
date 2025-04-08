@@ -657,19 +657,19 @@ C:/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/hls_hypot_apfixed.h:170:9
 #pragma HLS unroll
         ^
 In file included from posit_lib.cpp:1:
-./posit.hpp:123:23: warning: unused parameter 'size' [-Wunused-parameter]
+./posit.hpp:132:23: warning: unused parameter 'size' [-Wunused-parameter]
     pFFTResult(size_t size = 64) {
                       ^
-./posit.hpp:135:23: warning: unused parameter 'size' [-Wunused-parameter]
+./posit.hpp:144:23: warning: unused parameter 'size' [-Wunused-parameter]
     dFFTResult(size_t size = 64) {
                       ^
-./posit.hpp:147:23: warning: unused parameter 'size' [-Wunused-parameter]
+./posit.hpp:156:23: warning: unused parameter 'size' [-Wunused-parameter]
     fFFTResult(size_t size = 64) {
                       ^
-posit_lib.cpp:683:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
- sf_t sf_x,sf_y,sf_r,max =((2-32)<<2);
+posit_lib.cpp:734:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+ sf_t sf_x,sf_y,sf_r,max =((2-32)<<0);
                            ~~~~~~^
-directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=name=dFFT_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLSDIRECTIVE TOP name=dFFT
+directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=pFFT_XLX_SEP_ PragmaOptions=name=pFFT_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLSDIRECTIVE TOP name=pFFT
         ^
 206 warnings generated.

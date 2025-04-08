@@ -11,9 +11,9 @@
 using namespace std;
 
 #define N 32
-#define ES 2
-#define TERMS 4
-#define IN_SIZE 128
+#define ES 0
+#define TERMS 2
+#define IN_SIZE 64
 #define APPR_TAILOR 1
 
 #define FRAC_LEN (N-(ES+2))
@@ -82,8 +82,17 @@ typedef POSIT ps_t;
 
 // Accumulation functions for IFFT computation
 // Defining some constant POSIT structs 
-const ps_t POSIT_PI = {0, false, false, 0, 0, 1411}; 
+#if (N==32) && (ES==0)
+const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 842887333};
+const ps_t POSIT_PI = {0, false, false, 1, 0, 842887333};
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
+const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 842887333};
+const ps_t POSIT_M_PI = {1, false, false, 1, 0, 842887333};
+const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333}; 
+#endif 
+
+
+
 const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};
 const ps_t ZERO = {0, true, false, 0, 0, 1<<(FRAC_LEN-1)}; 
 regime_t LOD(reg_t reg);
@@ -97,7 +106,7 @@ float posit2float(ps_t pos);
 double posit2double(ps_t pos);
 ps_t float2posit(float in);
 ps_t double2posit(double in);
-
+ps_t positMod(ps_t x, ps_t y);
 ps_t pReduceAngle(ps_t angle, bool &negate);
 ps_t positAdd(ps_t x,ps_t y);
 ps_t positMul(ps_t x,ps_t y);

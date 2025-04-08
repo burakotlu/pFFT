@@ -8,7 +8,7 @@ INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\Posit
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
 INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
 INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'syn.top=dFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'syn.top=pFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
 INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
@@ -18,131 +18,454 @@ INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/H
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
 INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.661 seconds; current allocated memory: 161.754 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 4.99 seconds; current allocated memory: 162.480 MB.
 INFO: [HLS 200-10] Analyzing design file 'posit_lib.cpp' ... 
-WARNING: [HLS 207-5168] shifting a negative signed value is undefined (posit_lib.cpp:683:34)
-WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:123:23)
-WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:135:23)
-WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:147:23)
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 32.794 seconds; current allocated memory: 168.664 MB.
+WARNING: [HLS 207-5168] shifting a negative signed value is undefined (posit_lib.cpp:734:34)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:132:23)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:144:23)
+WARNING: [HLS 207-5292] unused parameter 'size' (./posit.hpp:156:23)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 48.961 seconds; current allocated memory: 169.703 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
-INFO: [HLS 200-1995] There were 13,954 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 854 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 624 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 589 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 221 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 228 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 228 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 225 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 233 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 243 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 214-210] Disaggregating variable 'result' (posit_lib.cpp:1288:0)
+WARNING: [HLS 200-1995] There were 155,738 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 14,480 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,127 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 9,233 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,937 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,248 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,248 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,335 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,295 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,326 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,718 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 10,484 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 10,484 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 10,484 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 10,466 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 10,061 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-210] Disaggregating variable 'result' (posit_lib.cpp:1363:0)
 Resolution: For help on HLS 214-210 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=214-210.html
-INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.10.20.30.59)' into 'fp_struct<double>::to_double() const (.7.17.27.56)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:494:0)
-INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.7.17.27.56)' into 'fp_struct<double>::to_ieee() const' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:509:0)
-INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double fmdrmd::generic_fmod<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:226:0)
-INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double fmdrmd::generic_fmod<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:226:0)
-INFO: [HLS 214-178] Inlining function 'fmod' into 'dReduceAngle(double, bool&)' (posit_lib.cpp:806:0)
-INFO: [HLS 214-178] Inlining function 'dReduceAngle(double, bool&)' into 'dTailorCos(double)' (posit_lib.cpp:830:0)
-INFO: [HLS 214-178] Inlining function 'fmod' into 'dNAngle(double)' (posit_lib.cpp:1014:0)
-INFO: [HLS 214-178] Inlining function 'dNAngle(double)' into 'dTailorSin(double)' (posit_lib.cpp:1031:0)
-INFO: [HLS 214-178] Inlining function 'dTailorCos(double)' into 'dEuler(double, double*, double*)' (posit_lib.cpp:1181:0)
-INFO: [HLS 214-178] Inlining function 'dTailorSin(double)' into 'dEuler(double, double*, double*)' (posit_lib.cpp:1181:0)
-INFO: [HLS 214-178] Inlining function 'dEuler(double, double*, double*)' into 'dAccumulateFC(int, int, double const*, double&, double&)' (posit_lib.cpp:1205:0)
-INFO: [HLS 214-178] Inlining function 'dAccumulateFC(int, int, double const*, double&, double&)' into 'dFFT(double*, dFFTResult&)' (posit_lib.cpp:1288:0)
-WARNING: [HLS 214-450] Ignore address on register port 'signal' (posit_lib.cpp:1217:20)
-INFO: [HLS 214-376] automatically set the pipeline for Loop< unknown> at C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:308:2 
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 10.395 seconds; current allocated memory: 169.633 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 169.633 MB.
+INFO: [HLS 214-291] Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:330:2)
+INFO: [HLS 214-186] Unrolling loop 'anonymous' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:330:2) in function 'log_reduce::log_generic<double>' completely with a factor of 99 (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isnan<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_isnan.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_isinf<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_isinf.h:16:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.192.225.234.259.269)' into 'fp_struct<double>::to_double() const (.222.231.256.266)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:494:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_double() const (.222.231.256.266)' into 'fp_struct<double>::to_ieee() const' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:509:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 57, 59>(ap_ufixed<57, -(4), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<59, -(((4) + (4)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 59, 69>(ap_ufixed<59, -(7), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<69, -(((7) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 69, 73>(ap_ufixed<69, -(12), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<73, -(((12) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 73, 68>(ap_ufixed<73, -(17), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<68, -(((17) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 68, 63>(ap_ufixed<68, -(22), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<63, -(((22) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 63, 58>(ap_ufixed<63, -(27), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<58, -(((27) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'void log_reduce::range_reduce<ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 58, 53>(ap_ufixed<58, -(32), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<53, -(((32) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<53, -37, (ap_q_mode)5, (ap_o_mode)3, 0> log_reduce::log_traits<double>::range_reduction<57>(ap_ufixed<57, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<102, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:153:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double log_reduce::log_generic<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'double log_reduce::log_generic<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isnan<double>(double)' into 'double log_reduce::log_generic<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isinf<double>(double)' into 'double log_reduce::log_generic<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double log_reduce::log_generic<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:183:0)
+INFO: [HLS 214-178] Inlining function 'log_reduce::log2(double)' into 'hls::log2(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c++\logdouble.cpp:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double generic_copysign<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double generic_copysign<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_copysign.h:10:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double generic_round<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_round.h:160:0)
+INFO: [HLS 214-178] Inlining function 'double generic_copysign<double>(double, double)' into 'double generic_round<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_round.h:160:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.192.225.234.259.269)' into 'double generic_round<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_round.h:160:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(ap_uint<64>)' into 'double generic_round<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_round.h:160:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double generic_round<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_round.h:160:0)
+INFO: [HLS 214-178] Inlining function 'double generic_copysign<double>(double, double)' into 'double generic_fabs<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint/hls_fabs.h:12:0)
+INFO: [HLS 214-178] Inlining function 'double generic_fabs<double>(double)' into 'fabs' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fabsdouble.cpp:7:0)
+INFO: [HLS 214-178] Inlining function 'fabs' into 'std::abs(double)' (C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\lib\gcc\x86_64-w64-mingw32\8.3.0\include\c++\bits/std_abs.h:71:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'double generic_copysign<double>(double, double)' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::data() const (.192.225.234.259.269)' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(ap_uint<64>)' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::to_ieee() const' into 'double generic_floor<double>(double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:14:0)
+INFO: [HLS 214-178] Inlining function 'round' into 'stable_floor(double, double)' (posit_lib.cpp:338:0)
+INFO: [HLS 214-178] Inlining function 'std::abs(double)' into 'stable_floor(double, double)' (posit_lib.cpp:338:0)
+INFO: [HLS 214-178] Inlining function 'floor' into 'stable_floor(double, double)' (posit_lib.cpp:338:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<int>::is_signed, bool>::type)' into 'int generic_cast_IEEE754<int, double>(double, bool)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'int generic_cast_IEEE754<int, double>(double, bool)' into '__hls_fptosi_double_i32' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:55:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 4, 4, 71, 73>(ap_ufixed<71, -(4), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<73, -(((4) + (4)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 7, 6, 73, 83>(ap_ufixed<73, -(7), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<83, -(((7) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 12, 6, 83, 92>(ap_ufixed<83, -(12), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<92, -(((12) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 17, 6, 92, 87>(ap_ufixed<92, -(17), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<87, -(((17) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 22, 6, 87, 82>(ap_ufixed<87, -(22), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<82, -(((22) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 27, 6, 82, 77>(ap_ufixed<82, -(27), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<77, -(((27) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'void pow_reduce::log_range_reduce<ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>, 32, 6, 77, 72>(ap_ufixed<77, -(32), (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&, ap_ufixed<72, -(((32) + (6)) - (1)), (ap_q_mode)5, (ap_o_mode)3, 0>&)' into 'ap_ufixed<72, -37, (ap_q_mode)5, (ap_o_mode)3, 0> pow_reduce::pow_traits<double>::log_range_reduction<71>(ap_ufixed<71, -4, (ap_q_mode)5, (ap_o_mode)3, 0>, ap_fixed<121, 12, (ap_q_mode)5, (ap_o_mode)3, 0>&)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:186:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isinf<double>(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'int generic_isnan<double>(double)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'pow_reduce::pow_traits<double>::exp_Z1P_m_1(ap_ufixed<51, -8, (ap_q_mode)5, (ap_o_mode)3, 0>)' into 'double pow_reduce::pow_generic<double>(double, double)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:292:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::fp_struct(double)' into 'long long generic_cast_IEEE754<long long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long long>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::mantissa() const' into 'long long generic_cast_IEEE754<long long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long long>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::expv() const' into 'long long generic_cast_IEEE754<long long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long long>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'fp_struct<double>::__signbit() const' into 'long long generic_cast_IEEE754<long long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long long>::is_signed, bool>::type)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:12:0)
+INFO: [HLS 214-178] Inlining function 'long long generic_cast_IEEE754<long long, (ap_q_mode)6, double>(double, bool, hls::enable_if<std::numeric_limits<long long>::is_signed, bool>::type)' into 'long long generic_cast_IEEE754<long long, double>(double, bool)' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_case_IEEE754.h:116:0)
+INFO: [HLS 214-178] Inlining function 'long long generic_cast_IEEE754<long long, double>(double, bool)' into '__hls_fptosi_double_i64' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\lib_floatconversion.cpp:56:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function 'hls::log2(double)' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function 'stable_floor(double, double)' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_double_i32' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function 'hls::pow(double, double)' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function '__hls_fptosi_double_i64' into 'double2posit(double)' (posit_lib.cpp:344:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positDiv(POSIT, POSIT)' (posit_lib.cpp:642:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positMul(POSIT, POSIT)' (posit_lib.cpp:731:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positAdd(POSIT, POSIT) (.587.590.639.649.795.815)' (posit_lib.cpp:523:0)
+INFO: [HLS 214-178] Inlining function 'LOD_ADD(ap_uint<31>)' into 'positAdd(POSIT, POSIT) (.587.590.639.649.795.815)' (posit_lib.cpp:523:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positSub(POSIT, POSIT) (.479.482.612.687.709)' (posit_lib.cpp:848:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'isGreater_posit(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positDiv(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positMul(POSIT, POSIT)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.479.482.612.687.709)' into 'positMod(POSIT, POSIT)' (posit_lib.cpp:32:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'pReduceAngle(POSIT, bool&)' (posit_lib.cpp:995:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.479.482.612.687.709)' into 'pReduceAngle(POSIT, bool&)' (posit_lib.cpp:995:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positDiv2p(POSIT, int)' (posit_lib.cpp:625:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'posit_negate(POSIT)' (posit_lib.cpp:249:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positCos(POSIT)' (posit_lib.cpp:1042:0)
+INFO: [HLS 214-178] Inlining function 'positDiv2p(POSIT, int)' into 'positCos(POSIT)' (posit_lib.cpp:1042:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.479.482.612.687.709)' into 'positCos(POSIT)' (posit_lib.cpp:1042:0)
+INFO: [HLS 214-178] Inlining function 'posit_negate(POSIT)' into 'positCos(POSIT)' (posit_lib.cpp:1042:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'pNAngle(POSIT)' (posit_lib.cpp:1192:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.479.482.612.687.709)' into 'pNAngle(POSIT)' (posit_lib.cpp:1192:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'positSin(POSIT)' (posit_lib.cpp:1232:0)
+INFO: [HLS 214-178] Inlining function 'positDiv2p(POSIT, int)' into 'positSin(POSIT)' (posit_lib.cpp:1232:0)
+INFO: [HLS 214-178] Inlining function 'positSub(POSIT, POSIT) (.479.482.612.687.709)' into 'positSin(POSIT)' (posit_lib.cpp:1232:0)
+INFO: [HLS 214-178] Inlining function 'POSIT::POSIT() (.458.464.470.476)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1339:0)
+INFO: [HLS 214-178] Inlining function 'pEuler(POSIT, POSIT*, POSIT*)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1339:0)
+INFO: [HLS 214-178] Inlining function 'positMul(POSIT, POSIT)' into 'pAccumulateFC(int, int, POSIT const*, POSIT&, POSIT&)' (posit_lib.cpp:1339:0)
+INFO: [HLS 214-241] Aggregating bram variable 'result_imag' with compact=bit mode in 40-bits (posit_lib.cpp:1363:0)
+INFO: [HLS 214-241] Aggregating bram variable 'result_real' with compact=bit mode in 40-bits (posit_lib.cpp:1363:0)
+INFO: [HLS 214-241] Aggregating scalar variable 'signal' with compact=bit mode in 40-bits (posit_lib.cpp:1363:0)
+WARNING: [HLS 214-450] Ignore address on register port 'signal' (posit_lib.cpp:1355:46)
+INFO: [HLS 214-376] automatically set the pipeline for Loop< VITIS_LOOP_1345_1> at posit_lib.cpp:1345:24 
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_99_1' is marked as complete unroll implied by the pipeline pragma (posit_lib.cpp:99:22)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_99_1' (posit_lib.cpp:99:22) in function 'positAdd' completely with a factor of 31 (posit_lib.cpp:523:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 3 seconds. CPU system time: 0 seconds. Elapsed time: 32.516 seconds; current allocated memory: 177.082 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.007 seconds; current allocated memory: 177.082 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.068 seconds; current allocated memory: 177.227 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.499 seconds; current allocated memory: 194.344 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-WARNING: [SYNCHK 200-23] C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:279: variable-indexed range selection may cause suboptimal QoR.
+INFO: [XFORM 203-602] Inlining function 'log_reduce::log_traits<double>::range_reduction<57>' into 'log_reduce::log_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:310) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
+INFO: [XFORM 203-602] Inlining function 'pow_reduce::pow_traits<double>::log_range_reduction<71>' into 'pow_reduce::pow_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:519) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_round<double>' into 'double2posit' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\rounddouble.cpp:7->posit_lib.cpp:339->posit_lib.cpp:367->posit_lib.cpp:1341) automatically.
+WARNING: [SYNCHK 200-23] C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:350: variable-indexed range selection may cause suboptimal QoR.
 INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.089 seconds; current allocated memory: 182.652 MB.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:276:6) to (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:308:2) in function 'fmdrmd::generic_fmod<double>'... converting 4 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:324:17) to (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:335:2) in function 'fmdrmd::generic_fmod<double>'... converting 4 basic blocks.
-INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:1206:32) to (posit_lib.cpp:1214:24) in function 'dFFT'... converting 14 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.383 seconds; current allocated memory: 207.367 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 222.254 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.677 seconds; current allocated memory: 212.062 MB.
+INFO: [XFORM 203-602] Inlining function 'log_reduce::log_traits<double>::range_reduction<57>' into 'log_reduce::log_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:310) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'pow_reduce::pow_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:383) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_round<double>' into 'double2posit' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\rounddouble.cpp:7->posit_lib.cpp:339->posit_lib.cpp:367->posit_lib.cpp:1341) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMod' into 'pReduceAngle' (posit_lib.cpp:997->posit_lib.cpp:1048) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMod' into 'pNAngle' (posit_lib.cpp:1194->posit_lib.cpp:1235) automatically.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock to (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_pow.h:661:3) in function 'pow_reduce::pow_generic<double>'... converting 13 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:731:27) in function 'positMul'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:523:20) in function 'positAdd'... converting 73 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:1345:33) to (posit_lib.cpp:1345:24) in function 'pAccumulateFC'... converting 11 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:8:10) to (posit_lib.cpp:31:1) in function 'isGreater_posit'... converting 6 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:13:19) to (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_floor.h:42:1) in function 'generic_floor<double>'... converting 9 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:361:12) to (posit_lib.cpp:339:9) in function 'double2posit'... converting 5 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (posit_lib.cpp:367:12) to (posit_lib.cpp:414:8) in function 'double2posit'... converting 7 basic blocks.
+INFO: [XFORM 203-602] Inlining function 'generic_floor<double>' into 'double2posit' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\floordouble.cpp:7->posit_lib.cpp:342->posit_lib.cpp:367->posit_lib.cpp:1341) automatically.
+INFO: [XFORM 203-602] Inlining function 'isGreater_posit' into 'pReduceAngle' (posit_lib.cpp:999->posit_lib.cpp:1048) automatically.
+INFO: [XFORM 203-602] Inlining function 'positMul' into 'positCos' (posit_lib.cpp:1050) automatically.
+INFO: [XFORM 203-602] Inlining function 'isGreater_posit' into 'pNAngle' (posit_lib.cpp:1196->posit_lib.cpp:1235) automatically.
+INFO: [XFORM 203-602] Inlining function 'positSin' into 'pAccumulateFC' (posit_lib.cpp:1272->posit_lib.cpp:1351) automatically.
+INFO: [XFORM 203-11] Balancing expressions in function 'positMul' (posit_lib.cpp:748:5)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'positCos' (posit_lib.cpp:253:12)...3 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'log_reduce::log_generic<double>' (C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_log_.h:182)...17 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.802 seconds; current allocated memory: 246.117 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.154 seconds; current allocated memory: 343.082 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
-INFO: [HLS 200-10] Synthesizing 'dFFT' ...
-WARNING: [SYN 201-103] Legalizing function name 'generic_fmod<double>_Pipeline_1' to 'generic_fmod_double_Pipeline_1'.
-WARNING: [SYN 201-103] Legalizing function name 'generic_fmod<double>' to 'generic_fmod_double_s'.
+INFO: [HLS 200-10] Synthesizing 'pFFT' ...
+WARNING: [SYN 201-103] Legalizing function name 'log_generic<double>' to 'log_generic_double_s'.
+WARNING: [SYN 201-103] Legalizing function name 'pow_generic<double>' to 'pow_generic_double_s'.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'generic_fmod_double_Pipeline_1' 
+INFO: [HLS 200-42] -- Implementing module 'log_generic_double_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
-INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 2, loop 'Loop 1'
+INFO: [SCHED 204-61] Pipelining function 'log_generic<double>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 12, function 'log_generic<double>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.3 seconds; current allocated memory: 225.574 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.904 seconds; current allocated memory: 362.352 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.151 seconds; current allocated memory: 226.625 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.221 seconds; current allocated memory: 363.414 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'generic_fmod_double_s' 
+INFO: [HLS 200-42] -- Implementing module 'pow_generic_double_s' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=add_ln563) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining function 'pow_generic<double>'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 12, function 'pow_generic<double>'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.113 seconds; current allocated memory: 226.715 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.519 seconds; current allocated memory: 363.555 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.079 seconds; current allocated memory: 226.738 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 363.559 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-42] -- Implementing module 'dFFT' 
+INFO: [HLS 200-42] -- Implementing module 'double2posit' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 226.934 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.417 seconds; current allocated memory: 363.957 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.218 seconds; current allocated memory: 227.133 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.196 seconds; current allocated memory: 364.539 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'generic_fmod_double_Pipeline_1' 
+INFO: [HLS 200-42] -- Implementing module 'positAdd' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'generic_fmod_double_Pipeline_1' pipeline 'Loop 1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Finished creating RTL model for 'generic_fmod_double_Pipeline_1'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.634 seconds; current allocated memory: 228.902 MB.
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positAdd'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 8, function 'positAdd'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.476 seconds; current allocated memory: 365.574 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 365.602 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'generic_fmod_double_s' 
+INFO: [HLS 200-42] -- Implementing module 'pReduceAngle' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-100] Generating core module 'ctlz_54_54_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'generic_fmod_double_s'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.321 seconds; current allocated memory: 230.895 MB.
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pReduceAngle'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, function 'pReduceAngle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.507 seconds; current allocated memory: 365.863 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.201 seconds; current allocated memory: 366.176 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [HLS 200-10] -- Generating RTL for module 'dFFT' 
+INFO: [HLS 200-42] -- Implementing module 'positCos' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
-INFO: [RTGEN 206-500] Setting interface mode on port 'dFFT/signal_r' to 'ap_none'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'dFFT/result_real' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on port 'dFFT/result_imag' to 'ap_memory'.
-INFO: [RTGEN 206-500] Setting interface mode on function 'dFFT' to 'ap_ctrl_hs'.
-INFO: [RTGEN 206-100] Generating core module 'dadddsub_64ns_64ns_64_5_full_dsp_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 2 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_6_max_dsp_1': 3 instance(s).
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positCos'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 52, function 'positCos'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.648 seconds; current allocated memory: 366.535 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.291 seconds; current allocated memory: 366.609 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pNAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'pNAngle'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, function 'pNAngle'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.269 seconds; current allocated memory: 367.602 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.327 seconds; current allocated memory: 368.277 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'positMul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'positMul'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 1, function 'positMul'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.435 seconds; current allocated memory: 368.543 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 368.723 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_1345_1'.
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' (loop 'VITIS_LOOP_1345_1'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret9', posit_lib.cpp:1355) and 'call' operation 39 bit ('call_ret4', posit_lib.cpp:1355) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' (loop 'VITIS_LOOP_1345_1'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret9', posit_lib.cpp:1355) and 'call' operation 39 bit ('call_ret4', posit_lib.cpp:1355) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' (loop 'VITIS_LOOP_1345_1'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret9', posit_lib.cpp:1355) and 'call' operation 39 bit ('call_ret4', posit_lib.cpp:1355) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' (loop 'VITIS_LOOP_1345_1'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret9', posit_lib.cpp:1355) and 'call' operation 39 bit ('call_ret4', posit_lib.cpp:1355) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' (loop 'VITIS_LOOP_1345_1'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 1) between 'extractvalue' operation 1 bit ('newret9', posit_lib.cpp:1355) and 'call' operation 39 bit ('call_ret4', posit_lib.cpp:1355) to 'positAdd'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 8, Depth = 64, loop 'VITIS_LOOP_1345_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.692 seconds; current allocated memory: 370.773 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.215 seconds; current allocated memory: 371.367 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pAccumulateFC' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.325 seconds; current allocated memory: 371.547 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.263 seconds; current allocated memory: 371.785 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'pFFT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.31 seconds; current allocated memory: 371.984 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.489 seconds; current allocated memory: 372.246 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'log_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_4_4_16_array_ROM_AUTO_1R' to 'log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_bkb' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_7_6_64_array_ROM_AUTO_1R' to 'log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_cud' due to the length limit 80
+INFO: [RTGEN 206-100] Generating core module 'bitselect_1ns_154ns_32ns_1_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_12s_66ns_76_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_28ns_28ns_55_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_54s_6ns_54_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_57ns_4ns_61_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_58ns_6ns_63_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_59ns_6ns_65_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_63ns_6ns_68_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_68ns_6ns_73_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_69ns_6ns_75_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_73ns_6ns_78_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'partselect_52ns_154ns_32ns_52_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'log_generic_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_inverse_lut_table_0_5_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log0_lut_table_ap_fixed_double_0_5_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_bkb' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_102_12_ap_q_mode_5_ap_o_mode_3_0_cud' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_12_6_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_17_6_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_22_6_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_27_6_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_log_generic_double_s_log_lut_table_ap_fixed_32_6_64_array_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.891 seconds; current allocated memory: 390.527 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pow_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_ardEe' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arraeOg' due to the length limit 80
+INFO: [SYN 201-210] Renamed object name 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_array_ROM_AUTO_1R' to 'pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrafYi' due to the length limit 80
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_16s_15ns_19s_31_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_13s_71s_71_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_43ns_36ns_79_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_49ns_44ns_93_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_50ns_50ns_99_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_54s_67ns_120_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_11_4_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pow_generic_double_s'.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_pow_generic_double_s_pow_reduce_anonymous_namespace_table_exp_Z1_ap_ufixed_ardEe' using auto ROMs.
+INFO: [HLS 200-2168] Implementing memory 'pFFT_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z3_ap_ufixed_arraeOg' using auto ROMs with 2 copies to ensure enough ports to satisfy II or latency constraints.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_pow_generic_double_s_pow_reduce_anonymous_namespace_table_f_Z2_ap_ufixed_arrafYi' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 4.8 seconds; current allocated memory: 400.590 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'double2posit' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dcmp_64ns_64ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_6_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'dsub_64ns_64ns_64_5_full_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sitodp_32s_64_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_9_3_64_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'double2posit'.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_double2posit_mask_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'pFFT_double2posit_one_half_table_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.655 seconds; current allocated memory: 404.449 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positAdd' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'positAdd' pipeline 'positAdd' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_2_1_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_30_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'sparsemux_7_3_6_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positAdd'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 1.978 seconds; current allocated memory: 410.047 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pReduceAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pReduceAngle' pipeline 'pReduceAngle' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_59ns_61ns_119_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pReduceAngle'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.713 seconds; current allocated memory: 415.887 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positCos' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'positCos' pipeline 'positCos' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positCos'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.268 seconds; current allocated memory: 421.238 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pNAngle' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pNAngle' pipeline 'pNAngle' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_59ns_61ns_119_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pNAngle'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.584 seconds; current allocated memory: 426.480 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'positMul' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'positMul'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.997 seconds; current allocated memory: 431.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1' pipeline 'VITIS_LOOP_1345_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_30ns_30ns_60_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pAccumulateFC_Pipeline_VITIS_LOOP_1345_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.567 seconds; current allocated memory: 433.371 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pAccumulateFC' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Generating core module 'dmul_64ns_64ns_64_6_max_dsp_1': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'sitodp_32ns_64_4_no_dsp_1': 1 instance(s).
-INFO: [RTGEN 206-100] Finished creating RTL model for 'dFFT'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.719 seconds; current allocated memory: 234.180 MB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.28 seconds; current allocated memory: 239.031 MB.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 2.912 seconds; current allocated memory: 242.430 MB.
-INFO: [VHDL 208-304] Generating VHDL RTL for dFFT.
-INFO: [VLOG 209-307] Generating Verilog RTL for dFFT.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pAccumulateFC'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.346 seconds; current allocated memory: 438.203 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'pFFT' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/signal_r' to 'ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/result_real' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'pFFT/result_imag' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'pFFT' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'pFFT'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.564 seconds; current allocated memory: 440.016 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.811 seconds; current allocated memory: 443.410 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 3.832 seconds; current allocated memory: 452.605 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for pFFT.
+INFO: [VLOG 209-307] Generating Verilog RTL for pFFT.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 132.13 MHz
-INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 2 seconds. Total elapsed time: 55.798 seconds; peak allocated memory: 242.738 MB.
-INFO: [v++ 60-791] Total elapsed time: 0h 1m 1s
+INFO: [HLS 200-789] **** Estimated Fmax: 129.49 MHz
+INFO: [HLS 200-112] Total CPU user time: 15 seconds. Total CPU system time: 5 seconds. Total elapsed time: 131.014 seconds; peak allocated memory: 452.605 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 2m 18s

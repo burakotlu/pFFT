@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "04/08/25 11:35:03",
- "timestampMillis": "1744104903763",
+ "dateTimestamp": "04/08/25 14:31:08",
+ "timestampMillis": "1744115468054",
  "buildStep": {
-  "cmdId": "83c0ca38-0490-4fc4-b0f5-cf2af99f5cdd",
+  "cmdId": "87f2f06b-61e3-455e-8319-19654c14cb63",
   "name": "v++",
   "logFile": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\logs\\PositFFT.steps.log",
   "commandLine": "C:/Xilinx/Vitis/2024.2/bin/unwrapped/win64.o/v++.exe  -c --mode hls --config C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\hls_config.cfg --work_dir PositFFT ",
@@ -28,7 +28,7 @@
   "iniFiles": [
    {
     "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\hls_config.cfg",
-    "content": "part=xazu7ev-fbvb900-1-i\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit.hpp\nsyn.file=C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit_lib.cpp\ncsim.code_analyzer=0\nsyn.top=dFFT\nclock=10ns\ntb.file=posit_fft_test.cpp"
+    "content": "part=xazu7ev-fbvb900-1-i\n\n[hls]\nflow_target=vivado\npackage.output.format=ip_catalog\npackage.output.syn=false\nsyn.file=C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit.hpp\nsyn.file=C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit_lib.cpp\ncsim.code_analyzer=0\nsyn.top=pFFT\nclock=10ns\ntb.file=posit_fft_test.cpp"
    }
   ],
   "cwd": "C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT"
@@ -38,10 +38,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "04/08/25 11:35:03",
- "timestampMillis": "1744104903764",
+ "dateTimestamp": "04/08/25 14:31:08",
+ "timestampMillis": "1744115468055",
  "status": {
-  "cmdId": "83c0ca38-0490-4fc4-b0f5-cf2af99f5cdd",
+  "cmdId": "87f2f06b-61e3-455e-8319-19654c14cb63",
   "state": "CS_RUNNING"
  }
 }
@@ -49,8 +49,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910270",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477152",
  "buildSummary": {
   "hardwarePlatform": "",
   "hardwareDsa": "",
@@ -63,7 +63,7 @@
    {
     "base": {
      "type": "KERNEL",
-     "name": "dFFT",
+     "name": "pFFT",
      "file": "",
      "reports": [],
      "uuid": ""
@@ -86,10 +86,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910272",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477155",
  "buildStep": {
-  "cmdId": "5e264cda-08ec-4c4f-9e03-67e4510844dd",
+  "cmdId": "c0012cfb-c9c3-4ab3-86c9-1306c80faf80",
   "name": "",
   "logFile": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls\\hls.log",
   "commandLine": "",
@@ -102,10 +102,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910273",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477156",
  "status": {
-  "cmdId": "5e264cda-08ec-4c4f-9e03-67e4510844dd",
+  "cmdId": "c0012cfb-c9c3-4ab3-86c9-1306c80faf80",
   "state": "CS_RUNNING"
  }
 }
@@ -113,8 +113,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910273",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477156",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls\\hls_data.json",
   "name": "",
@@ -127,8 +127,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910274",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477157",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls\\syn\\report\\csynth.rpt",
   "name": "",
@@ -141,8 +141,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:35:10",
- "timestampMillis": "1744104910275",
+ "dateTimestamp": "04/08/25 14:31:17",
+ "timestampMillis": "1744115477159",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls\\syn\\report\\csynth.xml",
   "name": "",
@@ -155,8 +155,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:36:02",
- "timestampMillis": "1744104962607",
+ "dateTimestamp": "04/08/25 14:33:23",
+ "timestampMillis": "1744115603302",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls",
   "name": "",
@@ -169,8 +169,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:36:02",
- "timestampMillis": "1744104962608",
+ "dateTimestamp": "04/08/25 14:33:23",
+ "timestampMillis": "1744115603303",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls",
   "name": "",
@@ -183,8 +183,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:36:02",
- "timestampMillis": "1744104962610",
+ "dateTimestamp": "04/08/25 14:33:23",
+ "timestampMillis": "1744115603304",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\hls",
   "name": "",
@@ -197,10 +197,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "04/08/25 11:36:02",
- "timestampMillis": "1744104962612",
+ "dateTimestamp": "04/08/25 14:33:23",
+ "timestampMillis": "1744115603304",
  "status": {
-  "cmdId": "5e264cda-08ec-4c4f-9e03-67e4510844dd",
+  "cmdId": "c0012cfb-c9c3-4ab3-86c9-1306c80faf80",
   "state": "CS_PASSED"
  }
 }
@@ -208,10 +208,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "04/08/25 11:36:03",
- "timestampMillis": "1744104963006",
+ "dateTimestamp": "04/08/25 14:33:24",
+ "timestampMillis": "1744115604043",
  "status": {
-  "cmdId": "83c0ca38-0490-4fc4-b0f5-cf2af99f5cdd",
+  "cmdId": "87f2f06b-61e3-455e-8319-19654c14cb63",
   "state": "CS_PASSED"
  }
 }
@@ -219,8 +219,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:36:03",
- "timestampMillis": "1744104963069",
+ "dateTimestamp": "04/08/25 14:33:24",
+ "timestampMillis": "1744115604087",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\reports\\v++_compile_PositFFT_guidance.html",
   "name": "",
@@ -233,8 +233,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "04/08/25 11:36:03",
- "timestampMillis": "1744104963070",
+ "dateTimestamp": "04/08/25 14:33:24",
+ "timestampMillis": "1744115604088",
  "report": {
   "path": "C:/Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\PositFFT\\reports\\.db\\v++_compile_PositFFT_guidance.pb3",
   "name": "",

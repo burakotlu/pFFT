@@ -1,6 +1,57 @@
 #include "posit.hpp"
 #include <cmath>
+bool isGreater_posit(ps_t x, ps_t y) {
+    // Extract fields
+    m_add_t x_mantissa = x.mantissa;
+    m_add_t y_mantissa = y.mantissa;
 
+    bool x_sign = x.sign;
+    bool y_sign = y.sign;
+
+    regime_t x_regime = x.regime;
+    regime_t y_regime = y.regime;
+
+    exponent_t x_exponent = x.exponent;
+    exponent_t y_exponent = y.exponent;
+
+    // Case 1: Different signs
+    if (x_sign != y_sign)
+        return (y_sign == 1); // If y is negative, x is greater
+
+    // Same sign, compare absolute values
+    bool absXGreaterEqual = 
+        (x_regime > y_regime) ||
+        (x_regime == y_regime && x_exponent > y_exponent) ||
+        (x_regime == y_regime && x_exponent == y_exponent && x_mantissa > y_mantissa);
+
+    if (x_sign == 0)
+        return absXGreaterEqual;  // Both positive: larger abs = greater
+    else
+        return !absXGreaterEqual; // Both negative: smaller abs = greater
+}
+ps_t positMod(ps_t x, ps_t y){
+    ps_t quotient,floor_val,c_x, inter,res;
+    sf_t sf_fVal=0;
+    mantissa_t m=0;
+    bool small;
+    bool x_sign = x.sign;
+    bool y_sign = y.sign;
+    c_x =x;
+    c_x.sign = false;
+    small= isGreater_posit(y, c_x);
+    if (small) return x;
+    else{
+        quotient = positDiv(c_x,y) ;
+        m.set(FRAC_LEN - 1);;
+        quotient.mantissa = m;
+        inter= positMul(quotient,y);
+        res = positSub(c_x,inter);
+        res.sign = x.sign;
+        return res;
+    }
+    
+
+}
 
 float floatMul(float x, float y){
     return x*y;    
@@ -942,6 +993,27 @@ double safeZero(double value) {
     return (std::abs(value) < EPSILON) ? 0.0 : value;
 }
 ps_t pReduceAngle(ps_t angle, bool &negate) {
+    ps_t m_angle;
+    m_angle = positMod(angle,POSIT_2PI);
+
+    if (isGreater_posit(m_angle,POSIT_PI ))
+        m_angle = positAdd(m_angle,POSIT_M_2PI);
+    else if (isGreater_posit(POSIT_M_PI,m_angle ))  
+        m_angle = positAdd(m_angle,POSIT_2PI);
+
+    // Kosinus-Symmetrie ausnutzen
+    negate = false;
+	if (isGreater_posit(m_angle,POSIT_PI_OVER2 ))	{
+		m_angle = positSub(POSIT_PI,m_angle);
+        negate = true;  // Negation für cos(-x) beachten
+    }else if (isGreater_posit(POSIT_M_PI_OVER2,m_angle )){
+		m_angle = positAdd(m_angle,POSIT_PI);
+		m_angle.sign=!m_angle.sign;
+        negate = true;  // Negation für cos(-x) beachten
+    }
+	return m_angle;
+}/*
+ps_t pReduceAngle(ps_t angle, bool &negate) {
     // Begrenzung auf [-π, π]
     double dAngle = posit2double(angle);
 //std::cout<<"dangle: "<<dAngle<<std::endl;
@@ -965,7 +1037,7 @@ ps_t pReduceAngle(ps_t angle, bool &negate) {
     dAngle = safeZero(dAngle);
    // std::cout<<"dangle: "<<dAngle<<std::endl;
     return double2posit(dAngle);
-}
+}*/
 // Approximate cosine using Taylor series expansion
 ps_t positCos(ps_t x) {
     ps_t y, y2, y4, result;
@@ -1115,6 +1187,26 @@ float fTailorSin(float in) {
         return term1 - term2 + term3 - term4;
     #endif
 }
+
+
+ps_t pNAngle(ps_t angle) {
+    ps_t m_angle;
+    m_angle = positMod(angle,POSIT_2PI);
+
+    if (isGreater_posit(m_angle,POSIT_PI )) 
+        m_angle = positAdd(m_angle,POSIT_M_2PI);
+	else if (isGreater_posit(POSIT_M_PI,m_angle )) 
+		m_angle = positAdd(m_angle,POSIT_2PI);	
+	if (isGreater_posit(m_angle,POSIT_PI_OVER2 ))	
+		m_angle = positSub(POSIT_PI,m_angle);
+	else if (isGreater_posit(POSIT_M_PI_OVER2,m_angle )){
+		m_angle = positAdd(m_angle,POSIT_PI);
+		m_angle.sign=!m_angle.sign;
+        }
+	return m_angle;
+
+
+}/*
 ps_t pNAngle(ps_t angle) {
     //Test
     double dAngle = posit2double(angle);
@@ -1133,7 +1225,7 @@ ps_t pNAngle(ps_t angle) {
     dAngle = safeZero(dAngle);
     return double2posit(dAngle);
 }
-
+*/
 
 
 // Approximate sine using Taylor series expansion
@@ -1246,7 +1338,8 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
 
 void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
     ps_t angle, realPart, imagPart;
-    ps_t deltaTheta = double2posit(-2.0 * M_PI * k / sampleCount);
+    ps_t deltaTheta;
+    //ps_t deltaTheta = double2posit(-2.0 * M_PI * k / sampleCount);
 
     // Loop over the samples and compute the FFT accumulation
 
@@ -1272,8 +1365,8 @@ void pFFT(ps_t signal[], pFFTResult& result) {
     int sampleCount = IN_SIZE;
 
     for (int k = 0; k < sampleCount; k++) { // For each frequency bin
-        if (k % 200 == 0)  
-            std::cout << k << std::endl;
+  //      if (k % 200 == 0)  
+   //         std::cout << k << std::endl;
 
         // Call the accumulation function for each frequency bin
         ps_t realSum = ZERO;

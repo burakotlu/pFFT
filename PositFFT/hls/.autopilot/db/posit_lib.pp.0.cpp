@@ -56890,19 +56890,19 @@ using namespace std;
 # 53 "./posit.hpp"
 typedef ap_int<6> regime_t;
 typedef ap_uint<6> ml_t;
-typedef ap_uint<(32 -(2 +2))> mantissa_t;
-typedef ap_uint<(32 -(2 +2))+6 +2 +1> mantissa_sf_t;
-
-typedef ap_uint<2> exponent_t;
+typedef ap_uint<(32 -(0 +2))> mantissa_t;
+typedef ap_uint<(32 -(0 +2))+6 +0 +1> mantissa_sf_t;
 
 
 
-typedef ap_uint<(32 -(2 +2))+2> mant_add_t;
-typedef ap_uint<(32 -(2 +2))+1> m_add_t;
+typedef ap_uint<1> exponent_t;
+
+typedef ap_uint<(32 -(0 +2))+2> mant_add_t;
+typedef ap_uint<(32 -(0 +2))+1> m_add_t;
 typedef ap_uint<2> ovf_t;
-typedef ap_uint<2*(32 -(2 +2))> mul_t;
-typedef ap_uint<2*(32 -(2 +2))+2> dv_t;
-typedef ap_int<6 +2 +1> sf_t;
+typedef ap_uint<2*(32 -(0 +2))> mul_t;
+typedef ap_uint<2*(32 -(0 +2))+2> dv_t;
+typedef ap_int<6 +0 +1> sf_t;
 
 typedef ap_uint<32 -1> reg_t;
 typedef ap_uint<32> posit_t;
@@ -56911,11 +56911,19 @@ typedef ap_uint<1> bool_t;
 
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
-# 85 "./posit.hpp"
-const ps_t POSIT_PI = {0, false, false, 0, 0, 1411};
+# 86 "./posit.hpp"
+const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 842887333};
+const ps_t POSIT_PI = {0, false, false, 1, 0, 842887333};
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333};
-const ps_t ONE = {0, false, false, 0, 0, 1<<((32 -(2 +2))-1)};
-const ps_t ZERO = {0, true, false, 0, 0, 1<<((32 -(2 +2))-1)};
+const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 842887333};
+const ps_t POSIT_M_PI = {1, false, false, 1, 0, 842887333};
+const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333};
+
+
+
+
+const ps_t ONE = {0, false, false, 0, 0, 1<<((32 -(0 +2))-1)};
+const ps_t ZERO = {0, true, false, 0, 0, 1<<((32 -(0 +2))-1)};
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t decode(posit_t posit);
@@ -56927,7 +56935,7 @@ float posit2float(ps_t pos);
 double posit2double(ps_t pos);
 ps_t float2posit(float in);
 ps_t double2posit(double in);
-
+ps_t positMod(ps_t x, ps_t y);
 ps_t pReduceAngle(ps_t angle, bool &negate);
 ps_t positAdd(ps_t x,ps_t y);
 ps_t positMul(ps_t x,ps_t y);
@@ -56982,8 +56990,8 @@ struct fFFTResult {
 };
 
 void fFFT(float signal[], fFFTResult& result);
-__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result);
-void pFFT(ps_t signal[], pFFTResult& result);
+void dFFT(double signal[], dFFTResult& result);
+__attribute__((sdx_kernel("pFFT", 0))) void pFFT(ps_t signal[], pFFTResult& result);
 
 
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount);
@@ -56993,7 +57001,58 @@ void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount)
 # 1 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 1 3
 # 40 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 3
 # 3 "posit_lib.cpp" 2
+bool isGreater_posit(ps_t x, ps_t y) {
 
+    m_add_t x_mantissa = x.mantissa;
+    m_add_t y_mantissa = y.mantissa;
+
+    bool x_sign = x.sign;
+    bool y_sign = y.sign;
+
+    regime_t x_regime = x.regime;
+    regime_t y_regime = y.regime;
+
+    exponent_t x_exponent = x.exponent;
+    exponent_t y_exponent = y.exponent;
+
+
+    if (x_sign != y_sign)
+        return (y_sign == 1);
+
+
+    bool absXGreaterEqual =
+        (x_regime > y_regime) ||
+        (x_regime == y_regime && x_exponent > y_exponent) ||
+        (x_regime == y_regime && x_exponent == y_exponent && x_mantissa > y_mantissa);
+
+    if (x_sign == 0)
+        return absXGreaterEqual;
+    else
+        return !absXGreaterEqual;
+}
+ps_t positMod(ps_t x, ps_t y){
+    ps_t quotient,floor_val,c_x, inter,res;
+    sf_t sf_fVal=0;
+    mantissa_t m=0;
+    bool small;
+    bool x_sign = x.sign;
+    bool y_sign = y.sign;
+    c_x =x;
+    c_x.sign = false;
+    small= isGreater_posit(y, c_x);
+    if (small) return x;
+    else{
+        quotient = positDiv(c_x,y) ;
+        m.set((32 -(0 +2)) - 1);;
+        quotient.mantissa = m;
+        inter= positMul(quotient,y);
+        res = positSub(c_x,inter);
+        res.sign = x.sign;
+        return res;
+    }
+
+
+}
 
 float floatMul(float x, float y){
     return x*y;
@@ -57038,7 +57097,7 @@ regime_t LOD(reg_t reg){
 int LOD_ADD(m_add_t in){
     bool flag=0;
     int count =0;
-    VITIS_LOOP_48_1: for(int i=in.width-1;i>=0;i-- ){
+    VITIS_LOOP_99_1: for(int i=in.width-1;i>=0;i-- ){
         if(in[i] ==0){
             if(flag==false) count+=1;
         }
@@ -57049,24 +57108,24 @@ int LOD_ADD(m_add_t in){
 int LOD_MUL(mul_t in){
     bool flag=0;
     int count =0;
-    VITIS_LOOP_59_1: for(int i=in.width-1;i>=0;i-- ){
+    VITIS_LOOP_110_1: for(int i=in.width-1;i>=0;i-- ){
         if(in[i] ==0){
             if(flag==false) count+=1;
         }
         else flag=true;
     }
-    return (32 -(2 +2))-1-count;
+    return (32 -(0 +2))-1-count;
 }
 int LOD_DIV(dv_t in){
     bool flag=0;
     int count =0;
-    VITIS_LOOP_70_1: for(int i=in.width-1;i>=0;i-- ){
+    VITIS_LOOP_121_1: for(int i=in.width-1;i>=0;i-- ){
         if(in[i] ==0){
             if(flag==false) count+=1;
         }
         else flag=true;
     }
-    return (32 -(2 +2))-1-count;
+    return (32 -(0 +2))-1-count;
 }
 ps_t decode(posit_t posit){
 
@@ -57106,13 +57165,13 @@ ps_t decode(posit_t posit){
     REM=32 -SREG;
 
     if(REM>0){
-        if(2==0){
+        if(0==0){
             mantissa=posit.range(REM-1,0);
         }
         else{
-            if(REM>2){
-                exponent=posit.range(REM-1,REM-2);
-                mantissa=posit.range(REM-(2 +1),0);
+            if(REM>0){
+                exponent=posit.range(REM-1,REM-0);
+                mantissa=posit.range(REM-(0 +1),0);
             }
             else {mantissa=0; exponent=posit.range(REM-1,0);}
         }
@@ -57171,13 +57230,13 @@ posit_t encode(ps_t x){
         }
 
         if(REM>0){
-            if(2==0){
+            if(0==0){
                 posit.range(REM-1,0)=mantissa;
             }
             else{
-                if(REM>2){
-                    posit.range(REM-1,REM-2)=exponent;
-                    posit.range(REM-(2 +1),0)=mantissa;
+                if(REM>0){
+                    posit.range(REM-1,REM-0)=exponent;
+                    posit.range(REM-(0 +1),0)=mantissa;
                 }
                 else posit.range(REM-1,0)=exponent;
             }
@@ -57214,7 +57273,7 @@ ps_t float2posit(float in) {
     sf_t sf;
 
 
-    double MAX = pow(2, 4 * (32 - 2));
+    double MAX = pow(2, 1 * (32 - 2));
 
 
     if (in == 0.0) {
@@ -57236,8 +57295,8 @@ ps_t float2posit(float in) {
 
         sf = (int)log2(in);
         exact = 1 << sf;
-        mant_part = (in - exact) * (1 << (32 -(2 +2)));
-        regime = sf >> 2;
+        mant_part = (in - exact) * (1 << (32 -(0 +2)));
+        regime = sf >> 0;
 
 
         if (regime >= 0) {
@@ -57252,16 +57311,16 @@ ps_t float2posit(float in) {
         REM=32 -SREG;
 
 
-        if (2 == 0) {
+        if (0 == 0) {
             if (REM > 0) {
-                mantissa.range((32 -(2 +2)) - 2, (32 -(2 +2)) - REM - 1) = mant_part << (REM - sf);
-                mantissa.set((32 -(2 +2)) - 1);
+                mantissa.range((32 -(0 +2)) - 2, (32 -(0 +2)) - REM - 1) = mant_part << (REM - sf);
+                mantissa.set((32 -(0 +2)) - 1);
             }
         } else {
-            if (REM > 2) {
-                exponent = sf & ((1 << 2) - 1);
-                mantissa.range((32 -(2 +2)) - 2, (32 -(2 +2)) - REM + 2 - 1) = mant_part << (REM - sf - 2);
-                mantissa.set((32 -(2 +2)) - 1);
+            if (REM > 0) {
+                exponent = sf & ((1 << 0) - 1);
+                mantissa.range((32 -(0 +2)) - 2, (32 -(0 +2)) - REM + 0 - 1) = mant_part << (REM - sf - 0);
+                mantissa.set((32 -(0 +2)) - 1);
             } else if (REM > 0) {
                 exponent = sf & ((1 << REM) - 1);
             }
@@ -57316,13 +57375,13 @@ ps_t double2posit(double in) {
 
     diff = in-exact;
 
-    factor.set((32 -(2 +2))-1);
+    factor.set((32 -(0 +2))-1);
     double interm = diff * factor;
     long long dtol = interm;
     mant_with_sf = dtol;
     mant_part= mant_with_sf >> (int)sf;
-    regime = (sf_t)sf >> 2;
-# 349 "posit_lib.cpp"
+    regime = (sf_t)sf >> 0;
+# 400 "posit_lib.cpp"
     if (regime >= 0) {
         if (regime + 3 < 32) {
             SREG = (reg_t)regime + 3;
@@ -57338,10 +57397,10 @@ ps_t double2posit(double in) {
 
 
     if(REM>0){
-        if (REM > 2) {
-            exponent = sf & ((1 << 2) - 1);
+        if (REM > 0) {
+            exponent = sf & ((1 << 0) - 1);
             mantissa= (mantissa_t)mant_part ;
-            mantissa.set((32 -(2 +2))-1);
+            mantissa.set((32 -(0 +2))-1);
         }
         else{
             exponent = sf & ((1 << REM) - 1);
@@ -57365,12 +57424,12 @@ float posit2float(ps_t pos){
  float result=0,mantissa,man_d,u_R,e;
 
  if(pos.isZero) return result;
- if(pos.regime>=0) ml=32 -(pos.regime+3+2);
- else ml=32 -2+pos.regime-2;
+ if(pos.regime>=0) ml=32 -(pos.regime+3+0);
+ else ml=32 -2+pos.regime-0;
  man_d=(float)(1<<ml);
  mantissa=(float)pos.mantissa/man_d;
 
- u_R=hls::pow((float)16,(float)pos.regime);
+ u_R=hls::pow((float)2,(float)pos.regime);
  e=hls::pow(2,pos.exponent);
  result=(float)(u_R*e*(1+mantissa));
  return pos.sign?-result:result;
@@ -57384,9 +57443,9 @@ double posit2double(ps_t pos){
     if(pos.isInf) return __builtin_inff();
 
 
-    mantissa = (double)pos.mantissa / (double) (1<<((32 -(2 +2))-1));
+    mantissa = (double)pos.mantissa / (double) (1<<((32 -(0 +2))-1));
 
- u_R=hls::pow((double)16,pos.regime);
+ u_R=hls::pow((double)2,pos.regime);
  e=hls::pow(2.0,pos.exponent);
     m= mantissa;
  result=u_R*e*m;
@@ -57409,7 +57468,7 @@ ps_t int2posit(int in){
  reg_t exact,mant_part,SREG,REM;
  sf_t sf;
 
- double MAX=pow(2,4*(32 -2));
+ double MAX=pow(2,1*(32 -2));
 
  if(in==0) isZero=true;
  else if(in>=MAX) regime=32 -2;
@@ -57421,18 +57480,18 @@ ps_t int2posit(int in){
   sf=(int)log2(in);
   exact=1<<sf;
   mant_part=in-exact;
-  regime=sf>>2;
+  regime=sf>>0;
 
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
 
-  if(2==0){
+  if(0==0){
    if(REM>0) mantissa=mant_part<<(REM-sf);
   }
   else{
-   if(REM>=2) {
-    exponent=sf.range(2 -1,0);
-    mantissa=mant_part<<(REM-sf-2);
+   if(REM>=0) {
+    exponent=sf.range(0 -1,0);
+    mantissa=mant_part<<(REM-sf-0);
    }
    else if(REM>0) {
     exponent=sf.range(REM-1,0);
@@ -57469,8 +57528,8 @@ ps_t positAdd(ps_t x,ps_t y){
 
  sign=ABSxIsGreaterEqual?x_sign:y_sign;
 
- sf_x=((sf_t)x_regime<<2)+x_exponent;
- sf_y=((sf_t)y_regime<<2)+y_exponent;
+ sf_x=((sf_t)x_regime<<0)+x_exponent;
+ sf_y=((sf_t)y_regime<<0)+y_exponent;
  sf_r=ABSxIsGreaterEqual?sf_x:sf_y;
     sf_L=ABSxIsGreaterEqual?sf_x:sf_y;
     sf_S=ABSxIsGreaterEqual?sf_y:sf_x;
@@ -57492,15 +57551,15 @@ ps_t positAdd(ps_t x,ps_t y){
     SA = LOD_ADD(mantissa);
     mantissa = mantissa <<SA;
     sf_r = sf_r-SA;
-# 535 "posit_lib.cpp"
- regime=sf_r>>2;
+# 586 "posit_lib.cpp"
+ regime=sf_r>>0;
 
  SREG=regime>=0?regime+3:2-regime;
  REM=32 -SREG;
 
     if(REM>0){
-        if (REM > 2) {
-            exponent = sf_r & ((1 << 2) - 1);
+        if (REM > 0) {
+            exponent = sf_r & ((1 << 0) - 1);
             mantissa= (mantissa_t)mantissa ;
         }
         else{
@@ -57536,14 +57595,14 @@ ps_t positDiv2p(ps_t in,int i){
     ps_t result;
     sf_t sf_in, sf_out;
     result = in;
-    sf_in=((sf_t)in.regime<<2)+in.exponent;
+    sf_in=((sf_t)in.regime<<0)+in.exponent;
     sf_out = sf_in +i;
-    if (sf_out.range(6 +2,6 +2 -1)==2){
+    if (sf_out.range(6 +0,6 +0 -1)==2){
         result.regime = 2-32;
     }
     else{
-        result.regime=sf_out>>2;
-        result.exponent = sf_out & ((1 << 2) - 1);
+        result.regime=sf_out>>0;
+        result.exponent = sf_out & ((1 << 0) - 1);
     }
 
     return result;
@@ -57571,33 +57630,33 @@ ps_t positDiv(ps_t x,ps_t y){
 
  isZero=x_isZero | y_isZero;
 
- sf_x=((sf_t)x_regime<<2)+x_exponent;
- sf_y=((sf_t)y_regime<<2)+y_exponent;
+ sf_x=((sf_t)x_regime<<0)+x_exponent;
+ sf_y=((sf_t)y_regime<<0)+y_exponent;
  sf_r=sf_x-sf_y;
 
-    if (sf_r.range(6 +2,6 +2 -1)==2){
+    if (sf_r.range(6 +0,6 +0 -1)==2){
         regime = 2-32;
     }
     else{
 
 
 
-        mant = (x_mantissa<<((32 -(2 +2))-1))/y_mantissa;
+        mant = (x_mantissa<<((32 -(0 +2))-1))/y_mantissa;
 
 
 
 
-        if(mant[(32 -(2 +2))-1] == 0){
+        if(mant[(32 -(0 +2))-1] == 0){
             mant = (mant<<1);
 
             sf_r = sf_r-1;
         }
         mantissa = (mantissa_t)mant;
-# 646 "posit_lib.cpp"
-        regime=sf_r>>2;
+# 697 "posit_lib.cpp"
+        regime=sf_r>>0;
 
     }
-    if (sf_r.range(6 +2,6 +2 -1)==2){
+    if (sf_r.range(6 +0,6 +0 -1)==2){
         regime = 2-32;
     }
  if(regime>=32 -2) regime=32 -2;
@@ -57607,8 +57666,8 @@ ps_t positDiv(ps_t x,ps_t y){
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
         if(REM>0){
-            if (REM > 2) {
-                exponent = sf_r & ((1 << 2) - 1);
+            if (REM > 0) {
+                exponent = sf_r & ((1 << 0) - 1);
 
             }
             else{
@@ -57631,7 +57690,7 @@ ps_t positDiv(ps_t x,ps_t y){
 ps_t positMul(ps_t x,ps_t y){
 
  ps_t result;
- sf_t sf_x,sf_y,sf_r,max =((2-32)<<2);
+ sf_t sf_x,sf_y,sf_r,max =((2-32)<<0);
 
  bool ovf,sign,x_sign,y_sign,x_isZero,y_isZero,isZero=0;
  regime_t R,regime,x_regime,y_regime;
@@ -57640,7 +57699,7 @@ ps_t positMul(ps_t x,ps_t y){
  mul_t x_mantissa,y_mantissa,mant=0,mul_part=0,mInter=0;
  reg_t SREG,REM;
  int SA=0;
-    mantissa.set((32 -(2 +2))-1);
+    mantissa.set((32 -(0 +2))-1);
 
  x_sign=x.sign; y_sign=y.sign;
  x_regime=x.regime; y_regime=y.regime;
@@ -57652,11 +57711,11 @@ ps_t positMul(ps_t x,ps_t y){
 
  isZero=x_isZero | y_isZero;
 
- sf_x=((sf_t)x_regime<<2)+x_exponent;
- sf_y=((sf_t)y_regime<<2)+y_exponent;
+ sf_x=((sf_t)x_regime<<0)+x_exponent;
+ sf_y=((sf_t)y_regime<<0)+y_exponent;
  sf_r=(sf_t)sf_x+sf_y;
-# 720 "posit_lib.cpp"
-    if (sf_r.range(6 +2,6 +2 -1)==2){
+# 771 "posit_lib.cpp"
+    if (sf_r.range(6 +0,6 +0 -1)==2){
         regime = 2-32;
 
 
@@ -57664,15 +57723,15 @@ ps_t positMul(ps_t x,ps_t y){
     else{
 
         mant = (mul_t) x_mantissa * y_mantissa;
-        ovf = mant[2*(32 -(2 +2))-1];
+        ovf = mant[2*(32 -(0 +2))-1];
         if (ovf){
             sf_r+=1;
-            mantissa = (mantissa_t) mant.range(2*(32 -(2 +2))-1,2*(32 -(2 +2))-(32 -(2 +2)));
+            mantissa = (mantissa_t) mant.range(2*(32 -(0 +2))-1,2*(32 -(0 +2))-(32 -(0 +2)));
         }
         else
-            mantissa = (mantissa_t) mant.range(2*(32 -(2 +2))-2,2*(32 -(2 +2))-1-(32 -(2 +2)));
-# 749 "posit_lib.cpp"
-        regime=sf_r>>2;
+            mantissa = (mantissa_t) mant.range(2*(32 -(0 +2))-2,2*(32 -(0 +2))-1-(32 -(0 +2)));
+# 800 "posit_lib.cpp"
+        regime=sf_r>>0;
     }
 
  if(regime>=32 -2) regime=32 -2;
@@ -57682,8 +57741,8 @@ ps_t positMul(ps_t x,ps_t y){
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
         if(REM>0){
-            if (REM > 2) {
-                exponent = sf_r & ((1 << 2) - 1);
+            if (REM > 0) {
+                exponent = sf_r & ((1 << 0) - 1);
                 mantissa= (mantissa_t)mantissa ;
             }
             else{
@@ -57699,7 +57758,7 @@ ps_t positMul(ps_t x,ps_t y){
  result.mantissa=mantissa;
  result.sign=sign;
  result.isZero=isZero;
-# 794 "posit_lib.cpp"
+# 845 "posit_lib.cpp"
  return result;
 }
 
@@ -57744,12 +57803,22 @@ double dTailorCos(double x) {
     x2 = x * x;
     term1 = 1.0;
     term2 = x2 / 2.0;
-# 856 "posit_lib.cpp"
-        return negate ? -(term1 - term2) : (term1 - term2);
 
 
 
 
+
+            term3 = x2 * x2 / 32.0;
+
+
+
+
+
+
+
+            term4 = x2 * term3 / 32.0;
+# 911 "posit_lib.cpp"
+        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
 
 
 
@@ -57775,7 +57844,7 @@ float fReduceAngle(float angle, bool &negate) {
 
     return angle;
 }
-# 903 "posit_lib.cpp"
+# 954 "posit_lib.cpp"
 float fTailorCos(float x) {
     bool negate;
     float x2,term1,term2,term3,term4;
@@ -57784,12 +57853,22 @@ float fTailorCos(float x) {
     x2 = x * x;
     term1 = 1.0;
     term2 = x2 / 2.0;
-# 929 "posit_lib.cpp"
-        return negate ? -(term1 - term2) : (term1 - term2);
 
 
 
 
+
+            term3 = x2 * x2 / 32.0;
+
+
+
+
+
+
+
+            term4 = x2 * term3 / 32.0;
+# 984 "posit_lib.cpp"
+        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
 
 
 
@@ -57801,31 +57880,27 @@ double safeZero(double value) {
     return (std::abs(value) < 1e-12) ? 0.0 : value;
 }
 ps_t pReduceAngle(ps_t angle, bool &negate) {
+    ps_t m_angle;
+    m_angle = positMod(angle,POSIT_2PI);
 
-    double dAngle = posit2double(angle);
-
-    dAngle = fmod(dAngle, 2 * 3.14);
-
-    if (dAngle >= 3.14)
-        dAngle -= 2 * 3.14;
-    else if (dAngle <= -3.14)
-        dAngle += 2 * 3.14;
+    if (isGreater_posit(m_angle,POSIT_PI ))
+        m_angle = positAdd(m_angle,POSIT_M_2PI);
+    else if (isGreater_posit(POSIT_M_PI,m_angle ))
+        m_angle = positAdd(m_angle,POSIT_2PI);
 
 
     negate = false;
-    if (dAngle >= 3.14 / 2) {
-        dAngle = 3.14 - dAngle;
+ if (isGreater_posit(m_angle,POSIT_PI_OVER2 )) {
+  m_angle = positSub(POSIT_PI,m_angle);
         negate = true;
-    } else if (dAngle <= -3.14 / 2) {
-        dAngle = -3.14 - dAngle;
+    }else if (isGreater_posit(POSIT_M_PI_OVER2,m_angle )){
+  m_angle = positAdd(m_angle,POSIT_PI);
+  m_angle.sign=!m_angle.sign;
         negate = true;
     }
-
-    dAngle = safeZero(dAngle);
-
-    return double2posit(dAngle);
+ return m_angle;
 }
-
+# 1042 "posit_lib.cpp"
 ps_t positCos(ps_t x) {
     ps_t y, y2, y4, result;
     ps_t term1, term2, term3, t1minust2, term4;
@@ -57838,12 +57913,35 @@ ps_t positCos(ps_t x) {
     y4 = positMul(y2, y2);
 
     term2 = positDiv2p(y2, -1);
-# 999 "posit_lib.cpp"
+
+
+
+
+
+            term3 = positDiv2p(y4, -5);
+
+
+
+
+
+
+
+            term4 = positDiv2p(positMul(term3, y2), -5);
+
+
+
     t1minust2 = positSub(term1, term2);
 
 
-        result = t1minust2;
-# 1011 "posit_lib.cpp"
+
+
+
+
+        result = positSub(positAdd(t1minust2, term3), term4);
+
+
+
+
     return negate ? posit_negate(result) : result;
 }
 
@@ -57873,12 +57971,21 @@ double dTailorSin(double in) {
 
 
         term2 = x * x * x / 8.0;
-# 1057 "posit_lib.cpp"
-        return term1 - term2;
 
 
 
 
+
+            term3 = term2*x*x/16.0;
+
+
+
+
+
+
+            term4 = term3*x*x/32.0;
+# 1133 "posit_lib.cpp"
+        return term1 - term2 + term3 - term4;
 
 
 
@@ -57909,37 +58016,46 @@ float fTailorSin(float in) {
 
 
         term2 = x * x * x / 8.0;
-# 1109 "posit_lib.cpp"
-        return term1 - term2;
 
 
 
 
+
+            term3 = term2*x*x/16.0;
+
+
+
+
+
+
+            term4 = term3*x*x/32.0;
+# 1185 "posit_lib.cpp"
+        return term1 - term2 + term3 - term4;
 
 
 
 }
+
+
 ps_t pNAngle(ps_t angle) {
-    double dAngle = posit2double(angle);
+    ps_t m_angle;
+    m_angle = positMod(angle,POSIT_2PI);
 
-    dAngle = fmod(dAngle, 2 * 3.14);
+    if (isGreater_posit(m_angle,POSIT_PI ))
+        m_angle = positAdd(m_angle,POSIT_M_2PI);
+ else if (isGreater_posit(POSIT_M_PI,m_angle ))
+  m_angle = positAdd(m_angle,POSIT_2PI);
+ if (isGreater_posit(m_angle,POSIT_PI_OVER2 ))
+  m_angle = positSub(POSIT_PI,m_angle);
+ else if (isGreater_posit(POSIT_M_PI_OVER2,m_angle )){
+  m_angle = positAdd(m_angle,POSIT_PI);
+  m_angle.sign=!m_angle.sign;
+        }
+ return m_angle;
 
-    if (dAngle > 3.14)
-        dAngle -= 2 * 3.14;
-    else if (dAngle < -3.14)
-        dAngle += 2 * 3.14;
 
-    if (dAngle > 3.14 / 2)
-        dAngle = 3.14 - dAngle;
-    else if (dAngle < -3.14 / 2)
-        dAngle = -3.14 - dAngle;
-    dAngle = safeZero(dAngle);
-    return double2posit(dAngle);
 }
-
-
-
-
+# 1232 "posit_lib.cpp"
 ps_t positSin(ps_t x) {
     ps_t y,y2,y3,y5,y7;
 
@@ -57947,9 +58063,15 @@ ps_t positSin(ps_t x) {
 
     y2 = positMul(y, y);
     y3 = positMul(y2,y);
-# 1157 "posit_lib.cpp"
-            return positSub(y,positDiv2p(y3,-3));
-# 1175 "posit_lib.cpp"
+
+        y5 = positMul(y2, y3);
+
+
+        y7 = positMul(y2, y5);
+# 1265 "posit_lib.cpp"
+            return positSub(positAdd(positSub(y,positDiv2p(y3,-3)),positDiv2p(y5,-7)),positDiv2p(y7, -12));
+
+
 }
 
 void pEuler(ps_t angle, ps_t *result_real, ps_t *result_imag) {
@@ -57989,7 +58111,7 @@ void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& 
     imagSum = 0.0;
 
 
-    VITIS_LOOP_1214_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1307_1: for (int n = 0; n < sampleCount; n++) {
         dEuler(angle, &realPart, &imagPart);
 
         realSum += signalBuffer[n] * realPart;
@@ -58008,7 +58130,7 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
     float deltaTheta = -2.0 * 3.14159265358979323846 * k / sampleCount;
 
 
-    VITIS_LOOP_1233_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1326_1: for (int n = 0; n < sampleCount; n++) {
 
         float signalVal = signal[n];
 
@@ -58027,7 +58149,7 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
 
 
 
-    VITIS_LOOP_1252_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1345_1: for (int n = 0; n < sampleCount; n++) {
 
         ps_t signalVal = signal[n];
 
@@ -58045,10 +58167,14 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
 }
 
 
-void pFFT(ps_t signal[], pFFTResult& result) {
+__attribute__((sdx_kernel("pFFT", 0))) void pFFT(ps_t signal[], pFFTResult& result) {
+#line 1 "directive"
+#pragma HLSDIRECTIVE TOP name=pFFT
+# 1363 "posit_lib.cpp"
+
     int sampleCount = 64;
 
-    VITIS_LOOP_1273_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1366_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58063,18 +58189,14 @@ void pFFT(ps_t signal[], pFFTResult& result) {
 }
 
 
-__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result) {
-#line 1 "directive"
-#pragma HLSDIRECTIVE TOP name=dFFT
-# 1288 "posit_lib.cpp"
-
+void dFFT(double signal[], dFFTResult& result) {
     const int sampleCount = 64;
 
 
     double signalBuffer[64];
 
 
-    VITIS_LOOP_1295_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1388_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << "Processing bin: " << k << std::endl;
 
@@ -58092,7 +58214,7 @@ __attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& re
 void fFFT(float signal[], fFFTResult& result) {
     int sampleCount = 64;
 
-    VITIS_LOOP_1313_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1406_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58113,7 +58235,7 @@ void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double&
     double realPart, imagPart, angle = 0.0;
     double deltaTheta = 2.0 * 3.14 * k / sampleCount;
 
-    VITIS_LOOP_1334_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1427_1: for (int n = 0; n < sampleCount; n++) {
         double signalVal_real = real[n];
         double signalVal_imag = imag[n];
 
@@ -58127,7 +58249,7 @@ void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double&
 
 
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount) {
-    VITIS_LOOP_1348_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1441_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58145,7 +58267,7 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
     float realPart, imagPart, angle = 0.0f;
     float deltaTheta = 2.0f * 3.14 * k / sampleCount;
 
-    VITIS_LOOP_1366_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1459_1: for (int n = 0; n < sampleCount; n++) {
         float signalVal_real = real[n];
         float signalVal_imag = imag[n];
 
@@ -58159,7 +58281,7 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
 
 
 void fIFFT(const float real[], const float imag[], float signal[], int sampleCount) {
-    VITIS_LOOP_1380_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1473_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
@@ -58176,7 +58298,7 @@ void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realS
     ps_t realPart, imagPart, angle = ZERO;
     ps_t deltaTheta = double2posit(2.0 * 3.14 * k / sampleCount);
 
-    VITIS_LOOP_1397_1: for (int n = 0; n < sampleCount; n++) {
+    VITIS_LOOP_1490_1: for (int n = 0; n < sampleCount; n++) {
         ps_t signalVal_real = real[n];
         ps_t signalVal_imag = imag[n];
 
@@ -58191,7 +58313,7 @@ void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realS
 
 
 void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount) {
-    VITIS_LOOP_1412_1: for (int k = 0; k < sampleCount; k++) {
+    VITIS_LOOP_1505_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
             std::cout << k << std::endl;
 
