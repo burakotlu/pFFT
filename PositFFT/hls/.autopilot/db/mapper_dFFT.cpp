@@ -243,45 +243,33 @@ class AESL_RUNTIME_BC {
     string mName;
 };
 using hls::sim::Byte;
-extern "C" void dFFT(Byte<8>*, Byte<8>*, Byte<8>*, int);
-extern "C" void apatb_dFFT_hw(volatile void * __xlx_apatb_param_signal_r, volatile void * __xlx_apatb_param_real_r, volatile void * __xlx_apatb_param_imag, int __xlx_apatb_param_sampleCount) {
+extern "C" void dFFT(volatile void *, Byte<8>*, Byte<8>*);
+extern "C" void apatb_dFFT_hw(volatile void * __xlx_apatb_param_signal_r, volatile void * __xlx_apatb_param_result_real, volatile void * __xlx_apatb_param_result_imag) {
 using hls::sim::createStream;
-  // Collect __xlx_signal_r__tmp_vec
-std::vector<Byte<8>> __xlx_signal_r__tmp_vec;
-for (size_t i = 0; i < 1024; ++i){
-__xlx_signal_r__tmp_vec.push_back(((Byte<8>*)__xlx_apatb_param_signal_r)[i]);
+  // Collect __xlx_result_real__tmp_vec
+std::vector<Byte<8>> __xlx_result_real__tmp_vec;
+for (size_t i = 0; i < 64; ++i){
+__xlx_result_real__tmp_vec.push_back(((Byte<8>*)__xlx_apatb_param_result_real)[i]);
 }
-  int __xlx_size_param_signal_r = 1024;
-  int __xlx_offset_param_signal_r = 0;
-  int __xlx_offset_byte_param_signal_r = 0*8;
-  // Collect __xlx_real_r__tmp_vec
-std::vector<Byte<8>> __xlx_real_r__tmp_vec;
-for (size_t i = 0; i < 1024; ++i){
-__xlx_real_r__tmp_vec.push_back(((Byte<8>*)__xlx_apatb_param_real_r)[i]);
+  int __xlx_size_param_result_real = 64;
+  int __xlx_offset_param_result_real = 0;
+  int __xlx_offset_byte_param_result_real = 0*8;
+  // Collect __xlx_result_imag__tmp_vec
+std::vector<Byte<8>> __xlx_result_imag__tmp_vec;
+for (size_t i = 0; i < 64; ++i){
+__xlx_result_imag__tmp_vec.push_back(((Byte<8>*)__xlx_apatb_param_result_imag)[i]);
 }
-  int __xlx_size_param_real_r = 1024;
-  int __xlx_offset_param_real_r = 0;
-  int __xlx_offset_byte_param_real_r = 0*8;
-  // Collect __xlx_imag__tmp_vec
-std::vector<Byte<8>> __xlx_imag__tmp_vec;
-for (size_t i = 0; i < 1024; ++i){
-__xlx_imag__tmp_vec.push_back(((Byte<8>*)__xlx_apatb_param_imag)[i]);
-}
-  int __xlx_size_param_imag = 1024;
-  int __xlx_offset_param_imag = 0;
-  int __xlx_offset_byte_param_imag = 0*8;
+  int __xlx_size_param_result_imag = 64;
+  int __xlx_offset_param_result_imag = 0;
+  int __xlx_offset_byte_param_result_imag = 0*8;
   // DUT call
-  dFFT(__xlx_signal_r__tmp_vec.data(), __xlx_real_r__tmp_vec.data(), __xlx_imag__tmp_vec.data(), __xlx_apatb_param_sampleCount);
-// print __xlx_apatb_param_signal_r
-for (size_t i = 0; i < __xlx_size_param_signal_r; ++i) {
-((Byte<8>*)__xlx_apatb_param_signal_r)[i] = __xlx_signal_r__tmp_vec[__xlx_offset_param_signal_r+i];
+  dFFT(__xlx_apatb_param_signal_r, __xlx_result_real__tmp_vec.data(), __xlx_result_imag__tmp_vec.data());
+// print __xlx_apatb_param_result_real
+for (size_t i = 0; i < __xlx_size_param_result_real; ++i) {
+((Byte<8>*)__xlx_apatb_param_result_real)[i] = __xlx_result_real__tmp_vec[__xlx_offset_param_result_real+i];
 }
-// print __xlx_apatb_param_real_r
-for (size_t i = 0; i < __xlx_size_param_real_r; ++i) {
-((Byte<8>*)__xlx_apatb_param_real_r)[i] = __xlx_real_r__tmp_vec[__xlx_offset_param_real_r+i];
-}
-// print __xlx_apatb_param_imag
-for (size_t i = 0; i < __xlx_size_param_imag; ++i) {
-((Byte<8>*)__xlx_apatb_param_imag)[i] = __xlx_imag__tmp_vec[__xlx_offset_param_imag+i];
+// print __xlx_apatb_param_result_imag
+for (size_t i = 0; i < __xlx_size_param_result_imag; ++i) {
+((Byte<8>*)__xlx_apatb_param_result_imag)[i] = __xlx_result_imag__tmp_vec[__xlx_offset_param_result_imag+i];
 }
 }

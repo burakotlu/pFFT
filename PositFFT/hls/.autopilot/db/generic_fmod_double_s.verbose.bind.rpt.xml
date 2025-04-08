@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'generic_fmod_double_s'" level="0">
-<item name = "Date">Sat Apr  5 23:10:48 2025
+<item name = "Date">Tue Apr  8 11:35:56 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">PositFFT</item>
 <item name = "Solution">hls (Vivado IP Flow Target)</item>
 <item name = "Product family">azynquplus</item>
-<item name = "Target device">xazu3teg-sfvc784-1Q-q</item>
+<item name = "Target device">xazu7ev-fbvb900-1-i</item>
 </section>
 
 <section name = "Performance Estimates" level="0">

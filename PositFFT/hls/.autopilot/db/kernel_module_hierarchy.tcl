@@ -1,11 +1,11 @@
 set ModuleHierarchy {[{
 "Name" : "dFFT","ID" : "0","Type" : "sequential",
 "SubLoops" : [
-	{"Name" : "VITIS_LOOP_1331_1","ID" : "1","Type" : "no",
+	{"Name" : "VITIS_LOOP_1295_1","ID" : "1","Type" : "no",
 	"SubLoops" : [
-	{"Name" : "VITIS_LOOP_1219_1","ID" : "2","Type" : "no",
+	{"Name" : "VITIS_LOOP_1214_1","ID" : "2","Type" : "no",
 		"SubInsts" : [
-		{"Name" : "grp_generic_fmod_double_s_fu_207","ID" : "3","Type" : "sequential",
+		{"Name" : "grp_generic_fmod_double_s_fu_173","ID" : "3","Type" : "sequential",
 				"SubInsts" : [
 				{"Name" : "grp_generic_fmod_double_Pipeline_1_fu_87","ID" : "4","Type" : "sequential",
 					"SubLoops" : [

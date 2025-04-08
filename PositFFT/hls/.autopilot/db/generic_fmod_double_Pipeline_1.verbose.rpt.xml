@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'generic_fmod_double_Pipeline_1'" level="0">
-<item name = "Date">Sat Apr  5 23:10:50 2025
+<item name = "Date">Tue Apr  8 11:35:57 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">PositFFT</item>
 <item name = "Solution">hls (Vivado IP Flow Target)</item>
 <item name = "Product family">azynquplus</item>
-<item name = "Target device">xazu3teg-sfvc784-1Q-q</item>
+<item name = "Target device">xazu7ev-fbvb900-1-i</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -54,7 +54,7 @@
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, 0, 45, -</column>
 <column name="Register">-, -, 82, -, -</column>
-<specialColumn name="Available">288, 576, 144000, 72000, 48</specialColumn>
+<specialColumn name="Available">624, 1728, 460800, 230400, 96</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
 </item>

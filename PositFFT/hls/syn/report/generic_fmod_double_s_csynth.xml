@@ -7,7 +7,7 @@
 <UserAssignments>
 <unit>ns</unit>
 <ProductFamily>azynquplus</ProductFamily>
-<Part>xazu3teg-sfvc784-1Q-q</Part>
+<Part>xazu7ev-fbvb900-1-i</Part>
 <TopModelName>generic_fmod_double_s</TopModelName>
 <TargetClockPeriod>10.00</TargetClockPeriod>
 <ClockUncertainty>2.70</ClockUncertainty>
@@ -47,11 +47,11 @@
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>288</BRAM_18K>
-<DSP>576</DSP>
-<FF>144000</FF>
-<LUT>72000</LUT>
-<URAM>48</URAM>
+<BRAM_18K>624</BRAM_18K>
+<DSP>1728</DSP>
+<FF>460800</FF>
+<LUT>230400</LUT>
+<URAM>96</URAM>
 </AvailableResources>
 </AreaEstimates>
 

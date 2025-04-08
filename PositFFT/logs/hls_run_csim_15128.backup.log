@@ -1,0 +1,158 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=dFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../posit_fft_test.cpp in debug mode
+csim.mk:88: recipe for target 'obj/posit_fft_test.o' failed
+In file included from ../../../../posit_fft_test.cpp:2:
+In file included from ../../../../posit.hpp:1:
+In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+../../../../posit_fft_test.cpp:162:5: error: no matching function for call to 'dFFT'
+    dFFT(signalStream, d_fftResult);
+    ^~~~
+../../../../posit.hpp:117:6: note: candidate function not viable: no known conversion from 'stream<float>' to 'const stream<double>' for 1st argument
+void dFFT(const hls::stream<double>& signal, dFFTResult& result) ;
+     ^
+../../../../posit_fft_test.cpp:170:5: error: no matching function for call to 'pFFT'
+    pFFT(signalStream, pfftResult);
+    ^~~~
+../../../../posit.hpp:118:6: note: candidate function not viable: no known conversion from 'stream<float>' to 'const stream<ps_t>' for 1st argument
+void pFFT(const hls::stream<ps_t>& signal, pFFTResult& result);
+     ^
+../../../../posit_fft_test.cpp:172:35: error: no matching function for call to 'convertPositArrayToDouble'
+    std::vector<double> RC_real = convertPositArrayToDouble(pfftResult.real);
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:63:21: note: candidate function not viable: no known conversion from 'hls::stream<ps_t>' (aka 'stream<POSIT>') to 'const std::vector<ps_t>' (aka 'const vector<POSIT>') for 1st argument
+std::vector<double> convertPositArrayToDouble(const std::vector<ps_t>& positArray) {
+                    ^
+../../../../posit_fft_test.cpp:173:35: error: no matching function for call to 'convertPositArrayToDouble'
+    std::vector<double> RC_imag = convertPositArrayToDouble(pfftResult.imag);
+                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:63:21: note: candidate function not viable: no known conversion from 'hls::stream<ps_t>' (aka 'stream<POSIT>') to 'const std::vector<ps_t>' (aka 'const vector<POSIT>') for 1st argument
+std::vector<double> convertPositArrayToDouble(const std::vector<ps_t>& positArray) {
+                    ^
+../../../../posit_fft_test.cpp:177:5: error: no matching function for call to 'writeToFile'
+    writeToFile(signalFile, signalStream);
+    ^~~~~~~~~~~
+../../../../posit_fft_test.cpp:48:6: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<double>' for 2nd argument
+void writeToFile(const std::string& filename, const std::vector<double>& data) {
+     ^
+../../../../posit_fft_test.cpp:180:5: error: no matching function for call to 'writeToFile'
+    writeToFile(dOutputFileReal, d_fftResult.real);
+    ^~~~~~~~~~~
+../../../../posit_fft_test.cpp:48:6: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 2nd argument
+void writeToFile(const std::string& filename, const std::vector<double>& data) {
+     ^
+../../../../posit_fft_test.cpp:181:5: error: no matching function for call to 'writeToFile'
+    writeToFile(dOutputFileImag, d_fftResult.imag);
+    ^~~~~~~~~~~
+../../../../posit_fft_test.cpp:48:6: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 2nd argument
+void writeToFile(const std::string& filename, const std::vector<double>& data) {
+     ^
+../../../../posit_fft_test.cpp:182:5: error: no matching function for call to 'writeToFileFloat'
+    writeToFileFloat(fOutputFileReal, f_fftResult.real);
+    ^~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:32:6: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<float>' for 2nd argument
+void writeToFileFloat(const std::string& filename, const std::vector<float>& vec) {
+     ^
+../../../../posit_fft_test.cpp:183:5: error: no matching function for call to 'writeToFileFloat'
+    writeToFileFloat(fOutputFileImag, f_fftResult.imag);
+    ^~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:32:6: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<float>' for 2nd argument
+void writeToFileFloat(const std::string& filename, const std::vector<float>& vec) {
+     ^
+../../../../posit_fft_test.cpp:186:23: error: no matching function for call to 'computeSNR'
+    double snrPosit = computeSNR(d_fftResult.real, RC_real);
+                      ^~~~~~~~~~
+../../../../posit_fft_test.cpp:87:8: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 1st argument
+double computeSNR(const std::vector<double>& original, const std::vector<double>& reconstructed) {
+       ^
+../../../../posit_fft_test.cpp:187:23: error: no matching function for call to 'computeSNRFloat'
+    double snrFloat = computeSNRFloat(d_fftResult.real, f_fftResult.real);
+                      ^~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:102:8: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 1st argument
+double computeSNRFloat(const std::vector<double>& original, const std::vector<float>& converted) {
+       ^
+../../../../posit_fft_test.cpp:204:5: error: no matching function for call to 'writeToFile'
+    writeToFile(difftOutputFile, d_reconstructedSignal);
+    ^~~~~~~~~~~
+../../../../posit_fft_test.cpp:48:6: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 2nd argument
+void writeToFile(const std::string& filename, const std::vector<double>& data) {
+     ^
+../../../../posit_fft_test.cpp:209:5: error: no matching function for call to 'writeToFileFloat'
+    writeToFileFloat(fifftOutputFile, f_reconstructedSignal);
+    ^~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:32:6: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<float>' for 2nd argument
+void writeToFileFloat(const std::string& filename, const std::vector<float>& vec) {
+     ^
+../../../../posit_fft_test.cpp:214:37: error: no matching function for call to 'convertPositArrayToDouble'
+    std::vector<double> RC_result = convertPositArrayToDouble(p_reconstructedSignal);
+                                    ^~~~~~~~~~~~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:63:21: note: candidate function not viable: no known conversion from 'hls::stream<ps_t>' (aka 'stream<POSIT>') to 'const std::vector<ps_t>' (aka 'const vector<POSIT>') for 1st argument
+std::vector<double> convertPositArrayToDouble(const std::vector<ps_t>& positArray) {
+                    ^
+../../../../posit_fft_test.cpp:218:16: error: no matching function for call to 'computeSNR'
+    snrPosit = computeSNR(d_reconstructedSignal, RC_result);
+               ^~~~~~~~~~
+../../../../posit_fft_test.cpp:87:8: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 1st argument
+double computeSNR(const std::vector<double>& original, const std::vector<double>& reconstructed) {
+       ^
+../../../../posit_fft_test.cpp:219:16: error: no matching function for call to 'computeSNRFloat'
+    snrFloat = computeSNRFloat(d_reconstructedSignal, f_reconstructedSignal);
+               ^~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:102:8: note: candidate function not viable: no known conversion from 'hls::stream<double>' to 'const std::vector<double>' for 1st argument
+double computeSNRFloat(const std::vector<double>& original, const std::vector<float>& converted) {
+       ^
+../../../../posit_fft_test.cpp:234:16: error: no matching function for call to 'computeSNR'
+    snrPosit = computeSNR(signalStream, RC_result);
+               ^~~~~~~~~~
+../../../../posit_fft_test.cpp:87:8: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<double>' for 1st argument
+double computeSNR(const std::vector<double>& original, const std::vector<double>& reconstructed) {
+       ^
+../../../../posit_fft_test.cpp:235:16: error: no matching function for call to 'computeSNRFloat'
+    snrFloat = computeSNRFloat(signalStream, f_reconstructedSignal);
+               ^~~~~~~~~~~~~~~
+../../../../posit_fft_test.cpp:102:8: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<double>' for 1st argument
+double computeSNRFloat(const std::vector<double>& original, const std::vector<float>& converted) {
+       ^
+../../../../posit_fft_test.cpp:236:24: error: no matching function for call to 'computeSNR'
+    double snrDouble = computeSNR(signalStream, d_reconstructedSignal);
+                       ^~~~~~~~~~
+../../../../posit_fft_test.cpp:87:8: note: candidate function not viable: no known conversion from 'hls::stream<float>' to 'const std::vector<double>' for 1st argument
+double computeSNR(const std::vector<double>& original, const std::vector<double>& reconstructed) {
+       ^
+1 warning and 19 errors generated.
+make: *** [obj/posit_fft_test.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 0 seconds. Total CPU system time: 0 seconds. Total elapsed time: 14.171 seconds; peak allocated memory: 163.055 MB.

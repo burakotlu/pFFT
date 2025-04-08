@@ -3,13 +3,13 @@
 ================================================================
 == Vitis HLS Report for 'generic_fmod_double_Pipeline_1'
 ================================================================
-* Date:           Sat Apr  5 23:10:48 2025
+* Date:           Tue Apr  8 11:35:55 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        PositFFT
 * Solution:       hls (Vivado IP Flow Target)
 * Product family: azynquplus
-* Target device:  xazu3teg-sfvc784-1Q-q
+* Target device:  xazu7ev-fbvb900-1-i
 
 
 ================================================================
@@ -136,7 +136,7 @@ The critical path consists of the following:
  <State 2>: 2.644ns
 The critical path consists of the following:
 	'load' operation 54 bit ('r_sh_load_1', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:310) on local variable 'r_sh', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:298 [21]  (0.000 ns)
-	'add' operation 54 bit ('add_ln310', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:310) [26]  (1.334 ns)
+	'icmp' operation 1 bit ('icmp_ln309', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:309) [25]  (1.334 ns)
 	'select' operation 54 bit ('r_sh', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:309) [27]  (0.411 ns)
 	'select' operation 54 bit ('r_sh', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:311) [31]  (0.411 ns)
 	'store' operation 0 bit ('store_ln298', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:298) of variable 'r_sh', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:311 on local variable 'r_sh', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:298 [35]  (0.489 ns)

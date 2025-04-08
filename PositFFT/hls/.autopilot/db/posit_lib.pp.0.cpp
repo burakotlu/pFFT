@@ -52767,9 +52767,7 @@ namespace hls {
 
 };
 # 8 "./posit.hpp" 2
-# 1 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 1 3
-# 40 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 3
-# 9 "./posit.hpp" 2
+
 # 1 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\vector" 1 3
 # 59 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\vector" 3
 
@@ -56758,23 +56756,153 @@ namespace std
 }
 # 70 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\vector" 2 3
 # 10 "./posit.hpp" 2
+# 1 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot\\hls_stream.h" 1
+# 12 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot\\hls_stream.h"
+# 1 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot/hls_stream_39.h" 1
+# 23 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot/hls_stream_39.h"
+namespace hls {
+# 49 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot/hls_stream_39.h"
+template<typename __STREAM_T__, int DEPTH=0>
+class stream;
+
+template<typename __STREAM_T__>
+class stream<__STREAM_T__, 0>
+{
+  public:
+    using value_type = __STREAM_T__;
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream() {
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const char* name) {
+      (void)(name);
+    }
+
+
+  private:
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const stream< __STREAM_T__ >& chn):V(chn.V) {
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream& operator= (const stream< __STREAM_T__ >& chn) {
+        V = chn.V;
+        return *this;
+    }
+
+  public:
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void operator >> (__STREAM_T__& rdata) {
+        read(rdata);
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void operator << (const __STREAM_T__& wdata) {
+        write(wdata);
+    }
+
+
+  public:
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool empty() const {
+        return !__fpga_fifo_not_empty(&V);
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool full() const {
+        return !__fpga_fifo_not_full(&V);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void read(__STREAM_T__& dout) {
+        __fpga_fifo_pop(&V, &dout);
+    }
+
+
+    inline __attribute__((noinline)) __attribute__((nodebug)) bool read_dep(__STREAM_T__& dout, volatile bool flag) {
+        __fpga_fifo_pop(&V, &dout);
+        return flag;
+    }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) __STREAM_T__ read() {
+        __STREAM_T__ tmp;
+        read(tmp);
+        return tmp;
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool read_nb(__STREAM_T__& dout) {
+        __STREAM_T__ tmp;
+
+        if (__fpga_fifo_nb_pop(&V, &tmp)) {
+            dout = tmp;
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) void write(const __STREAM_T__& din) {
+        __fpga_fifo_push(&V, &din);
+    }
+
+
+    inline __attribute__((noinline)) __attribute__((nodebug)) bool write_dep(const __STREAM_T__& din, volatile bool flag) {
+        __fpga_fifo_push(&V, &din);
+        return flag;
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) bool write_nb(const __STREAM_T__& din) {
+        return __fpga_fifo_nb_push(&V, &din);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) unsigned size() const {
+        return __fpga_fifo_size(&V);
+    }
+
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) unsigned capacity() const {
+        return __fpga_fifo_capacity(&V);
+    }
+
+
+    void set_name(const char* name) { (void)(name); }
+
+  public:
+    __STREAM_T__ V __attribute__((no_ctor));
+};
+
+template<typename __STREAM_T__, int DEPTH>
+class stream : public stream<__STREAM_T__, 0> {
+  public:
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream() {
+#pragma HLS stream variable=this depth=DEPTH
+ }
+
+    inline __attribute__((always_inline)) __attribute__((nodebug)) stream(const char* name) {
+#pragma HLS stream variable=this depth=DEPTH
+ (void)(name);
+    }
+};
+}
+# 13 "C:/Xilinx/Vitis/2024.2/common/technology/autopilot\\hls_stream.h" 2
+# 11 "./posit.hpp" 2
 using namespace std;
-# 52 "./posit.hpp"
+# 53 "./posit.hpp"
 typedef ap_int<6> regime_t;
 typedef ap_uint<6> ml_t;
-typedef ap_uint<(32 -(0 +2))> mantissa_t;
-typedef ap_uint<(32 -(0 +2))+6 +0 +1> mantissa_sf_t;
+typedef ap_uint<(32 -(2 +2))> mantissa_t;
+typedef ap_uint<(32 -(2 +2))+6 +2 +1> mantissa_sf_t;
+
+typedef ap_uint<2> exponent_t;
 
 
 
-typedef ap_uint<1> exponent_t;
-
-typedef ap_uint<(32 -(0 +2))+2> mant_add_t;
-typedef ap_uint<(32 -(0 +2))+1> m_add_t;
+typedef ap_uint<(32 -(2 +2))+2> mant_add_t;
+typedef ap_uint<(32 -(2 +2))+1> m_add_t;
 typedef ap_uint<2> ovf_t;
-typedef ap_uint<2*(32 -(0 +2))> mul_t;
-typedef ap_uint<2*(32 -(0 +2))+2> dv_t;
-typedef ap_int<6 +0 +1> sf_t;
+typedef ap_uint<2*(32 -(2 +2))> mul_t;
+typedef ap_uint<2*(32 -(2 +2))+2> dv_t;
+typedef ap_int<6 +2 +1> sf_t;
 
 typedef ap_uint<32 -1> reg_t;
 typedef ap_uint<32> posit_t;
@@ -56783,38 +56911,11 @@ typedef ap_uint<1> bool_t;
 
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
-# 86 "./posit.hpp"
-struct pFFTResult {
-    ps_t real[1024];
-    ps_t imag[1024];
-};
-
-
-
-
-
-struct dFFTResult {
-    double real[1024];
-    double imag[1024];
-};
-struct fFFTResult {
-    std::vector<float> real = std::vector<float>(1024, 0.0f);
-    std::vector<float> imag = std::vector<float>(1024, 0.0f);
-};
-
-fFFTResult fFFT(const std::vector<float>& signal);
-dFFTResult dFFT(const std::vector<double>& signal);
-
-void pFFT(const ps_t signal[1024], ps_t real[1024], ps_t imag[1024], int sampleCount) ;
-
-std::vector<double> dIFFT(const dFFTResult& result);
-std::vector<float> fIFFT(const fFFTResult& result);
-std::vector<ps_t> pIFFT(const pFFTResult& result);
-
+# 85 "./posit.hpp"
 const ps_t POSIT_PI = {0, false, false, 0, 0, 1411};
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333};
-const ps_t ONE = {0, false, false, 0, 0, 1<<((32 -(0 +2))-1)};
-const ps_t ZERO = {0, true, false, 0, 0, 1<<((32 -(0 +2))-1)};
+const ps_t ONE = {0, false, false, 0, 0, 1<<((32 -(2 +2))-1)};
+const ps_t ZERO = {0, true, false, 0, 0, 1<<((32 -(2 +2))-1)};
 regime_t LOD(reg_t reg);
 int LOD_ADD(mant_add_t in);
 ps_t decode(posit_t posit);
@@ -56842,6 +56943,52 @@ float fTailorCos(float in);
 void pEuler(ps_t angle, ps_t *result_real, ps_t *result_imag);
 void dEuler(double angle, double *result_real, double *result_imag);
 void fEuler(float angle, float *result_real, float *result_imag);
+
+
+struct pFFTResult {
+    ps_t real[64];
+    ps_t imag[64];
+
+
+    pFFTResult(size_t size = 64) {
+
+        std::fill(std::begin(real), std::end(real), ps_t{ZERO});
+        std::fill(std::begin(imag), std::end(imag), ps_t{ZERO});
+    }
+};
+
+struct dFFTResult {
+    double real[64];
+    double imag[64];
+
+
+    dFFTResult(size_t size = 64) {
+
+        std::fill(std::begin(real), std::end(real), 0.0);
+        std::fill(std::begin(imag), std::end(imag), 0.0);
+    }
+};
+
+struct fFFTResult {
+    float real[64];
+    float imag[64];
+
+
+    fFFTResult(size_t size = 64) {
+
+        std::fill(std::begin(real), std::end(real), 0.0f);
+        std::fill(std::begin(imag), std::end(imag), 0.0f);
+    }
+};
+
+void fFFT(float signal[], fFFTResult& result);
+__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result);
+void pFFT(ps_t signal[], pFFTResult& result);
+
+
+void dIFFT(const double real[], const double imag[], double signal[], int sampleCount);
+void fIFFT(const float real[], const float imag[], float signal[], int sampleCount);
+void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount);
 # 2 "posit_lib.cpp" 2
 # 1 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 1 3
 # 40 "C:/Xilinx/Vitis/2024.2/tps/mingw/8.3.0/win64.o/nt\\lib\\gcc\\x86_64-w64-mingw32\\8.3.0\\include\\c++\\cmath" 3
@@ -56908,7 +57055,7 @@ int LOD_MUL(mul_t in){
         }
         else flag=true;
     }
-    return (32 -(0 +2))-1-count;
+    return (32 -(2 +2))-1-count;
 }
 int LOD_DIV(dv_t in){
     bool flag=0;
@@ -56919,7 +57066,7 @@ int LOD_DIV(dv_t in){
         }
         else flag=true;
     }
-    return (32 -(0 +2))-1-count;
+    return (32 -(2 +2))-1-count;
 }
 ps_t decode(posit_t posit){
 
@@ -56959,13 +57106,13 @@ ps_t decode(posit_t posit){
     REM=32 -SREG;
 
     if(REM>0){
-        if(0==0){
+        if(2==0){
             mantissa=posit.range(REM-1,0);
         }
         else{
-            if(REM>0){
-                exponent=posit.range(REM-1,REM-0);
-                mantissa=posit.range(REM-(0 +1),0);
+            if(REM>2){
+                exponent=posit.range(REM-1,REM-2);
+                mantissa=posit.range(REM-(2 +1),0);
             }
             else {mantissa=0; exponent=posit.range(REM-1,0);}
         }
@@ -57024,13 +57171,13 @@ posit_t encode(ps_t x){
         }
 
         if(REM>0){
-            if(0==0){
+            if(2==0){
                 posit.range(REM-1,0)=mantissa;
             }
             else{
-                if(REM>0){
-                    posit.range(REM-1,REM-0)=exponent;
-                    posit.range(REM-(0 +1),0)=mantissa;
+                if(REM>2){
+                    posit.range(REM-1,REM-2)=exponent;
+                    posit.range(REM-(2 +1),0)=mantissa;
                 }
                 else posit.range(REM-1,0)=exponent;
             }
@@ -57067,7 +57214,7 @@ ps_t float2posit(float in) {
     sf_t sf;
 
 
-    double MAX = pow(2, 1 * (32 - 2));
+    double MAX = pow(2, 4 * (32 - 2));
 
 
     if (in == 0.0) {
@@ -57089,8 +57236,8 @@ ps_t float2posit(float in) {
 
         sf = (int)log2(in);
         exact = 1 << sf;
-        mant_part = (in - exact) * (1 << (32 -(0 +2)));
-        regime = sf >> 0;
+        mant_part = (in - exact) * (1 << (32 -(2 +2)));
+        regime = sf >> 2;
 
 
         if (regime >= 0) {
@@ -57105,16 +57252,16 @@ ps_t float2posit(float in) {
         REM=32 -SREG;
 
 
-        if (0 == 0) {
+        if (2 == 0) {
             if (REM > 0) {
-                mantissa.range((32 -(0 +2)) - 2, (32 -(0 +2)) - REM - 1) = mant_part << (REM - sf);
-                mantissa.set((32 -(0 +2)) - 1);
+                mantissa.range((32 -(2 +2)) - 2, (32 -(2 +2)) - REM - 1) = mant_part << (REM - sf);
+                mantissa.set((32 -(2 +2)) - 1);
             }
         } else {
-            if (REM > 0) {
-                exponent = sf & ((1 << 0) - 1);
-                mantissa.range((32 -(0 +2)) - 2, (32 -(0 +2)) - REM + 0 - 1) = mant_part << (REM - sf - 0);
-                mantissa.set((32 -(0 +2)) - 1);
+            if (REM > 2) {
+                exponent = sf & ((1 << 2) - 1);
+                mantissa.range((32 -(2 +2)) - 2, (32 -(2 +2)) - REM + 2 - 1) = mant_part << (REM - sf - 2);
+                mantissa.set((32 -(2 +2)) - 1);
             } else if (REM > 0) {
                 exponent = sf & ((1 << REM) - 1);
             }
@@ -57129,6 +57276,12 @@ ps_t float2posit(float in) {
     result.isZero = isZero;
 
     return result;
+}
+double stable_floor(double x, double epsilon = 1e-9) {
+    if (std::abs(x - std::round(x)) < epsilon) {
+        return std::round(x);
+    }
+    return std::floor(x);
 }
 ps_t double2posit(double in) {
     ps_t result;
@@ -57152,23 +57305,24 @@ ps_t double2posit(double in) {
         in = -in;
     }
 
-    double sf_d = log2(in);
+    double sf_d = hls::log2(in);
+    double fl= stable_floor(sf_d);
+    bool sf_exact = (fl == sf_d);
 
-    bool sf_exact = std::floor(sf_d) == sf_d;
+    sf = (sf_t)static_cast<int>(fl);
 
-    sf = (int)sf_d;
-    if(in<1 && !sf_exact) sf= sf-1;
+
     exact = hls::pow((double)2.0,(double)sf);
 
     diff = in-exact;
 
-    factor.set((32 -(0 +2))-1);
+    factor.set((32 -(2 +2))-1);
     double interm = diff * factor;
     long long dtol = interm;
     mant_with_sf = dtol;
     mant_part= mant_with_sf >> (int)sf;
-    regime = (sf_t)sf >> 0;
-# 341 "posit_lib.cpp"
+    regime = (sf_t)sf >> 2;
+# 349 "posit_lib.cpp"
     if (regime >= 0) {
         if (regime + 3 < 32) {
             SREG = (reg_t)regime + 3;
@@ -57184,10 +57338,10 @@ ps_t double2posit(double in) {
 
 
     if(REM>0){
-        if (REM > 0) {
-            exponent = sf & ((1 << 0) - 1);
+        if (REM > 2) {
+            exponent = sf & ((1 << 2) - 1);
             mantissa= (mantissa_t)mant_part ;
-            mantissa.set((32 -(0 +2))-1);
+            mantissa.set((32 -(2 +2))-1);
         }
         else{
             exponent = sf & ((1 << REM) - 1);
@@ -57211,12 +57365,12 @@ float posit2float(ps_t pos){
  float result=0,mantissa,man_d,u_R,e;
 
  if(pos.isZero) return result;
- if(pos.regime>=0) ml=32 -(pos.regime+3+0);
- else ml=32 -2+pos.regime-0;
+ if(pos.regime>=0) ml=32 -(pos.regime+3+2);
+ else ml=32 -2+pos.regime-2;
  man_d=(float)(1<<ml);
  mantissa=(float)pos.mantissa/man_d;
 
- u_R=hls::pow((float)2,(float)pos.regime);
+ u_R=hls::pow((float)16,(float)pos.regime);
  e=hls::pow(2,pos.exponent);
  result=(float)(u_R*e*(1+mantissa));
  return pos.sign?-result:result;
@@ -57230,9 +57384,9 @@ double posit2double(ps_t pos){
     if(pos.isInf) return __builtin_inff();
 
 
-    mantissa = (double)pos.mantissa / (double) (1<<((32 -(0 +2))-1));
+    mantissa = (double)pos.mantissa / (double) (1<<((32 -(2 +2))-1));
 
- u_R=hls::pow((double)2,pos.regime);
+ u_R=hls::pow((double)16,pos.regime);
  e=hls::pow(2.0,pos.exponent);
     m= mantissa;
  result=u_R*e*m;
@@ -57255,7 +57409,7 @@ ps_t int2posit(int in){
  reg_t exact,mant_part,SREG,REM;
  sf_t sf;
 
- double MAX=pow(2,1*(32 -2));
+ double MAX=pow(2,4*(32 -2));
 
  if(in==0) isZero=true;
  else if(in>=MAX) regime=32 -2;
@@ -57267,18 +57421,18 @@ ps_t int2posit(int in){
   sf=(int)log2(in);
   exact=1<<sf;
   mant_part=in-exact;
-  regime=sf>>0;
+  regime=sf>>2;
 
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
 
-  if(0==0){
+  if(2==0){
    if(REM>0) mantissa=mant_part<<(REM-sf);
   }
   else{
-   if(REM>=0) {
-    exponent=sf.range(0 -1,0);
-    mantissa=mant_part<<(REM-sf-0);
+   if(REM>=2) {
+    exponent=sf.range(2 -1,0);
+    mantissa=mant_part<<(REM-sf-2);
    }
    else if(REM>0) {
     exponent=sf.range(REM-1,0);
@@ -57315,8 +57469,8 @@ ps_t positAdd(ps_t x,ps_t y){
 
  sign=ABSxIsGreaterEqual?x_sign:y_sign;
 
- sf_x=((sf_t)x_regime<<0)+x_exponent;
- sf_y=((sf_t)y_regime<<0)+y_exponent;
+ sf_x=((sf_t)x_regime<<2)+x_exponent;
+ sf_y=((sf_t)y_regime<<2)+y_exponent;
  sf_r=ABSxIsGreaterEqual?sf_x:sf_y;
     sf_L=ABSxIsGreaterEqual?sf_x:sf_y;
     sf_S=ABSxIsGreaterEqual?sf_y:sf_x;
@@ -57338,15 +57492,15 @@ ps_t positAdd(ps_t x,ps_t y){
     SA = LOD_ADD(mantissa);
     mantissa = mantissa <<SA;
     sf_r = sf_r-SA;
-# 527 "posit_lib.cpp"
- regime=sf_r>>0;
+# 535 "posit_lib.cpp"
+ regime=sf_r>>2;
 
  SREG=regime>=0?regime+3:2-regime;
  REM=32 -SREG;
 
     if(REM>0){
-        if (REM > 0) {
-            exponent = sf_r & ((1 << 0) - 1);
+        if (REM > 2) {
+            exponent = sf_r & ((1 << 2) - 1);
             mantissa= (mantissa_t)mantissa ;
         }
         else{
@@ -57382,14 +57536,14 @@ ps_t positDiv2p(ps_t in,int i){
     ps_t result;
     sf_t sf_in, sf_out;
     result = in;
-    sf_in=((sf_t)in.regime<<0)+in.exponent;
+    sf_in=((sf_t)in.regime<<2)+in.exponent;
     sf_out = sf_in +i;
-    if (sf_out.range(6 +0,6 +0 -1)==2){
+    if (sf_out.range(6 +2,6 +2 -1)==2){
         result.regime = 2-32;
     }
     else{
-        result.regime=sf_out>>0;
-        result.exponent = sf_out & ((1 << 0) - 1);
+        result.regime=sf_out>>2;
+        result.exponent = sf_out & ((1 << 2) - 1);
     }
 
     return result;
@@ -57417,33 +57571,33 @@ ps_t positDiv(ps_t x,ps_t y){
 
  isZero=x_isZero | y_isZero;
 
- sf_x=((sf_t)x_regime<<0)+x_exponent;
- sf_y=((sf_t)y_regime<<0)+y_exponent;
+ sf_x=((sf_t)x_regime<<2)+x_exponent;
+ sf_y=((sf_t)y_regime<<2)+y_exponent;
  sf_r=sf_x-sf_y;
 
-    if (sf_r.range(6 +0,6 +0 -1)==2){
+    if (sf_r.range(6 +2,6 +2 -1)==2){
         regime = 2-32;
     }
     else{
 
 
 
-        mant = (x_mantissa<<((32 -(0 +2))-1))/y_mantissa;
+        mant = (x_mantissa<<((32 -(2 +2))-1))/y_mantissa;
 
 
 
 
-        if(mant[(32 -(0 +2))-1] == 0){
+        if(mant[(32 -(2 +2))-1] == 0){
             mant = (mant<<1);
 
             sf_r = sf_r-1;
         }
         mantissa = (mantissa_t)mant;
-# 638 "posit_lib.cpp"
-        regime=sf_r>>0;
+# 646 "posit_lib.cpp"
+        regime=sf_r>>2;
 
     }
-    if (sf_r.range(6 +0,6 +0 -1)==2){
+    if (sf_r.range(6 +2,6 +2 -1)==2){
         regime = 2-32;
     }
  if(regime>=32 -2) regime=32 -2;
@@ -57453,8 +57607,8 @@ ps_t positDiv(ps_t x,ps_t y){
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
         if(REM>0){
-            if (REM > 0) {
-                exponent = sf_r & ((1 << 0) - 1);
+            if (REM > 2) {
+                exponent = sf_r & ((1 << 2) - 1);
 
             }
             else{
@@ -57477,7 +57631,7 @@ ps_t positDiv(ps_t x,ps_t y){
 ps_t positMul(ps_t x,ps_t y){
 
  ps_t result;
- sf_t sf_x,sf_y,sf_r,max =((2-32)<<0);
+ sf_t sf_x,sf_y,sf_r,max =((2-32)<<2);
 
  bool ovf,sign,x_sign,y_sign,x_isZero,y_isZero,isZero=0;
  regime_t R,regime,x_regime,y_regime;
@@ -57486,7 +57640,7 @@ ps_t positMul(ps_t x,ps_t y){
  mul_t x_mantissa,y_mantissa,mant=0,mul_part=0,mInter=0;
  reg_t SREG,REM;
  int SA=0;
-    mantissa.set((32 -(0 +2))-1);
+    mantissa.set((32 -(2 +2))-1);
 
  x_sign=x.sign; y_sign=y.sign;
  x_regime=x.regime; y_regime=y.regime;
@@ -57498,11 +57652,11 @@ ps_t positMul(ps_t x,ps_t y){
 
  isZero=x_isZero | y_isZero;
 
- sf_x=((sf_t)x_regime<<0)+x_exponent;
- sf_y=((sf_t)y_regime<<0)+y_exponent;
+ sf_x=((sf_t)x_regime<<2)+x_exponent;
+ sf_y=((sf_t)y_regime<<2)+y_exponent;
  sf_r=(sf_t)sf_x+sf_y;
-# 712 "posit_lib.cpp"
-    if (sf_r.range(6 +0,6 +0 -1)==2){
+# 720 "posit_lib.cpp"
+    if (sf_r.range(6 +2,6 +2 -1)==2){
         regime = 2-32;
 
 
@@ -57510,15 +57664,15 @@ ps_t positMul(ps_t x,ps_t y){
     else{
 
         mant = (mul_t) x_mantissa * y_mantissa;
-        ovf = mant[2*(32 -(0 +2))-1];
+        ovf = mant[2*(32 -(2 +2))-1];
         if (ovf){
             sf_r+=1;
-            mantissa = (mantissa_t) mant.range(2*(32 -(0 +2))-1,2*(32 -(0 +2))-(32 -(0 +2)));
+            mantissa = (mantissa_t) mant.range(2*(32 -(2 +2))-1,2*(32 -(2 +2))-(32 -(2 +2)));
         }
         else
-            mantissa = (mantissa_t) mant.range(2*(32 -(0 +2))-2,2*(32 -(0 +2))-1-(32 -(0 +2)));
-# 741 "posit_lib.cpp"
-        regime=sf_r>>0;
+            mantissa = (mantissa_t) mant.range(2*(32 -(2 +2))-2,2*(32 -(2 +2))-1-(32 -(2 +2)));
+# 749 "posit_lib.cpp"
+        regime=sf_r>>2;
     }
 
  if(regime>=32 -2) regime=32 -2;
@@ -57528,8 +57682,8 @@ ps_t positMul(ps_t x,ps_t y){
   SREG=regime>=0?regime+3:2-regime;
   REM=32 -SREG;
         if(REM>0){
-            if (REM > 0) {
-                exponent = sf_r & ((1 << 0) - 1);
+            if (REM > 2) {
+                exponent = sf_r & ((1 << 2) - 1);
                 mantissa= (mantissa_t)mantissa ;
             }
             else{
@@ -57545,7 +57699,7 @@ ps_t positMul(ps_t x,ps_t y){
  result.mantissa=mantissa;
  result.sign=sign;
  result.isZero=isZero;
-# 786 "posit_lib.cpp"
+# 794 "posit_lib.cpp"
  return result;
 }
 
@@ -57590,12 +57744,10 @@ double dTailorCos(double x) {
     x2 = x * x;
     term1 = 1.0;
     term2 = x2 / 2.0;
+# 856 "posit_lib.cpp"
+        return negate ? -(term1 - term2) : (term1 - term2);
 
 
-
-            term3 = x2 * x2 / 24.0;
-# 850 "posit_lib.cpp"
-        return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
 
 
 
@@ -57623,7 +57775,7 @@ float fReduceAngle(float angle, bool &negate) {
 
     return angle;
 }
-# 895 "posit_lib.cpp"
+# 903 "posit_lib.cpp"
 float fTailorCos(float x) {
     bool negate;
     float x2,term1,term2,term3,term4;
@@ -57632,12 +57784,10 @@ float fTailorCos(float x) {
     x2 = x * x;
     term1 = 1.0;
     term2 = x2 / 2.0;
+# 929 "posit_lib.cpp"
+        return negate ? -(term1 - term2) : (term1 - term2);
 
 
-
-            term3 = x2 * x2 / 24.0;
-# 923 "posit_lib.cpp"
-        return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
 
 
 
@@ -57688,23 +57838,12 @@ ps_t positCos(ps_t x) {
     y4 = positMul(y2, y2);
 
     term2 = positDiv2p(y2, -1);
-
-
-
-            term3 = positDiv(y4, double2posit(24.0));
-# 991 "posit_lib.cpp"
+# 999 "posit_lib.cpp"
     t1minust2 = positSub(term1, term2);
 
 
-
-
-        result = positAdd(t1minust2, term3);
-
-
-
-
-
-
+        result = t1minust2;
+# 1011 "posit_lib.cpp"
     return negate ? posit_negate(result) : result;
 }
 
@@ -57731,15 +57870,13 @@ double dTailorSin(double in) {
 
     term1 = x;
 
-        term2 = x * x * x / 6.0;
 
 
+        term2 = x * x * x / 8.0;
+# 1057 "posit_lib.cpp"
+        return term1 - term2;
 
 
-
-            term3 = term2 * x * x / 20.0;
-# 1051 "posit_lib.cpp"
-        return term1 - term2 + term3;
 
 
 
@@ -57769,15 +57906,13 @@ float fTailorSin(float in) {
 
     term1 = x;
 
-        term2 = x * x * x / 6.0;
 
 
+        term2 = x * x * x / 8.0;
+# 1109 "posit_lib.cpp"
+        return term1 - term2;
 
 
-
-            term3 = term2 * x * x / 20.0;
-# 1103 "posit_lib.cpp"
-        return term1 - term2 + term3;
 
 
 
@@ -57812,11 +57947,9 @@ ps_t positSin(ps_t x) {
 
     y2 = positMul(y, y);
     y3 = positMul(y2,y);
-
-        y5 = positMul(y2, y3);
-# 1155 "posit_lib.cpp"
-            return positAdd(positSub(y,positDiv(y3,double2posit(6))),positDiv(y5,double2posit(120)));
-# 1167 "posit_lib.cpp"
+# 1157 "posit_lib.cpp"
+            return positSub(y,positDiv2p(y3,-3));
+# 1175 "posit_lib.cpp"
 }
 
 void pEuler(ps_t angle, ps_t *result_real, ps_t *result_imag) {
@@ -57831,102 +57964,240 @@ void fEuler(float angle, float *result_real, float *result_imag) {
     *result_real = fTailorCos(angle);
     *result_imag = fTailorSin(angle);
 }
-# 1212 "posit_lib.cpp"
-void dAccumulateFC(int k, const double signal[1024], double& realSum, double& imagSum, int sampleCount) {
-    double realPart, imagPart, angle = 0.0;
 
-    realSum = 0.0;
-    imagSum = 0.0;
-    double deltaTheta = -2.0 * 3.14 * k / sampleCount;
+std::ofstream signalFile("signal_values.txt");
+std::ofstream realPartFile("realPart_values.txt");
+std::ofstream multiplicationFile("multiplication_values.txt");
+std::ofstream realSumFile("realsum_values.txt");
+std::ofstream angleFile("angle_values.txt");
+std::ofstream deltaThetaFile("deltaTheta_values.txt");
 
-    VITIS_LOOP_1219_1: for (int n = 0; n < sampleCount; n++) {
-        dEuler(angle, &realPart, &imagPart);
-
-        realSum += signal[n] * realPart;
-        imagSum += signal[n] * imagPart;
-        angle += deltaTheta;
-    }
-}
-
-void fAccumulateFC(int k, const std::vector<float>& signal, float& realSum, float& imagSum) {
-    int sampleCount = signal.size();
-    float realPart, imagPart,angle=0.0;
-    realSum = 0.0;
-    imagSum = 0.0;
-    float deltaTheta = -2.0 * 3.14 * k / sampleCount;
-    VITIS_LOOP_1234_1: for (int n = 0; n < sampleCount; n++) {
-
-
-        fEuler(angle, &realPart, &imagPart);
-        realSum += signal[n] * realPart;
-        imagSum += signal[n] * imagPart;
-        angle += deltaTheta;
-    }
-}
-void pAccumulateFC(int k, const ps_t signal[1024], ps_t& realSum, ps_t& imagSum, int sampleCount) {
-#pragma HLS INLINE
- ps_t angle = ZERO;
-    ps_t realPart, imagPart;
-    ps_t deltaTheta = double2posit(-2.0 * 3.14 * k / sampleCount);
-
-    VITIS_LOOP_1249_1: for (int n = 0; n < sampleCount; n++) {
-#pragma HLS PIPELINE II=1
- pEuler(angle, &realPart, &imagPart);
-
-        realSum = positAdd(realSum, positMul(signal[n], realPart));
-        imagSum = positAdd(imagSum, positMul(signal[n], imagPart));
-
-        angle = positAdd(angle, deltaTheta);
-    }
-}
 std::ofstream PsignalFile("posit_signal_values.txt");
 std::ofstream PrealPartFile("posit_realPart_values.txt");
 std::ofstream PmultiplicationFile("posit_multiplication_values.txt");
 std::ofstream PrealSumFile("posit_realsum_values.txt");
 std::ofstream PangleFile("posit_angle_values.txt");
 std::ofstream PdeltaThetaFile("posit_deltaTheta_values.txt");
-# 1298 "posit_lib.cpp"
-void pFFT(const ps_t signal[1024], ps_t real[1024], ps_t imag[1024], int sampleCount) {
-#pragma HLS INTERFACE mode=ap_memory port=signal
-#pragma HLS INTERFACE mode=ap_memory port=real
-#pragma HLS INTERFACE mode=ap_memory port=imag
-#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
 
- VITIS_LOOP_1304_1: for (int k = 0; k < sampleCount; k++) {
-        if (k % 200 == 0)
-            std::cout << k << std::endl;
-        pAccumulateFC(k, signal, real[k], imag[k], sampleCount);
+
+void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& realSum, double& imagSum) {
+    double realPart, imagPart, angle = 0.0;
+    double deltaTheta = -2.0 * 3.14159265358979323846 * k / sampleCount;
+
+
+    realSum = 0.0;
+    imagSum = 0.0;
+
+
+    VITIS_LOOP_1214_1: for (int n = 0; n < sampleCount; n++) {
+        dEuler(angle, &realPart, &imagPart);
+
+        realSum += signalBuffer[n] * realPart;
+        imagSum += signalBuffer[n] * imagPart;
+
+        angle += deltaTheta;
     }
 }
-# 1325 "posit_lib.cpp"
-__attribute__((sdx_kernel("dFFT", 0))) void dFFT(const double signal[1024], double real[1024], double imag[1024], int sampleCount) {
+
+void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum, float& imagSum) {
+    float realPart, imagPart, angle = 0.0;
+
+
+    realSum = 0.0;
+    imagSum = 0.0;
+    float deltaTheta = -2.0 * 3.14159265358979323846 * k / sampleCount;
+
+
+    VITIS_LOOP_1233_1: for (int n = 0; n < sampleCount; n++) {
+
+        float signalVal = signal[n];
+
+        fEuler(angle, &realPart, &imagPart);
+
+
+        realSum += signalVal * realPart;
+        imagSum += signalVal * imagPart;
+        angle += deltaTheta;
+    }
+}
+
+void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
+    ps_t angle, realPart, imagPart;
+    ps_t deltaTheta = double2posit(-2.0 * 3.14159265358979323846 * k / sampleCount);
+
+
+
+    VITIS_LOOP_1252_1: for (int n = 0; n < sampleCount; n++) {
+
+        ps_t signalVal = signal[n];
+
+
+
+        pEuler(angle, &realPart, &imagPart);
+
+
+        realSum = positAdd(realSum, positMul(signalVal, realPart));
+        imagSum = positAdd(imagSum, positMul(signalVal, imagPart));
+
+        angle = positAdd(angle, deltaTheta);
+    }
+
+}
+
+
+void pFFT(ps_t signal[], pFFTResult& result) {
+    int sampleCount = 64;
+
+    VITIS_LOOP_1273_1: for (int k = 0; k < sampleCount; k++) {
+        if (k % 200 == 0)
+            std::cout << k << std::endl;
+
+
+        ps_t realSum = ZERO;
+        ps_t imagSum = ZERO;
+        pAccumulateFC(k, sampleCount, signal, realSum, imagSum);
+
+        result.real[k] = realSum;
+        result.imag[k] = imagSum;
+    }
+}
+
+
+__attribute__((sdx_kernel("dFFT", 0))) void dFFT(double signal[], dFFTResult& result) {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=dFFT
-# 1325 "posit_lib.cpp"
+# 1288 "posit_lib.cpp"
 
-#pragma HLS INTERFACE mode=ap_memory port=signal
-#pragma HLS INTERFACE mode=ap_memory port=real
-#pragma HLS INTERFACE mode=ap_memory port=imag
-#pragma HLS INTERFACE mode=ap_ctrl_hs port=return
+    const int sampleCount = 64;
 
- VITIS_LOOP_1331_1: for (int k = 0; k < sampleCount; k++) {
+
+    double signalBuffer[64];
+
+
+    VITIS_LOOP_1295_1: for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
-            std::cout << k << std::endl;
-        dAccumulateFC(k, signal, real[k], imag[k], sampleCount);
+            std::cout << "Processing bin: " << k << std::endl;
+
+        double realSum = 0.0;
+        double imagSum = 0.0;
+
+        dAccumulateFC(k, sampleCount, signal, realSum, imagSum);
+
+        result.real[k] = realSum;
+        result.imag[k] = imagSum;
     }
 }
-# 1353 "posit_lib.cpp"
-fFFTResult fFFT(const std::vector<float>& signal) {
-    int sampleCount = signal.size();
-    fFFTResult result;
 
 
+void fFFT(float signal[], fFFTResult& result) {
+    int sampleCount = 64;
 
-    VITIS_LOOP_1359_1: for (int k = 0; k < sampleCount; k++) {
-        if (k%200 ==0)
-            std::cout<<k<<std::endl;
-        fAccumulateFC(k, signal, result.real[k], result.imag[k]);
+    VITIS_LOOP_1313_1: for (int k = 0; k < sampleCount; k++) {
+        if (k % 200 == 0)
+            std::cout << k << std::endl;
+
+
+        float realSum = 0;
+        float imagSum = 0;
+        fAccumulateFC(k, sampleCount, signal, realSum, imagSum);
+
+        result.real[k] = realSum;
+        result.imag[k] = imagSum;
+    }
+}
+
+
+void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double& realSum, double& imagSum, int sampleCount) {
+    realSum = 0.0;
+    imagSum = 0.0;
+    double realPart, imagPart, angle = 0.0;
+    double deltaTheta = 2.0 * 3.14 * k / sampleCount;
+
+    VITIS_LOOP_1334_1: for (int n = 0; n < sampleCount; n++) {
+        double signalVal_real = real[n];
+        double signalVal_imag = imag[n];
+
+        dEuler(angle, &realPart, &imagPart);
+
+        realSum += signalVal_real * realPart - signalVal_imag * imagPart;
+        imagSum += signalVal_real * imagPart + signalVal_imag * realPart;
+        angle += deltaTheta;
+    }
+}
+
+
+void dIFFT(const double real[], const double imag[], double signal[], int sampleCount) {
+    VITIS_LOOP_1348_1: for (int k = 0; k < sampleCount; k++) {
+        if (k % 200 == 0)
+            std::cout << k << std::endl;
+
+        double realSum = 0.0, imagSum = 0.0;
+        dAccumulateFC_IFFT(k, real, imag, realSum, imagSum, sampleCount);
+
+        signal[k] = realSum / sampleCount;
+    }
+}
+
+
+void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& realSum, float& imagSum, int sampleCount) {
+    realSum = 0.0f;
+    imagSum = 0.0f;
+    float realPart, imagPart, angle = 0.0f;
+    float deltaTheta = 2.0f * 3.14 * k / sampleCount;
+
+    VITIS_LOOP_1366_1: for (int n = 0; n < sampleCount; n++) {
+        float signalVal_real = real[n];
+        float signalVal_imag = imag[n];
+
+        fEuler(angle, &realPart, &imagPart);
+
+        realSum += signalVal_real * realPart - signalVal_imag * imagPart;
+        imagSum += signalVal_real * imagPart + signalVal_imag * realPart;
+        angle += deltaTheta;
+    }
+}
+
+
+void fIFFT(const float real[], const float imag[], float signal[], int sampleCount) {
+    VITIS_LOOP_1380_1: for (int k = 0; k < sampleCount; k++) {
+        if (k % 200 == 0)
+            std::cout << k << std::endl;
+
+        float realSum = 0.0f, imagSum = 0.0f;
+        fAccumulateFC_IFFT(k, real, imag, realSum, imagSum, sampleCount);
+
+        signal[k] = realSum / sampleCount;
+    }
+}
+
+
+void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realSum, ps_t& imagSum, int sampleCount) {
+
+    ps_t realPart, imagPart, angle = ZERO;
+    ps_t deltaTheta = double2posit(2.0 * 3.14 * k / sampleCount);
+
+    VITIS_LOOP_1397_1: for (int n = 0; n < sampleCount; n++) {
+        ps_t signalVal_real = real[n];
+        ps_t signalVal_imag = imag[n];
+
+        pEuler(angle, &realPart, &imagPart);
+
+        realSum = positAdd(realSum, positSub(positMul(signalVal_real, realPart), positMul(signalVal_imag, imagPart)));
+        imagSum = positAdd(imagSum, positAdd(positMul(signalVal_real, imagPart), positMul(signalVal_imag, realPart)));
+        angle = positAdd(angle, deltaTheta);
     }
 
-    return result;
+}
+
+
+void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount) {
+    VITIS_LOOP_1412_1: for (int k = 0; k < sampleCount; k++) {
+        if (k % 200 == 0)
+            std::cout << k << std::endl;
+
+        ps_t realSum=ZERO;
+        ps_t imagSum=ZERO;
+        pAccumulateFC_IFFT(k, real, imag, realSum, imagSum, sampleCount);
+        signal[k] = positDiv(realSum ,double2posit(sampleCount));
+    }
 }

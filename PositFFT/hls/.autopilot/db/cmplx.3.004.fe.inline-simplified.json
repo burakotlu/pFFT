@@ -1,18 +1,18 @@
 {
   "0": {
-    "basicblocks": 20,
+    "basicblocks": 18,
     "calls": "1",
     "file": "posit_lib.cpp",
-    "fileloc": 1325,
-    "instructions": 93,
+    "fileloc": 1288,
+    "instructions": 75,
     "loads": {
       "T": 1
     },
     "name": "dFFT",
     "stores": {
-      "T": 4
+      "T": 2
     },
-    "total_instructions": 239
+    "total_instructions": 221
   },
   "1": {
     "basicblocks": 26,

@@ -20,69 +20,85 @@ def extract_snr_values(file_path):
 
 def format_label(folder_name):
     """
-    Reformats the folder name to a shorter label.
-    Expected folder name format: TERMS_<T>_N_<N_value>_ES_<ES_value>_SIZE_<size>_<APP/NAPP>
-    Example: 'TERMS_4_N_32_ES_0_SIZE_4000_APP' → 'T:4 (32,0) APP'
+    Converts folder name to a short label like 'T:4 (32,0)' — without APP/NAPP.
     """
     parts = folder_name.split('_')
     if len(parts) >= 9:
-        return "T:" + parts[1] + " (" + parts[3] + "," + parts[5] + ") " + parts[8]
+        return f"T:{parts[1]} ({parts[3]},{parts[5]})"
     return folder_name
 
+def get_app_type(folder_name):
+    """Returns 'APP' or 'NAPP' if matched correctly, else 'UNKNOWN'."""
+    match = re.search(r'_(APP|NAPP)$', folder_name, re.IGNORECASE)
+    return match.group(1).upper() if match else 'UNKNOWN'
+
 def process_folders(base_dir='.'):
-    """Processes all TERMS_ folders, extracts SNR values, and groups by SIZE."""
+    """Processes folders, extracts SNRs, and plots by SIZE and APP/NAPP type."""
     data = []
-    folders = os.listdir(base_dir)
-    for folder in folders:
+    for folder in os.listdir(base_dir):
         if os.path.isdir(folder) and folder.startswith("TERMS_"):
-            # Extract SIZE from folder name, e.g., SIZE_4000
             match_size = re.search(r'SIZE_(\d+)', folder)
             size_val = match_size.group(1) if match_size else 'Unknown'
             fft_file = os.path.join(base_dir, folder, 'snr_fft.txt')
             ifft_file = os.path.join(base_dir, folder, 'snr_ifft.txt')
+            sin_file = os.path.join(base_dir, folder, 'snr_sin.txt')
+            cos_file = os.path.join(base_dir, folder, 'snr_cos.txt')
             posit_fft, float_fft = extract_snr_values(fft_file)
             posit_ifft, float_ifft = extract_snr_values(ifft_file)
-            data.append([folder, size_val, posit_fft, float_fft, posit_ifft, float_ifft])
+            posit_sin, float_sin = extract_snr_values(sin_file)
+            posit_cos, float_cos = extract_snr_values(cos_file)
+            app_type = get_app_type(folder)
+            if app_type != 'UNKNOWN':
+                data.append([folder, size_val, posit_fft, float_fft, posit_ifft, float_ifft, posit_sin, float_sin, posit_cos, float_cos, app_type])
     
-    df = pd.DataFrame(data, columns=['Configuration', 'SIZE', 'Posit_FFT', 'Float_FFT', 'Posit_IFFT', 'Float_IFFT'])
+    df = pd.DataFrame(data, columns=[
+        'Configuration', 'SIZE', 'Posit_FFT', 'Float_FFT',
+        'Posit_IFFT', 'Float_IFFT', 'Posit_SIN', 'Float_SIN', 
+        'Posit_COS', 'Float_COS', 'Type'
+    ])
     df['Label'] = df['Configuration'].apply(format_label)
-    
     df.to_csv('snr_results.csv', index=False)
-    
-    size_groups = df.groupby('SIZE')
-    for size, group in size_groups:
-         plot_results(group, 'FFT', size)
-         plot_results(group, 'IFFT', size)
 
-def plot_results(df, plot_type, size):
-    """Plots the SNR values for FFT or IFFT for a given SIZE group and saves the figure."""
-    size_to_points = {
-        '1000': '1024',
-        '2000': '2048',
-        '4000': '4096'
-    }
-    point_count = size_to_points.get(size, size)  # fallback to size if not mapped
+    # Now separate APP and NAPP
+    for app_type in ['APP', 'NAPP']:
+        type_df = df[df['Type'] == app_type]
+        if type_df.empty:
+            print(f"No data found for type: {app_type}")
+            continue
+        for size, group in type_df.groupby('SIZE'):
+            plot_results(group, 'FFT', size, app_type)
+            plot_results(group, 'IFFT', size, app_type)
+            plot_results(group, 'SIN', size, app_type)
+            plot_results(group, 'COS', size, app_type)
 
+def plot_results(df, plot_type, size, app_type):
+    """Plots SNR values for one transform (FFT/IFFT/SIN/COS), size, and APP/NAPP in a separate figure."""
     if plot_type == 'FFT':
         posit_values = df['Posit_FFT']
         float_values = df['Float_FFT']
-    else:
+    elif plot_type == 'IFFT':
         posit_values = df['Posit_IFFT']
         float_values = df['Float_IFFT']
+    elif plot_type == 'SIN':
+        posit_values = df['Posit_SIN']
+        float_values = df['Float_SIN']
+    elif plot_type == 'COS':
+        posit_values = df['Posit_COS']
+        float_values = df['Float_COS']
     
     plt.figure(figsize=(10, 5))
     plt.plot(df['Label'], posit_values, marker='o', label='Posit')
     plt.plot(df['Label'], float_values, marker='s', label='Float')
     plt.xlabel('Configuration')
     plt.ylabel('SNR (dB)')
-    plt.title('SNR Comparison ({}) - {}-Point'.format(plot_type, point_count))
+    plt.title(f'SNR Comparison ({plot_type}) - SIZE {size} - {app_type}')
     plt.xticks(rotation=90)
     plt.legend()
     plt.grid()
     plt.tight_layout()
-    save_path = 'snr_{}_SIZE_{}.png'.format(plot_type.lower(), size)
-    plt.savefig(save_path)
-    print("Figure saved as:", save_path)
+    filename = f'snr_{plot_type.lower()}_SIZE_{size}_{app_type}.png'
+    plt.savefig(filename)
+    print("Figure saved as:", filename)
     plt.close()
 
 if __name__ == "__main__":

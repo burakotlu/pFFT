@@ -3,13 +3,13 @@
 ================================================================
 == Vitis HLS Report for 'generic_fmod_double_s'
 ================================================================
-* Date:           Sat Apr  5 23:10:48 2025
+* Date:           Tue Apr  8 11:35:56 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        PositFFT
 * Solution:       hls (Vivado IP Flow Target)
 * Product family: azynquplus
-* Target device:  xazu3teg-sfvc784-1Q-q
+* Target device:  xazu7ev-fbvb900-1-i
 
 
 ================================================================

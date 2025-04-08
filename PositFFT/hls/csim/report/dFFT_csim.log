@@ -1,0 +1,21 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch CLANG as the compiler.
+   Compiling ../../../../posit_fft_test.cpp in debug mode
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+ONE: 1
+Before Load
+Loaded 10 values into arrays
+After Load
+Calculating double results...
+Processing bin: 0
+Calculating float results...
+0
+Calculating posit results...
+0
+Writing results in files...
+----------------SNR RESULTS FFT-------------------------
+SNR (Posit Reconstruction): 150.275 dB
+SNR (Float Conversion): 122.137 dB
+INFO: [SIM 1] CSim done with 0 errors.
+INFO: [SIM 3] *************** CSIM finish ***************

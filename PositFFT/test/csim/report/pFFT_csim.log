@@ -5,100 +5,73 @@ INFO: [SIM 4] CSIM will launch CLANG as the compiler.
    Generating csim.exe
 ONE: 1
 Before Load
+Loaded 256 values into arrays
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/in_double.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/in_float.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/in_posit.txt
+----------------SNR RESULTS INPUT-------------------------
+SNR (Posit Reconstruction): 162.354 dB
+SNR (Float Conversion): 152.384 dB
 After Load
+Loaded 256 values into arrays
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/inSinCos_double.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/inSinCos_float.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/inSinCos_posit.txt
+----------SIN--------------
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/sin_double.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/sin_posit.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/sin_float.txt
+----------------SNR RESULTS SIN-------------------------
+SNR (Posit Reconstruction): 160.44 dB
+SNR (Float Conversion): 139.818 dB
+----------COS--------------
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/cos_double.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/cos_posit.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/cos_float.txt
+----------------SNR RESULTS COS-------------------------
+SNR (Posit Reconstruction): 157.121 dB
+SNR (Float Conversion): 138.577 dB
+----------FFT--------------
 Calculating double results...
-sampleCount: 2000
-0
-200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
+Processing bin: 0
+Processing bin: 200
 Calculating float results...
 0
 200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
 Calculating posit results...
-sampleCount: 2000
 0
 200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
 Writing results in files...
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/signal.txt
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_fft_real.txt
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_fft_imag.txt
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_fft_real.txt
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_fft_imag.txt
-Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_fft_real.txt
-Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_fft_imag.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/signal.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/posit_fft_real.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/posit_fft_imag.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/double_fft_real.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/double_fft_imag.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/float_fft_real.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/float_fft_imag.txt
 ----------------SNR RESULTS FFT-------------------------
-SNR (Posit Reconstruction): 23.1714 dB
-SNR (Float Conversion): 22.4323 dB
+SNR (Posit Reconstruction): 58.2057 dB
+SNR (Float Conversion): 52.2198 dB
 Computing double IFFT...
-sampleCount: 2000
 0
 200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
 Writing IFFT results to file...
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/double_ifft_output.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/double_ifft_output.txt
 Computing float IFFT...
-sampleCount: 2000
 0
 200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
-Sin written to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/float_ifft_output.txt
-Computing float IFFT...
-sampleCount: 2000
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/float_ifft_output.txt
+Computing posit IFFT...
 0
 200
-400
-600
-800
-1000
-1200
-1400
-1600
-1800
-Saved 2000 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_2_N_28_ES_0_SIZE_2000_NAPP/posit_ifft_output.txt
+Saved 256 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_256_APP/posit_ifft_output.txt
 ----------------SNR RESULTS IFFT-------------------------
-SNR (Posit Reconstruction): 4.10075 dB
-SNR (Float Conversion): 27.5732 dB
-----------------SNR RESULTS IFFT WRT ORIG-------------------------
-SNR (Posit Reconstruction): 4.83836 dB
-SNR (Float Conversion): 18.9352 dB
-SNR (Double Conversion): 19.1663 dB
+SNR (Posit Reconstruction): 42.7619 dB
+SNR (Float Conversion): 41.5055 dB
+----------------SNR RESULTS IFFT WRT ORIG-----------------
+SNR (Posit Reconstruction): 14.7455 dB
+SNR (Float Conversion): 14.7867 dB
+SNR (Double Conversion): 14.7754 dB
 Processing complete.
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

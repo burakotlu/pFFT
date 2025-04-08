@@ -64,13 +64,13 @@ close_project
 
 if __name__ == "__main__":
     header_file = "C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp"
-    N_ES_combinations = [(28,0)]
-    TERMS_values = [2]
-    IN_SIZE_values = [2000]  
+    N_ES_combinations = [(24,0),(24,1),(24,2),(28,0),(28,1),(28,2),(32,0),(32,1),(32,2)]
+    TERMS_values = [2,3,4]
+    IN_SIZE_values = [64,128,256]  
     
     for terms in TERMS_values:
         for n, es in N_ES_combinations:
-            for appr_tailor in [0]:  
+            for appr_tailor in [0,1]:  
                 for in_size in IN_SIZE_values:  
                     print("Running for IN_SIZE={}, APPR_TAILOR={}".format(in_size, appr_tailor))
                     print("Running HLS for: TERMS={}, N={}, ES={}, APPR_TAILOR={}, IN_SIZE={}".format(terms, n, es, appr_tailor, in_size))

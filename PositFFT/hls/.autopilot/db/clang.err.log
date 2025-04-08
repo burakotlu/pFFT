@@ -1,4 +1,4 @@
-posit_lib.cpp:675:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
- sf_t sf_x,sf_y,sf_r,max =((2-32)<<0);
+posit_lib.cpp:683:34: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+ sf_t sf_x,sf_y,sf_r,max =((2-32)<<2);
                            ~~~~~~^
 1 warning generated.

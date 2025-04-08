@@ -3,8 +3,8 @@
     "basicblocks": 20,
     "calls": "1",
     "file": "posit_lib.cpp",
-    "fileloc": 1325,
-    "instructions": 94,
+    "fileloc": 1288,
+    "instructions": 79,
     "loads": {
       "T": 1
     },
@@ -12,7 +12,7 @@
     "stores": {
       "T": 2
     },
-    "total_instructions": 240
+    "total_instructions": 225
   },
   "1": {
     "basicblocks": 26,

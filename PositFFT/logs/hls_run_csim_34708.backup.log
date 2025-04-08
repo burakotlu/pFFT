@@ -6,9 +6,9 @@ INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\Posit
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
 INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'tb.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_mul_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
-INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_mul_test.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'syn.top=positAdd' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=dFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
 INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
@@ -19,10 +19,9 @@ INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Use
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../posit_mul_test.cpp in debug mode
-   Compiling ../../../../posit_lib.cpp in debug mode
-   Generating csim.exe
-In file included from ../../../../posit_mul_test.cpp:1:
+   Compiling ../../../../posit_fft_test.cpp in debug mode
+csim.mk:88: recipe for target 'obj/posit_fft_test.o' failed
+In file included from ../../../../posit_fft_test.cpp:1:
 In file included from ../../../../posit.hpp:1:
 In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
 In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
@@ -37,30 +36,29 @@ C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro red
 C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
 #define __GMP_LIBGMP_DLL 1
         ^
-1 warning generated.
-In file included from ../../../../posit_lib.cpp:1:
-In file included from ../../../../posit.hpp:1:
-In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
-In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
-In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
-In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
-In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
-In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
-In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
-C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
-#define __GMP_LIBGMP_DLL  0
-        ^
-C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
-#define __GMP_LIBGMP_DLL 1
-        ^
-1 warning generated.
--1.77435 -1.28389 2.27807
--1.77435 -1.28389 2.27807
-Sum written to mulDouble.txt
-Sum written to mulFloat.txt
-SNR (Posit Reconstruction): 172.792 dB
-SNR (Float Conversion): 147.733 dB
-INFO: [SIM 211-1] CSim done with 0 errors.
+In file included from ../../../../posit_fft_test.cpp:1:
+../../../../posit.hpp:118:11: error: unknown type name 't'
+void pFFT(t hls::stream<ps_t>& signal, pFFTResult& result);
+          ^
+../../../../posit.hpp:118:18: error: parameter declarator cannot be qualified
+void pFFT(t hls::stream<ps_t>& signal, pFFTResult& result);
+            ~~~~~^
+../../../../posit.hpp:118:18: error: parameter name cannot have template arguments
+../../../../posit.hpp:118:30: error: expected ')'
+void pFFT(t hls::stream<ps_t>& signal, pFFTResult& result);
+                             ^
+../../../../posit.hpp:118:10: note: to match this '('
+void pFFT(t hls::stream<ps_t>& signal, pFFTResult& result);
+         ^
+../../../../posit_fft_test.cpp:177:5: error: no matching function for call to 'pFFT'
+    pFFT(positSignalStream, pfftResult);
+    ^~~~
+../../../../posit.hpp:118:6: note: candidate function not viable: requires 1 argument, but 2 were provided
+void pFFT(t hls::stream<ps_t>& signal, pFFTResult& result);
+     ^
+1 warning and 5 errors generated.
+make: *** [obj/posit_fft_test.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 23.035 seconds; peak allocated memory: 163.039 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 28s
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 12.333 seconds; peak allocated memory: 162.652 MB.

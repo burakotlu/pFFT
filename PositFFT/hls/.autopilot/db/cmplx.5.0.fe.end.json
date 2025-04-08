@@ -1,4 +1,24 @@
 {
+    "0": {
+        "name": "dFFT",
+        "file": "posit_lib.cpp",
+        "fileloc": "1288",
+        "instructions": "98",
+        "total_instructions": "187",
+        "calls": "2",
+        "basicblocks": "7",
+        "loads": {
+            "L": "1"
+        },
+        "stores": {
+            "L": "2",
+            "T": "2"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
+        }
+    },
     "1": {
         "name": "generic_fmod<double>_Pipeline_1",
         "file": "C:\\scratch\\2024.2\\hls_product\\495\\2024.2\\src\\shared\\hls\\clib\/hlsmath\/include\/FloatingPoint\\hls_fmod_rem_quo.h",
@@ -27,27 +47,6 @@
         "basicblocks": "11",
         "loads": {
             "L": "1"
-        }
-    },
-    "0": {
-        "name": "dFFT",
-        "file": "posit_lib.cpp",
-        "fileloc": "1325",
-        "instructions": "110",
-        "total_instructions": "199",
-        "calls": "2",
-        "basicblocks": "7",
-        "loads": {
-            "L": "1",
-            "T": "1"
-        },
-        "stores": {
-            "L": "2",
-            "T": "2"
-        },
-        "loops": {
-            "L": "1",
-            "N": "1"
         }
     }
 }

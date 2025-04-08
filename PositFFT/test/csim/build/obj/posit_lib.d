@@ -45,4 +45,5 @@ obj/posit_lib.o: ../../../../posit_lib.cpp ../../../../posit.hpp \
   C:/Xilinx/Vitis/2024.2/include/etc/hls_mad_apfixed.h \
   C:/Xilinx/Vitis/2024.2/include/etc/hls_cbrt_apfixed.h \
   C:/Xilinx/Vitis/2024.2/include/etc/hls_hypot_apfixed.h \
-  C:/Xilinx/Vitis/2024.2/include/etc/hls_ldexp_apfixed.h
+  C:/Xilinx/Vitis/2024.2/include/etc/hls_ldexp_apfixed.h \
+  C:/Xilinx/Vitis/2024.2/include/hls_stream.h

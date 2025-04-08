@@ -3,13 +3,13 @@
 ================================================================
 == Vitis HLS Report for 'generic_fmod_double_s'
 ================================================================
-* Date:           Sat Apr  5 23:10:48 2025
+* Date:           Tue Apr  8 11:35:56 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        PositFFT
 * Solution:       hls (Vivado IP Flow Target)
 * Product family: azynquplus
-* Target device:  xazu3teg-sfvc784-1Q-q
+* Target device:  xazu7ev-fbvb900-1-i
 
 
 ================================================================
@@ -156,8 +156,8 @@ Target clock period: 10.000ns, clock uncertainty: 2.700ns.
  <State 1>: 2.126ns
 The critical path consists of the following:
 	wire read operation ('x') on port 'x' [2]  (0.000 ns)
-	'icmp' operation 1 bit ('icmp_ln271', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:271) [22]  (1.306 ns)
-	'or' operation 1 bit ('or_ln271', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:271) [23]  (0.331 ns)
+	'icmp' operation 1 bit ('icmp_ln267_1', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:267) [14]  (1.306 ns)
+	'or' operation 1 bit ('or_ln267', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:267) [15]  (0.331 ns)
 	'call' operation 0 bit ('call_ln296', C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:296) to 'generic_fmod<double>_Pipeline_1' [33]  (0.489 ns)
 
  <State 2>: 0.721ns

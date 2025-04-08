@@ -22,17 +22,15 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_signal_r "../tv/cdatafile/c.dFFT.autotvin_signal_r.dat"
 #define AUTOTB_TVOUT_signal_r "../tv/cdatafile/c.dFFT.autotvout_signal_r.dat"
-#define AUTOTB_TVIN_real_r "../tv/cdatafile/c.dFFT.autotvin_real_r.dat"
-#define AUTOTB_TVOUT_real_r "../tv/cdatafile/c.dFFT.autotvout_real_r.dat"
-#define AUTOTB_TVIN_imag "../tv/cdatafile/c.dFFT.autotvin_imag.dat"
-#define AUTOTB_TVOUT_imag "../tv/cdatafile/c.dFFT.autotvout_imag.dat"
-#define AUTOTB_TVIN_sampleCount "../tv/cdatafile/c.dFFT.autotvin_sampleCount.dat"
-#define AUTOTB_TVOUT_sampleCount "../tv/cdatafile/c.dFFT.autotvout_sampleCount.dat"
+#define AUTOTB_TVIN_result_real "../tv/cdatafile/c.dFFT.autotvin_result_real.dat"
+#define AUTOTB_TVOUT_result_real "../tv/cdatafile/c.dFFT.autotvout_result_real.dat"
+#define AUTOTB_TVIN_result_imag "../tv/cdatafile/c.dFFT.autotvin_result_imag.dat"
+#define AUTOTB_TVOUT_result_imag "../tv/cdatafile/c.dFFT.autotvout_result_imag.dat"
 
 
 // tvout file define:
-#define AUTOTB_TVOUT_PC_real_r "../tv/rtldatafile/rtl.dFFT.autotvout_real_r.dat"
-#define AUTOTB_TVOUT_PC_imag "../tv/rtldatafile/rtl.dFFT.autotvout_imag.dat"
+#define AUTOTB_TVOUT_PC_result_real "../tv/rtldatafile/rtl.dFFT.autotvout_result_real.dat"
+#define AUTOTB_TVOUT_PC_result_imag "../tv/rtldatafile/rtl.dFFT.autotvout_result_imag.dat"
 
 
 namespace hls::sim
@@ -1226,21 +1224,21 @@ namespace hls::sim
 
 
 extern "C"
-void dFFT_hw_stub_wrapper(void*, void*, void*, hls::sim::Byte<4>);
+void dFFT_hw_stub_wrapper(void*, void*, void*);
 
 extern "C"
-void apatb_dFFT_hw(void* __xlx_apatb_param_signal_r, void* __xlx_apatb_param_real_r, void* __xlx_apatb_param_imag, hls::sim::Byte<4> __xlx_apatb_param_sampleCount)
+void apatb_dFFT_hw(void* __xlx_apatb_param_signal_r, void* __xlx_apatb_param_result_real, void* __xlx_apatb_param_result_imag)
 {
   static hls::sim::Register port0 {
-    .name = "sampleCount",
-    .width = 32,
+    .name = "signal_r",
+    .width = 64,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_sampleCount),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_signal_r),
 #endif
   };
-  port0.param = &__xlx_apatb_param_sampleCount;
+  port0.param = __xlx_apatb_param_signal_r;
 
 #ifdef USE_BINARY_TV_FILE
   static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port1 {
@@ -1250,21 +1248,30 @@ void apatb_dFFT_hw(void* __xlx_apatb_param_signal_r, void* __xlx_apatb_param_rea
     .width = 64,
     .asize = 8,
     .hbm = false,
-    .name = { "signal_r" },
+    .name = { "result_real" },
 #ifdef POST_CHECK
-#else
-    .owriter = nullptr,
 #ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_signal_r),
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_result_real),
 #else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_signal_r),
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_result_real),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_result_real),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_result_real),
+#endif
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_result_real),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_result_real),
 #endif
 #endif
-    .hasWrite = { false },
+    .hasWrite = { true },
   };
-  port1.param = { __xlx_apatb_param_signal_r };
-  port1.mname = { "signal_r" };
-  port1.nbytes = { 8192 };
+  port1.param = { __xlx_apatb_param_result_real };
+  port1.mname = { "result_real" };
+  port1.nbytes = { 512 };
 
 #ifdef USE_BINARY_TV_FILE
   static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port2 {
@@ -1274,69 +1281,36 @@ void apatb_dFFT_hw(void* __xlx_apatb_param_signal_r, void* __xlx_apatb_param_rea
     .width = 64,
     .asize = 8,
     .hbm = false,
-    .name = { "real_r" },
+    .name = { "result_imag" },
 #ifdef POST_CHECK
 #ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_real_r),
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_result_imag),
 #else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_real_r),
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_result_imag),
 #endif
 #else
 #ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_real_r),
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_result_imag),
 #else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_real_r),
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_result_imag),
 #endif
 #ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_real_r),
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_result_imag),
 #else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_real_r),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_result_imag),
 #endif
 #endif
     .hasWrite = { true },
   };
-  port2.param = { __xlx_apatb_param_real_r };
-  port2.mname = { "real_r" };
-  port2.nbytes = { 8192 };
-
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port3 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port3 {
-#endif
-    .width = 64,
-    .asize = 8,
-    .hbm = false,
-    .name = { "imag" },
-#ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_imag),
-#else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_imag),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_imag),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_imag),
-#endif
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Output(AUTOTB_TVIN_imag),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_imag),
-#endif
-#endif
-    .hasWrite = { true },
-  };
-  port3.param = { __xlx_apatb_param_imag };
-  port3.mname = { "imag" };
-  port3.nbytes = { 8192 };
+  port2.param = { __xlx_apatb_param_result_imag };
+  port2.mname = { "result_imag" };
+  port2.nbytes = { 512 };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
+    check(port1);
     check(port2);
-    check(port3);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
@@ -1344,16 +1318,14 @@ void apatb_dFFT_hw(void* __xlx_apatb_param_signal_r, void* __xlx_apatb_param_rea
     dump(port0, port0.iwriter, tcl.AESL_transaction);
     dump(port1, port1.iwriter, tcl.AESL_transaction);
     dump(port2, port2.iwriter, tcl.AESL_transaction);
-    dump(port3, port3.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
-    port3.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    dFFT_hw_stub_wrapper(__xlx_apatb_param_signal_r, __xlx_apatb_param_real_r, __xlx_apatb_param_imag, __xlx_apatb_param_sampleCount);
+    dFFT_hw_stub_wrapper(__xlx_apatb_param_signal_r, __xlx_apatb_param_result_real, __xlx_apatb_param_result_imag);
     CodeState = DUMP_OUTPUTS;
+    dump(port1, port1.owriter, tcl.AESL_transaction);
     dump(port2, port2.owriter, tcl.AESL_transaction);
-    dump(port3, port3.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

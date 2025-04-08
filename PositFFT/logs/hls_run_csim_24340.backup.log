@@ -6,23 +6,25 @@ INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\Posit
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
 INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'tb.file=C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_div_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
-INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_div_test.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'syn.top=doubleAdd' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=pFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
 INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
 INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
 INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../posit_div_test.cpp in debug mode
+   Compiling ../../../../posit_fft_test.cpp in debug mode
    Compiling ../../../../posit_lib.cpp in debug mode
    Generating csim.exe
-In file included from ../../../../posit_div_test.cpp:1:
+In file included from ../../../../posit_fft_test.cpp:1:
 In file included from ../../../../posit.hpp:1:
 In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
 In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
@@ -53,14 +55,86 @@ C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro red
 C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
 #define __GMP_LIBGMP_DLL 1
         ^
-1 warning generated.
-1.18617 0.722291 1.64224
-1.18617 0.722291 1.64224
-Div written to divDouble.txt
-Sum written to divFloat.txt
-SNR (Posit Reconstruction): 74.6785 dB
-SNR (Float Conversion): 145.158 dB
+../../../../posit_lib.cpp:683:33: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+        sf_t sf_x,sf_y,sf_r,max =((2-N)<<ES);
+                                  ~~~~~^
+2 warnings generated.
+ONE: 1
+Before Load
+Loaded 1024 values into arrays
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/in_double.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/in_float.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/in_posit.txt
+----------------SNR RESULTS INPUT-------------------------
+SNR (Posit Reconstruction): 162.564 dB
+SNR (Float Conversion): 153.18 dB
+After Load
+Calculating double results...
+Processing bin: 0
+Processing bin: 200
+Processing bin: 400
+Processing bin: 600
+Processing bin: 800
+Processing bin: 1000
+Calculating float results...
+0
+200
+400
+600
+800
+1000
+Calculating posit results...
+0
+200
+400
+600
+800
+1000
+Writing results in files...
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/signal.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/posit_fft_real.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/posit_fft_imag.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/double_fft_real.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/double_fft_imag.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/float_fft_real.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/float_fft_imag.txt
+----------------SNR RESULTS FFT-------------------------
+SNR (Posit Reconstruction): 46.9272 dB
+SNR (Float Conversion): 37.4122 dB
+Computing double IFFT...
+0
+200
+400
+600
+800
+1000
+Writing IFFT results to file...
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/double_ifft_output.txt
+Computing float IFFT...
+0
+200
+400
+600
+800
+1000
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/float_ifft_output.txt
+Computing posit IFFT...
+0
+200
+400
+600
+800
+1000
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_APP/posit_ifft_output.txt
+----------------SNR RESULTS IFFT-------------------------
+SNR (Posit Reconstruction): 42.771 dB
+SNR (Float Conversion): 36.2397 dB
+----------------SNR RESULTS IFFT WRT ORIG-----------------
+SNR (Posit Reconstruction): 4.63575 dB
+SNR (Float Conversion): 4.65303 dB
+SNR (Double Conversion): 4.65278 dB
+Processing complete.
 INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 22.244 seconds; peak allocated memory: 162.582 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 28s
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 369.222 seconds; peak allocated memory: 162.191 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 6m 17s

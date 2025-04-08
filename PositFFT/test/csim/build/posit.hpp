@@ -5,15 +5,16 @@
 #include <string.h>
 #include <stdlib.h>
 #include <hls_math.h>
-#include <cmath>
+
 #include <vector>
+#include "hls_stream.h"
 using namespace std;
 
-#define N 28
-#define ES 0
-#define TERMS 2
-#define IN_SIZE 2000
-#define APPR_TAILOR 0
+#define N 32
+#define ES 2
+#define TERMS 4
+#define IN_SIZE 256
+#define APPR_TAILOR 1
 
 #define FRAC_LEN (N-(ES+2))
 #define MUL_LEN 2*FRAC_LEN
@@ -68,38 +69,18 @@ typedef ap_int<REG_LEN+ES+1> sf_t;
 typedef ap_uint<N-1> reg_t;
 typedef ap_uint<N> posit_t;
 typedef ap_uint<1> bool_t;
-#define MAX_SIZE 1024
+
 
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
 
-struct pFFTResult {
-    std::vector<ps_t> real;
-    std::vector<ps_t> imag;
 
-    // Constructor to initialize vectors with a given size
-    pFFTResult(size_t size = IN_SIZE) {
-        real.resize(size);
-        imag.resize(size);
-    }
-};
-struct dFFTResult {
-    std::vector<double> real = std::vector<double>(IN_SIZE, 0.0);
-    std::vector<double> imag = std::vector<double>(IN_SIZE, 0.0);
-};
 
-struct fFFTResult {
-    std::vector<float> real = std::vector<float>(IN_SIZE, 0.0f);
-    std::vector<float> imag = std::vector<float>(IN_SIZE, 0.0f);
-};
+// Header declarations updated for streaming-based functions
 
-fFFTResult fFFT(const std::vector<float>& signal);
-dFFTResult dFFT(const std::vector<double>& signal);
-pFFTResult pFFT(const std::vector<ps_t>& signal);
 
-std::vector<double> dIFFT(const dFFTResult& result);
-std::vector<float> fIFFT(const fFFTResult& result);
-std::vector<ps_t> pIFFT(const pFFTResult& result);
+
+// Accumulation functions for IFFT computation
 // Defining some constant POSIT structs 
 const ps_t POSIT_PI = {0, false, false, 0, 0, 1411}; 
 const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
@@ -132,3 +113,49 @@ float fTailorCos(float in);
 void pEuler(ps_t angle, ps_t *result_real, ps_t *result_imag);
 void dEuler(double angle, double *result_real, double *result_imag);
 void fEuler(float angle, float *result_real, float *result_imag);
+
+
+struct pFFTResult {
+    ps_t real[IN_SIZE];  // Array for real values
+    ps_t imag[IN_SIZE];  // Array for imaginary values
+
+    // Constructor (initialize arrays)
+    pFFTResult(size_t size = IN_SIZE) {
+        // Arrays are statically sized, no need to resize
+        std::fill(std::begin(real), std::end(real), ps_t{ZERO});  // Initialize with zero
+        std::fill(std::begin(imag), std::end(imag), ps_t{ZERO});  // Initialize with zero
+    }
+};
+
+struct dFFTResult {
+    double real[IN_SIZE];  // Array for real values
+    double imag[IN_SIZE];  // Array for imaginary values
+
+    // Constructor (initialize arrays)
+    dFFTResult(size_t size = IN_SIZE) {
+        // Arrays are statically sized, no need to resize
+        std::fill(std::begin(real), std::end(real), 0.0);  // Initialize with zero
+        std::fill(std::begin(imag), std::end(imag), 0.0);  // Initialize with zero
+    }
+};
+
+struct fFFTResult {
+    float real[IN_SIZE];  // Array for real values
+    float imag[IN_SIZE];  // Array for imaginary values
+
+    // Constructor (initialize arrays)
+    fFFTResult(size_t size = IN_SIZE) {
+        // Arrays are statically sized, no need to resize
+        std::fill(std::begin(real), std::end(real), 0.0f);  // Initialize with zero
+        std::fill(std::begin(imag), std::end(imag), 0.0f);  // Initialize with zero
+    }
+};
+
+void fFFT(float signal[], fFFTResult& result);
+void dFFT(double signal[], dFFTResult& result);
+void pFFT(ps_t signal[], pFFTResult& result);
+
+// IFFT functions for different signal types
+void dIFFT(const double real[], const double imag[], double signal[], int sampleCount);
+void fIFFT(const float real[], const float imag[], float signal[], int sampleCount);
+void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount);

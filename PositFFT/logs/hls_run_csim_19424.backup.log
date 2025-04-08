@@ -6,22 +6,24 @@ INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\Posit
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
 INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
 INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'tb.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_sin_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
-INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_sin_test.cpp' to the project
-INFO: [HLS 200-1465] Applying ini 'syn.top=positDiv' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=pFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
 INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
 INFO: [HLS 200-1505] Using flow_target 'vivado'
 Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
 INFO: [HLS 200-1465] Applying ini 'part=xazu3teg-sfvc784-1Q-q' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
 INFO: [HLS 200-1611] Setting target device to 'xazu3teg-sfvc784-1Q-q'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
 INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
 INFO: [SIM 211-2] *************** CSIM start ***************
 INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
 INFO: [HLS 200-2036] Building debug C Simulation binaries
-   Compiling ../../../../posit_lib.cpp in debug mode
-   Generating csim.exe
-In file included from ../../../../posit_lib.cpp:1:
+   Compiling ../../../../posit_fft_test.cpp in debug mode
+csim.mk:88: recipe for target 'obj/posit_fft_test.o' failed
+In file included from ../../../../posit_fft_test.cpp:1:
 In file included from ../../../../posit.hpp:1:
 In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
 In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
@@ -36,17 +38,18 @@ C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro red
 C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
 #define __GMP_LIBGMP_DLL 1
         ^
-../../../../posit_lib.cpp:933:33: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
-        sf_t sf_x,sf_y,sf_r,max =((2-N)<<ES);
-                                  ~~~~~^
-2 warnings generated.
-Sin written to sinDouble.txt
-Sin written to tailorsinDouble.txt
-Sin written to tailorsinFloat.txt
-----------------SNR RESULTS-------------------------
-SNR (Posit Reconstruction): 164.392 dB
-SNR (Float Conversion): 143.79 dB
-INFO: [SIM 211-1] CSim done with 0 errors.
+../../../../posit_fft_test.cpp:274:17: error: call to 'floor' is ambiguous
+    double fl = hls::floor((int)sf_d);
+                ^~~~~~~~~~
+C:/Xilinx/Vitis/2024.2/include/hls_math.h:333:10: note: candidate function
+  double floor(double);
+         ^
+C:/Xilinx/Vitis/2024.2/include/hls_math.h:334:10: note: candidate function
+  float  floor(float);
+         ^
+1 warning and 1 error generated.
+make: *** [obj/posit_fft_test.o] Error 1
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
 INFO: [SIM 211-3] *************** CSIM finish ***************
-INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 3 seconds. Total elapsed time: 107.096 seconds; peak allocated memory: 162.734 MB.
-INFO: [vitis-run 60-791] Total elapsed time: 0h 2m 15s
+ERROR: 4
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 1 seconds. Total elapsed time: 11.108 seconds; peak allocated memory: 163.078 MB.

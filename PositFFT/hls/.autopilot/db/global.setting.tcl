@@ -42,7 +42,7 @@ set ExportMCPathFlag 0
 set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
-set TargetInfo xazu3teg:-sfvc784:-1Q-q
+set TargetInfo xazu7ev:-fbvb900:-1-i
 set SourceFiles {sc {} c ../../posit_lib.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {}
