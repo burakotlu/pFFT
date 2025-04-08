@@ -1116,6 +1116,7 @@ float fTailorSin(float in) {
     #endif
 }
 ps_t pNAngle(ps_t angle) {
+    //Test
     double dAngle = posit2double(angle);
     //std::cout<<"dAngle: "<<dAngle<<std::endl;
     dAngle = fmod(dAngle, 2 * PI);  // Begrenzung auf [-2π, 2π]
