@@ -3225,7 +3225,7 @@
       <key>filename</key>
       <string>./posit.hpp</string>
       <key>line</key>
-      <integer>145</integer>
+      <integer>160</integer>
       <key>column</key>
       <integer>23</integer>
       <key>message</key>
@@ -3241,7 +3241,7 @@
       <key>filename</key>
       <string>./posit.hpp</string>
       <key>line</key>
-      <integer>157</integer>
+      <integer>172</integer>
       <key>column</key>
       <integer>23</integer>
       <key>message</key>
@@ -3257,7 +3257,7 @@
       <key>filename</key>
       <string>./posit.hpp</string>
       <key>line</key>
-      <integer>169</integer>
+      <integer>184</integer>
       <key>column</key>
       <integer>23</integer>
       <key>message</key>
@@ -3273,7 +3273,7 @@
       <key>filename</key>
       <string>posit_lib.cpp</string>
       <key>line</key>
-      <integer>745</integer>
+      <integer>751</integer>
       <key>column</key>
       <integer>34</integer>
       <key>message</key>
@@ -3293,7 +3293,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=dFFT_XLX_SEP_ PragmaOptions=name=dFFT_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=dIFFT_XLX_SEP_ PragmaOptions=name=dIFFT_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>

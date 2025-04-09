@@ -6,7 +6,7 @@
       "--sysroot=C:\\Xilinx\\Vitis\\2024.2\\tps\\mingw\\10.0.0\\win64.o\\nt",
       "-fhls",
       "-hls-syn-headers-dir=C:\\Xilinx\\Vitis\\2024.2\\common\\technology\\autopilot",
-      "-fhlstoplevel=dFFT",
+      "-fhlstoplevel=dIFFT",
       "-c",
       "C:\\Users\\Burak\\Desktop\\TAU\\HLS\\PositFFT\\PositFFT\\posit_lib.cpp"
     ],

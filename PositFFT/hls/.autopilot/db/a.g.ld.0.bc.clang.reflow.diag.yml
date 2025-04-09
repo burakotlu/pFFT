@@ -81,7 +81,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 870, Column: 13 }
+DebugLoc:        { File: posit_lib.cpp, Line: 876, Column: 13 }
 Function:        _Z12dReduceAngledRb
 Args:            
   - Callee:          fmod
@@ -89,26 +89,26 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 895, Column: 9 }
+DebugLoc:        { File: posit_lib.cpp, Line: 901, Column: 9 }
 Function:        _Z10dTailorCosd
 Args:            
   - Callee:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1099, Column: 13 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1105, Column: 13 }
 Function:        _Z7dNAngled
 Args:            
   - Callee:          fmod
@@ -116,83 +116,73 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1116, Column: 9 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1122, Column: 9 }
 Function:        _Z10dTailorSind
 Args:            
   - Callee:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1286, Column: 20 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1292, Column: 20 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - Callee:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1287, Column: 20 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1293, Column: 20 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - Callee:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1319, Column: 9 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_
+DebugLoc:        { File: posit_lib.cpp, Line: 1506, Column: 9 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
 Args:            
   - Callee:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dAccumulateFC(int, int, double const*, double&, double&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Caller:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1438, Column: 9 }
-Function:        _Z4dFFTPdR10dFFTResult
+DebugLoc:        { File: posit_lib.cpp, Line: 1521, Column: 9 }
+Function:        _Z5dIFFTPKdS0_Pdi
 Args:            
-  - Callee:          'dAccumulateFC(int, int, double const*, double&, double&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Callee:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dFFT(double*, dFFTResult&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1424, Column: 0 }
+  - Caller:          'dIFFT(double const*, double const*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1515, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
-...
---- !Passed
-Pass:            reflow-disaggr
-Name:            DisaggrSucc
-DebugLoc:        { File: posit_lib.cpp, Line: 1424, Column: 0 }
-Function:        _Z4dFFTPdR10dFFTResult
-Args:            
-  - String:          'Disaggregating variable '''
-  - Name:            result
-  - String:          ''''
 ...
 --- !Missed
 Pass:            inline
@@ -277,7 +267,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 870, Column: 13 }
+DebugLoc:        { File: posit_lib.cpp, Line: 876, Column: 13 }
 Function:        _Z12dReduceAngledRb
 Args:            
   - Callee:          fmod
@@ -285,26 +275,26 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 895, Column: 9 }
+DebugLoc:        { File: posit_lib.cpp, Line: 901, Column: 9 }
 Function:        _Z10dTailorCosd
 Args:            
   - Callee:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1099, Column: 13 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1105, Column: 13 }
 Function:        _Z7dNAngled
 Args:            
   - Callee:          fmod
@@ -312,83 +302,83 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1116, Column: 9 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1122, Column: 9 }
 Function:        _Z10dTailorSind
 Args:            
   - Callee:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1286, Column: 20 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1292, Column: 20 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - Callee:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1287, Column: 20 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1293, Column: 20 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - Callee:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1319, Column: 9 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_
+DebugLoc:        { File: posit_lib.cpp, Line: 1506, Column: 9 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
 Args:            
   - Callee:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dAccumulateFC(int, int, double const*, double&, double&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Caller:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1438, Column: 9 }
-Function:        _Z4dFFTPdR10dFFTResult
+DebugLoc:        { File: posit_lib.cpp, Line: 1521, Column: 9 }
+Function:        _Z5dIFFTPKdS0_Pdi
 Args:            
-  - Callee:          'dAccumulateFC(int, int, double const*, double&, double&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Callee:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dFFT(double*, dFFTResult&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1424, Column: 0 }
+  - Caller:          'dIFFT(double const*, double const*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1515, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-Function:        apatb_dFFT_ir
+Function:        apatb_dIFFT_ir
 Args:            
-  - Callee:          'dFFT(double*, dFFTResult&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1424, Column: 0 }
+  - Callee:          'dIFFT(double const*, double const*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1515, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          apatb_dFFT_ir
+  - Caller:          apatb_dIFFT_ir
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Passed
@@ -462,7 +452,7 @@ Args:
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
 Function:        _Z12dReduceAngledRb
 Args:            
   - String:          'Inlining function '''
@@ -471,27 +461,27 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
 Function:        _Z10dTailorCosd
 Args:            
   - String:          'Inlining function '''
   - Callee:          'dReduceAngle(double, bool&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 868, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 874, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
 Function:        _Z7dNAngled
 Args:            
   - String:          'Inlining function '''
@@ -500,85 +490,129 @@ Args:
                        Line: 6, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
 Function:        _Z10dTailorSind
 Args:            
   - String:          'Inlining function '''
   - Callee:          'dNAngle(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1097, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1103, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - String:          'Inlining function '''
   - Callee:          'dTailorCos(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 892, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 898, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
 Function:        _Z6dEulerdPdS_
 Args:            
   - String:          'Inlining function '''
   - Callee:          'dTailorSin(double)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1114, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1120, Column: 0 }
   - String:          ''' into '''
   - Caller:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ''''
 ...
 --- !Passed
 Pass:            reflow-inliner
 Name:            Inline
-DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_
+DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
 Args:            
   - String:          'Inlining function '''
   - Callee:          'dEuler(double, double*, double*)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1285, Column: 0 }
+    DebugLoc:        { File: posit_lib.cpp, Line: 1291, Column: 0 }
   - String:          ''' into '''
-  - Caller:          'dAccumulateFC(int, int, double const*, double&, double&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Caller:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ''''
 ...
 --- !Failure
 Pass:            reflow-syncheck
 Name:            AdderessOnRegister
-DebugLoc:        { File: posit_lib.cpp, Line: 1321, Column: 20 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_
+DebugLoc:        { File: posit_lib.cpp, Line: 1503, Column: 33 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
 Args:            
   - String:          Ignore address on register port
   - String:          ' '''
-  - String:          signalBuffer
+  - String:          real
   - String:          ''''
 ...
 --- !Failure
 Pass:            reflow-syncheck
 Name:            AdderessOnRegister
-DebugLoc:        { File: posit_lib.cpp, Line: 1321, Column: 20 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_
+DebugLoc:        { File: posit_lib.cpp, Line: 1504, Column: 33 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
 Args:            
   - String:          Ignore address on register port
   - String:          ' '''
-  - String:          signalBuffer
+  - String:          imag
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: posit_lib.cpp, Line: 1523, Column: 19 }
+Function:        _Z5dIFFTPKdS0_Pdi
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          signal
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: posit_lib.cpp, Line: 1503, Column: 33 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          real
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: posit_lib.cpp, Line: 1504, Column: 33 }
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          imag
+  - String:          ''''
+...
+--- !Failure
+Pass:            reflow-syncheck
+Name:            AdderessOnRegister
+DebugLoc:        { File: posit_lib.cpp, Line: 1523, Column: 19 }
+Function:        _Z5dIFFTPKdS0_Pdi
+Args:            
+  - String:          Ignore address on register port
+  - String:          ' '''
+  - String:          signal
   - String:          ''''
 ...
 --- !HLSReportInfo
@@ -596,26 +630,26 @@ Pass:            inline
 Name:            NeverInline
 DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp', 
                    Line: 7, Column: 12 }
-Function:        _Z13dAccumulateFCiiPKdRdS1_.1
+Function:        _Z18dAccumulateFC_IFFTiPKdS0_RdS1_i.1
 Args:            
   - Callee:          'double fmdrmd::generic_fmod<double>(double, double)'
     DebugLoc:        { File: 'C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h', 
                        Line: 226, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dAccumulateFC(int, int, double const*, double&, double&) (.1)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Caller:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int) (.1)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: posit_lib.cpp, Line: 1438, Column: 9 }
-Function:        _Z4dFFTPdR10dFFTResult
+DebugLoc:        { File: posit_lib.cpp, Line: 1521, Column: 9 }
+Function:        _Z5dIFFTPKdS0_Pdi
 Args:            
-  - Callee:          'dAccumulateFC(int, int, double const*, double&, double&) (.1)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1309, Column: 0 }
+  - Callee:          'dAccumulateFC_IFFT(int, double const*, double const*, double&, double&, int) (.1)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1496, Column: 0 }
   - String:          ' not inlined into '
-  - Caller:          'dFFT(double*, dFFTResult&)'
-    DebugLoc:        { File: posit_lib.cpp, Line: 1424, Column: 0 }
+  - Caller:          'dIFFT(double const*, double const*, double*, int)'
+    DebugLoc:        { File: posit_lib.cpp, Line: 1515, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...

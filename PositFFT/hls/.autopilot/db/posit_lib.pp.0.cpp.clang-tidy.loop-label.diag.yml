@@ -1293,120 +1293,102 @@ Diagnostics:
         Length:          0
         ReplacementText: 'VITIS_LOOP_169_3: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_99_1:  '
-    FileOffset:      99
+    Message:         'Added loop label VITIS_LOOP_105_1:  '
+    FileOffset:      105
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2513364
+        Offset:          2513413
         Length:          0
-        ReplacementText: 'VITIS_LOOP_99_1: '
+        ReplacementText: 'VITIS_LOOP_105_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_110_1:  '
-    FileOffset:      110
+    Message:         'Added loop label VITIS_LOOP_116_1:  '
+    FileOffset:      116
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2513582
+        Offset:          2513631
         Length:          0
-        ReplacementText: 'VITIS_LOOP_110_1: '
+        ReplacementText: 'VITIS_LOOP_116_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_121_1:  '
-    FileOffset:      121
+    Message:         'Added loop label VITIS_LOOP_127_1:  '
+    FileOffset:      127
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2513812
+        Offset:          2513861
         Length:          0
-        ReplacementText: 'VITIS_LOOP_121_1: '
+        ReplacementText: 'VITIS_LOOP_127_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_132_1:  '
-    FileOffset:      132
+    Message:         'Added loop label VITIS_LOOP_138_1:  '
+    FileOffset:      138
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2514048
+        Offset:          2514097
         Length:          0
-        ReplacementText: 'VITIS_LOOP_132_1: '
+        ReplacementText: 'VITIS_LOOP_138_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1318_1:  '
-    FileOffset:      1318
+    Message:         'Added loop label VITIS_LOOP_1331_1:  '
+    FileOffset:      1331
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2534114
+        Offset:          2533524
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1318_1: '
+        ReplacementText: 'VITIS_LOOP_1331_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1337_1:  '
-    FileOffset:      1337
+    Message:         'Added loop label VITIS_LOOP_1357_1:  '
+    FileOffset:      1357
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2534593
+        Offset:          2533992
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1337_1: '
+        ReplacementText: 'VITIS_LOOP_1357_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1388_1:  '
-    FileOffset:      1388
+    Message:         'Added loop label VITIS_LOOP_1413_1:  '
+    FileOffset:      1413
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2535624
+        Offset:          2535046
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1388_1: '
+        ReplacementText: 'VITIS_LOOP_1413_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1409_1:  '
-    FileOffset:      1409
+    Message:         'Added loop label VITIS_LOOP_1439_1:  '
+    FileOffset:      1439
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2536022
+        Offset:          2535449
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1409_1: '
+        ReplacementText: 'VITIS_LOOP_1439_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1431_1:  '
-    FileOffset:      1431
+    Message:         'Added loop label VITIS_LOOP_1462_1:  '
+    FileOffset:      1462
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2536504
+        Offset:          2535814
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1431_1: '
+        ReplacementText: 'VITIS_LOOP_1462_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1449_1:  '
-    FileOffset:      1449
+    Message:         'Added loop label VITIS_LOOP_1481_1:  '
+    FileOffset:      1481
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2536918
+        Offset:          2536229
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1449_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1470_1:  '
-    FileOffset:      1470
-    FilePath:        posit_lib.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2537492
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_1470_1: '
-  - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1484_1:  '
-    FileOffset:      1484
-    FilePath:        posit_lib.cpp
-    Replacements:    
-      - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2537941
-        Length:          0
-        ReplacementText: 'VITIS_LOOP_1484_1: '
+        ReplacementText: 'VITIS_LOOP_1481_1: '
   - DiagnosticName:  xilinx-label-all-loops
     Message:         'Added loop label VITIS_LOOP_1502_1:  '
     FileOffset:      1502
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2538487
+        Offset:          2536803
         Length:          0
         ReplacementText: 'VITIS_LOOP_1502_1: '
   - DiagnosticName:  xilinx-label-all-loops
@@ -1415,25 +1397,43 @@ Diagnostics:
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2538931
+        Offset:          2537372
         Length:          0
         ReplacementText: 'VITIS_LOOP_1516_1: '
   - DiagnosticName:  xilinx-label-all-loops
-    Message:         'Added loop label VITIS_LOOP_1533_1:  '
-    FileOffset:      1533
+    Message:         'Added loop label VITIS_LOOP_1534_1:  '
+    FileOffset:      1534
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2539446
+        Offset:          2537853
         Length:          0
-        ReplacementText: 'VITIS_LOOP_1533_1: '
+        ReplacementText: 'VITIS_LOOP_1534_1: '
   - DiagnosticName:  xilinx-label-all-loops
     Message:         'Added loop label VITIS_LOOP_1548_1:  '
     FileOffset:      1548
     FilePath:        posit_lib.cpp
     Replacements:    
       - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
-        Offset:          2539992
+        Offset:          2538297
         Length:          0
         ReplacementText: 'VITIS_LOOP_1548_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1568_1:  '
+    FileOffset:      1568
+    FilePath:        posit_lib.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
+        Offset:          2538790
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1568_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1583_1:  '
+    FileOffset:      1583
+    FilePath:        posit_lib.cpp
+    Replacements:    
+      - FilePath:        'C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\PositFFT\hls\.autopilot\db\posit_lib.pp.0.cpp'
+        Offset:          2539336
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1583_1: '
 ...

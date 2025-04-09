@@ -17,26 +17,6 @@
             "L": "1"
         }
     },
-    "0": {
-        "name": "dFFT",
-        "file": "posit_lib.cpp",
-        "fileloc": "1424",
-        "instructions": "111",
-        "total_instructions": "200",
-        "calls": "2",
-        "basicblocks": "7",
-        "loads": {
-            "L": "1"
-        },
-        "stores": {
-            "L": "2",
-            "T": "2"
-        },
-        "loops": {
-            "L": "1",
-            "N": "1"
-        }
-    },
     "2": {
         "name": "generic_fmod<double>",
         "file": "hls_fmod_rem_quo.h",
@@ -47,6 +27,25 @@
         "basicblocks": "11",
         "loads": {
             "L": "1"
+        }
+    },
+    "0": {
+        "name": "dIFFT",
+        "file": "posit_lib.cpp",
+        "fileloc": "1515",
+        "instructions": "117",
+        "total_instructions": "206",
+        "calls": "2",
+        "basicblocks": "9",
+        "loads": {
+            "L": "2"
+        },
+        "stores": {
+            "L": "3"
+        },
+        "loops": {
+            "L": "1",
+            "N": "1"
         }
     }
 }

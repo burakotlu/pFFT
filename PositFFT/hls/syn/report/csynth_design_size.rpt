@@ -6,41 +6,41 @@
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 | Phase         | Step                        | Instructions | Description                                                                            |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
-| Compile/Link  |                             | 13,970       | After all functions are compiled and linked into a single design                       |
+| Compile/Link  |                             | 13,965       | After all functions are compiled and linked into a single design                       |
 |               |                             |              |                                                                                        |
 | Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
-|               | (1) unroll                  |    870       | user unroll pragmas are applied                                                        |
-|               | (2) simplification          |    644       | simplification of applied user unroll pragmas                                          |
-|               | (3) inline                  |    603       | user inline pragmas are applied                                                        |
-|               | (4) simplification          |    253       | simplification of applied user inline pragmas                                          |
+|               | (1) unroll                  |    881       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |    655       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |    617       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |    267       | simplification of applied user inline pragmas                                          |
 |               |                             |              |                                                                                        |
 | Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
-|               | (1) array partition         |    253       | user array partition pragmas are applied                                               |
-|               | (2) simplification          |    253       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
-|               | (3) aggregate/disaggregate  |    253       | user struct aggregate/disaggregate pragmas are applied                                 |
-|               | (4) array reshape           |    253       | apply array reshape pragmas                                                            |
-|               | (5) access patterns         |    256       | array access pattern optmizations                                                      |
+|               | (1) array partition         |    266       | user array partition pragmas are applied                                               |
+|               | (2) simplification          |    266       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |    266       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |    266       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |    270       | array access pattern optmizations                                                      |
 |               |                             |              |                                                                                        |
 | Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
-|               | (1) loop simplification     |    256       | loop and instruction simplification                                                    |
-|               | (2) parallelization         |    253       | loops are unrolled or pipelined to meet performance targets                            |
-|               | (3) array partition         |    253       | arrays are partitioned to meet performance targets                                     |
-|               | (4) simplification          |    253       | simplification of design after performance transformations                             |
+|               | (1) loop simplification     |    270       | loop and instruction simplification                                                    |
+|               | (2) parallelization         |    267       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |    266       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |    266       | simplification of design after performance transformations                             |
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
-|               | (1) lowering                |    261       | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           |    265       | high level synthesis optimizations                                                     |
+|               | (1) lowering                |    274       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |    278       | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
 +------------------------------+------------------------+-----------------+---------------+--------------+-------------+---------------+
 | Function                     | Location               | Compile/Link    | Unroll/Inline | Array/Struct | Performance | HW Transforms |
 +------------------------------+------------------------+-----------------+---------------+--------------+-------------+---------------+
-| + dFFT                       | posit_lib.cpp:1424     | 13,970          | 253           | 256          | 253         | 265           |
-|  + dAccumulateFC             | posit_lib.cpp:1309     | 13,930          | 229           | 232          | 229         | 235           |
-|   + dEuler                   | posit_lib.cpp:1285     | 13,885          |               |              |             |               |
-|    + dTailorCos              | posit_lib.cpp:892      | 6,947           |               |              |             |               |
-|     + dReduceAngle           | posit_lib.cpp:868      | 6,922           |               |              |             |               |
+| + dIFFT                      | posit_lib.cpp:1515     | 13,965          | 267           | 270          | 266         | 278           |
+|  + dAccumulateFC_IFFT        | posit_lib.cpp:1496     | 13,936          | 240           | 243          | 240         | 245           |
+|   + dEuler                   | posit_lib.cpp:1291     | 13,885          |               |              |             |               |
+|    + dTailorCos              | posit_lib.cpp:898      | 6,947           |               |              |             |               |
+|     + dReduceAngle           | posit_lib.cpp:874      | 6,922           |               |              |             |               |
 |      + fmod                  | fmoddouble.cpp:6       | 6,895           |               |              |             |               |
 |       + generic_fmod<double> | hls_fmod_rem_quo.h:225 | 6,893           |               |              |             |               |
 |          fp_struct           | x_hls_utils.h:456      |   638 (2 calls) |               |              |             |               |
@@ -48,8 +48,8 @@
 |        + to_ieee             | x_hls_utils.h:509      | 1,818 (6 calls) |               |              |             |               |
 |         + to_double          | x_hls_utils.h:494      | 1,806 (6 calls) |               |              |             |               |
 |            data              | x_hls_utils.h:475      | 1,674 (6 calls) |               |              |             |               |
-|    + dTailorSin              | posit_lib.cpp:1114     | 6,933           |               |              |             |               |
-|     + dNAngle                | posit_lib.cpp:1097     | 6,919           |               |              |             |               |
+|    + dTailorSin              | posit_lib.cpp:1120     | 6,933           |               |              |             |               |
+|     + dNAngle                | posit_lib.cpp:1103     | 6,919           |               |              |             |               |
 |      + fmod                  | fmoddouble.cpp:6       | 6,895           |               |              |             |               |
 |       + generic_fmod<double> | hls_fmod_rem_quo.h:225 | 6,893           |               |              |             |               |
 |          fp_struct           | x_hls_utils.h:456      |   638 (2 calls) |               |              |             |               |

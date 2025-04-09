@@ -1,35 +1,77 @@
 {
   "0": {
     "basicblocks": 7,
-    "calls": "3",
+    "calls": "11",
     "file": "posit_lib.cpp",
-    "fileloc": 1424,
-    "instructions": 33,
+    "fileloc": 1515,
+    "instructions": 32,
     "loads": {
-      "L": 2
+      "L": 1
     },
-    "name": "dFFT",
+    "name": "dIFFT",
     "stores": {
       "L": 2,
-      "T": 2
+      "T": 1
     },
-    "total_instructions": 870
+    "total_instructions": 881
   },
   "1": {
     "basicblocks": 1,
-    "calls": "9 12",
+    "calls": "5",
     "file": "posit_lib.cpp",
-    "fileloc": 1285,
-    "instructions": 5,
-    "name": "dEuler",
-    "stores": {
-      "L": 2
-    },
-    "total_instructions": 799
+    "fileloc": 1120,
+    "instructions": 14,
+    "name": "dTailorSin",
+    "total_instructions": 392
   },
   "10": {
+    "basicblocks": 4,
+    "calls": "6",
+    "file": "posit_lib.cpp",
+    "fileloc": 898,
+    "instructions": 21,
+    "loads": {
+      "L": 1
+    },
+    "name": "dTailorCos",
+    "total_instructions": 402
+  },
+  "11": {
+    "basicblocks": 7,
+    "calls": "8",
+    "file": "posit_lib.cpp",
+    "fileloc": 1496,
+    "instructions": 50,
+    "loads": {
+      "L": 8
+    },
+    "name": "dAccumulateFC_IFFT",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 849
+  },
+  "12": {
     "basicblocks": 1,
-    "calls": "5",
+    "calls": "3",
+    "file": "x_hls_utils.h",
+    "fileloc": 509,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 21
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "9",
+    "file": "fmoddouble.cpp",
+    "fileloc": 6,
+    "instructions": 2,
+    "name": "fmod",
+    "total_instructions": 354
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "4",
     "file": "x_hls_utils.h",
     "fileloc": 494,
     "instructions": 5,
@@ -39,61 +81,7 @@
     "name": "to_double",
     "total_instructions": 19
   },
-  "11": {
-    "basicblocks": 11,
-    "calls": "4",
-    "file": "posit_lib.cpp",
-    "fileloc": 868,
-    "instructions": 27,
-    "name": "dReduceAngle",
-    "stores": {
-      "L": 3
-    },
-    "total_instructions": 381
-  },
-  "12": {
-    "basicblocks": 1,
-    "calls": "2",
-    "file": "posit_lib.cpp",
-    "fileloc": 1114,
-    "instructions": 14,
-    "name": "dTailorSin",
-    "total_instructions": 392
-  },
-  "2": {
-    "basicblocks": 11,
-    "calls": "4",
-    "file": "posit_lib.cpp",
-    "fileloc": 1097,
-    "instructions": 24,
-    "name": "dNAngle",
-    "total_instructions": 378
-  },
-  "3": {
-    "basicblocks": 5,
-    "calls": "1",
-    "file": "posit_lib.cpp",
-    "fileloc": 1309,
-    "instructions": 38,
-    "loads": {
-      "L": 6
-    },
-    "name": "dAccumulateFC",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 837
-  },
   "4": {
-    "basicblocks": 1,
-    "calls": "6",
-    "file": "fmoddouble.cpp",
-    "fileloc": 6,
-    "instructions": 2,
-    "name": "fmod",
-    "total_instructions": 354
-  },
-  "5": {
     "basicblocks": 1,
     "calls": "",
     "file": "x_hls_utils.h",
@@ -108,20 +96,26 @@
     },
     "total_instructions": 14
   },
+  "5": {
+    "basicblocks": 11,
+    "calls": "2",
+    "file": "posit_lib.cpp",
+    "fileloc": 1103,
+    "instructions": 24,
+    "name": "dNAngle",
+    "total_instructions": 378
+  },
   "6": {
-    "basicblocks": 46,
-    "calls": "7 8 8 8 8 8 8",
-    "file": "hls_fmod_rem_quo.h",
-    "fileloc": 225,
-    "instructions": 218,
-    "loads": {
-      "L": 15
-    },
-    "name": "generic_fmod<double>",
+    "basicblocks": 11,
+    "calls": "2",
+    "file": "posit_lib.cpp",
+    "fileloc": 874,
+    "instructions": 27,
+    "name": "dReduceAngle",
     "stores": {
-      "L": 14
+      "L": 3
     },
-    "total_instructions": 352
+    "total_instructions": 381
   },
   "7": {
     "basicblocks": 1,
@@ -137,23 +131,29 @@
   },
   "8": {
     "basicblocks": 1,
-    "calls": "10",
-    "file": "x_hls_utils.h",
-    "fileloc": 509,
-    "instructions": 2,
-    "name": "to_ieee",
-    "total_instructions": 21
+    "calls": "10 1",
+    "file": "posit_lib.cpp",
+    "fileloc": 1291,
+    "instructions": 5,
+    "name": "dEuler",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 799
   },
   "9": {
-    "basicblocks": 4,
-    "calls": "11",
-    "file": "posit_lib.cpp",
-    "fileloc": 892,
-    "instructions": 21,
+    "basicblocks": 46,
+    "calls": "7 12 12 12 12 12 12",
+    "file": "hls_fmod_rem_quo.h",
+    "fileloc": 225,
+    "instructions": 218,
     "loads": {
-      "L": 1
+      "L": 15
     },
-    "name": "dTailorCos",
-    "total_instructions": 402
+    "name": "generic_fmod<double>",
+    "stores": {
+      "L": 14
+    },
+    "total_instructions": 352
   }
 }

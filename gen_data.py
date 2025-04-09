@@ -16,4 +16,4 @@ def generate_angles_to_file(input_size):
     print(f"File '{filename}' created with {input_size} angle values.")
 
 # Example usage
-generate_angles_to_file(256)
+generate_angles_to_file(64)

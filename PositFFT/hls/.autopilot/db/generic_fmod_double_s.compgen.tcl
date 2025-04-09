@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler dFFT_ctlz_54_54_1_1 BINDTYPE {op} TYPE {ctlz} IMPL {auto}
+	::AP::rtl_comp_handler dIFFT_ctlz_54_54_1_1 BINDTYPE {op} TYPE {ctlz} IMPL {auto}
 }
 
 

@@ -1,14 +1,14 @@
 <xilinx:hls_fe_msgs>
-    <msg msg_groups="" msg_id="207-5168" msg_severity="WARNING" msg_loc="posit_lib.cpp:745:34" msg_body="shifting a negative signed value is undefined">
+    <msg msg_groups="" msg_id="207-5168" msg_severity="WARNING" msg_loc="posit_lib.cpp:751:34" msg_body="shifting a negative signed value is undefined">
         <args ClangWarningOption="shift-negative-value"/>
     </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:145:23" msg_body="unused parameter 'size'">
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:160:23" msg_body="unused parameter 'size'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:157:23" msg_body="unused parameter 'size'">
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:172:23" msg_body="unused parameter 'size'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
-    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:169:23" msg_body="unused parameter 'size'">
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="./posit.hpp:184:23" msg_body="unused parameter 'size'">
         <args ClangWarningOption="unused-parameter"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="C:/Xilinx/Vitis/2024.2/common/technology/autopilot\utils/x_hls_utils.h:224:9" msg_body="HLS pragma dump">
@@ -615,10 +615,7 @@
         <args ARG_PragmaFunction="hypot_fixed" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
-        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dFFT" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dFFT" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
-    </msg>
-    <msg msg_groups="PRAGMA_DISAGGREGATE" msg_id="214-210" msg_severity="INFO" msg_loc="posit_lib.cpp:1424:0" msg_body="Disaggregating variable 'result'">
-        <args Name="result"/>
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="dIFFT" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=dIFFT" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
     </msg>
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h:494:0" msg_body="Inlining function 'fp_struct&lt;double&gt;::data() const (.10.20.30.59)' into 'fp_struct&lt;double&gt;::to_double() const (.7.17.27.56)'">
         <args Callee="fp_struct&lt;double&gt;::data() const (.10.20.30.59)" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 475 Column 0" Caller="fp_struct&lt;double&gt;::to_double() const (.7.17.27.56)" Caller-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 494 Column 0"/>
@@ -632,27 +629,29 @@
     <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h:226:0" msg_body="Inlining function 'fp_struct&lt;double&gt;::to_ieee() const' into 'double fmdrmd::generic_fmod&lt;double&gt;(double, double)'">
         <args Callee="fp_struct&lt;double&gt;::to_ieee() const" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/src/hls\utils/x_hls_utils.h} Line 509 Column 0" Caller="double fmdrmd::generic_fmod&lt;double&gt;(double, double)" Caller-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib/hlsmath/include/FloatingPoint\hls_fmod_rem_quo.h} Line 226 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:868:0" msg_body="Inlining function 'fmod' into 'dReduceAngle(double, bool&amp;)'">
-        <args Callee="fmod" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp} Line 6 Column 0" Caller="dReduceAngle(double, bool&amp;)" Caller-DebugLoc="File posit_lib.cpp Line 868 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:874:0" msg_body="Inlining function 'fmod' into 'dReduceAngle(double, bool&amp;)'">
+        <args Callee="fmod" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp} Line 6 Column 0" Caller="dReduceAngle(double, bool&amp;)" Caller-DebugLoc="File posit_lib.cpp Line 874 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:892:0" msg_body="Inlining function 'dReduceAngle(double, bool&amp;)' into 'dTailorCos(double)'">
-        <args Callee="dReduceAngle(double, bool&amp;)" Callee-DebugLoc="File posit_lib.cpp Line 868 Column 0" Caller="dTailorCos(double)" Caller-DebugLoc="File posit_lib.cpp Line 892 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:898:0" msg_body="Inlining function 'dReduceAngle(double, bool&amp;)' into 'dTailorCos(double)'">
+        <args Callee="dReduceAngle(double, bool&amp;)" Callee-DebugLoc="File posit_lib.cpp Line 874 Column 0" Caller="dTailorCos(double)" Caller-DebugLoc="File posit_lib.cpp Line 898 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1097:0" msg_body="Inlining function 'fmod' into 'dNAngle(double)'">
-        <args Callee="fmod" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp} Line 6 Column 0" Caller="dNAngle(double)" Caller-DebugLoc="File posit_lib.cpp Line 1097 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1103:0" msg_body="Inlining function 'fmod' into 'dNAngle(double)'">
+        <args Callee="fmod" Callee-DebugLoc="File {C:\scratch\2024.2\hls_product\495\2024.2\src\shared\hls\clib\hlsmath\src\c\fmoddouble.cpp} Line 6 Column 0" Caller="dNAngle(double)" Caller-DebugLoc="File posit_lib.cpp Line 1103 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1114:0" msg_body="Inlining function 'dNAngle(double)' into 'dTailorSin(double)'">
-        <args Callee="dNAngle(double)" Callee-DebugLoc="File posit_lib.cpp Line 1097 Column 0" Caller="dTailorSin(double)" Caller-DebugLoc="File posit_lib.cpp Line 1114 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1120:0" msg_body="Inlining function 'dNAngle(double)' into 'dTailorSin(double)'">
+        <args Callee="dNAngle(double)" Callee-DebugLoc="File posit_lib.cpp Line 1103 Column 0" Caller="dTailorSin(double)" Caller-DebugLoc="File posit_lib.cpp Line 1120 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1285:0" msg_body="Inlining function 'dTailorCos(double)' into 'dEuler(double, double*, double*)'">
-        <args Callee="dTailorCos(double)" Callee-DebugLoc="File posit_lib.cpp Line 892 Column 0" Caller="dEuler(double, double*, double*)" Caller-DebugLoc="File posit_lib.cpp Line 1285 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1291:0" msg_body="Inlining function 'dTailorCos(double)' into 'dEuler(double, double*, double*)'">
+        <args Callee="dTailorCos(double)" Callee-DebugLoc="File posit_lib.cpp Line 898 Column 0" Caller="dEuler(double, double*, double*)" Caller-DebugLoc="File posit_lib.cpp Line 1291 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1285:0" msg_body="Inlining function 'dTailorSin(double)' into 'dEuler(double, double*, double*)'">
-        <args Callee="dTailorSin(double)" Callee-DebugLoc="File posit_lib.cpp Line 1114 Column 0" Caller="dEuler(double, double*, double*)" Caller-DebugLoc="File posit_lib.cpp Line 1285 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1291:0" msg_body="Inlining function 'dTailorSin(double)' into 'dEuler(double, double*, double*)'">
+        <args Callee="dTailorSin(double)" Callee-DebugLoc="File posit_lib.cpp Line 1120 Column 0" Caller="dEuler(double, double*, double*)" Caller-DebugLoc="File posit_lib.cpp Line 1291 Column 0"/>
     </msg>
-    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1309:0" msg_body="Inlining function 'dEuler(double, double*, double*)' into 'dAccumulateFC(int, int, double const*, double&amp;, double&amp;)'">
-        <args Callee="dEuler(double, double*, double*)" Callee-DebugLoc="File posit_lib.cpp Line 1285 Column 0" Caller="dAccumulateFC(int, int, double const*, double&amp;, double&amp;)" Caller-DebugLoc="File posit_lib.cpp Line 1309 Column 0"/>
+    <msg msg_groups="PRAGMA_INLINE" msg_id="214-178" msg_severity="INFO" msg_loc="posit_lib.cpp:1496:0" msg_body="Inlining function 'dEuler(double, double*, double*)' into 'dAccumulateFC_IFFT(int, double const*, double const*, double&amp;, double&amp;, int)'">
+        <args Callee="dEuler(double, double*, double*)" Callee-DebugLoc="File posit_lib.cpp Line 1291 Column 0" Caller="dAccumulateFC_IFFT(int, double const*, double const*, double&amp;, double&amp;, int)" Caller-DebugLoc="File posit_lib.cpp Line 1496 Column 0"/>
     </msg>
-    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="posit_lib.cpp:1321:20" msg_body="Ignore address on register port 'signalBuffer'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="posit_lib.cpp:1503:33" msg_body="Ignore address on register port 'real'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="posit_lib.cpp:1504:33" msg_body="Ignore address on register port 'imag'"/>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-450" msg_severity="WARNING" msg_loc="posit_lib.cpp:1523:19" msg_body="Ignore address on register port 'signal'"/>
 </xilinx:hls_fe_msgs>
 

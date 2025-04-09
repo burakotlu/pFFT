@@ -3064,7 +3064,7 @@
         <count>1</count>
         <item_version>0</item_version>
         <item class_id="36" tracking_level="0" version="0">
-          <first>flow_control_loop_pipe_sequential_init_U (dFFT_flow_control_loop_pipe_sequential_init)</first>
+          <first>flow_control_loop_pipe_sequential_init_U (dIFFT_flow_control_loop_pipe_sequential_init)</first>
           <second class_id="37" tracking_level="0" version="0">
             <count>0</count>
             <item_version>0</item_version>

@@ -1,5 +1,5 @@
 
-set TopModule "dFFT"
+set TopModule "dIFFT"
 set ClockPeriod 10
 set ClockList ap_clk
 set AxiliteClockList {}
@@ -24,7 +24,7 @@ set ResetRegisterNum 0
 set FsmEncStyle onehot
 set MaxFanout 0
 set RtlPrefix {}
-set RtlSubPrefix dFFT_
+set RtlSubPrefix dIFFT_
 set ExtraCCFlags {}
 set ExtraCLdFlags {}
 set SynCheckOptions {}

@@ -102,7 +102,22 @@ const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 842887333};
 const ps_t POSIT_M_PI = {1, false, false, 1, 0, 842887333};
 const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333}; 
 #endif 
-
+#if (N==28) && (ES==0)
+const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 52680458};
+const ps_t POSIT_PI = {0, false, false, 1, 0, 52680458};
+const ps_t POSIT_2PI = {0, false, false, 2, 0, 52680458}; 
+const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 52680458};
+const ps_t POSIT_M_PI = {1, false, false, 1, 0, 52680458};
+const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 52680458}; 
+#endif 
+#if (N==24) && (ES==0)
+const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 3292528};
+const ps_t POSIT_PI = {0, false, false, 1, 0, 3292528};
+const ps_t POSIT_2PI = {0, false, false, 2, 0, 3292528}; 
+const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 3292528};
+const ps_t POSIT_M_PI = {1, false, false, 1, 0, 3292528};
+const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 3292528}; 
+#endif 
 
 
 const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};

@@ -31,25 +31,31 @@ bool isGreater_posit(ps_t x, ps_t y) {
 }
 ps_t positMod(ps_t x, ps_t y){
     ps_t quotient,c_x, inter,res;
-    sf_t sf_fVal=0;
-    mantissa_t m=0;
+    sf_t sf=0;
+   
     bool small;
     bool x_sign = x.sign;
     bool y_sign = y.sign;
     c_x =x;
     c_x.sign = false;
+    //std::cout << "[INFO] Input x: " << posit2double(x) << ", y: " << posit2double(y) << std::endl;
+
     small= isGreater_posit(y, c_x);
     if (small) return x;
     else{
         quotient = positDiv(c_x,y) ;
-        m.set(FRAC_LEN - 1);;
-        quotient.mantissa = m;
+        sf = ((sf_t)quotient.regime<<ES)+quotient.exponent;
+        quotient.mantissa.range(FRAC_LEN-sf-2,0)=0;
         inter= positMul(quotient,y);
         res = positSub(c_x,inter);
         res.sign = x.sign;
+   /*     std::cout << "[DEBUG] c_x: " << posit2double(c_x) << std::endl;
+        std::cout << "[DEBUG] sf: " << sf << std::endl;
+        std::cout << "[DEBUG] quotient: " << posit2double(quotient) << std::endl;
+        std::cout << "[DEBUG] inter (quotient * y): " << posit2double(inter) << std::endl;
+        std::cout << "[RESULT] positMod result: " << posit2double(res) << std::endl;*/
         return res;
     }
-    
 
 }
 
@@ -702,11 +708,11 @@ ps_t positDiv(ps_t x,ps_t y){
         std::cout<<"sf_r:"<<sf_r<<std::endl;
         std::cout<<"mantissa:"<<mantissa<<std::endl;
         std::cout<<"mant:"<<mant<<std::endl;
-    */
-
+    
+*/
         //determine regime
         regime=sf_r>>ES;
-
+        //std::cout<<"regime:"<<mant<<std::endl;
     }
     if (sf_r.range(REG_LEN+ES,REG_LEN+ES-1)==2){
         regime = 2-N;
@@ -1289,7 +1295,7 @@ void dEuler(double angle, double *result_real, double *result_imag) {
 void fEuler(float angle, float *result_real, float *result_imag) {
     *result_real = fTailorCos(angle);
     *result_imag = fTailorSin(angle);
-}
+}/*
 // Define file streams for logging values (commented out)
 std::ofstream signalFile("signal_values.txt");
 std::ofstream realPartFile("realPart_values.txt");
@@ -1304,12 +1310,19 @@ std::ofstream PmultiplicationFile("posit_multiplication_values.txt");
 std::ofstream PrealSumFile("posit_realsum_values.txt");
 std::ofstream PangleFile("posit_angle_values.txt");
 std::ofstream PdeltaThetaFile("posit_deltaTheta_values.txt");
-
+std::ofstream deltaFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_deltaTheta.txt");
+std::ofstream deltaThetaPosit("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/posit_deltaTheta.txt");*/
 // Define the accumulation function for double type signals
 void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& realSum, double& imagSum) {
     double realPart, imagPart, angle = 0.0;
-    double deltaTheta = -2.0 * M_PI * k / sampleCount;
+    double deltaTheta = -2.0 * PI * k / sampleCount;
 
+/*    // Open output files
+    std::ofstream realFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_realPart_k" + std::to_string(k) + ".txt");
+    std::ofstream imagFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_imagPart_k" + std::to_string(k) + ".txt");
+
+    // Write deltaTheta once
+    deltaFile << deltaTheta << std::endl;*/
     // Initialize sums
     realSum = 0.0;
     imagSum = 0.0;
@@ -1317,12 +1330,19 @@ void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& 
     // Accumulate FFT bin
     for (int n = 0; n < sampleCount; n++) {
         dEuler(angle, &realPart, &imagPart);
+   /*     // Save current values to files
+        realFile << angle<<"   "<<realPart << std::endl;
+        imagFile << angle<<"   "<<imagPart << std::endl;*/
 
         realSum += signalBuffer[n] * realPart;
         imagSum += signalBuffer[n] * imagPart;
 
         angle += deltaTheta;
     }
+/*    // Close files
+    realFile.close();
+    imagFile.close();*/
+    
 }
 
 void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum, float& imagSum) {
@@ -1331,7 +1351,7 @@ void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum,
     // Initialize the sums to 0
     realSum = 0.0;
     imagSum = 0.0;
-    float deltaTheta = -2.0 * M_PI * k / sampleCount;
+    float deltaTheta = -2.0 * PI * k / sampleCount;
 
     // Loop over the samples and compute the FFT accumulation
     for (int n = 0; n < sampleCount; n++) {
@@ -1377,14 +1397,19 @@ ps_t calculateKFactor(int k){
 	return result;
 }
 void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
-    ps_t angle, realPart, imagPart;
-    ps_t deltaTheta, k_factor;
+    ps_t angle=ZERO, realPart, imagPart;
+   ps_t deltaTheta, k_factor;
 	k_factor = calculateKFactor(k);
 	deltaTheta = positMul(POSIT_M_2PI,k_factor);
-    //ps_t deltaTheta = double2posit(-2.0 * M_PI * k / sampleCount);
-
+    //ps_t deltaTheta = double2posit(-2.0 * PI * k / sampleCount);
+/*
     // Loop over the samples and compute the FFT accumulation
-
+    // Open output files
+    std::ofstream realFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/realPart_k" + std::to_string(k) + ".txt");
+    std::ofstream imagFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/imagPart_k" + std::to_string(k) + ".txt");
+*/
+    // Optional: write deltaTheta only once
+   // deltaThetaPosit << posit2double(deltaTheta) << std::endl;
     for (int n = 0; n < sampleCount; n++) {
         // Access the signal array instead of reading from the stream
         ps_t signalVal = signal[n];
@@ -1392,13 +1417,18 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
         // Compute Euler for posit type
 
         pEuler(angle, &realPart, &imagPart);
-
+   /*     // Save current values
+        realFile << posit2double(angle )<<"   "<<posit2double(realPart) << std::endl;
+        imagFile << posit2double(angle )<<"   "<<posit2double(imagPart) << std::endl;*/
         // Accuulate the results
         realSum = positAdd(realSum, positMul(signalVal, realPart));
         imagSum = positAdd(imagSum, positMul(signalVal, imagPart));
 
         angle = positAdd(angle, deltaTheta);
     }
+  /*  // Close files
+    realFile.close();
+    imagFile.close();*/
 
 }
 
@@ -1418,6 +1448,7 @@ void pFFT(ps_t signal[], pFFTResult& result) {
         result.real[k] = realSum;  // Store the real part in the array
         result.imag[k] = imagSum;  // Store the imaginary part in the array
     }
+    //deltaThetaPosit.close();
 }
 
 // Function for dFFT (using double type)
@@ -1440,6 +1471,7 @@ void dFFT(double signal[], dFFTResult& result) {
         result.real[k] = realSum;  // Store the real part in the array
         result.imag[k] = imagSum;  // Store the imaginary part in the array
     }
+    //deltaFile.close();
 }
 
 // Function for fFFT (using float type)
@@ -1482,8 +1514,8 @@ void dAccumulateFC_IFFT(int k, const double real[], const double imag[], double&
 // IFFT function for dFFT (using double arrays)
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount) {
     for (int k = 0; k < sampleCount; k++) {
-        if (k % 200 == 0)
-            std::cout << k << std::endl;
+  /*      if (k % 200 == 0)
+            std::cout << k << std::endl;*/
 
         double realSum = 0.0, imagSum = 0.0;
         dAccumulateFC_IFFT(k, real, imag, realSum, imagSum, sampleCount);
@@ -1514,8 +1546,8 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
 // IFFT function for fFFT (using float arrays)
 void fIFFT(const float real[], const float imag[], float signal[], int sampleCount) {
     for (int k = 0; k < sampleCount; k++) {
-        if (k % 200 == 0)
-            std::cout << k << std::endl;
+ /*       if (k % 200 == 0)
+            std::cout << k << std::endl;*/
 
         float realSum = 0.0f, imagSum = 0.0f;
         fAccumulateFC_IFFT(k, real, imag, realSum, imagSum, sampleCount);
@@ -1528,7 +1560,10 @@ void fIFFT(const float real[], const float imag[], float signal[], int sampleCou
 void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realSum, ps_t& imagSum, int sampleCount) {
 
     ps_t realPart, imagPart, angle = ZERO;
-    ps_t deltaTheta = double2posit(2.0 * PI * k / sampleCount);
+    ps_t deltaTheta, k_factor;
+	k_factor = calculateKFactor(k);
+	deltaTheta = positMul(POSIT_2PI,k_factor);
+    //ps_t deltaTheta = double2posit(2.0 * PI * k / sampleCount);
 
     for (int n = 0; n < sampleCount; n++) {
         ps_t signalVal_real = real[n];
@@ -1546,8 +1581,8 @@ void pAccumulateFC_IFFT(int k, const ps_t real[], const ps_t imag[], ps_t& realS
 // IFFT function for pFFT (using ps_t arrays)
 void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount) {
     for (int k = 0; k < sampleCount; k++) {
-        if (k % 200 == 0)
-            std::cout << k << std::endl;
+/*        if (k % 200 == 0)
+            std::cout << k << std::endl;*/
 
         ps_t realSum=ZERO;
         ps_t imagSum=ZERO;

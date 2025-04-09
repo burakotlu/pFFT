@@ -1,36 +1,21 @@
 {
   "0": {
-    "basicblocks": 4,
-    "calls": "1",
-    "file": "posit_lib.cpp",
-    "fileloc": 1424,
-    "instructions": 30,
-    "loads": {
-      "L": 2
-    },
-    "name": "dFFT",
-    "stores": {
-      "L": 2,
-      "T": 2
-    },
-    "total_instructions": 265
-  },
-  "1": {
-    "basicblocks": 17,
+    "basicblocks": 6,
     "calls": "2",
     "file": "posit_lib.cpp",
-    "fileloc": 1309,
-    "instructions": 86,
+    "fileloc": 1515,
+    "instructions": 33,
     "loads": {
       "L": 1
     },
-    "name": "dAccumulateFC",
+    "name": "dIFFT",
     "stores": {
-      "L": 4
+      "L": 2,
+      "T": 1
     },
-    "total_instructions": 235
+    "total_instructions": 278
   },
-  "2": {
+  "1": {
     "basicblocks": 27,
     "calls": "",
     "file": "hls_fmod_rem_quo.h",
@@ -38,5 +23,20 @@
     "instructions": 149,
     "name": "generic_fmod<double>",
     "total_instructions": 149
+  },
+  "2": {
+    "basicblocks": 19,
+    "calls": "1",
+    "file": "posit_lib.cpp",
+    "fileloc": 1496,
+    "instructions": 96,
+    "loads": {
+      "L": 2
+    },
+    "name": "dAccumulateFC_IFFT",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 245
   }
 }
