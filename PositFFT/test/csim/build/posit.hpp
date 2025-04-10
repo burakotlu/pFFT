@@ -13,8 +13,8 @@ using namespace std;
 #define N 32
 #define ES 2
 #define TERMS 4
-#define IN_SIZE 256
-#define APPR_TAILOR 1
+#define IN_SIZE 1024
+#define APPR_TAILOR 0
 
 #define FRAC_LEN (N-(ES+2))
 #define MUL_LEN 2*FRAC_LEN

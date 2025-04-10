@@ -66,7 +66,7 @@ if __name__ == "__main__":
     header_file = "C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp"
     N_ES_combinations = [(24,0),(24,1),(24,2),(28,0),(28,1),(28,2),(32,0),(32,1),(32,2)]
     TERMS_values = [2,3,4]
-    IN_SIZE_values = [64,128,256]  
+    IN_SIZE_values = [512,1024]  
     
     for terms in TERMS_values:
         for n, es in N_ES_combinations:

@@ -28324,3 +28324,2437 @@ INFO: [SIM 211-1] CSim done with 0 errors.
 INFO: [SIM 211-3] *************** CSIM finish ***************
 INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:30; Allocated memory: 1.301 MB.
 INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:57; Allocated memory: 1.477 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:50; Allocated memory: 1.316 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:51; Allocated memory: 1.316 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:36; Allocated memory: 1.305 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:56; Allocated memory: 1.477 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:58; Allocated memory: 1.316 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:51; Allocated memory: 1.297 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:39; Allocated memory: 1.500 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:14; Allocated memory: 1.379 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:55; Allocated memory: 1.344 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:51; Allocated memory: 1.328 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:47; Allocated memory: 1.441 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:54; Allocated memory: 1.305 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:57; Allocated memory: 1.387 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:50; Allocated memory: 1.270 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:34; Allocated memory: 1.359 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.219 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:54; Allocated memory: 1.496 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:54; Allocated memory: 1.438 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:39; Allocated memory: 1.496 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.352 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:02; Allocated memory: 1.398 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:52; Allocated memory: 1.375 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:38; Allocated memory: 1.387 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:54; Allocated memory: 1.438 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:48; Allocated memory: 1.281 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:51; Allocated memory: 1.359 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:35; Allocated memory: 1.273 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.465 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:54; Allocated memory: 1.344 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:52; Allocated memory: 1.355 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:43; Allocated memory: 1.508 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.430 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:55; Allocated memory: 1.270 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:52; Allocated memory: 1.414 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:41; Allocated memory: 1.359 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:05; Allocated memory: 1.426 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:31; Allocated memory: 1.500 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.395 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:53; Allocated memory: 1.340 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:06; Allocated memory: 1.258 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:37; Allocated memory: 1.395 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:56; Allocated memory: 1.297 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:02; Allocated memory: 1.398 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:06; Allocated memory: 1.473 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:46; Allocated memory: 1.504 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:56; Allocated memory: 1.414 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:58; Allocated memory: 1.410 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:05; Allocated memory: 1.324 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:32; Allocated memory: 1.398 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:56; Allocated memory: 1.543 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:54; Allocated memory: 1.523 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:10; Allocated memory: 1.402 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:42; Allocated memory: 1.383 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:57; Allocated memory: 1.457 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:59; Allocated memory: 1.484 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:06; Allocated memory: 1.375 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:38; Allocated memory: 1.375 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:56; Allocated memory: 1.355 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:57; Allocated memory: 1.367 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:05; Allocated memory: 1.363 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:50; Allocated memory: 1.395 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:55; Allocated memory: 1.324 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:54; Allocated memory: 1.262 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:07; Allocated memory: 1.414 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:04; Allocated memory: 1.363 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:57; Allocated memory: 1.352 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:09; Allocated memory: 1.297 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:08; Allocated memory: 1.465 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:42; Allocated memory: 1.230 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:00:57; Allocated memory: 1.453 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:00; Allocated memory: 1.371 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:17; Allocated memory: 1.414 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:30; Allocated memory: 1.293 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:00; Allocated memory: 1.305 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:14; Allocated memory: 1.367 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:19; Allocated memory: 1.449 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:29; Allocated memory: 1.445 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:02; Allocated memory: 1.383 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:20; Allocated memory: 1.387 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:20; Allocated memory: 1.309 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:56; Allocated memory: 1.309 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:02; Allocated memory: 1.309 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:28; Allocated memory: 1.340 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:18; Allocated memory: 1.582 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:22; Allocated memory: 1.508 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:01; Allocated memory: 1.359 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:35; Allocated memory: 1.453 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:35; Allocated memory: 1.270 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:05:09; Allocated memory: 1.328 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:10; Allocated memory: 1.379 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:47; Allocated memory: 1.363 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:33; Allocated memory: 1.379 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:05:36; Allocated memory: 1.496 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:16; Allocated memory: 1.332 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:57; Allocated memory: 1.359 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:40; Allocated memory: 1.379 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:04:58; Allocated memory: 1.336 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:05; Allocated memory: 1.383 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:03:35; Allocated memory: 1.355 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:49; Allocated memory: 1.320 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:05:38; Allocated memory: 1.371 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:01:15; Allocated memory: 1.254 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 20:42:31; Allocated memory: 1.184 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-2161] Finished Command csim_design Elapsed time: 00:02:26; Allocated memory: 1.340 MB.
+INFO: [HLS 200-1510] Running: close_project 
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2024.2 (64-bit)
+Tool Version Limit: 2024.11
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+==============================================================
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_top pFFT 
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1510] Running: add_files C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp 
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1510] Running: csim_design 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries

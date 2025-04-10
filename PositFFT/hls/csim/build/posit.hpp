@@ -11,9 +11,9 @@
 using namespace std;
 
 #define N 32
-#define ES 2
+#define ES 0
 #define TERMS 4
-#define IN_SIZE 128
+#define IN_SIZE 64
 #define APPR_TAILOR 1
 
 #define FRAC_LEN (N-(ES+2))

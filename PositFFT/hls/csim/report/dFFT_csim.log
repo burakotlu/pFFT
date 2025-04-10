@@ -5,8 +5,33 @@ INFO: [SIM 4] CSIM will launch CLANG as the compiler.
    Generating csim.exe
 ONE: 1
 Before Load
-Loaded 10 values into arrays
+Loaded 64 values into arrays
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/in_double.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/in_float.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/in_posit.txt
+----------------SNR RESULTS INPUT-------------------------
+SNR (Posit Reconstruction): 174.855 dB
+SNR (Float Conversion): 153.033 dB
 After Load
+Loaded 64 values into arrays
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/inSinCos_double.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/inSinCos_float.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/inSinCos_posit.txt
+----------SIN--------------
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/sin_double.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/sin_posit.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/sin_float.txt
+----------------SNR RESULTS SIN-------------------------
+SNR (Posit Reconstruction): 171.049 dB
+SNR (Float Conversion): 139.772 dB
+----------COS--------------
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/cos_double.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/cos_posit.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/cos_float.txt
+----------------SNR RESULTS COS-------------------------
+SNR (Posit Reconstruction): 169.693 dB
+SNR (Float Conversion): 138.623 dB
+----------FFT--------------
 Calculating double results...
 Processing bin: 0
 Calculating float results...
@@ -14,8 +39,33 @@ Calculating float results...
 Calculating posit results...
 0
 Writing results in files...
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/signal.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/posit_fft_real.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/posit_fft_imag.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/double_fft_real.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/double_fft_imag.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/float_fft_real.txt
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/float_fft_imag.txt
 ----------------SNR RESULTS FFT-------------------------
-SNR (Posit Reconstruction): 150.275 dB
-SNR (Float Conversion): 122.137 dB
+SNR (Posit Reconstruction): 109.283 dB
+SNR (Float Conversion): 86.6896 dB
+Computing double IFFT...
+0
+Writing IFFT results to file...
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/double_ifft_output.txt
+Computing float IFFT...
+0
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/float_ifft_output.txt
+Computing posit IFFT...
+0
+Saved 64 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_64_APP/posit_ifft_output.txt
+----------------SNR RESULTS IFFT-------------------------
+SNR (Posit Reconstruction): 41.2276 dB
+SNR (Float Conversion): 40.0188 dB
+----------------SNR RESULTS IFFT WRT ORIG-----------------
+SNR (Posit Reconstruction): 19.3983 dB
+SNR (Float Conversion): 19.4442 dB
+SNR (Double Conversion): 19.3755 dB
+Processing complete.
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

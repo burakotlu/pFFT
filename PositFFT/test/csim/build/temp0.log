@@ -1,0 +1,45 @@
+ONE: 1
+Before Load
+Loaded 1024 values into arrays
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/in_double.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/in_float.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/in_posit.txt
+----------------SNR RESULTS INPUT-------------------------
+SNR (Posit Reconstruction): 162.564 dB
+SNR (Float Conversion): 153.18 dB
+After Load
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/inSinCos_double.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/inSinCos_float.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/inSinCos_posit.txt
+----------SIN--------------
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/sin_double.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/sin_posit.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/sin_float.txt
+----------------SNR RESULTS SIN-------------------------
+SNR (Posit Reconstruction): inf dB
+SNR (Float Conversion): inf dB
+----------COS--------------
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/cos_double.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/cos_posit.txt
+Saved 1024 values to c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_2_SIZE_1024_NAPP/cos_float.txt
+----------------SNR RESULTS COS-------------------------
+SNR (Posit Reconstruction): inf dB
+SNR (Float Conversion): inf dB
+----------FFT--------------
+Calculating double results...
+Processing bin: 0
+Processing bin: 200
+Processing bin: 400
+Processing bin: 600
+Processing bin: 800
+Processing bin: 1000
+Calculating float results...
+0
+200
+400
+600
+800
+1000
+Calculating posit results...
+0
+200
