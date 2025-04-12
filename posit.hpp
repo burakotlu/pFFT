@@ -13,7 +13,7 @@ using namespace std;
 #define N 32
 #define ES 0
 #define TERMS 4
-#define IN_SIZE 64
+#define IN_SIZE 512
 #define APPR_TAILOR 1
 #if (IN_SIZE ==64)
 #define LOG_IN_SIZE_SF 6
@@ -30,7 +30,7 @@ using namespace std;
 typedef ap_uint<LOG_IN_SIZE_SF> log_sf_t;
 #define FRAC_LEN (N-(ES+2))
 #define MUL_LEN 2*FRAC_LEN
-#define PI 3.14
+
 #if (ES==0)
 #define REG_SHIFT 1 //(1<<ES)
 #define USEED 2 //(1<<REG_SHIFT)
@@ -86,7 +86,14 @@ typedef ap_uint<1> bool_t;
 typedef struct POSIT{bool sign=0;bool isZero=1;bool isInf=0;regime_t regime=0;exponent_t exponent=0;mantissa_t mantissa=0;}POSIT;
 typedef POSIT ps_t;
 
-
+inline bool operator==(const POSIT& lhs, const POSIT& rhs) {
+    return lhs.sign     == rhs.sign     &&
+           lhs.isZero   == rhs.isZero   &&
+           lhs.isInf    == rhs.isInf    &&
+           lhs.regime   == rhs.regime   &&
+           lhs.exponent == rhs.exponent &&
+           lhs.mantissa == rhs.mantissa;
+}
 
 // Header declarations updated for streaming-based functions
 
@@ -94,33 +101,54 @@ typedef POSIT ps_t;
 
 // Accumulation functions for IFFT computation
 // Defining some constant POSIT structs 
-#if (N==32) && (ES==0)
-const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 842887333};
-const ps_t POSIT_PI = {0, false, false, 1, 0, 842887333};
-const ps_t POSIT_2PI = {0, false, false, 2, 0, 842887333}; 
-const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 842887333};
-const ps_t POSIT_M_PI = {1, false, false, 1, 0, 842887333};
-const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 842887333}; 
-#endif 
-#if (N==28) && (ES==0)
-const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 52680458};
-const ps_t POSIT_PI = {0, false, false, 1, 0, 52680458};
-const ps_t POSIT_2PI = {0, false, false, 2, 0, 52680458}; 
-const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 52680458};
-const ps_t POSIT_M_PI = {1, false, false, 1, 0, 52680458};
-const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 52680458}; 
-#endif 
-#if (N==24) && (ES==0)
-const ps_t POSIT_PI_OVER2 = {0, false, false, 0, 0, 3292528};
-const ps_t POSIT_PI = {0, false, false, 1, 0, 3292528};
-const ps_t POSIT_2PI = {0, false, false, 2, 0, 3292528}; 
-const ps_t POSIT_M_PI_OVER2 = {1, false, false, 0, 0, 3292528};
-const ps_t POSIT_M_PI = {1, false, false, 1, 0, 3292528};
-const ps_t POSIT_M_2PI = {1, false, false, 2, 0, 3292528}; 
-#endif 
 
+#if (N==32)
+//#define PI_MANTISSA 843251712
+#define PI_MANTISSA 843055104
+//#define PI_MANTISSA 838860800
+#endif
+#if (N==28)
+//#define PI_MANTISSA 52703232
+#define PI_MANTISSA 52690944
+//#define PI_MANTISSA 52428800
+#endif
+#if (N==24)
+//#define PI_MANTISSA 3293952
+#define PI_MANTISSA 3293184
+//#define PI_MANTISSA 3276800
+#endif
+//#define PI 3.141357421875
+#define PI 3.140625
+//#define PI 3.125
+#if (ES==0)
+
+const ps_t POSIT_PI_OVER2 =     {0, false, false, 0, 0, PI_MANTISSA};
+const ps_t POSIT_PI =           {0, false, false, 1, 0, PI_MANTISSA};
+const ps_t POSIT_2PI =          {0, false, false, 2, 0, PI_MANTISSA}; 
+const ps_t POSIT_M_PI_OVER2 =   {1, false, false, 0, 0, PI_MANTISSA};
+const ps_t POSIT_M_PI =         {1, false, false, 1, 0, PI_MANTISSA};
+const ps_t POSIT_M_2PI =        {1, false, false, 2, 0, PI_MANTISSA}; 
+#endif 
+#if (ES==1)
+const ps_t POSIT_PI_OVER2 =     {0, false, false, 0, 0, PI_MANTISSA/2};
+const ps_t POSIT_PI =           {0, false, false, 0, 1, PI_MANTISSA/2};
+const ps_t POSIT_2PI =          {0, false, false, 1, 0, PI_MANTISSA/2}; 
+const ps_t POSIT_M_PI_OVER2 =   {1, false, false, 0, 0, PI_MANTISSA/2};
+const ps_t POSIT_M_PI =         {1, false, false, 0, 1, PI_MANTISSA/2};
+const ps_t POSIT_M_2PI =        {1, false, false, 1, 0, PI_MANTISSA/2}; 
+#endif 
+#if  (ES==2)
+//#define PI 3.14159265161
+const ps_t POSIT_PI_OVER2 =     {0, false, false, 0, 0, PI_MANTISSA/4};
+const ps_t POSIT_PI =           {0, false, false, 0, 1, PI_MANTISSA/4};
+const ps_t POSIT_2PI =          {0, false, false, 0, 2, PI_MANTISSA/4};
+const ps_t POSIT_M_PI_OVER2 =   {1, false, false, 0, 0, PI_MANTISSA/4};
+const ps_t POSIT_M_PI =         {1, false, false, 0, 1, PI_MANTISSA/4};
+const ps_t POSIT_M_2PI =        {1, false, false, 0, 2, PI_MANTISSA/4};
+#endif
 
 const ps_t ONE = {0, false, false, 0, 0, 1<<(FRAC_LEN-1)};
+const ps_t mONE = {1, false, false, 0, 0, 1<<(FRAC_LEN-1)};
 const ps_t ZERO = {0, true, false, 0, 0, 1<<(FRAC_LEN-1)}; 
 ps_t calculateKFactor(int k);
 regime_t LOD(reg_t reg);
@@ -142,6 +170,7 @@ ps_t positDiv(ps_t x,ps_t y);
 ps_t positSub(ps_t x,ps_t y);
 ps_t positCos(ps_t x);
 ps_t positSin(ps_t x);
+ps_t positMod(ps_t x, ps_t y);
 ps_t normalize_angle(ps_t x) ;
 double dTailorSin(double in);
 float fTailorSin(float in);
@@ -196,3 +225,55 @@ void pFFT(ps_t signal[], pFFTResult& result);
 void dIFFT(const double real[], const double imag[], double signal[], int sampleCount);
 void fIFFT(const float real[], const float imag[], float signal[], int sampleCount);
 void pIFFT(const ps_t real[], const ps_t imag[], ps_t signal[], int sampleCount);
+
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+#include <cstddef>  // for size_t
+
+const size_t MAX_SIZE = IN_SIZE*IN_SIZE;
+const size_t DTHETA_SIZE = IN_SIZE;
+extern double d_Angle_Array[MAX_SIZE];   
+extern size_t d_Angle_Counter;           
+extern float f_Angle_Array[MAX_SIZE];   
+extern size_t f_Angle_Counter;           
+extern double p_Angle_Array[MAX_SIZE];   
+extern size_t p_Angle_Counter;           
+
+void addTod_Angle_Array(double value);
+void f_addTof_Angle_Array(float value);
+void p_addTop_Angle_Array(double value);
+///RP
+extern double d_RP_Array[MAX_SIZE];   
+extern size_t d_RP_Counter;           
+extern float f_RP_Array[MAX_SIZE];   
+extern size_t f_RP_Counter;           
+extern double p_RP_Array[MAX_SIZE];   
+extern size_t p_RP_Counter; 
+
+void addTod_RP_Array(double value);
+void f_addTof_RP_Array(float value);
+void p_addTop_RP_Array(double value);
+///IMG
+extern double d_IMG_Array[MAX_SIZE];   
+extern size_t d_IMG_Counter;           
+extern float f_IMG_Array[MAX_SIZE];   
+extern size_t f_IMG_Counter;           
+extern double p_IMG_Array[MAX_SIZE];   
+extern size_t p_IMG_Counter; 
+
+void addTod_IMG_Array(double value);
+void f_addTof_IMG_Array(float value);
+void p_addTop_IMG_Array(double value);
+///DTheta
+extern double d_DTH_Array[DTHETA_SIZE];   
+extern size_t d_DTH_Counter;           
+extern float f_DTH_Array[DTHETA_SIZE];   
+extern size_t f_DTH_Counter;           
+extern double p_DTH_Array[DTHETA_SIZE];   
+extern size_t p_DTH_Counter; 
+
+void addTod_DTH_Array(double value);
+void f_addTof_DTH_Array(float value);
+void p_addTop_DTH_Array(double value);
+#endif

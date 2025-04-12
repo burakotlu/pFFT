@@ -1,0 +1,453 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/PositFFT 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit.hpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(7)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit.hpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\posit_lib.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(8)
+INFO: [HLS 200-10] Adding design file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_lib.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'tb.file=posit_fft_test.cpp' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(12)
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/posit_fft_test.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=dIFFT' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xazu7ev-fbvb900-1-i' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xazu7ev-fbvb900-1-i'
+INFO: [HLS 200-1465] Applying ini 'clock=10ns' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(11)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1465] Applying ini 'csim.code_analyzer=0' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(9)
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/hls_config.cfg(5)
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch CLANG as the compiler.
+INFO: [HLS 200-2036] Building debug C Simulation binaries
+   Compiling ../../../../posit_lib.cpp in debug mode
+   Generating csim.exe
+In file included from ../../../../posit_lib.cpp:1:
+In file included from ../../../../posit.hpp:1:
+In file included from C:/Xilinx/Vitis/2024.2/include/ap_int.h:10:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_common.h:658:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/ap_private.h:68:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_half.h:26:
+In file included from C:/Xilinx/Vitis/2024.2/include/etc/hls_half_fpo.h:19:
+In file included from C:/Xilinx/Vitis/2024.2/include/hls_fpo.h:140:
+In file included from C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:150:
+C:/Xilinx/Vitis/2024.2/include/gmp.h:58:9: warning: '__GMP_LIBGMP_DLL' macro redefined [-Wmacro-redefined]
+#define __GMP_LIBGMP_DLL  0
+        ^
+C:/Xilinx/Vitis/2024.2/include/floating_point_v7_1_bitacc_cmodel.h:142:9: note: previous definition is here
+#define __GMP_LIBGMP_DLL 1
+        ^
+../../../../posit_lib.cpp:773:33: warning: shifting a negative signed value is undefined [-Wshift-negative-value]
+        sf_t sf_x,sf_y,sf_r,max =((2-N)<<ES);
+                                  ~~~~~^
+2 warnings generated.
+double PI: 2
+ONE: 1
+POSIT_PI_OVER2: 1
+PI: 2
+2PI: 4
+POSIT_M_PI_OVER2: -1
+POSIT_M_PI: -2
+POSIT_M_2PI: -4
+----------------SNR RESULTS K Factor-------------------------
+SNR k factor Calculation: inf dB
+----------------SNR RESULTS MOD-------------------------
+SNR Before Calculation: 182.101600059 dB
+SNR Mod Calculation: 146.873514224 dB
+Before Load
+Loaded 128 values into arrays
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/in_double.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/in_float.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/in_posit.txt for writing!
+----------------SNR RESULTS INPUT-------------------------
+SNR (Posit Reconstruction): 174.907181033 dB
+SNR (Float Conversion): 152.912139893 dB
+After Load
+Loaded 128 values into arrays
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/inSinCos_double.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/inSinCos_float.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/inSinCos_posit.txt for writing!
+----------SIN--------------
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/sin_double.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/sin_posit.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/sin_float.txt for writing!
+----------------SNR RESULTS SIN-------------------------
+SNR (Posit Reconstruction): 164.227315763 dB
+SNR (Float Conversion): 135.649299622 dB
+----------COS--------------
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/cos_double.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/cos_posit.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/cos_float.txt for writing!
+----------------SNR RESULTS COS-------------------------
+SNR (Posit Reconstruction): 171.905102221 dB
+SNR (Float Conversion): 143.469963074 dB
+----------FFT--------------
+Calculating double results...
+0
+GC: 0
+GC: 1
+GC: 2
+GC: 3
+GC: 4
+GC: 5
+GC: 6
+GC: 7
+GC: 8
+GC: 9
+GC: 10
+GC: 11
+GC: 12
+GC: 13
+GC: 14
+GC: 15
+GC: 16
+GC: 17
+GC: 18
+GC: 19
+GC: 20
+GC: 21
+GC: 22
+GC: 23
+GC: 24
+GC: 25
+GC: 26
+GC: 27
+GC: 28
+GC: 29
+GC: 30
+GC: 31
+GC: 32
+GC: 33
+GC: 34
+GC: 35
+GC: 36
+GC: 37
+GC: 38
+GC: 39
+GC: 40
+GC: 41
+GC: 42
+GC: 43
+GC: 44
+GC: 45
+GC: 46
+GC: 47
+GC: 48
+GC: 49
+GC: 50
+GC: 51
+GC: 52
+GC: 53
+GC: 54
+GC: 55
+GC: 56
+GC: 57
+GC: 58
+GC: 59
+GC: 60
+GC: 61
+GC: 62
+GC: 63
+GC: 64
+GC: 65
+GC: 66
+GC: 67
+GC: 68
+GC: 69
+GC: 70
+GC: 71
+GC: 72
+GC: 73
+GC: 74
+GC: 75
+GC: 76
+GC: 77
+GC: 78
+GC: 79
+GC: 80
+GC: 81
+GC: 82
+GC: 83
+GC: 84
+GC: 85
+GC: 86
+GC: 87
+GC: 88
+GC: 89
+GC: 90
+GC: 91
+GC: 92
+GC: 93
+GC: 94
+GC: 95
+GC: 96
+GC: 97
+GC: 98
+GC: 99
+GC: 100
+GC: 101
+GC: 102
+GC: 103
+GC: 104
+GC: 105
+GC: 106
+GC: 107
+GC: 108
+GC: 109
+GC: 110
+GC: 111
+GC: 112
+GC: 113
+GC: 114
+GC: 115
+GC: 116
+GC: 117
+GC: 118
+GC: 119
+GC: 120
+GC: 121
+GC: 122
+GC: 123
+GC: 124
+GC: 125
+GC: 126
+GC: 127
+Calculating float results...
+0
+Calculating posit results...
+Writing results in files...
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/signal.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/posit_fft_real.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/posit_fft_imag.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/double_fft_real.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/double_fft_imag.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/float_fft_real.txt for writing!
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/float_fft_imag.txt for writing!
+----------------SNR RESULTS FFT-------------------------
+SNR (Posit Reconstruction): 16.2327554782 dB
+SNR (Float Conversion): 133.514909744 dB
+-0 0
+-0.03125 -0.03125
+-0.0625 -0.0625
+-0.09375 -0.09375
+-0.125 -0.125
+-0.15625 -0.15625
+-0.1875 -0.1875
+-0.21875 -0.21875
+-0.25 -0.25
+-0.28125 -0.28125
+-0.3125 -0.3125
+-0.34375 -0.34375
+-0.375 -0.375
+-0.40625 -0.40625
+-0.4375 -0.4375
+-0.46875 -0.46875
+-0.5 -0.5
+-0.53125 -0.53125
+-0.5625 -0.5625
+-0.59375 -0.59375
+-0.625 -0.625
+-0.65625 -0.65625
+-0.6875 -0.6875
+-0.71875 -0.71875
+-0.75 -0.75
+-0.78125 -0.78125
+-0.8125 -0.8125
+-0.84375 -0.84375
+-0.875 -0.875
+-0.90625 -0.90625
+-0.9375 -0.9375
+-0.96875 -0.96875
+-1 -1
+-1.03125 -1.03125
+-1.0625 -1.0625
+-1.09375 -1.09375
+-1.125 -1.125
+-1.15625 -1.15625
+-1.1875 -1.1875
+-1.21875 -1.21875
+-1.25 -1.25
+-1.28125 -1.28125
+-1.3125 -1.3125
+-1.34375 -1.34375
+-1.375 -1.375
+-1.40625 -1.40625
+-1.4375 -1.4375
+-1.46875 -1.46875
+-1.5 -1.5
+-1.53125 -1.53125
+-1.5625 -1.5625
+-1.59375 -1.59375
+-1.625 -1.625
+-1.65625 -1.65625
+-1.6875 -1.6875
+-1.71875 -1.71875
+-1.75 -1.75
+-1.78125 -1.78125
+-1.8125 -1.8125
+-1.84375 -1.84375
+-1.875 -1.875
+-1.90625 -1.90625
+-1.9375 -1.9375
+-1.96875 -1.96875
+-2 -2
+-2.03125 -2.03125
+-2.0625 -2.0625
+-2.09375 -2.09375
+-2.125 -2.125
+-2.15625 -2.15625
+-2.1875 -2.1875
+-2.21875 -2.21875
+-2.25 -2.25
+-2.28125 -2.28125
+-2.3125 -2.3125
+-2.34375 -2.34375
+-2.375 -2.375
+-2.40625 -2.40625
+-2.4375 -2.4375
+-2.46875 -2.46875
+-2.5 -2.5
+-2.53125 -2.53125
+-2.5625 -2.5625
+-2.59375 -2.59375
+-2.625 -2.625
+-2.65625 -2.65625
+-2.6875 -2.6875
+-2.71875 -2.71875
+-2.75 -2.75
+-2.78125 -2.78125
+-2.8125 -2.8125
+-2.84375 -2.84375
+-2.875 -2.875
+-2.90625 -2.90625
+-2.9375 -2.9375
+-2.96875 -2.96875
+-3 -3
+-3.03125 -3.03125
+-3.0625 -3.0625
+-3.09375 -3.09375
+-3.125 -3.125
+-3.15625 -3.15625
+-3.1875 -3.1875
+-3.21875 -3.21875
+-3.25 -3.25
+-3.28125 -3.28125
+-3.3125 -3.3125
+-3.34375 -3.34375
+-3.375 -3.375
+-3.40625 -3.40625
+-3.4375 -3.4375
+-3.46875 -3.46875
+-3.5 -3.5
+-3.53125 -3.53125
+-3.5625 -3.5625
+-3.59375 -3.59375
+-3.625 -3.625
+-3.65625 -3.65625
+-3.6875 -3.6875
+-3.71875 -3.71875
+-3.75 -3.75
+-3.78125 -3.78125
+-3.8125 -3.8125
+-3.84375 -3.84375
+-3.875 -3.875
+-3.90625 -3.90625
+-3.9375 -3.9375
+-3.96875 -3.96875
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+0 0
+----------------SNR RESULTS Delta Theta-------------------------
+SNR Before Calculation: inf dB
+----------------SNR RESULTS MOD-------------------------
+SNR Before Calculation: 182.101600059 dB
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/double_ifft_output.txt for writing!
+SNR Mod Calculation: 146.873514224 dB
+Computing double IFFT...
+Writing IFFT results to file...
+Computing float IFFT...
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/float_ifft_output.txt for writing!
+Computing posit IFFT...
+Error: Could not open file c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_4_N_32_ES_0_SIZE_128_APP/posit_ifft_output.txt for writing!
+----------------SNR RESULTS IFFT-------------------------
+SNR (Posit Reconstruction): 22.8999250275 dB
+SNR (Float Conversion): 134.861927032 dB
+----------------SNR RESULTS IFFT WRT ORIG-----------------
+SNR (Posit Reconstruction): 3.49422335663 dB
+SNR (Float Conversion): 3.42164546251 dB
+SNR (Double Conversion): 3.42164659676 dB
+Processing complete.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-112] Total CPU user time: 2 seconds. Total CPU system time: 1 seconds. Total elapsed time: 18.463 seconds; peak allocated memory: 162.703 MB.
+INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 26s

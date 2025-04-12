@@ -66,7 +66,7 @@ void writeToFile(const std::string& filename, const double data_array[], size_t 
 
     // Loop through the array and write each value to the file
     for (size_t i = 0; i < size; ++i) {
-        outFile << data_array[i] << "\n";
+        outFile <<data_array[i] << "\n";
     }
 
     outFile.close();
@@ -81,7 +81,13 @@ void convertPositArrayToDoubleArray(ps_t positArray[], double doubleArray[], siz
     }
 }
 
-
+void convertDoubleArrayToPositArray(ps_t positArray[], double doubleArray[], size_t size) {
+    for (size_t i = 0; i < size; ++i) {
+        double doubleValue = doubleArray[i]; // Access array element
+        ps_t converted = double2posit(doubleValue);  // Convert posit to double
+        positArray[i] = converted; // Store in the output array
+    }
+}
 
 
 // Compute SNR between original and reconstructed array
@@ -160,14 +166,39 @@ void calculateCosArrays(
         CosPosit[i] = positCos(positSinCosIn[i]);  
     }
 }
+void fillRandomDoublesArray(double* arr, int size, double minVal = -5.0, double maxVal = 5.0) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> dist(minVal, maxVal);
+
+    for (int i = 0; i < size; ++i) {
+        arr[i] = dist(gen);
+    }
+}
 int main() {
-   std::cout << "ONE: " << posit2double(ONE) << std::endl;
+    std::cout<<"double PI: "<<PI<<std::endl;
+   std::cout << "ONE: "  <<posit2double(ONE) << std::endl;
+   std::cout << "mONE: "  <<posit2double(mONE) << std::endl;
     std::cout << "POSIT_PI_OVER2: " << posit2double(POSIT_PI_OVER2) << std::endl;
     std::cout << "PI: " << posit2double(POSIT_PI) << std::endl;
     std::cout << "2PI: " << posit2double(POSIT_2PI) << std::endl;
     std::cout << "POSIT_M_PI_OVER2: " << posit2double(POSIT_M_PI_OVER2) << std::endl;
     std::cout << "POSIT_M_PI: " << posit2double(POSIT_M_PI) << std::endl;
     std::cout << "POSIT_M_2PI: " << posit2double(POSIT_M_2PI) << std::endl;
+
+    std::cout << "ZERO+mONE: "  <<posit2double(positAdd(ZERO,mONE)) << std::endl;
+    std::cout << "(ZERO+mONE)+mONE: "  <<posit2double(positAdd(positAdd(ZERO,mONE),mONE)) << std::endl;
+    
+    std::cout<<"------------------------"<<std::endl;
+    
+    double ang = -278.0101318359375;
+    std::cout << "positMod: "  <<posit2double(positMod(double2posit(ang),POSIT_2PI)) << std::endl;
+    std::cout << "doubleMod: "  <<fmod(ang,PI*2) << std::endl;
+     std::cout<<"------------------------"<<std::endl;
+    std::cout << "positCos: "  <<posit2double(positCos(double2posit(ang)) )<< std::endl;
+    std::cout << "doubleCos: "  <<dTailorCos(ang) << std::endl;
+    std::cout << "floatCos: "  <<fTailorCos(ang) << std::endl;
+
 /*
     ps_t x,y;
     x= double2posit(5);
@@ -194,13 +225,40 @@ int main() {
     std::cout<<posit2double(positMod(double2posit(-150.895),POSIT_2PI))<<std::endl;
     std::cout<<posit2double(positMod(double2posit(-153.742),POSIT_2PI))<<std::endl;
 */
-/*
-    for(int i=0;i<IN_SIZE;i++){
-        std::cout<<posit2double(calculateKFactor(i))<<std::endl;
-    }*/
-    
-    std::string appr_suffix = (APPR_TAILOR == 1) ? "_APP" : "_NAPP";
 
+    double doublekFac[IN_SIZE];
+    ps_t positkFac[IN_SIZE];
+    double positkFacDouble[IN_SIZE];
+    for(int i=0;i<IN_SIZE;i++){
+        positkFac[i] = calculateKFactor(i);
+        doublekFac[i] = (double) i/IN_SIZE;
+
+    }
+    convertPositArrayToDoubleArray(positkFac, positkFacDouble, IN_SIZE);
+    double snrPosit_F = computeSNR(doublekFac, positkFacDouble, IN_SIZE);
+
+
+    double dIn[1000];
+    ps_t pIn[1000];
+    double ptodIn[1000];
+    double doubleMd[1000];
+    ps_t positMd[1000];
+    double positMdDouble[1000];
+    fillRandomDoublesArray(dIn,1000,-250,250);
+    convertDoubleArrayToPositArray(pIn,dIn,1000);
+    convertPositArrayToDoubleArray(pIn, ptodIn, 1000);
+    for(int i=0;i<1000;i++){
+        positMd[i] = positMod(pIn[i],POSIT_2PI);
+        doubleMd[i] = fmod(dIn[i],2*PI);
+
+    }
+    convertPositArrayToDoubleArray(positMd, positMdDouble, 1000);
+    double snrPosit_M_IN = computeSNR(dIn, ptodIn, IN_SIZE);
+    double snrPosit_M = computeSNR(doubleMd, positMdDouble, IN_SIZE);
+
+
+    std::string appr_suffix = (APPR_TAILOR == 1) ? "_APP" : "_NAPP";
+    
     // Construct the base path
     std::string basePath = "c:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/TERMS_" 
                             + std::to_string(TERMS) + "_N_" + std::to_string(N) 
@@ -251,10 +309,6 @@ int main() {
 
     double snrFloat_IN = computeSNRFloat(doubleSignal,floatSignal, IN_SIZE);
 
-    // Print results
-    std::cout << "----------------SNR RESULTS INPUT-------------------------" << std::endl;
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit_IN << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat_IN << " dB" << std::endl;
 
     std::cout << "After Load" << std::endl;
     float floatSinCosIn[IN_SIZE];
@@ -278,10 +332,6 @@ int main() {
     writeToFileFloat(sinFloat, SinFloat, IN_SIZE);  
     double snrPosit_SIN = computeSNR(SinDouble, SinPositDouble, IN_SIZE);
     double snrFloat_SIN = computeSNRFloat(SinDouble,SinFloat, IN_SIZE);   
-	    // Print results
-    std::cout << "----------------SNR RESULTS SIN-------------------------" << std::endl;
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit_SIN << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat_SIN << " dB" << std::endl;
     std::ofstream outFileSIN(snrSINOut);
     outFileSIN << "Posit: " << snrPosit_SIN << std::endl;
     outFileSIN << "Float: " << snrFloat_SIN << std::endl;
@@ -298,10 +348,6 @@ int main() {
     writeToFileFloat(cosFloat, CosFloat, IN_SIZE);  
 	double snrPosit_COS = computeSNR(CosDouble, CosPositDouble, IN_SIZE);
     double snrFloat_COS = computeSNRFloat(CosDouble,CosFloat, IN_SIZE);   
-	    // Print results
-    std::cout << "----------------SNR RESULTS COS-------------------------" << std::endl;
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit_COS << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat_COS << " dB" << std::endl;
     std::ofstream outFileCOS(snrCOSOut);
     outFileCOS << "Posit: " << snrPosit_COS << std::endl;
     outFileCOS << "Float: " << snrFloat_COS << std::endl;
@@ -338,19 +384,49 @@ int main() {
 
     // Compute SNRs
 
-    double snrPosit = computeSNR(d_fftResult.real, RC_real, IN_SIZE);
+    double snrPosit_FFT = computeSNR(d_fftResult.real, RC_real, IN_SIZE);
 
-    double snrFloat = computeSNRFloat(d_fftResult.real,f_fftResult.real, IN_SIZE);
-
-    // Print results
-    std::cout << "----------------SNR RESULTS FFT-------------------------" << std::endl;
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
-
+    double snrFloat_FFT = computeSNRFloat(d_fftResult.real,f_fftResult.real, IN_SIZE);
     std::ofstream outFileFFT(snrFFTOut);
-    outFileFFT << "Posit: " << snrPosit << std::endl;
-    outFileFFT << "Float: " << snrFloat << std::endl;
+    outFileFFT << "Posit: " << snrPosit_FFT << std::endl;
+    outFileFFT << "Float: " << snrFloat_FFT << std::endl;
     outFileFFT.close();
+
+    double snrPosit_ANG = computeSNR(d_Angle_Array, p_Angle_Array, MAX_SIZE);
+    double snrFloat_ANG = computeSNRFloat(d_Angle_Array, f_Angle_Array, MAX_SIZE);
+    std::string GAFile = basePath + "/angle.txt";  // Input file with the time-domain signal
+    std::string pGAFile = basePath + "/p_angle.txt";  // Input file with the time-domain signal
+    std::string fGAFile = basePath + "/f_angle.txt";  // Input file with the time-domain signal
+    writeToFile(GAFile, d_Angle_Array, MAX_SIZE);        // For signalArray
+    writeToFileFloat(fGAFile, f_Angle_Array, MAX_SIZE);       // For real part of float FFT result
+    writeToFile(pGAFile, p_Angle_Array, MAX_SIZE);       // For real part of posit FFT result
+ 
+    double snrPosit_RP = computeSNR(d_RP_Array, p_RP_Array, MAX_SIZE);
+    double snrFloat_RP = computeSNRFloat(d_RP_Array, f_RP_Array, MAX_SIZE);
+    std::string RPFile = basePath + "/rp.txt";  // Input file with the time-domain signal
+    std::string pRPFile = basePath + "/p_rp.txt";  // Input file with the time-domain signal
+    std::string fRPFile = basePath + "/f_rp.txt";  // Input file with the time-domain signal
+    writeToFile(RPFile, d_RP_Array, MAX_SIZE);        // For signalArray
+    writeToFileFloat(fRPFile, f_RP_Array, MAX_SIZE);       // For real part of float FFT result
+    writeToFile(pRPFile, p_RP_Array, MAX_SIZE);       // For real part of posit FFT result
+ 
+    double snrPosit_IMG = computeSNR(d_IMG_Array, p_IMG_Array, MAX_SIZE);
+    double snrFloat_IMG = computeSNRFloat(d_IMG_Array, f_IMG_Array, MAX_SIZE);
+    std::string IMGFile = basePath + "/img.txt";  // Input file with the time-domain signal
+    std::string pIMGFile = basePath + "/p_img.txt";  // Input file with the time-domain signal
+    std::string fIMGFile = basePath + "/f_img.txt";  // Input file with the time-domain signal
+    writeToFile(IMGFile, d_IMG_Array, MAX_SIZE);        // For signalArray
+    writeToFileFloat(fIMGFile, f_IMG_Array, MAX_SIZE);       // For real part of float FFT result
+    writeToFile(pIMGFile, p_IMG_Array, MAX_SIZE);       // For real part of posit FFT result
+
+    double snrPosit_DTH = computeSNR(d_DTH_Array, p_DTH_Array, DTHETA_SIZE);
+    double snrFloat_DTH = computeSNRFloat(d_DTH_Array, f_DTH_Array, DTHETA_SIZE);
+    std::string DTHFile = basePath + "/dth.txt";  // Input file with the time-domain signal
+    std::string pDTHFile = basePath + "/p_dth.txt";  // Input file with the time-domain signal
+    std::string fDTHFile = basePath + "/f_dth.txt";  // Input file with the time-domain signal
+    writeToFile(DTHFile, d_DTH_Array, DTHETA_SIZE);        // For signalArray
+    writeToFileFloat(fDTHFile, f_DTH_Array, DTHETA_SIZE);       // For real part of float FFT result
+    writeToFile(pDTHFile, p_DTH_Array, DTHETA_SIZE);       // For real part of posit FFT result
 
     std::cout << "Computing double IFFT..." << std::endl;
     double d_reconstructedSignal[IN_SIZE];
@@ -380,35 +456,61 @@ int main() {
     double RC_result[IN_SIZE];
     convertPositArrayToDoubleArray(p_reconstructedSignal, RC_result, IN_SIZE);
     writeToFile(pifftOutputFile, RC_result, IN_SIZE);
-
-    // Compute SNRs for IFFT
-    snrPosit = computeSNR(d_reconstructedSignal, RC_result, IN_SIZE);
-    snrFloat = computeSNRFloat(d_reconstructedSignal, f_reconstructedSignal, IN_SIZE);
-
-    std::cout << "----------------SNR RESULTS IFFT-------------------------" << std::endl;
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
-
+     // Compute SNRs for IFFT
+    double snrPosit_IFFT = computeSNR(d_reconstructedSignal, RC_result, IN_SIZE);
+    double snrFloat_IFFT = computeSNRFloat(d_reconstructedSignal, f_reconstructedSignal, IN_SIZE);
     std::ofstream outFileIFFT(snrIFFTOut);
-    outFileIFFT << "Posit: " << snrPosit << std::endl;
-    outFileIFFT << "Float: " << snrFloat << std::endl;
-
-
-    std::cout << "----------------SNR RESULTS IFFT WRT ORIG-----------------" << std::endl;
-
-    // Compute SNRs with respect to original signal
-    snrPosit = computeSNR(doubleSignal, RC_result,IN_SIZE);
-    snrFloat = computeSNRFloat(doubleSignal, f_reconstructedSignal,IN_SIZE);
-    double snrDouble = computeSNR(doubleSignal, d_reconstructedSignal,IN_SIZE);
-
-    std::cout << "SNR (Posit Reconstruction): " << snrPosit << " dB" << std::endl;
-    std::cout << "SNR (Float Conversion): " << snrFloat << " dB" << std::endl;
-    std::cout << "SNR (Double Conversion): " << snrDouble << " dB" << std::endl;
 
     outFileIFFT << "-------------WRT ORIG-------------------------" << std::endl;
-    outFileIFFT << "Posit: " << snrPosit << std::endl;
-    outFileIFFT << "Float: " << snrFloat << std::endl;
+    outFileIFFT << "Posit: " << snrPosit_IFFT << std::endl;
+    outFileIFFT << "Float: " << snrFloat_IFFT << std::endl;
     outFileIFFT.close();
+    // Compute SNRs with respect to original signal
+    double snrPosit_IFFT_ORIG = computeSNR(doubleSignal, RC_result,IN_SIZE);
+    double snrFloat_IFFT_ORIG = computeSNRFloat(doubleSignal, f_reconstructedSignal,IN_SIZE);
+    double snrDouble_IFFT_ORIG = computeSNR(doubleSignal, d_reconstructedSignal,IN_SIZE);
+    std::cout << "----------------SNR RESULTS K Factor-------------------------" << std::endl;
+    std::cout << "SNR k factor Calculation: " << snrPosit_F << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS MOD-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_M_IN << " dB" << std::endl;
+    std::cout << "SNR Mod Calculation: " << snrPosit_M << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS INPUT-------------------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_IN << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_IN << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS SIN-------------------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_SIN << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_SIN << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS COS-------------------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_COS << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_COS << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS FFT-------------------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_FFT << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_FFT << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS IFFT-------------------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_IFFT << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_IFFT << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS IFFT WRT ORIG-----------------" << std::endl;
+    std::cout << "SNR (Posit Reconstruction): " << snrPosit_IFFT_ORIG << " dB" << std::endl;
+    std::cout << "SNR (Float Conversion): " << snrFloat_IFFT_ORIG << " dB" << std::endl;
+    std::cout << "SNR (Double Conversion): " << snrDouble_IFFT_ORIG << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS ANG-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_ANG << " dB" << std::endl;
+    std::cout << "SNR Before Calculation Float: " << snrFloat_ANG << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS RP-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_RP << " dB" << std::endl;
+    std::cout << "SNR Before Calculation Float: " << snrFloat_RP << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS IMG-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_IMG << " dB" << std::endl;
+    std::cout << "SNR Before Calculation Float: " << snrFloat_IMG << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS DTH-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_DTH << " dB" << std::endl;
+    std::cout << "SNR Before Calculation Float: " << snrFloat_DTH << " dB" << std::endl;
+    std::cout << "----------------SNR RESULTS MOD-------------------------" << std::endl;
+    std::cout << "SNR Before Calculation: " << snrPosit_M_IN << " dB" << std::endl;
+    std::cout << "SNR Mod Calculation: " << snrPosit_M << " dB" << std::endl;
+
+
+
 
     std::cout << "Processing complete." << std::endl;
 

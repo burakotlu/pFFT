@@ -1,3 +1,3 @@
 relativeroot=C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT
-original_argv=-c --mode hls --config C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\hls_config.cfg --work_dir PositFFT 
+original_argv=--mode hls --csim --config C:\Users\Burak\Desktop\TAU\HLS\PositFFT\PositFFT\hls_config.cfg --work_dir PositFFT 
 

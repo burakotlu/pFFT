@@ -1,5 +1,131 @@
 #include "posit.hpp"
 #include <cmath>
+
+
+double d_Angle_Array[MAX_SIZE] = {0.0};
+size_t d_Angle_Counter = 0;
+
+void addTod_Angle_Array(double value) {
+    if (d_Angle_Counter < MAX_SIZE) {
+        d_Angle_Array[d_Angle_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+float f_Angle_Array[MAX_SIZE] = {0.0};
+size_t f_Angle_Counter = 0;
+
+void f_addTof_Angle_Array(float value) {
+    if (f_Angle_Counter < MAX_SIZE) {
+        f_Angle_Array[f_Angle_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+double p_Angle_Array[MAX_SIZE] = {0.0};
+size_t p_Angle_Counter = 0;
+
+void p_addTop_Angle_Array(double value) {
+    if (p_Angle_Counter < MAX_SIZE) {
+        p_Angle_Array[p_Angle_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+////////////////////////////////////////////
+double d_RP_Array[MAX_SIZE] = {0.0};
+size_t d_RP_Counter = 0;
+
+void addTod_RP_Array(double value) {
+    if (d_RP_Counter < MAX_SIZE) {
+        d_RP_Array[d_RP_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+float f_RP_Array[MAX_SIZE] = {0.0};
+size_t f_RP_Counter = 0;
+
+void f_addTof_RP_Array(float value) {
+    if (f_RP_Counter < MAX_SIZE) {
+        f_RP_Array[f_RP_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+double p_RP_Array[MAX_SIZE] = {0.0};
+size_t p_RP_Counter = 0;
+
+void p_addTop_RP_Array(double value) {
+    if (p_RP_Counter < MAX_SIZE) {
+        p_RP_Array[p_RP_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+//////////
+double d_IMG_Array[MAX_SIZE] = {0.0};
+size_t d_IMG_Counter = 0;
+
+void addTod_IMG_Array(double value) {
+    if (d_IMG_Counter < MAX_SIZE) {
+        d_IMG_Array[d_IMG_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+float f_IMG_Array[MAX_SIZE] = {0.0};
+size_t f_IMG_Counter = 0;
+
+void f_addTof_IMG_Array(float value) {
+    if (f_IMG_Counter < MAX_SIZE) {
+        f_IMG_Array[f_IMG_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+double p_IMG_Array[MAX_SIZE] = {0.0};
+size_t p_IMG_Counter = 0;
+
+void p_addTop_IMG_Array(double value) {
+    if (p_IMG_Counter < MAX_SIZE) {
+        p_IMG_Array[p_IMG_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+//////////
+double d_DTH_Array[DTHETA_SIZE] = {0.0};
+size_t d_DTH_Counter = 0;
+
+void addTod_DTH_Array(double value) {
+    if (d_DTH_Counter < DTHETA_SIZE) {
+        d_DTH_Array[d_DTH_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+float f_DTH_Array[DTHETA_SIZE] = {0.0};
+size_t f_DTH_Counter = 0;
+
+void f_addTof_DTH_Array(float value) {
+    if (f_DTH_Counter < DTHETA_SIZE) {
+        f_DTH_Array[f_DTH_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+double p_DTH_Array[DTHETA_SIZE] = {0.0};
+size_t p_DTH_Counter = 0;
+
+void p_addTop_DTH_Array(double value) {
+    if (p_DTH_Counter < DTHETA_SIZE) {
+        p_DTH_Array[p_DTH_Counter++] = value;
+    } else {
+        std::cerr << "Global array overflow!" << std::endl;
+    }
+}
+
 bool isGreater_posit(ps_t x, ps_t y) {
     // Extract fields
     m_add_t x_mantissa = x.mantissa;
@@ -29,6 +155,7 @@ bool isGreater_posit(ps_t x, ps_t y) {
     else
         return !absXGreaterEqual; // Both negative: smaller abs = greater
 }
+
 ps_t positMod(ps_t x, ps_t y){
     ps_t quotient,c_x, inter,res;
     sf_t sf=0;
@@ -189,7 +316,7 @@ ps_t  decode(posit_t posit){
                 exponent=posit.range(REM-1,REM-ES);
                 mantissa=posit.range(REM-(ES+1),0);
             }
-            else {mantissa=0; exponent=posit.range(REM-1,0);}
+            else {mantissa=1<<(FRAC_LEN-1); exponent=posit.range(REM-1,0);}
         }
     }
 	
@@ -615,11 +742,8 @@ ps_t positAdd(ps_t x,ps_t y){
         }
 
     }
-	if((x_isZero && y_isZero)||((x_regime==y_regime && x_exponent==y_exponent && x_mantissa==y_mantissa )&& x.sign!=y.sign)){
-		isZero=true;
-		regime=0; exponent=0; mantissa=0;
-	}
-	else if(x_isZero && !y_isZero){ // x=0 ,y!=0 --> r=y
+
+	if(x_isZero && !y_isZero){ // x=0 ,y!=0 --> r=y
 		sign=y_sign;
 		regime=y_regime;
 		exponent=y_exponent;
@@ -630,6 +754,10 @@ ps_t positAdd(ps_t x,ps_t y){
 		regime=x_regime;
 		exponent=x_exponent;
 		mantissa=x_mantissa;
+	}
+    else if((x_isZero && y_isZero)||((x_regime==y_regime && x_exponent==y_exponent && x_mantissa==y_mantissa )&& x.sign!=y.sign)){
+		isZero=true;
+		regime=0; exponent=0; mantissa=1<<(FRAC_LEN-1);
 	}
 	result.regime=regime;
 	result.exponent=exponent;
@@ -734,7 +862,7 @@ ps_t positDiv(ps_t x,ps_t y){
 
         }
 	}
-	if(isZero) {regime=0;exponent=0;mantissa=0;sign=0;}
+	if(isZero) {regime=0;exponent=0;mantissa=1<<(FRAC_LEN-1);sign=0;}
 	//set result
 	result.regime=regime;
 	result.exponent=exponent;
@@ -834,7 +962,7 @@ ps_t positMul(ps_t x,ps_t y){
 
         }
 	}
-	if(isZero) {regime=0;exponent=0;mantissa=0;sign=0;}
+	if(isZero) {regime=0;exponent=0;mantissa=1<<(FRAC_LEN-1);sign=0;}
 	//set result
 	result.regime=regime;
 	result.exponent=exponent;
@@ -873,12 +1001,14 @@ ps_t positSub(ps_t x,ps_t y){
 ///////////////////////////COS////////////////////////////////
 double dReduceAngle(double angle, bool &negate) {
     // Begrenzung auf [-π, π]
+    //std::cout<<"angle: "<<angle<<std::endl;
+     //std::cout<<"angle: "<<angle<<std::endl;
     angle = fmod(angle, 2 * PI);
     if (angle > PI) 
         angle -= 2 * PI;
     else if (angle < -PI) 
         angle += 2 * PI;
-
+    //std::cout<<"angle: "<<angle<<std::endl;
     // Kosinus-Symmetrie ausnutzen
     negate = false;
     if (angle > PI / 2) {
@@ -888,8 +1018,8 @@ double dReduceAngle(double angle, bool &negate) {
         angle = -PI - angle;
         negate = true;  // Negation für cos(-x) beachten
     }
-
     return angle;
+    //return negate ? angle:-angle;
 }
 
 // Taylor-Approximation für cos(x)
@@ -899,36 +1029,41 @@ double dTailorCos(double x) {
     bool negate;
     double x2,term1,term2,term3,term4;
     x = dReduceAngle(x, negate);  // Reduce the angle to [0, π/2]
+    //std::cout<<"dRA: "<<x<<std::endl;
+    if(x == PI/2 || x == -PI/2) return 0;
+    else if (x== 0) return 1;
+    else{
+        x2 = x * x;
+        term1 = 1.0;
+        term2 = x2 / 2.0;
 
-    x2 = x * x;
-    term1 = 1.0;
-    term2 = x2 / 2.0;
-
-    #if TERMS > 2
-        #if APPR_TAILOR ==0
-            term3 = x2 * x2 / 24.0;
-        #elif APPR_TAILOR ==1
-            term3 = x2 * x2 / 32.0;
+        #if TERMS > 2
+            #if APPR_TAILOR ==0
+                term3 = x2 * x2 / 24.0;
+            #elif APPR_TAILOR ==1
+                term3 = x2 * x2 / 32.0;
+            #endif
         #endif
-    #endif
 
-    #if TERMS > 3
-        #if APPR_TAILOR ==0
-            term4 = x2 * term3 / 30.0;
-        #elif APPR_TAILOR ==1
-            term4 = x2 * term3 / 32.0;
+        #if TERMS > 3
+            #if APPR_TAILOR ==0
+                term4 = x2 * term3 / 30.0;
+            #elif APPR_TAILOR ==1
+                term4 = x2 * term3 / 32.0;
+            #endif
         #endif
-    #endif
 
-    #if TERMS == 2
-        return negate ? -(term1 - term2) : (term1 - term2);
-    #elif TERMS == 3
-        return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
-    #elif TERMS == 4
-        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
-    #else
-        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
-    #endif
+        #if TERMS == 2
+            return negate ? -(term1 - term2) : (term1 - term2);
+        #elif TERMS == 3
+            return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
+        #elif TERMS == 4
+            return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
+        #else
+            return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
+        #endif
+    }
+ 
 }
 
 float fReduceAngle(float angle, bool &negate) {
@@ -948,7 +1083,7 @@ float fReduceAngle(float angle, bool &negate) {
         angle = -PI - angle;
         negate = true;  // Negation für cos(-x) beachten
     }
-
+    
     return angle;
 }
 
@@ -971,37 +1106,41 @@ float fTailorCos(float x) {
 float fTailorCos(float x) {
     bool negate;
     float x2,term1,term2,term3,term4;
-    x = dReduceAngle(x, negate);  // Reduce the angle to [0, π/2]
+    x = fReduceAngle(x, negate);  // Reduce the angle to [0, π/2]
+    if(x == PI/2 || x == -PI/2) return 0;
+    else if (x== 0) return 1;
+    else{
+        x2 = x * x;
+        term1 = 1.0;
+        term2 = x2 / 2.0;
 
-    x2 = x * x;
-    term1 = 1.0;
-    term2 = x2 / 2.0;
-
-    #if TERMS > 2
-        #if APPR_TAILOR ==0
-            term3 = x2 * x2 / 24.0;
-        #elif APPR_TAILOR ==1
-            term3 = x2 * x2 / 32.0;
+        #if TERMS > 2
+            #if APPR_TAILOR ==0
+                term3 = x2 * x2 / 24.0;
+            #elif APPR_TAILOR ==1
+                term3 = x2 * x2 / 32.0;
+            #endif
         #endif
-    #endif
 
-    #if TERMS > 3
-        #if APPR_TAILOR ==0
-            term4 = x2 * term3 / 30.0;
-        #elif APPR_TAILOR ==1
-            term4 = x2 * term3 / 32.0;
+        #if TERMS > 3
+            #if APPR_TAILOR ==0
+                term4 = x2 * term3 / 30.0;
+            #elif APPR_TAILOR ==1
+                term4 = x2 * term3 / 32.0;
+            #endif
         #endif
-    #endif
 
-    #if TERMS == 2
-        return negate ? -(term1 - term2) : (term1 - term2);
-    #elif TERMS == 3
-        return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
-    #elif TERMS == 4
-        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
-    #else
-        return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
-    #endif
+        #if TERMS == 2
+            return negate ? -(term1 - term2) : (term1 - term2);
+        #elif TERMS == 3
+            return negate ? -(term1 - term2 + term3) : (term1 - term2 + term3);
+        #elif TERMS == 4
+            return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
+        #else
+            return negate ? -(term1 - term2 + term3 - term4) : (term1 - term2 + term3 - term4);
+        #endif
+    }
+
 }
 
 #define EPSILON 1e-12  // Adjust this based on precision needs
@@ -1023,11 +1162,14 @@ ps_t pReduceAngle(ps_t angle, bool &negate) {
 	if (isGreater_posit(m_angle,POSIT_PI_OVER2 ))	{
 		m_angle = positSub(POSIT_PI,m_angle);
         negate = true;  // Negation für cos(-x) beachten
+     //   std::cout<<"1 "<<std::endl;
     }else if (isGreater_posit(POSIT_M_PI_OVER2,m_angle )){
 		m_angle = positAdd(m_angle,POSIT_PI);
-		m_angle.sign=!m_angle.sign;
+		//m_angle.sign=!m_angle.sign;
         negate = true;  // Negation für cos(-x) beachten
+         //   std::cout<<"2 "<<std::endl;
     }
+     //   std::cout<<"p negate: "<<negate<<std::endl;
 	return m_angle;
 }/*
 ps_t pReduceAngle(ps_t angle, bool &negate) {
@@ -1063,41 +1205,46 @@ ps_t positCos(ps_t x) {
     term1 = ONE;
     if (x.isZero == 1) return term1;
     y = pReduceAngle(x, negate);
+    //std::cout<<"pDG: "<<posit2double(y)<<std::endl;    
+    if(y == POSIT_PI_OVER2 || y ==POSIT_M_PI_OVER2) return ZERO;
+    else if (y == ZERO) return ONE;
+    else{
+        y2 = positMul(y, y);
+        y4 = positMul(y2, y2);
 
-    y2 = positMul(y, y);
-    y4 = positMul(y2, y2);
+        term2 = positDiv2p(y2, -1);
 
-    term2 = positDiv2p(y2, -1);
-
-    #if TERMS > 2
-        #if APPR_TAILOR ==0
-            term3 = positDiv(y4, double2posit(24.0));
-        #elif APPR_TAILOR ==1
-            term3 = positDiv2p(y4, -5);
+        #if TERMS > 2
+            #if APPR_TAILOR ==0
+                term3 = positDiv(y4, double2posit(24.0));
+            #elif APPR_TAILOR ==1
+                term3 = positDiv2p(y4, -5);
+            #endif
         #endif
-    #endif
 
-    #if TERMS > 3
-        #if APPR_TAILOR ==0
-            term4 = positDiv(positMul(term3, y2), double2posit(30.0));
-        #elif APPR_TAILOR ==1
-            term4 = positDiv2p(positMul(term3, y2), -5);
-        #endif        
-    #endif
+        #if TERMS > 3
+            #if APPR_TAILOR ==0
+                term4 = positDiv(positMul(term3, y2), double2posit(30.0));
+            #elif APPR_TAILOR ==1
+                term4 = positDiv2p(positMul(term3, y2), -5);
+            #endif        
+        #endif
 
-    t1minust2 = positSub(term1, term2);
+        t1minust2 = positSub(term1, term2);
 
-    #if TERMS == 2
-        result = t1minust2;
-    #elif TERMS == 3
-        result = positAdd(t1minust2, term3);
-    #elif TERMS == 4
-        result = positSub(positAdd(t1minust2, term3), term4);
-    #else
-        result = positSub(positAdd(t1minust2, term3), term4);
-    #endif
-    
-    return negate ? posit_negate(result) : result;
+        #if TERMS == 2
+            result = t1minust2;
+        #elif TERMS == 3
+            result = positAdd(t1minust2, term3);
+        #elif TERMS == 4
+            result = positSub(positAdd(t1minust2, term3), term4);
+        #else
+            result = positSub(positAdd(t1minust2, term3), term4);
+        #endif
+        
+        return negate ? posit_negate(result) : result;   
+    }
+
 }
 ///////////////////////////SINE////////////////////////////////
 double dNAngle(double angle) {
@@ -1171,7 +1318,7 @@ float fNAngle(float angle) {
 
 float fTailorSin(float in) {
     float term1, term2, term3, term4, x;
-    x = dNAngle(in);
+    x = fNAngle(in);
 
     term1 = x;
     #if APPR_TAILOR ==0
@@ -1313,31 +1460,35 @@ std::ofstream PdeltaThetaFile("posit_deltaTheta_values.txt");
 std::ofstream deltaFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_deltaTheta.txt");
 std::ofstream deltaThetaPosit("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/posit_deltaTheta.txt");*/
 // Define the accumulation function for double type signals
-void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& realSum, double& imagSum) {
+void dAccumulateFC(int k, int sampleCount, const double signal[], double& realSum, double& imagSum) {
     double realPart, imagPart, angle = 0.0;
     double deltaTheta = -2.0 * PI * k / sampleCount;
 
+    addTod_DTH_Array(deltaTheta);
+    double signalVal;    
 /*    // Open output files
     std::ofstream realFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_realPart_k" + std::to_string(k) + ".txt");
     std::ofstream imagFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/double_imagPart_k" + std::to_string(k) + ".txt");
-
     // Write deltaTheta once
     deltaFile << deltaTheta << std::endl;*/
     // Initialize sums
-    realSum = 0.0;
-    imagSum = 0.0;
 
     // Accumulate FFT bin
     for (int n = 0; n < sampleCount; n++) {
-        dEuler(angle, &realPart, &imagPart);
+        
    /*     // Save current values to files
         realFile << angle<<"   "<<realPart << std::endl;
         imagFile << angle<<"   "<<imagPart << std::endl;*/
-
-        realSum += signalBuffer[n] * realPart;
-        imagSum += signalBuffer[n] * imagPart;
-
+        signalVal = signal[n];
+        dEuler(angle, &realPart, &imagPart);
+        // Accumulate the results
+        realSum += signalVal * realPart;
+        imagSum += signalVal * imagPart;
+        addTod_Angle_Array(angle);
         angle += deltaTheta;
+        
+        addTod_RP_Array(realPart);
+		addTod_IMG_Array(imagPart);
     }
 /*    // Close files
     realFile.close();
@@ -1347,23 +1498,18 @@ void dAccumulateFC(int k, int sampleCount, const double signalBuffer[], double& 
 
 void fAccumulateFC(int k, int sampleCount, const float signal[], float& realSum, float& imagSum) {
     float realPart, imagPart, angle = 0.0;
-
-    // Initialize the sums to 0
-    realSum = 0.0;
-    imagSum = 0.0;
     float deltaTheta = -2.0 * PI * k / sampleCount;
-
-    // Loop over the samples and compute the FFT accumulation
+    float signalVal;
+	f_addTof_DTH_Array(deltaTheta);
     for (int n = 0; n < sampleCount; n++) {
-        // Access the signal array instead of reading from the stream
-        float signalVal = signal[n];
-
+        signalVal = signal[n];
         fEuler(angle, &realPart, &imagPart);
-
-        // Accumulate the results
         realSum += signalVal * realPart;
         imagSum += signalVal * imagPart;
+        f_addTof_Angle_Array(angle);
         angle += deltaTheta;
+        f_addTof_RP_Array(realPart);
+		f_addTof_IMG_Array(imagPart);
     }
 }
 ps_t calculateKFactor(int k){
@@ -1396,13 +1542,17 @@ ps_t calculateKFactor(int k){
     std::cout<<"exponent: "<<exponent<<std::endl;*/
 	return result;
 }
+
 void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, ps_t& imagSum) {
     ps_t angle=ZERO, realPart, imagPart;
-   ps_t deltaTheta, k_factor;
+    ps_t deltaTheta, k_factor;
 	k_factor = calculateKFactor(k);
 	deltaTheta = positMul(POSIT_M_2PI,k_factor);
-    //ps_t deltaTheta = double2posit(-2.0 * PI * k / sampleCount);
+    ps_t signalVal;
+    p_addTop_DTH_Array(posit2double(deltaTheta));
+    //ps_t deltaTheta = double2posit(-2.0 * M_PI * k / sampleCount);
 /*
+    
     // Loop over the samples and compute the FFT accumulation
     // Open output files
     std::ofstream realFile("C:/Users/Burak/Desktop/TAU/HLS/PositFFT/PositFFT/debug/realPart_k" + std::to_string(k) + ".txt");
@@ -1412,7 +1562,7 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
    // deltaThetaPosit << posit2double(deltaTheta) << std::endl;
     for (int n = 0; n < sampleCount; n++) {
         // Access the signal array instead of reading from the stream
-        ps_t signalVal = signal[n];
+        signalVal = signal[n];
 
         // Compute Euler for posit type
 
@@ -1423,8 +1573,11 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
         // Accuulate the results
         realSum = positAdd(realSum, positMul(signalVal, realPart));
         imagSum = positAdd(imagSum, positMul(signalVal, imagPart));
-
+        p_addTop_Angle_Array(posit2double(angle));
         angle = positAdd(angle, deltaTheta);
+        
+        p_addTop_RP_Array(posit2double(realPart));
+		p_addTop_IMG_Array(posit2double(imagPart));
     }
   /*  // Close files
     realFile.close();
@@ -1435,14 +1588,14 @@ void pAccumulateFC(int k, int sampleCount, const ps_t signal[], ps_t& realSum, p
 // Function for pFFT (using ps_t type)
 void pFFT(ps_t signal[], pFFTResult& result) {
     int sampleCount = IN_SIZE;
-
+    ps_t realSum,imagSum;
     for (int k = 0; k < sampleCount; k++) { // For each frequency bin
   //      if (k % 200 == 0)  
    //         std::cout << k << std::endl;
 
         // Call the accumulation function for each frequency bin
-        ps_t realSum = ZERO;
-        ps_t imagSum = ZERO;
+        realSum = ZERO;
+        imagSum = ZERO;
         pAccumulateFC(k, sampleCount, signal, realSum, imagSum);
 
         result.real[k] = realSum;  // Store the real part in the array
@@ -1454,20 +1607,17 @@ void pFFT(ps_t signal[], pFFTResult& result) {
 // Function for dFFT (using double type)
 void dFFT(double signal[], dFFTResult& result) {
     const int sampleCount = IN_SIZE;
+    double realSum,imagSum;
 
-    // Step 1: Copy signal from stream into buffer
-    double signalBuffer[IN_SIZE];
-
-    // Step 2: Use buffered data for FFT (reusable)
     for (int k = 0; k < sampleCount; k++) {
         if (k % 200 == 0)
-            std::cout << "Processing bin: " << k << std::endl;
+            std::cout<< k << std::endl;
 
-        double realSum = 0.0;
-        double imagSum = 0.0;
+        realSum = 0.0;
+        imagSum = 0.0;
 
         dAccumulateFC(k, sampleCount, signal, realSum, imagSum);
-
+        //std::cout << "Counter after k=" << k << ": " << globalCounter << std::endl;
         result.real[k] = realSum;  // Store the real part in the array
         result.imag[k] = imagSum;  // Store the imaginary part in the array
     }
@@ -1476,15 +1626,14 @@ void dFFT(double signal[], dFFTResult& result) {
 
 // Function for fFFT (using float type)
 void fFFT(float signal[], fFFTResult& result) {
-    int sampleCount = IN_SIZE;
-
+    const int sampleCount = IN_SIZE;
+    float realSum,imagSum;
     for (int k = 0; k < sampleCount; k++) { // For each frequency bin
         if (k % 200 == 0)  
             std::cout << k << std::endl;
 
-        // Call the accumulation function for each frequency bin
-        float realSum = 0;
-        float imagSum = 0;
+        realSum = 0.0;
+        imagSum = 0.0;
         fAccumulateFC(k, sampleCount, signal, realSum, imagSum);
 
         result.real[k] = realSum;  // Store the real part in the array
@@ -1529,7 +1678,7 @@ void fAccumulateFC_IFFT(int k, const float real[], const float imag[], float& re
     realSum = 0.0f;
     imagSum = 0.0f;
     float realPart, imagPart, angle = 0.0f;
-    float deltaTheta = 2.0f * PI * k / sampleCount;
+    float deltaTheta = 2.0 * PI * k / sampleCount;
 
     for (int n = 0; n < sampleCount; n++) {
         float signalVal_real = real[n];
