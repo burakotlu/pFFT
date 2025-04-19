@@ -1,2 +1,0 @@
-Posit: inf
-Float: inf
